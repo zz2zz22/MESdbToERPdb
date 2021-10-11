@@ -1,0 +1,12 @@
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\MESdbToERPdb.exe.config
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\MESdbToERPdb.exe
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\MESdbToERPdb.pdb
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.AssemblyReference.cache
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.mes2ERPMainWin.resources
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.Properties.Resources.resources
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.GenerateResource.cache
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.CoreCompileInputs.cache
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.exe
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.pdb
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.SettingWindow.resources
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.SupportWindow.resources
