@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 
+using MySql.Data.MySqlClient;
+
 namespace MESdbToERPdb
 {
     class DatabaseSQLServerUtils
@@ -21,10 +23,10 @@ namespace MESdbToERPdb
             SqlConnection con = new SqlConnection(connectionString);
             return con;
         }
-        public static SqlConnection GetMESDBConnection(string server, string database, string port, string user, string password, string sslM)
+        public static MySqlConnection GetMESDBConnection(string host, string user, string password, string database)
         {
-            string connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
-            SqlConnection con = new SqlConnection(connectionString);
+            string connectionString = String.Format("host={0};user={1};password={2}; database={3};", host, user, password, database);
+            MySqlConnection con = new MySqlConnection(connectionString);
             return con;
         }
     }

@@ -12,6 +12,7 @@ namespace MESdbToERPdb
 {
     public partial class mes2ERPMainWin : Form
     {
+        public MySqlConnection con = DatabaseUtils.GetMESDBConnection();
         public mes2ERPMainWin()
         {
             InitializeComponent();
@@ -31,14 +32,15 @@ namespace MESdbToERPdb
 
         private void btn_start_Click(object sender, EventArgs e)
         {
+            con.Open();
             string sql = " SELECT * FROM `quality_control_order_view`  " +
                 "WHERE `qc_no` LIKE '%JO202190339000001%' " +
                 "AND `work_order_no` LIKE '%Y51421090017%'" +
                 "AND `product_no` LIKE '%CYM0084%'";
-            MySqlConnection con = new MySqlConnection("host=172.16.0.22;user=guest;password=guest@123;database=mes_interface;");
+            
             MySqlCommand cmd = new MySqlCommand(sql, con);
 
-            con.Open();
+            
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -50,6 +52,7 @@ namespace MESdbToERPdb
                 textBox1.Text += $"{reader.GetString("qc_no")};";
                 textBox2.Text += $"{reader.GetString("product_name")};";
             }
+            con.Close();
         }
 
         private void btn_stop_Click(object sender, EventArgs e)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace MESdbToERPdb
 {
@@ -30,16 +31,14 @@ namespace MESdbToERPdb
             return DatabaseSQLServerUtils.GetERPDBConnection(datasource, database, username, password);
         }
 
-        public static SqlConnection GetMESDBConnection() //MES trên con .22 mySQL port 3306 - sử dụng MySQL DataProvider để clone về server local
+        public static MySqlConnection GetMESDBConnection() //MES trên con .22 mySQL port 3306 - sử dụng MySQL DataProvider để clone về server local
         {
-            string server = "172.16.0.22"; // Main MES connection
-            string database = "mes_interface";
+            string host = "172.16.0.22"; // Main MES connection
             string user = "guest";
             string password = "guest@123";
-            string port = "3306";
-            string sslM = "none";
+            string database = "mes_interface";
 
-            return DatabaseSQLServerUtils.GetMESDBConnection(server, database, port, user, password, sslM);
+            return DatabaseSQLServerUtils.GetMESDBConnection(host, user, password, database);
         }
     }
 }
