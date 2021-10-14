@@ -40,8 +40,6 @@ namespace MESdbToERPdb
             
             MySqlCommand cmd = new MySqlCommand(sql, con);
 
-            
-
             MySqlDataReader reader = cmd.ExecuteReader();
 
             textBox1.Text = string.Empty;
@@ -49,8 +47,8 @@ namespace MESdbToERPdb
 
             while (reader.Read())
             {
-                textBox1.Text += $"{reader.GetString("qc_no")};";
-                textBox2.Text += $"{reader.GetString("product_name")};";
+                textBox1.Text += $"{reader.GetString("qc_no")}";
+                textBox2.Text += $"{reader.GetString("product_name")}";
             }
             con.Close();
         }
