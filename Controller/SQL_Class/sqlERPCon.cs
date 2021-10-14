@@ -23,7 +23,7 @@ namespace MESdbToERPdb.Controller.SQL_Class
             conn.Close();
             return outstring;
             //catch
-
+            //Xuất log file báo lỗi nếu có
         }
         public void sqlDataAdapterFillDatatable(string sql, ref DataTable dt)
         {
@@ -50,7 +50,7 @@ namespace MESdbToERPdb.Controller.SQL_Class
             {
                 if (result_message_show)
                 {
-                    //log
+                    //Xuất log message ra để thông báo kết nối thành công
                 }
                 conn.Close();
                 return true;

@@ -31,6 +31,8 @@ namespace MESdbToERPdb
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mes2ERPMainWin));
             this.panel_Controller = new System.Windows.Forms.Panel();
+            this.btn_stop = new System.Windows.Forms.Button();
+            this.btn_start = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.panel_LogText = new System.Windows.Forms.Panel();
             this.lb_progress_percentage = new System.Windows.Forms.Label();
@@ -41,8 +43,8 @@ namespace MESdbToERPdb
             this.pgb_backgroundWorkerProgressBar = new System.Windows.Forms.ProgressBar();
             this.rtb_logText = new System.Windows.Forms.RichTextBox();
             this.pic_title = new System.Windows.Forms.PictureBox();
-            this.btn_start = new System.Windows.Forms.Button();
-            this.btn_stop = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panel_Controller.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel_LogText.SuspendLayout();
@@ -51,6 +53,8 @@ namespace MESdbToERPdb
             // 
             // panel_Controller
             // 
+            this.panel_Controller.Controls.Add(this.textBox2);
+            this.panel_Controller.Controls.Add(this.textBox1);
             this.panel_Controller.Controls.Add(this.btn_stop);
             this.panel_Controller.Controls.Add(this.btn_start);
             this.panel_Controller.Controls.Add(this.pic_logo);
@@ -58,6 +62,28 @@ namespace MESdbToERPdb
             this.panel_Controller.Name = "panel_Controller";
             this.panel_Controller.Size = new System.Drawing.Size(421, 649);
             this.panel_Controller.TabIndex = 0;
+            // 
+            // btn_stop
+            // 
+            this.btn_stop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_stop.Location = new System.Drawing.Point(110, 247);
+            this.btn_stop.Name = "btn_stop";
+            this.btn_stop.Size = new System.Drawing.Size(160, 70);
+            this.btn_stop.TabIndex = 5;
+            this.btn_stop.Text = "STOP";
+            this.btn_stop.UseVisualStyleBackColor = true;
+            this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
+            // 
+            // btn_start
+            // 
+            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.Location = new System.Drawing.Point(110, 160);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(160, 70);
+            this.btn_start.TabIndex = 4;
+            this.btn_start.Text = "START";
+            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
             // 
             // pic_logo
             // 
@@ -166,27 +192,19 @@ namespace MESdbToERPdb
             this.pic_title.TabIndex = 0;
             this.pic_title.TabStop = false;
             // 
-            // btn_start
+            // textBox1
             // 
-            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_start.Location = new System.Drawing.Point(110, 160);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(160, 70);
-            this.btn_start.TabIndex = 4;
-            this.btn_start.Text = "START";
-            this.btn_start.UseVisualStyleBackColor = true;
-            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
+            this.textBox1.Location = new System.Drawing.Point(92, 395);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(294, 22);
+            this.textBox1.TabIndex = 6;
             // 
-            // btn_stop
+            // textBox2
             // 
-            this.btn_stop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_stop.Location = new System.Drawing.Point(110, 247);
-            this.btn_stop.Name = "btn_stop";
-            this.btn_stop.Size = new System.Drawing.Size(160, 70);
-            this.btn_stop.TabIndex = 5;
-            this.btn_stop.Text = "STOP";
-            this.btn_stop.UseVisualStyleBackColor = true;
-            this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
+            this.textBox2.Location = new System.Drawing.Point(92, 447);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(294, 22);
+            this.textBox2.TabIndex = 7;
             // 
             // mes2ERPMainWin
             // 
@@ -201,6 +219,7 @@ namespace MESdbToERPdb
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MES database to ERP database";
             this.panel_Controller.ResumeLayout(false);
+            this.panel_Controller.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel_LogText.ResumeLayout(false);
             this.panel_LogText.PerformLayout();
@@ -224,6 +243,8 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Label lb_progress;
         private System.Windows.Forms.Button btn_stop;
         private System.Windows.Forms.Button btn_start;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

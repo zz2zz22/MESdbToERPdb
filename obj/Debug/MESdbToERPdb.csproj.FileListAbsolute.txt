@@ -10,3 +10,9 @@ D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.exe
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.pdb
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.SettingWindow.resources
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.SupportWindow.resources
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\MySql.Data.DLL
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.CopyComplete
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Renci.SshNet.Async.dll
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Renci.SshNet.dll
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Renci.SshNet.xml
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Renci.SshNet.Async.xml
