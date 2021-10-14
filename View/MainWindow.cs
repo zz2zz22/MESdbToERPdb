@@ -30,7 +30,7 @@ namespace MESdbToERPdb
             supportW.ShowDialog();
         }
 
-        private void btn_start_Click(object sender, EventArgs e)
+        private void btn_start_Click(object sender, EventArgs e) //test get data from MES
         {
             con.Open();
             string sql = " SELECT * FROM `quality_control_order_view`  " +
