@@ -1,25 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
-using System.Data.SqlClient;
-using System.Windows.Forms;
+
+using MySql.Data.MySqlClient;
 
 namespace MESdbToERPdb
 {
-    class sqlERPCon
+    class sqlMESCon
     {
-        public SqlConnection conn = DatabaseUtils.GetERPDBConnection();
+        public MySqlConnection conn = DatabaseUtils.GetMESDBConnection();
 
         public string sqlExecuteScalarString(string sql)
         {
             String outstring;
             conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             //try
             outstring = cmd.ExecuteScalar().ToString();
+
             conn.Close();
             return outstring;
             //catch
@@ -28,8 +29,8 @@ namespace MESdbToERPdb
         public void sqlDataAdapterFillDatatable(string sql, ref DataTable dt)
         {
             //try
-            SqlCommand cmd = new SqlCommand();
-            SqlDataAdapter adapter = new SqlDataAdapter();
+            MySqlCommand cmd = new MySqlCommand();
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
             {
                 cmd.CommandText = sql;
                 cmd.Connection = conn;
@@ -43,7 +44,7 @@ namespace MESdbToERPdb
         {
             //try
             conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
 
             int response = cmd.ExecuteNonQuery();
             if (response > 1)

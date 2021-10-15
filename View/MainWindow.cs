@@ -33,14 +33,33 @@ namespace MESdbToERPdb
         private void btn_start_Click(object sender, EventArgs e) //test get data from MES
         {
             con.Open();
+            string inputDate;
+            sqlMESCon mes = new sqlMESCon();
             string sql = " SELECT * FROM `quality_control_order_view`  " +
                 "WHERE `qc_no` LIKE '%JO202190339000001%' " +
                 "AND `work_order_no` LIKE '%Y51421090017%'" +
                 "AND `product_no` LIKE '%CYM0084%'";
-            
+            inputDate = "2021-09-01 15:00:00";
+            //DateTime currentBGWdate = DateTime.ParseExact(inputDate, "yyyy-MM-dd HH:mm:ss", null);
+            string sqlSelectTop30 = " SELECT * FROM `quality_control_order_view` " +
+                "WHERE create_date >= '" + inputDate + "' " +
+                "LIMIT 100";//test data grid view
+
             MySqlCommand cmd = new MySqlCommand(sql, con);
 
             MySqlDataReader reader = cmd.ExecuteReader();
+
+            DataTable dt = new DataTable();
+            mes.sqlDataAdapterFillDatatable(sqlSelectTop30, ref dt);
+
+            BindingSource bSource = new BindingSource();
+            bSource.DataSource = dt;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView1.AllowUserToResizeColumns = false;
+
+            dataGridView1.DataSource = bSource;
 
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
@@ -55,6 +74,8 @@ namespace MESdbToERPdb
 
         private void btn_stop_Click(object sender, EventArgs e)
         {
+            textBox1.Text = string.Empty;
+            textBox2.Text = string.Empty;
         }
     }
 }

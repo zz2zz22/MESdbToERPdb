@@ -31,6 +31,8 @@ namespace MESdbToERPdb
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mes2ERPMainWin));
             this.panel_Controller = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_stop = new System.Windows.Forms.Button();
             this.btn_start = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
@@ -41,14 +43,13 @@ namespace MESdbToERPdb
             this.btn_setting = new System.Windows.Forms.Button();
             this.btn_support = new System.Windows.Forms.Button();
             this.pgb_backgroundWorkerProgressBar = new System.Windows.Forms.ProgressBar();
-            this.rtb_logText = new System.Windows.Forms.RichTextBox();
             this.pic_title = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel_Controller.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel_LogText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_title)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Controller
@@ -62,6 +63,20 @@ namespace MESdbToERPdb
             this.panel_Controller.Name = "panel_Controller";
             this.panel_Controller.Size = new System.Drawing.Size(421, 649);
             this.panel_Controller.TabIndex = 0;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(92, 447);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(294, 22);
+            this.textBox2.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(92, 395);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(294, 22);
+            this.textBox1.TabIndex = 6;
             // 
             // btn_stop
             // 
@@ -99,13 +114,13 @@ namespace MESdbToERPdb
             // 
             // panel_LogText
             // 
+            this.panel_LogText.Controls.Add(this.dataGridView1);
             this.panel_LogText.Controls.Add(this.lb_progress_percentage);
             this.panel_LogText.Controls.Add(this.lb_progress);
             this.panel_LogText.Controls.Add(this.lb_logText);
             this.panel_LogText.Controls.Add(this.btn_setting);
             this.panel_LogText.Controls.Add(this.btn_support);
             this.panel_LogText.Controls.Add(this.pgb_backgroundWorkerProgressBar);
-            this.panel_LogText.Controls.Add(this.rtb_logText);
             this.panel_LogText.Controls.Add(this.pic_title);
             this.panel_LogText.Location = new System.Drawing.Point(439, 12);
             this.panel_LogText.Name = "panel_LogText";
@@ -170,16 +185,6 @@ namespace MESdbToERPdb
             this.pgb_backgroundWorkerProgressBar.Size = new System.Drawing.Size(804, 36);
             this.pgb_backgroundWorkerProgressBar.TabIndex = 2;
             // 
-            // rtb_logText
-            // 
-            this.rtb_logText.Enabled = false;
-            this.rtb_logText.Location = new System.Drawing.Point(4, 156);
-            this.rtb_logText.Name = "rtb_logText";
-            this.rtb_logText.ReadOnly = true;
-            this.rtb_logText.Size = new System.Drawing.Size(804, 425);
-            this.rtb_logText.TabIndex = 1;
-            this.rtb_logText.Text = "";
-            // 
             // pic_title
             // 
             this.pic_title.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pic_title.BackgroundImage")));
@@ -192,19 +197,18 @@ namespace MESdbToERPdb
             this.pic_title.TabIndex = 0;
             this.pic_title.TabStop = false;
             // 
-            // textBox1
+            // dataGridView1
             // 
-            this.textBox1.Location = new System.Drawing.Point(92, 395);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(294, 22);
-            this.textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(92, 447);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(294, 22);
-            this.textBox2.TabIndex = 7;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.ColumnHeadersHeight = 32;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView1.Location = new System.Drawing.Point(7, 160);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 65;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(800, 421);
+            this.dataGridView1.TabIndex = 7;
             // 
             // mes2ERPMainWin
             // 
@@ -224,6 +228,7 @@ namespace MESdbToERPdb
             this.panel_LogText.ResumeLayout(false);
             this.panel_LogText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_title)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -237,7 +242,6 @@ namespace MESdbToERPdb
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Button btn_setting;
         private System.Windows.Forms.Button btn_support;
-        private System.Windows.Forms.RichTextBox rtb_logText;
         private System.Windows.Forms.Label lb_logText;
         private System.Windows.Forms.Label lb_progress_percentage;
         private System.Windows.Forms.Label lb_progress;
@@ -245,6 +249,7 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Button btn_start;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

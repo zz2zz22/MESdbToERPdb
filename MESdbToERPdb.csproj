@@ -59,6 +59,7 @@
     <Compile Include="Controller\SQL_Class\DatabaseSQLServerUtils.cs" />
     <Compile Include="Controller\SQL_Class\DatabaseUtils.cs" />
     <Compile Include="Controller\SQL_Class\sqlERPCon.cs" />
+    <Compile Include="Controller\SQL_Class\sqlMESCon.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
