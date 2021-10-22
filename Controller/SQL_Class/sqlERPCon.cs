@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace MESdbToERPdb
 {
-    class sqlERPCon
+    public class sqlERPCon
     {
         public SqlConnection conn = DatabaseUtils.GetERPDBConnection();
 

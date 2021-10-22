@@ -32,17 +32,19 @@ namespace MESdbToERPdb
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mes2ERPMainWin));
             this.panel_Controller = new System.Windows.Forms.Panel();
-            this.btn_stopTimer = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_startTimer = new System.Windows.Forms.Button();
+            this.txt_remainingSec = new System.Windows.Forms.Label();
+            this.btn_stopTimer = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_cycle = new System.Windows.Forms.NumericUpDown();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_remainingSec = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btn_stop = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_start = new System.Windows.Forms.Button();
+            this.btn_stop = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.panel_LogText = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -55,16 +57,15 @@ namespace MESdbToERPdb
             this.pic_title = new System.Windows.Forms.PictureBox();
             this.BW = new System.ComponentModel.BackgroundWorker();
             this.timer_nextRun = new System.Windows.Forms.Timer(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lb_txtSec = new System.Windows.Forms.Label();
             this.panel_Controller.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).BeginInit();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel_LogText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_title)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_Controller
@@ -77,16 +78,22 @@ namespace MESdbToERPdb
             this.panel_Controller.Size = new System.Drawing.Size(421, 649);
             this.panel_Controller.TabIndex = 0;
             // 
-            // btn_stopTimer
+            // groupBox2
             // 
-            this.btn_stopTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
-            this.btn_stopTimer.Location = new System.Drawing.Point(227, 39);
-            this.btn_stopTimer.Name = "btn_stopTimer";
-            this.btn_stopTimer.Size = new System.Drawing.Size(160, 64);
-            this.btn_stopTimer.TabIndex = 16;
-            this.btn_stopTimer.Text = "Stop";
-            this.btn_stopTimer.UseVisualStyleBackColor = true;
-            this.btn_stopTimer.Click += new System.EventHandler(this.btn_stopTimer_Click);
+            this.groupBox2.Controls.Add(this.lb_txtSec);
+            this.groupBox2.Controls.Add(this.btn_startTimer);
+            this.groupBox2.Controls.Add(this.txt_remainingSec);
+            this.groupBox2.Controls.Add(this.btn_stopTimer);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.txt_cycle);
+            this.groupBox2.Location = new System.Drawing.Point(3, 314);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(415, 332);
+            this.groupBox2.TabIndex = 18;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Automated";
             // 
             // btn_startTimer
             // 
@@ -98,6 +105,48 @@ namespace MESdbToERPdb
             this.btn_startTimer.Text = "Start";
             this.btn_startTimer.UseVisualStyleBackColor = true;
             this.btn_startTimer.Click += new System.EventHandler(this.btn_startTimer_Click);
+            // 
+            // txt_remainingSec
+            // 
+            this.txt_remainingSec.AutoSize = true;
+            this.txt_remainingSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_remainingSec.Location = new System.Drawing.Point(141, 255);
+            this.txt_remainingSec.Name = "txt_remainingSec";
+            this.txt_remainingSec.Size = new System.Drawing.Size(53, 46);
+            this.txt_remainingSec.TabIndex = 11;
+            this.txt_remainingSec.Text = "...";
+            this.txt_remainingSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_stopTimer
+            // 
+            this.btn_stopTimer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold);
+            this.btn_stopTimer.Location = new System.Drawing.Point(227, 39);
+            this.btn_stopTimer.Name = "btn_stopTimer";
+            this.btn_stopTimer.Size = new System.Drawing.Size(160, 64);
+            this.btn_stopTimer.TabIndex = 16;
+            this.btn_stopTimer.Text = "Stop";
+            this.btn_stopTimer.UseVisualStyleBackColor = true;
+            this.btn_stopTimer.Click += new System.EventHandler(this.btn_stopTimer_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(141, 18);
+            this.label4.TabIndex = 12;
+            this.label4.Text = "Time between run";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(6, 218);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 18);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Count down";
             // 
             // label5
             // 
@@ -116,50 +165,29 @@ namespace MESdbToERPdb
             this.txt_cycle.Size = new System.Drawing.Size(85, 22);
             this.txt_cycle.TabIndex = 13;
             // 
-            // label4
+            // groupBox1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(141, 18);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Time between run";
+            this.groupBox1.Controls.Add(this.btn_start);
+            this.groupBox1.Controls.Add(this.btn_stop);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Location = new System.Drawing.Point(3, 105);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(415, 203);
+            this.groupBox1.TabIndex = 17;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Manual";
             // 
-            // txt_remainingSec
+            // btn_start
             // 
-            this.txt_remainingSec.AutoSize = true;
-            this.txt_remainingSec.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_remainingSec.Location = new System.Drawing.Point(188, 251);
-            this.txt_remainingSec.Name = "txt_remainingSec";
-            this.txt_remainingSec.Size = new System.Drawing.Size(53, 46);
-            this.txt_remainingSec.TabIndex = 11;
-            this.txt_remainingSec.Text = "...";
-            this.txt_remainingSec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 218);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 18);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "Count down";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(43, 159);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(344, 22);
-            this.textBox2.TabIndex = 7;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(43, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(344, 22);
-            this.textBox1.TabIndex = 6;
+            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_start.Location = new System.Drawing.Point(43, 55);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(160, 70);
+            this.btn_start.TabIndex = 4;
+            this.btn_start.Text = "START";
+            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
             // 
             // btn_stop
             // 
@@ -172,16 +200,19 @@ namespace MESdbToERPdb
             this.btn_stop.UseVisualStyleBackColor = true;
             this.btn_stop.Click += new System.EventHandler(this.btn_stop_Click);
             // 
-            // btn_start
+            // textBox1
             // 
-            this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_start.Location = new System.Drawing.Point(43, 55);
-            this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(160, 70);
-            this.btn_start.TabIndex = 4;
-            this.btn_start.Text = "START";
-            this.btn_start.UseVisualStyleBackColor = true;
-            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
+            this.textBox1.Location = new System.Drawing.Point(43, 131);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(344, 22);
+            this.textBox1.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(43, 159);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(344, 22);
+            this.textBox2.TabIndex = 7;
             // 
             // pic_logo
             // 
@@ -222,6 +253,7 @@ namespace MESdbToERPdb
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(800, 421);
             this.dataGridView1.TabIndex = 7;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // lb_progress_percentage
             // 
@@ -229,7 +261,7 @@ namespace MESdbToERPdb
             this.lb_progress_percentage.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_progress_percentage.Location = new System.Drawing.Point(70, 584);
             this.lb_progress_percentage.Name = "lb_progress_percentage";
-            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 22);
+            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 23);
             this.lb_progress_percentage.TabIndex = 6;
             // 
             // lb_progress
@@ -238,7 +270,7 @@ namespace MESdbToERPdb
             this.lb_progress.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_progress.Location = new System.Drawing.Point(3, 584);
             this.lb_progress.Name = "lb_progress";
-            this.lb_progress.Size = new System.Drawing.Size(53, 22);
+            this.lb_progress.Size = new System.Drawing.Size(55, 23);
             this.lb_progress.TabIndex = 5;
             this.lb_progress.Text = "Start";
             // 
@@ -248,7 +280,7 @@ namespace MESdbToERPdb
             this.lb_logText.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_logText.Location = new System.Drawing.Point(3, 127);
             this.lb_logText.Name = "lb_logText";
-            this.lb_logText.Size = new System.Drawing.Size(116, 22);
+            this.lb_logText.Size = new System.Drawing.Size(122, 23);
             this.lb_logText.TabIndex = 4;
             this.lb_logText.Text = "Log output : ";
             // 
@@ -304,34 +336,14 @@ namespace MESdbToERPdb
             this.timer_nextRun.Interval = 1000;
             this.timer_nextRun.Tick += new System.EventHandler(this.timer_nextRun_Tick);
             // 
-            // groupBox1
+            // lb_txtSec
             // 
-            this.groupBox1.Controls.Add(this.btn_start);
-            this.groupBox1.Controls.Add(this.btn_stop);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Location = new System.Drawing.Point(3, 105);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(415, 203);
-            this.groupBox1.TabIndex = 17;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Manual";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btn_startTimer);
-            this.groupBox2.Controls.Add(this.txt_remainingSec);
-            this.groupBox2.Controls.Add(this.btn_stopTimer);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.txt_cycle);
-            this.groupBox2.Location = new System.Drawing.Point(3, 314);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(415, 332);
-            this.groupBox2.TabIndex = 18;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Automated";
+            this.lb_txtSec.AutoSize = true;
+            this.lb_txtSec.Location = new System.Drawing.Point(305, 279);
+            this.lb_txtSec.Name = "lb_txtSec";
+            this.lb_txtSec.Size = new System.Drawing.Size(54, 17);
+            this.lb_txtSec.TabIndex = 17;
+            this.lb_txtSec.Text = "second";
             // 
             // mes2ERPMainWin
             // 
@@ -346,16 +358,16 @@ namespace MESdbToERPdb
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MES database to ERP database";
             this.panel_Controller.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cycle)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel_LogText.ResumeLayout(false);
             this.panel_LogText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_title)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -388,6 +400,7 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Timer timer_nextRun;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lb_txtSec;
     }
 }
 

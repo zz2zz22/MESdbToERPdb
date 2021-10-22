@@ -9,7 +9,7 @@ using MySql.Data.MySqlClient;
 
 namespace MESdbToERPdb
 {
-    class sqlMESCon
+    public class sqlMESCon
     {
         public MySqlConnection conn = DatabaseUtils.GetMESDBConnection();
 

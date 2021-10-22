@@ -13,7 +13,7 @@ namespace MESdbToERPdb
     public partial class mes2ERPMainWin : Form
     {
         protected int cycle;
-        public MySqlConnection con = DatabaseUtils.GetMESDBConnection();
+        public MySqlConnection con = DatabaseUtils.GetMESDBConnection();//test connect to database
         public mes2ERPMainWin()
         {
             InitializeComponent();
@@ -34,19 +34,22 @@ namespace MESdbToERPdb
         private void btn_start_Click(object sender, EventArgs e) //test get data from MES
         {
             con.Open();
-            string inputDate;
+            DateTime currentDate = DateTime.Now;
+            
             sqlMESCon mes = new sqlMESCon();
             string sql = " SELECT * FROM `quality_control_order_view`  " +
                 "WHERE `qc_no` LIKE '%JO202190339000001%' " +
                 "AND `work_order_no` LIKE '%Y51421090017%'" +
                 "AND `product_no` LIKE '%CYM0084%'";
-            inputDate = "2021-09-01 15:00:00";
-            //DateTime currentBGWdate = DateTime.ParseExact(inputDate, "yyyy-MM-dd HH:mm:ss", null);
+
+            string inputDate = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
+
             string sqlSelectTop30 = " SELECT * FROM `quality_control_order_view` " +
                 "WHERE create_date >= '" + inputDate + "' " +
+                " ORDER BY create_date ASC " +
                 "LIMIT 100";//test data grid view
 
-            MySqlCommand cmd = new MySqlCommand(sql, con);
+            MySqlCommand cmd = new MySqlCommand(sqlSelectTop30, con);
 
             MySqlDataReader reader = cmd.ExecuteReader();
 
@@ -55,21 +58,21 @@ namespace MESdbToERPdb
 
             BindingSource bSource = new BindingSource();
             bSource.DataSource = dt;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridView1.AllowUserToResizeColumns = false;
 
             dataGridView1.DataSource = bSource;
-
+            
             textBox1.Text = string.Empty;
             textBox2.Text = string.Empty;
 
-            while (reader.Read())
-            {
-                textBox1.Text += $"{reader.GetString("qc_no")}";
-                textBox2.Text += $"{reader.GetString("product_name")}";
-            }
+            //while (reader.Read())
+            //{
+            //    textBox1.Text += $"{reader.GetString("qc_no")}";
+            //    textBox2.Text += $"{reader.GetString("product_name")}";
+            //}
             con.Close();
         }
 
@@ -143,6 +146,13 @@ namespace MESdbToERPdb
         private void BW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = this.dataGridView1.CurrentRow;
+            textBox1.Text = row.Cells["qc_no"].Value.ToString();
+            textBox2.Text = row.Cells["finish_quantity"].Value.ToString();
         }
     }
 }
