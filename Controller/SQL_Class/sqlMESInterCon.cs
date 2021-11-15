@@ -9,13 +9,15 @@ using MySql.Data.MySqlClient;
 
 namespace MESdbToERPdb
 {
-    public class sqlMESCon
+    public class sqlMESInterCon
     {
-        public MySqlConnection conn = DatabaseUtils.GetMESDBConnection();
+        
+        public MySqlConnection conn = DatabaseUtils.GetMes_InterfaceDBConnection();
 
-        public string sqlExecuteScalarString(string sql)
+        public string sqlExecuteScalarString( string sql)
         {
             String outstring;
+            
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             //try
@@ -26,7 +28,7 @@ namespace MESdbToERPdb
             //catch
             //Xuất log file báo lỗi nếu có
         }
-        public void sqlDataAdapterFillDatatable(string sql, ref DataTable dt)
+        public void sqlDataAdapterFillDatatable( string sql, ref DataTable dt)
         {
             //try
             MySqlCommand cmd = new MySqlCommand();
@@ -43,6 +45,7 @@ namespace MESdbToERPdb
         public bool sqlExecuteNonQuery(string sql, bool result_message_show)
         {
             //try
+            
             conn.Open();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 

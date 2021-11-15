@@ -56,11 +56,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Logfile\ClearMemmory.cs" />
+    <Compile Include="Controller\Logfile\EventBroker.cs" />
+    <Compile Include="Controller\Logfile\SaveObject.cs" />
+    <Compile Include="Controller\Logfile\SystemLog.cs" />
     <Compile Include="Controller\SQL_Class\DatabaseSQLServerUtils.cs" />
     <Compile Include="Controller\SQL_Class\DatabaseUtils.cs" />
     <Compile Include="Controller\SQL_Class\sqlERPCon.cs" />
-    <Compile Include="Controller\SQL_Class\sqlMESCon.cs" />
+    <Compile Include="Controller\SQL_Class\sqlMESInterCon.cs" />
     <Compile Include="Controller\SubClass\insertERPSFCTC.cs" />
+    <Compile Include="Controller\SubClass\INVMD.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

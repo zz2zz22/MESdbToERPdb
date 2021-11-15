@@ -13,7 +13,7 @@ namespace MESdbToERPdb
     public partial class mes2ERPMainWin : Form
     {
         protected int cycle;
-        public MySqlConnection con = DatabaseUtils.GetMESDBConnection();//test connect to database
+        //public MySqlConnection con = DatabaseUtils.GetMESDBConnection("mes_interface");//test connect to database
         public mes2ERPMainWin()
         {
             InitializeComponent();
@@ -33,25 +33,27 @@ namespace MESdbToERPdb
 
         private void btn_start_Click(object sender, EventArgs e) //test get data from MES
         {
-            con.Open();
+            //con.Open();
             DateTime currentDate = DateTime.Now;
             
-            sqlMESCon mes = new sqlMESCon();
-            string sql = " SELECT * FROM `quality_control_order_view`  " +
-                "WHERE `qc_no` LIKE '%JO202190339000001%' " +
-                "AND `work_order_no` LIKE '%Y51421090017%'" +
-                "AND `product_no` LIKE '%CYM0084%'";
+            sqlMESInterCon mes = new sqlMESInterCon();
+            //string sql = " SELECT * FROM `quality_control_order_view`  " +
+            //    "WHERE `qc_no` LIKE '%JO202190339000001%' " +
+            //    "AND `work_order_no` LIKE '%Y51421090017%'" +
+            //    "AND `product_no` LIKE '%CYM0084%'";
 
             string inputDate = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
 
             string sqlSelectTop30 = " SELECT * FROM `quality_control_order_view` " +
                 "WHERE create_date >= '" + inputDate + "' " +
                 " ORDER BY create_date ASC " +
-                "LIMIT 100";//test data grid view
+                "LIMIT 100";//test fill data into datagridview
 
-            MySqlCommand cmd = new MySqlCommand(sqlSelectTop30, con);
+            //MySqlCommand cmd = new MySqlCommand(sqlSelectTop30, con);
 
-            MySqlDataReader reader = cmd.ExecuteReader();
+            //MySqlDataReader reader = cmd.ExecuteReader();
+
+            mes.sqlExecuteScalarString(sqlSelectTop30);
 
             DataTable dt = new DataTable();
             mes.sqlDataAdapterFillDatatable(sqlSelectTop30, ref dt);
@@ -73,7 +75,7 @@ namespace MESdbToERPdb
             //    textBox1.Text += $"{reader.GetString("qc_no")}";
             //    textBox2.Text += $"{reader.GetString("product_name")}";
             //}
-            con.Close();
+            //con.Close();
         }
 
         private void btn_stop_Click(object sender, EventArgs e)
