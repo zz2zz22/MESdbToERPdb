@@ -25,12 +25,12 @@ namespace MESdbToERPdb
         EventBroker.EventObserver m_observerLog = null;
 
         EventBroker.EventParam m_timerEvent = null;
+        int Timer = 0;
 
         FlowDocument m_flowDoc = null; //Hien log vao richtextbox
 
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
-        object lockObject = new object();
-        System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
+
         SettingClass SettingClass = null; 
         private void InitializeVersion()
         {
@@ -200,64 +200,37 @@ namespace MESdbToERPdb
             btn_stop.Enabled = false;
         }
 
-        private void btn_startTimer_Click(object sender, EventArgs e)
-        {
-            //if (txt_cycle.Value == 0)
-            //{
-            //    MessageBox.Show("Cycle must be greater than 0!", "Error!");
-            //    return;
-            //}
-            //timer_nextRun.Enabled = true;
-            //cycle = (int)txt_cycle.Value;
-            //cycle = cycle * 3600;
-            //txt_remainingSec.Text = cycle.ToString();
-            //txt_cycle.Enabled = false;
-            //btn_startTimer.Enabled = false;
-            //btn_start.Enabled = false;
-            //btn_stop.Enabled = false;
-            ////Run BW
-            //BW.RunWorkerAsync();
-        }
+       
 
         private void timer_nextRun_Tick(object sender, EventArgs e)
         {
-            
-            if (Monitor.TryEnter(lockObject))
+            if (Timer <= 0)
             {
-                try
+                if (!bgWorker.IsBusy)
                 {
-                    // if bgworker is not busy the call the worker
-                    if (!bgWorker.IsBusy)
-                        bgWorker.RunWorkerAsync();
+                    if (txt_TimeMark.Text == "")
+                    {
+                        Properties.Settings.Default.TimeMark = DateTime.Now.ToString("yyyy - MM - dd HH:mm:ss");
+                        Properties.Settings.Default.Save();
+                        txt_TimeMark.Text = Properties.Settings.Default.TimeMark;
+                    }
+                    else
+                    {
+                        Properties.Settings.Default.TimeMark = txt_TimeMark.Text;
+                        txt_TimeMark.Text = DateTime.Now.ToString("yyyy - MM - dd HH:mm:ss");
+                        Properties.Settings.Default.Save();
+                    }
+                    bgWorker.RunWorkerAsync();
                 }
-                finally
-                {
-                    Monitor.Exit(lockObject);
-                }
+                Timer = 3600;
             }
             else
             {
-                // as the bgworker is busy we will start a timer that will try to call the bgworker again after some time
-                tmrEnsureWorkerGetsCalled = new System.Threading.Timer(new TimerCallback(tmrEnsureWorkerGetsCalled_Callback), null, 0, 10);
+                Timer--;
             }
         }
 
-        private void btn_stopTimer_Click(object sender, EventArgs e)
-        {
-            //timer_nextRun.Enabled = false;
-            //cycle = (int)txt_cycle.Value * 3600;
-            //txt_remainingSec.Text = cycle.ToString();
-            //txt_cycle.Enabled = true;
-            //btn_startTimer.Enabled = true;
-            //btn_start.Enabled = true;
-            //btn_stop.Enabled = true;
 
-            ////Stop BW
-            //if (!BW.IsBusy && BW.WorkerSupportsCancellation)
-            //    BW.CancelAsync();
-            //else
-            //    MessageBox.Show("Timer stopped but the process may still be running! Do not close or stop the program until progress have finished!", "Warning!");
-        }
 
         private void BW_DoWork(object sender, DoWorkEventArgs e)
         {
@@ -279,13 +252,7 @@ namespace MESdbToERPdb
             System.Threading.Thread.Sleep(100);
         }
 
-        private void BW_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            //if (e.ProgressPercentage == -1)
-            //    pgb_backgroundWorkerProgressBar.Maximum = Convert.ToInt32(e.UserState);
-            //else
-            //    pgb_backgroundWorkerProgressBar.Value = e.ProgressPercentage;
-        }
+
 
         private void BW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
@@ -298,29 +265,8 @@ namespace MESdbToERPdb
             }
         }
 
-        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    //DataGridViewRow row = this.dataGridView1.CurrentRow;
-        //    //textBox1.Text = row.Cells["qc_no"].Value.ToString();
-        //    //textBox2.Text = row.Cells["finish_quantity"].Value.ToString();
-        //}
-        void tmrEnsureWorkerGetsCalled_Callback(object obj)
-        {
-            // this timer was started as the bgworker was busy before now it will try to call the bgworker again
-            if (Monitor.TryEnter(lockObject))
-            {
-                try
-                {
-                    if (!bgWorker.IsBusy)
-                        bgWorker.RunWorkerAsync();
-                }
-                finally
-                {
-                    Monitor.Exit(lockObject);
-                }
-                tmrEnsureWorkerGetsCalled = null;
-            }
-        }
+       
+        
         #endregion
 
         private void mes2ERPMainWin_FormClosed(object sender, FormClosedEventArgs e)
@@ -347,6 +293,7 @@ namespace MESdbToERPdb
             }
             this.WindowState = FormWindowState.Minimized;
             e.Cancel = true;
+            
         }
 
         private void mes2ERPMainWin_Load(object sender, EventArgs e)
@@ -361,5 +308,59 @@ namespace MESdbToERPdb
             this.Show();
             this.WindowState = FormWindowState.Normal;
         }
+
+        private void BW_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            if (e.ProgressPercentage == -1)
+                pgb_backgroundWorkerProgressBar.Maximum = Convert.ToInt32(e.UserState);
+            else
+                pgb_backgroundWorkerProgressBar.Value = e.ProgressPercentage;
+        }
+
+        #region old unused function
+
+        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    //DataGridViewRow row = this.dataGridView1.CurrentRow;
+        //    //textBox1.Text = row.Cells["qc_no"].Value.ToString();
+        //    //textBox2.Text = row.Cells["finish_quantity"].Value.ToString();
+        //}
+
+        private void btn_stopTimer_Click(object sender, EventArgs e)
+        {
+            //timer_nextRun.Enabled = false;
+            //cycle = (int)txt_cycle.Value * 3600;
+            //txt_remainingSec.Text = cycle.ToString();
+            //txt_cycle.Enabled = true;
+            //btn_startTimer.Enabled = true;
+            //btn_start.Enabled = true;
+            //btn_stop.Enabled = true;
+
+            ////Stop BW
+            //if (!BW.IsBusy && BW.WorkerSupportsCancellation)
+            //    BW.CancelAsync();
+            //else
+            //    MessageBox.Show("Timer stopped but the process may still be running! Do not close or stop the program until progress have finished!", "Warning!");
+        }
+
+        private void btn_startTimer_Click(object sender, EventArgs e)
+        {
+            //if (txt_cycle.Value == 0)
+            //{
+            //    MessageBox.Show("Cycle must be greater than 0!", "Error!");
+            //    return;
+            //}
+            //timer_nextRun.Enabled = true;
+            //cycle = (int)txt_cycle.Value;
+            //cycle = cycle * 3600;
+            //txt_remainingSec.Text = cycle.ToString();
+            //txt_cycle.Enabled = false;
+            //btn_startTimer.Enabled = false;
+            //btn_start.Enabled = false;
+            //btn_stop.Enabled = false;
+            ////Run BW
+            //BW.RunWorkerAsync();
+        }    
+        #endregion
     }
 }

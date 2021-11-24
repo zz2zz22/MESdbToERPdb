@@ -33,7 +33,7 @@ namespace MESdbToERPdb
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mes2ERPMainWin));
             this.panel_Controller = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txt_TimeMark = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
@@ -70,7 +70,7 @@ namespace MESdbToERPdb
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.txt_TimeMark);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.elementHost1);
             this.groupBox1.Controls.Add(this.lb_progress);
@@ -84,13 +84,13 @@ namespace MESdbToERPdb
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
-            // maskedTextBox1
+            // txt_TimeMark
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(141, 176);
-            this.maskedTextBox1.Mask = "0000-00-00 00:00:00.000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(182, 22);
-            this.maskedTextBox1.TabIndex = 9;
+            this.txt_TimeMark.Location = new System.Drawing.Point(141, 176);
+            this.txt_TimeMark.Mask = "0000-00-00 00:00:00";
+            this.txt_TimeMark.Name = "txt_TimeMark";
+            this.txt_TimeMark.Size = new System.Drawing.Size(182, 22);
+            this.txt_TimeMark.TabIndex = 9;
             // 
             // label1
             // 
@@ -290,7 +290,7 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private RichTextBoxLog richTextBoxLog1;
         private System.Windows.Forms.DataGridView dtgv_Uploaded;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txt_TimeMark;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
