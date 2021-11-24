@@ -27,9 +27,6 @@ namespace MESdbToERPdb
         EventBroker.EventParam m_timerEvent = null;
 
         FlowDocument m_flowDoc = null; //Hien log vao richtextbox
-        System.Windows.Forms.Timer tmrCallBgWorker;
-        //Khoi tao bg worker
-        BackgroundWorker bgWorker;
 
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
         object lockObject = new object();
@@ -181,34 +178,19 @@ namespace MESdbToERPdb
             #endregion
 
             tmrCallBgWorker.Start();
-            UploadMain uploadMain = new UploadMain();
-            uploadMain.GetListTransferOrder();
-            btn_start.Enabled = false;
-            btn_stop.Enabled = true;
-            //insertERPSFCTC insert = new insertERPSFCTC();
-            //insert.InsertdataToERP("B511-19120073;0010;B01;B01", "BMH1284056S02", "80", "0", "20211101", "00:00:00"); //test truyền dữ liệu tạo phiếu chuyển D201
+            //UploadMain uploadMain = new UploadMain();
+            //uploadMain.GetListTransferOrder();
+            //btn_start.Enabled = false;
+            //btn_stop.Enabled = true;
+            ////insertERPSFCTC insert = new insertERPSFCTC();
+            ////insert.InsertdataToERP("B511-19120073;0010;B01;B01", "BMH1284056S02", "80", "0", "20211101", "00:00:00"); //test truyền dữ liệu tạo phiếu chuyển D201
 
-            //rtb_log.Text = "Upload to data to ERP finished!";
-            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
-            ClearMemory.CleanMemory();
+            ////rtb_log.Text = "Upload to data to ERP finished!";
+            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
+            //ClearMemory.CleanMemory();
         }
         #region backgroundworker
-        private void LoadBackgroundWorker()
-        {   // this timer calls bgWorker again and again after regular intervals
-            tmrCallBgWorker = new System.Windows.Forms.Timer();//Timer for do task
-            tmrCallBgWorker.Tick += new EventHandler(timer_nextRun_Tick);
-            tmrCallBgWorker.Interval = SettingClass.TimmerBackgroudWorker > 100000 ? SettingClass.TimmerBackgroudWorker : 900000;
-
-            // this is our worker
-            bgWorker = new BackgroundWorker();
-
-            // work happens in this method
-            bgWorker.DoWork += new DoWorkEventHandler(BW_DoWork);
-            bgWorker.ProgressChanged += BW_ProgressChanged;
-            bgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BW_RunWorkerCompleted);
-            bgWorker.WorkerReportsProgress = true;
-
-        }
+       
         private void btn_stop_Click(object sender, EventArgs e)
         {
             tmrCallBgWorker.Stop();
@@ -357,6 +339,12 @@ namespace MESdbToERPdb
 
         private void mes2ERPMainWin_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if(e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+                this.Visible = false;
+                
+            }
             this.WindowState = FormWindowState.Minimized;
             e.Cancel = true;
         }
@@ -366,8 +354,12 @@ namespace MESdbToERPdb
             SettingClass = new SettingClass();
             if (File.Exists(SaveObject.Pathsave))
                 SettingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);
+        }
 
-            LoadBackgroundWorker();
+        private void notifyIcon1_MouseDoubleClick(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            this.Show();
+            this.WindowState = FormWindowState.Normal;
         }
     }
 }

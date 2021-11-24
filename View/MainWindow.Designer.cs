@@ -33,27 +33,30 @@ namespace MESdbToERPdb
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mes2ERPMainWin));
             this.panel_Controller = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
+            this.lb_progress = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
+            this.lb_logText = new System.Windows.Forms.Label();
+            this.pgb_backgroundWorkerProgressBar = new System.Windows.Forms.ProgressBar();
             this.btn_stop = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.panel_LogText = new System.Windows.Forms.Panel();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
-            this.lb_progress_percentage = new System.Windows.Forms.Label();
-            this.lb_progress = new System.Windows.Forms.Label();
-            this.lb_logText = new System.Windows.Forms.Label();
-            this.btn_setting = new System.Windows.Forms.Button();
-            this.pgb_backgroundWorkerProgressBar = new System.Windows.Forms.ProgressBar();
-            this.pic_title = new System.Windows.Forms.PictureBox();
-            this.BW = new System.ComponentModel.BackgroundWorker();
-            this.timer_nextRun = new System.Windows.Forms.Timer(this.components);
             this.dtgv_Uploaded = new System.Windows.Forms.DataGridView();
+            this.lb_progress_percentage = new System.Windows.Forms.Label();
+            this.btn_setting = new System.Windows.Forms.Button();
+            this.pic_title = new System.Windows.Forms.PictureBox();
+            this.bgWorker = new System.ComponentModel.BackgroundWorker();
+            this.tmrCallBgWorker = new System.Windows.Forms.Timer(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.panel_Controller.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel_LogText.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_title)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Uploaded)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_title)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Controller
@@ -67,6 +70,8 @@ namespace MESdbToERPdb
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.elementHost1);
             this.groupBox1.Controls.Add(this.lb_progress);
             this.groupBox1.Controls.Add(this.btn_start);
@@ -79,6 +84,44 @@ namespace MESdbToERPdb
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Location = new System.Drawing.Point(141, 176);
+            this.maskedTextBox1.Mask = "0000-00-00 00:00:00.000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(182, 22);
+            this.maskedTextBox1.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(17, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(92, 21);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Prev Time";
+            // 
+            // elementHost1
+            // 
+            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elementHost1.Location = new System.Drawing.Point(6, 307);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(403, 179);
+            this.elementHost1.TabIndex = 7;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.richTextBoxLog1;
+            // 
+            // lb_progress
+            // 
+            this.lb_progress.AutoSize = true;
+            this.lb_progress.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_progress.Location = new System.Drawing.Point(353, 499);
+            this.lb_progress.Name = "lb_progress";
+            this.lb_progress.Size = new System.Drawing.Size(53, 22);
+            this.lb_progress.TabIndex = 5;
+            this.lb_progress.Text = "Start";
+            // 
             // btn_start
             // 
             this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -89,6 +132,23 @@ namespace MESdbToERPdb
             this.btn_start.Text = "START";
             this.btn_start.UseVisualStyleBackColor = true;
             this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
+            // 
+            // lb_logText
+            // 
+            this.lb_logText.AutoSize = true;
+            this.lb_logText.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_logText.Location = new System.Drawing.Point(6, 283);
+            this.lb_logText.Name = "lb_logText";
+            this.lb_logText.Size = new System.Drawing.Size(112, 21);
+            this.lb_logText.TabIndex = 4;
+            this.lb_logText.Text = "Log output : ";
+            // 
+            // pgb_backgroundWorkerProgressBar
+            // 
+            this.pgb_backgroundWorkerProgressBar.Location = new System.Drawing.Point(6, 499);
+            this.pgb_backgroundWorkerProgressBar.Name = "pgb_backgroundWorkerProgressBar";
+            this.pgb_backgroundWorkerProgressBar.Size = new System.Drawing.Size(341, 36);
+            this.pgb_backgroundWorkerProgressBar.TabIndex = 2;
             // 
             // btn_stop
             // 
@@ -124,15 +184,15 @@ namespace MESdbToERPdb
             this.panel_LogText.Size = new System.Drawing.Size(811, 649);
             this.panel_LogText.TabIndex = 1;
             // 
-            // elementHost1
+            // dtgv_Uploaded
             // 
-            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elementHost1.Location = new System.Drawing.Point(6, 207);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(403, 279);
-            this.elementHost1.TabIndex = 7;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.richTextBoxLog1;
+            this.dtgv_Uploaded.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_Uploaded.Location = new System.Drawing.Point(4, 140);
+            this.dtgv_Uploaded.Name = "dtgv_Uploaded";
+            this.dtgv_Uploaded.RowHeadersWidth = 51;
+            this.dtgv_Uploaded.RowTemplate.Height = 24;
+            this.dtgv_Uploaded.Size = new System.Drawing.Size(804, 500);
+            this.dtgv_Uploaded.TabIndex = 7;
             // 
             // lb_progress_percentage
             // 
@@ -140,28 +200,8 @@ namespace MESdbToERPdb
             this.lb_progress_percentage.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_progress_percentage.Location = new System.Drawing.Point(70, 584);
             this.lb_progress_percentage.Name = "lb_progress_percentage";
-            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 23);
+            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 22);
             this.lb_progress_percentage.TabIndex = 6;
-            // 
-            // lb_progress
-            // 
-            this.lb_progress.AutoSize = true;
-            this.lb_progress.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_progress.Location = new System.Drawing.Point(353, 499);
-            this.lb_progress.Name = "lb_progress";
-            this.lb_progress.Size = new System.Drawing.Size(55, 23);
-            this.lb_progress.TabIndex = 5;
-            this.lb_progress.Text = "Start";
-            // 
-            // lb_logText
-            // 
-            this.lb_logText.AutoSize = true;
-            this.lb_logText.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_logText.Location = new System.Drawing.Point(6, 165);
-            this.lb_logText.Name = "lb_logText";
-            this.lb_logText.Size = new System.Drawing.Size(112, 21);
-            this.lb_logText.TabIndex = 4;
-            this.lb_logText.Text = "Log output : ";
             // 
             // btn_setting
             // 
@@ -173,13 +213,6 @@ namespace MESdbToERPdb
             this.btn_setting.TabIndex = 2;
             this.btn_setting.UseVisualStyleBackColor = true;
             this.btn_setting.Click += new System.EventHandler(this.btn_setting_Click);
-            // 
-            // pgb_backgroundWorkerProgressBar
-            // 
-            this.pgb_backgroundWorkerProgressBar.Location = new System.Drawing.Point(6, 499);
-            this.pgb_backgroundWorkerProgressBar.Name = "pgb_backgroundWorkerProgressBar";
-            this.pgb_backgroundWorkerProgressBar.Size = new System.Drawing.Size(341, 36);
-            this.pgb_backgroundWorkerProgressBar.TabIndex = 2;
             // 
             // pic_title
             // 
@@ -193,26 +226,23 @@ namespace MESdbToERPdb
             this.pic_title.TabIndex = 0;
             this.pic_title.TabStop = false;
             // 
-            // BW
+            // bgWorker
             // 
-            this.BW.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_DoWork);
-            this.BW.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BW_ProgressChanged);
-            this.BW.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BW_RunWorkerCompleted);
+            this.bgWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_DoWork);
+            this.bgWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BW_ProgressChanged);
+            this.bgWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BW_RunWorkerCompleted);
             // 
-            // timer_nextRun
+            // tmrCallBgWorker
             // 
-            this.timer_nextRun.Interval = 1000;
-            this.timer_nextRun.Tick += new System.EventHandler(this.timer_nextRun_Tick);
+            this.tmrCallBgWorker.Interval = 1000;
+            this.tmrCallBgWorker.Tick += new System.EventHandler(this.timer_nextRun_Tick);
             // 
-            // dtgv_Uploaded
+            // notifyIcon1
             // 
-            this.dtgv_Uploaded.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_Uploaded.Location = new System.Drawing.Point(4, 140);
-            this.dtgv_Uploaded.Name = "dtgv_Uploaded";
-            this.dtgv_Uploaded.RowHeadersWidth = 51;
-            this.dtgv_Uploaded.RowTemplate.Height = 24;
-            this.dtgv_Uploaded.Size = new System.Drawing.Size(804, 500);
-            this.dtgv_Uploaded.TabIndex = 7;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "MES->ERP";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
             // mes2ERPMainWin
             // 
@@ -235,8 +265,8 @@ namespace MESdbToERPdb
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel_LogText.ResumeLayout(false);
             this.panel_LogText.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_title)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Uploaded)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_title)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -254,12 +284,15 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Label lb_progress;
         private System.Windows.Forms.Button btn_stop;
         private System.Windows.Forms.Button btn_start;
-        private System.ComponentModel.BackgroundWorker BW;
-        private System.Windows.Forms.Timer timer_nextRun;
+        private System.ComponentModel.BackgroundWorker bgWorker;
+        private System.Windows.Forms.Timer tmrCallBgWorker;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private RichTextBoxLog richTextBoxLog1;
         private System.Windows.Forms.DataGridView dtgv_Uploaded;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
 
