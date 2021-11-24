@@ -1,0 +1,36 @@
+08:19:00.594 MESdbToERPdb 1.0.0 : Started 
+09:30:00.660 MESdbToERPdb 1.0.0 : Started 
+09:30:19.008 MESdbToERPdb 1.0.0 : Started 
+09:40:36.927 MESdbToERPdb 1.0.0 : Started 
+09:52:11.457 MESdbToERPdb 1.0.0 : Started 
+09:52:40.694 MESdbToERPdb 1.0.0 : Started 
+09:52:47.586 MESdbToERPdb 1.0.0 : Started 
+09:54:42.291 MESdbToERPdb 1.0.0 : Started 
+10:02:18.212 MESdbToERPdb 1.0.0 : Started 
+10:06:46.841 MESdbToERPdb 1.0.0 : Started 
+10:19:44.056 MESdbToERPdb 1.0.0 : Started 
+10:27:08.247 MESdbToERPdb 1.0.0 : Started 
+10:28:22.166 MESdbToERPdb 1.0.0 : Started 
+10:28:24.884  GetListLOT : There is no row at position 0.
+10:28:24.887 Upload to data to ERP finished! : 
+10:37:39.580 MESdbToERPdb 1.0.0 : Started 
+10:37:43.382  GetListLOT : There is no row at position 0.
+10:37:43.383 Upload to data to ERP finished! : 
+10:38:53.497 MESdbToERPdb 1.0.0 : Started 
+10:38:57.623  GetListLOT : There is no row at position 0.
+10:38:57.623 Upload to data to ERP finished! : 
+10:39:45.267 MESdbToERPdb 1.0.0 : Started 
+10:39:48.194  GetListLOT : There is no row at position 0.
+10:39:48.194 Upload to data to ERP finished! : 
+14:58:30.930 MESdbToERPdb 1.0.0 : Started 
+16:15:46.351 MESdbToERPdb 1.0.0 : Started 
+16:17:15.521 MESdbToERPdb 1.0.0 : Started 
+16:18:06.024 MESdbToERPdb 1.0.0 : Started 
+16:19:10.163 MESdbToERPdb 1.0.0 : Started 
+16:19:12.919  GetListLOT : There is no row at position 0.
+16:19:12.919 Upload to data to ERP finished! : 
+16:19:15.655 MESdbToERPdb 1.0.0 : Started 
+16:39:17.170 MESdbToERPdb 1.0.0 : Started 
+16:39:26.606 MESdbToERPdb 1.0.0 : Started 
+16:39:41.841 MESdbToERPdb 1.0.0 : Started 
+16:40:09.763 MESdbToERPdb 1.0.0 : Started 
