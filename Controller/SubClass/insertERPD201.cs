@@ -63,12 +63,13 @@ namespace MESdbToERPdb
 
         }
 
-        public void InsertdataToERP_D201(string barcode, string model, string output, string NG, string date, string time)
+        public void InsertdataToERP_D201(string work_order_no, string model, string output, string NG, string date, string time)
         {
             try
             {
-                string[] QR = barcode.Split(';');
-                string[] ML = QR[0].Split('-');
+                string MP = work_order_no.Substring(0, 4);
+                string SP = work_order_no.Substring(4);
+                
 
                 string month = date.Substring(2, 6);
 
@@ -76,13 +77,13 @@ namespace MESdbToERPdb
 
                 string TC002 = GetTC002();
 
-                string TC047 = sqlERPCon.sqlExecuteScalarString("select distinct TA006 from MOCTA where TA001 = '" + ML[0] + "' and TA002 = '" + ML[1] + "'");
+                string TC047 = sqlERPCon.sqlExecuteScalarString("select distinct TA006 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 ITEMID_TC047 = TC047;
-                string TC048 = sqlERPCon.sqlExecuteScalarString("select distinct TA034 from MOCTA where TA001 = '" + ML[0] + "' and TA002 = '" + ML[1] + "'");
+                string TC048 = sqlERPCon.sqlExecuteScalarString("select distinct TA034 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 ITEMNAME_TC048 = TC048;
                 ITEMDESCRIPTION = sqlERPCon.sqlExecuteScalarString("select distinct TA035 from MOCTA where TA006 = '" + TC047 + "'");
 
-                string TA007 = sqlERPCon.sqlExecuteScalarString("select distinct TA007 from SFCTA where TA004 ='B01' and  TA001 = '" + ML[0] + "' and TA002 = '" + ML[1] + "'");
+                string TA007 = sqlERPCon.sqlExecuteScalarString("select distinct TA007 from SFCTA where TA004 ='B01' and  TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 int TC036 = int.Parse(output) + int.Parse(NG);
 
                 TRANSNO = TB039;//kg dùng SFT nua nen TB038 & TB039 = 0
@@ -105,7 +106,7 @@ namespace MESdbToERPdb
                 sqlInsertSFCTC.Append(@"TC041,TC042,TC043,TC044,TC045,TC046,TC047,TC048,TC049,TC050,TC051,TC055)");
                 sqlInsertSFCTC.Append(" values ( ");
                 sqlInsertSFCTC.Append("'TLVN2','BQC01','JG01','" + date + "','BQC01','" + date + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
-                sqlInsertSFCTC.Append("'D201','" + TC002 + "','0001','" + ML[0] + "','" + ML[1] + "','" + QR[1] + "','" + QR[2] + "','0020','B02','PCS','','','1'," + output + ",0," + NG + ",0,0,0,0,");
+                sqlInsertSFCTC.Append("'D201','" + TC002 + "','0001','" + MP + "','" + SP + "','" + null + "','" + null + "','0020','B02','PCS','','','1'," + output + ",0," + NG + ",0,0,0,0,");
                 sqlInsertSFCTC.Append("0,'Y','B01','',0,'N','N','" + date + "','" + date + "','N'," + TC036 + ",0,'" + date + "','0','',");
                 sqlInsertSFCTC.Append("'B01'," + KLTotal + "," + KLOK + ",0," + KLNG + ",0,'" + TC047 + "','" + TC048 + "','" + ITEMDESCRIPTION + "','KG','0','N'");  //update new 21-oct
                 sqlInsertSFCTC.Append(")");

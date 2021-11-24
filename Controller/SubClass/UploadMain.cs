@@ -11,12 +11,10 @@ namespace MESdbToERPdb
     public class UploadMain
     {
         string strLot = "";
-        public void GetListLOT()
+        public void GetListTransferOrder()
         {
             try
             {
-                //test
-                
                 string sqlgetListLOT = "select distinct lot  from m_ERPMQC_REALTIME  where data not like '0' and status  like '' ";
                 ComboBox cmb_ = new ComboBox();
                 sqlCON data = new sqlCON();
@@ -63,7 +61,7 @@ namespace MESdbToERPdb
                     double SL_UPload = intCountOK + intCountNG;
                     //Chua ma Lenh San xuat vao 2 truong dang dua vao
                     bool IsResultheck = material.KiemtraNguyenVatLieu(code, No, SL_UPload, out IsDuSoLuong, out IsNVL, out listMaterial, out _messages);
-                    insertERPSFCTC classinsert = new insertERPSFCTC();
+                    insertERP_D201 classinsert = new insertERP_D201();
                     
 
 
@@ -75,7 +73,7 @@ namespace MESdbToERPdb
                         {
                             //test
                             
-                            classinsert.InsertdataToERP(table.Rows[0]["lot"].ToString(), Model, intCountOK.ToString(), intCountNG.ToString(), DateUp, TimeUp);
+                            classinsert.InsertdataToERP_D201(table.Rows[0]["lot"].ToString(), Model, intCountOK.ToString(), intCountNG.ToString(), DateUp, TimeUp);
                             classinsert.updateERP(table.Rows[0]["lot"].ToString(), Model, intCountOK.ToString(), intCountNG.ToString(), DateUp, TimeUp);
 
                             string PO = table.Rows[0]["lot"].ToString().Split(';')[0];

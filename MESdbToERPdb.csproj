@@ -72,7 +72,7 @@
     <Compile Include="Controller\SQL_Class\DatabaseUtils.cs" />
     <Compile Include="Controller\SQL_Class\sqlERPCon.cs" />
     <Compile Include="Controller\SQL_Class\sqlMESInterCon.cs" />
-    <Compile Include="Controller\SubClass\insertERPSFCTC.cs" />
+    <Compile Include="Controller\SubClass\insertERPD201.cs" />
     <Compile Include="Controller\SQL_Class\INVMD.cs" />
     <Compile Include="Controller\SubClass\Material.cs" />
     <Compile Include="Controller\SQL_Class\sqlCON.cs" />

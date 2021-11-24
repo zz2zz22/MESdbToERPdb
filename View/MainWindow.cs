@@ -182,7 +182,7 @@ namespace MESdbToERPdb
 
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
-            uploadMain.GetListLOT();
+            uploadMain.GetListTransferOrder();
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
             //insertERPSFCTC insert = new insertERPSFCTC();
@@ -284,7 +284,7 @@ namespace MESdbToERPdb
             try
             {
                 UploadMain uploadMain = new UploadMain();
-                uploadMain.GetListLOT();
+                uploadMain.GetListTransferOrder();
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
                 ClearMemory.CleanMemory();
             }
