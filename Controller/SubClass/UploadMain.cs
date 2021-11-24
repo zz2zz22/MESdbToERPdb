@@ -11,100 +11,73 @@ namespace MESdbToERPdb
     public class UploadMain
     {
         string strLot = "";
-        public void GetListTransferOrder()
+        public void GetListTransferOrder(DateTime dIn, DateTime dOut)
         {
+            string dateIn = dIn.ToString("yyyy-MM-dd HH:mm:ss");
+            string dateOut = dOut.ToString("yyyy-MM-dd HH:mm:ss");
+            string DateUp = DateTime.Now.ToString("yyyyMMdd");
+            string TimeUp = DateTime.Now.ToString("HH:mm:ss");
             try
             {
-                string sqlgetListLOT = "select distinct lot  from m_ERPMQC_REALTIME  where data not like '0' and status  like '' ";
+                string sqlgetListTO = "select distinct uuid from job_move where create_date < '" + dateOut + "' and create_date >= '" + dateIn + "'";
                 ComboBox cmb_ = new ComboBox();
-                sqlCON data = new sqlCON();
-                data.getComboBoxData(sqlgetListLOT, ref cmb_);
-                string inspectdate = DateTime.Now.ToString("yyyy-MM-dd");
-                string inspecttime = DateTime.Now.ToString("HH:mm:ss");
-                string DateUp = DateTime.Now.ToString("yyyyMMdd");
-                string TimeUp = DateTime.Now.ToString("HH:mm:ss");
-                string TimeSerno = DateTime.Now.ToString("HHmmss");
+                sqlMESPlanningExcutionCon data = new sqlMESPlanningExcutionCon();
+                data.getComboBoxData(sqlgetListTO, ref cmb_);
 
                 for (int cmbitem = 0; cmbitem < cmb_.Items.Count; cmbitem++)
                 {
-                    string serno = cmb_.Items[cmbitem].ToString().Split(';')[0] + "-" + DateUp + "_" + TimeSerno;
+                    string jobmId = cmb_.Items[cmbitem].ToString();
                     DataTable table = new DataTable();
                     StringBuilder sqlGetTable = new StringBuilder();
-                    sqlGetTable.Append("select '" + serno + "' as serno,");
-                    sqlGetTable.Append("lot, model, site, factory, line, process,item,");
-                    sqlGetTable.Append("'" + inspectdate + "' as inspectdate,");
-                    sqlGetTable.Append("'" + inspecttime + "' as inspecttime,");
-                    sqlGetTable.Append("sum(cast(data as int)) as data,");
-                    sqlGetTable.Append("'0' as judge , status, remark from m_ERPMQC_REALTIME_Test  ");
-                    sqlGetTable.Append("where data not like '0' and status  like '' and lot = '" + cmb_.Items[cmbitem].ToString() + "'");
-                    sqlGetTable.Append("group by item,lot,model,site, factory, line, process, item,  status, remark");
+                    sqlGetTable.Append("select uuid, move_no, job_order_uuid,");
+                    sqlGetTable.Append("job_no, work_order_uuid, belong_organization, work_order_process_uuid, ");
+                    sqlGetTable.Append("operation_uuid, operation_no, product_uuid, product_lot_no, move_out_date, create_by, update_by, create_date, update_date");
+                    sqlGetTable.Append("from job_move");
+                    sqlGetTable.Append("where uuid = '" + cmb_.Items[cmbitem].ToString() + "'");
                     data.sqlDataAdapterFillDatatable(sqlGetTable.ToString(), ref table);
 
-                    int intCountOK = CounterỌKERP(ref table);
-                    int intCountNG = CounterNGERP(ref table);
-                    strLot = table.Rows[0]["lot"].ToString();
-                    string code = table.Rows[0]["serno"].ToString().Split('-')[0];
-                    string No = table.Rows[0]["serno"].ToString().Split('-')[1];
-                    string Model = table.Rows[0]["model"].ToString();
+                    sqlMESInterCon con2 = new sqlMESInterCon();
+                    string jobOrder_id = table.Rows[cmbitem]["job_order_uuid"].ToString();
+                    string productLotNo = table.Rows[cmbitem]["product_lot_no"].ToString();
+                    DateTime createDate = Convert.ToDateTime(data.sqlExecuteScalarString("select distinct create_date from job_move where uuid = '" + jobmId + "'"));
 
-                    string typeNG = "";
-                    int checkdouble = 0;
+                    string jobOrderRecord_id = data.sqlExecuteScalarString("select distinct uuid from job_order_record where job_order_uuid = '" + jobOrder_id + "' and product_lot_no = '" + productLotNo + "' and create_date = '" + createDate.ToString("yyyy-MM-dd HH:mm:ss") + "'");
+
+                    int OKQty = int.Parse(con2.sqlExecuteScalarString("select distinct actual_pass_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
+                    int NGQty = int.Parse(con2.sqlExecuteScalarString("select distinct actual_fail_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
+
+
+                    DateTime transDate = Convert.ToDateTime(table.Rows[0]["move_out_date"].ToString());
+
+                    string erpCode = con2.sqlExecuteScalarString("select distinct erp_order_no from job_order_record_view where uuid = '" + jobOrderRecord_id + "'");
                     
-                    string sqlERPError = "select count(*) from m_ERPMQC_REALTIME_Test where serno = '" + serno + "'";
-                    
-                    string MaLSX = code + "-" + No;
-                    Material material = new Material();
-                    bool IsDuSoLuong = false;
-                    bool IsNVL = false;
-                    List<string> _messages = new List<string>();
-                    List<MaterialAdapt> listMaterial = new List<MaterialAdapt>();
-                    double SL_UPload = intCountOK + intCountNG;
-                    //Chua ma Lenh San xuat vao 2 truong dang dua vao
-                    bool IsResultheck = material.KiemtraNguyenVatLieu(code, No, SL_UPload, out IsDuSoLuong, out IsNVL, out listMaterial, out _messages);
+                    string MP = erpCode.Substring(0,4);
+                    string SP = erpCode.Substring(4);
+                    //check là mã có thuộc ( A511, B511, P511, J511 ) hay kg
+                    string operationCode = table.Rows[cmbitem]["operation_no"].ToString();
                     insertERP_D201 classinsert = new insertERP_D201();
-                    
-
-
-                    if (intCountNG + intCountOK > 0) // check lai
+                    if ((MP == "A511") || (MP == "B511") || (MP == "P511") || (MP == "J511"))
                     {
-                        //update to realtime
-
-                        if (IsResultheck == true)
+                        if (OKQty + NGQty > 0) // check lai
                         {
-                            //test
-                            
-                            classinsert.InsertdataToERP_D201(table.Rows[0]["lot"].ToString(), Model, intCountOK.ToString(), intCountNG.ToString(), DateUp, TimeUp);
-                            classinsert.updateERP(table.Rows[0]["lot"].ToString(), Model, intCountOK.ToString(), intCountNG.ToString(), DateUp, TimeUp);
+                            //update to realtime
+                            classinsert.InsertdataToERP_D201(MP, SP, OrgCode ,  OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
+                            classinsert.updateERPD201(MP, SP, OrgCode, OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp); //check transdate
 
                             string PO = table.Rows[0]["lot"].ToString().Split(';')[0];
                         }
-                    }
+                    }             
                 }
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, " GetListLOT", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "GetListTransferOrder", ex.Message);
             }
         }
-        public int CounterỌKERP(ref DataTable dt)
+        
+        public string GetOrganization(string uuid)
         {
-            int OK = 0;
 
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                if (dt.Rows[i]["remark"].ToString() == "OP") OK += int.Parse(dt.Rows[i]["data"].ToString());
-            }
-            return OK;
-        }
-        //Counter NG < chưa dung để đó>
-        public int CounterNGERP(ref DataTable dt)
-        {
-            int NG = 0;
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                if (dt.Rows[i]["remark"].ToString() == "NG") NG += int.Parse(dt.Rows[i]["data"].ToString());
-            }
-            return NG;
         }
     }
 }

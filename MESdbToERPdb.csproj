@@ -67,6 +67,7 @@
     <Compile Include="Controller\Logfile\SaveObject.cs" />
     <Compile Include="Controller\Logfile\SystemLog.cs" />
     <Compile Include="Controller\SQL_Class\sqlMESBaseDataCon.cs" />
+    <Compile Include="Controller\SQL_Class\sqlMESPlanningExcution.cs" />
     <Compile Include="Controller\SQL_Class\sqlMESQualityControlCon.cs" />
     <Compile Include="Controller\SQL_Class\DatabaseSQLServerUtils.cs" />
     <Compile Include="Controller\SQL_Class\DatabaseUtils.cs" />
@@ -75,7 +76,6 @@
     <Compile Include="Controller\SubClass\insertERPD201.cs" />
     <Compile Include="Controller\SQL_Class\INVMD.cs" />
     <Compile Include="Controller\SubClass\Material.cs" />
-    <Compile Include="Controller\SQL_Class\sqlCON.cs" />
     <Compile Include="Controller\SubClass\SettingClass.cs" />
     <Compile Include="Controller\SubClass\UploadMain.cs" />
     <Compile Include="Properties\Resources.Designer.cs">

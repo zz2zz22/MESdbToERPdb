@@ -182,7 +182,7 @@ namespace MESdbToERPdb
 
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
-            uploadMain.GetListTransferOrder();
+            //uploadMain.GetListTransferOrder();
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
             //insertERPSFCTC insert = new insertERPSFCTC();
@@ -284,7 +284,7 @@ namespace MESdbToERPdb
             try
             {
                 UploadMain uploadMain = new UploadMain();
-                uploadMain.GetListTransferOrder();
+                //uploadMain.GetListTransferOrder();
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
                 ClearMemory.CleanMemory();
             }
@@ -316,12 +316,6 @@ namespace MESdbToERPdb
             }
         }
 
-        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    //DataGridViewRow row = this.dataGridView1.CurrentRow;
-        //    //textBox1.Text = row.Cells["qc_no"].Value.ToString();
-        //    //textBox2.Text = row.Cells["finish_quantity"].Value.ToString();
-        //}
         void tmrEnsureWorkerGetsCalled_Callback(object obj)
         {
             // this timer was started as the bgworker was busy before now it will try to call the bgworker again

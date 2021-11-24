@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
 namespace MESdbToERPdb
 {
-    public class sqlCON
+    public class sqlMESPlanningExcutionCon
     {
-        public SqlConnection conn = DatabaseUtils.GetDBConnection();
+        public MySqlConnection conn = DatabaseUtils.GetMes_Planning_Excution();
 
         public string sqlExecuteScalarString(string sql)
         {
@@ -19,7 +19,7 @@ namespace MESdbToERPdb
             String outstring;
             try
             {
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
                 conn.Open();
                 outstring = cmd.ExecuteScalar().ToString();
                 conn.Close();
@@ -36,10 +36,10 @@ namespace MESdbToERPdb
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand();
+                MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = sql;
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
                 adapter.SelectCommand = cmd;
                 DataSet ds = new DataSet();
                 adapter.Fill(ds);
@@ -62,8 +62,8 @@ namespace MESdbToERPdb
         {
             try
             {
-                SqlCommand cmd = new SqlCommand();
-                SqlDataAdapter adapter = new SqlDataAdapter();
+                MySqlCommand cmd = new MySqlCommand();
+                MySqlDataAdapter adapter = new MySqlDataAdapter();
                 {
                     cmd.CommandText = sql;
                     cmd.Connection = conn;
@@ -81,7 +81,7 @@ namespace MESdbToERPdb
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
                 int response = cmd.ExecuteNonQuery();
                 if (response >= 1)
