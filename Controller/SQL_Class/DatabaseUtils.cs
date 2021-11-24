@@ -31,37 +31,45 @@ namespace MESdbToERPdb
             return DatabaseSQLServerUtils.GetERPDBConnection(datasource, database, username, password);
         }
 
-        public static SqlConnection GetERPTargetDBConnection() 
-        {
-            string datasource = "172.16.0.11"; 
-            string database = "SOT";
-            string username = "soft";
-            string password = "techlink@!@#";
+        //public static SqlConnection GetERPTargetDBConnection() 
+        //{
+        //    string datasource = "172.16.0.11"; 
+        //    string database = "SOT";
+        //    string username = "sa";
+        //    string password = "dsc@123";
 
-            return DatabaseSQLServerUtils.GetERPTargetDBConnection(datasource, database, username, password);
-        }
+        //    return DatabaseSQLServerUtils.GetERPTargetDBConnection(datasource, database, username, password);
+        //}
 
-            public static MySqlConnection GetMes_InterfaceDBConnection() //MES trên con .22 mySQL - sử dụng MySQL DataProvider để clone về server local
+        public static MySqlConnection GetMes_InterfaceDBC() //MES trên con .22 mySQL - sử dụng MySQL DataProvider để clone về server local
         {
             string host = "172.16.0.22"; //mes connection
             string user = "guest";
             string password = "guest@123";
             string database = "mes_interface";
 
-            return DatabaseSQLServerUtils.GetMes_InterfaceDBConnection(host, user, password, database);
+            return DatabaseSQLServerUtils.GetMesDBConnection(host, user, password, database);
         }
 
 
-        public static MySqlConnection GetMes_Quality_ControlDBConnection()
+        public static MySqlConnection GetMes_Quality_ControlDBC()
         {
             string host = "172.16.0.22";
             string user = "guest";
             string password = "guest@123";
             string database = "mes_quality_control";
 
-            return DatabaseSQLServerUtils.GetMes_Quality_ControlDBConnection(host, user, password, database);
+            return DatabaseSQLServerUtils.GetMesDBConnection(host, user, password, database);
         }
 
-        
+        public static MySqlConnection GetMes_Base_DataDBC()
+        {
+            string host = "172.16.0.22";
+            string user = "guest";
+            string password = "guest@123";
+            string database = "mes_base_data";
+
+            return DatabaseSQLServerUtils.GetMesDBConnection(host, user, password, database);
+        }
     }
 }

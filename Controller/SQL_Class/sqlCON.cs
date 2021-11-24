@@ -9,27 +9,54 @@ using System.Windows.Forms;
 
 namespace MESdbToERPdb
 {
-    public class sqlERPCon
+    public class sqlCON
     {
-        public SqlConnection conn = DatabaseUtils.GetERPDBConnection();
+        public SqlConnection conn = DatabaseUtils.GetDBConnection();
 
         public string sqlExecuteScalarString(string sql)
         {
+
             String outstring;
-            conn.Open();
-            SqlCommand cmd = new SqlCommand(sql, conn);
             try
             {
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                conn.Open();
                 outstring = cmd.ExecuteScalar().ToString();
                 conn.Close();
                 return outstring;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                conn.Close();
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "sqlExecuteScalarString(string sql)", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
                 return String.Empty;
             }
+        }
+        public void getComboBoxData(string sql, ref ComboBox cmb)
+        {
+            try
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = sql;
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = cmd;
+                DataSet ds = new DataSet();
+                adapter.Fill(ds);
+                adapter.Dispose();
+                cmd.Dispose();
+                foreach (DataRow row in ds.Tables[0].Rows)
+                {
+                    cmb.Items.Add(row[0].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+
+
+            }
+            conn.Close();
         }
         public void sqlDataAdapterFillDatatable(string sql, ref DataTable dt)
         {
@@ -44,12 +71,11 @@ namespace MESdbToERPdb
                     adapter.Fill(dt);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
             }
         }
-
         public bool sqlExecuteNonQuery(string sql, bool result_message_show)
         {
             try
@@ -66,14 +92,13 @@ namespace MESdbToERPdb
                 }
                 else
                 {
-                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", "");
-
                     conn.Close();
                     return false;
                 }
             }
             catch (Exception ex)
             {
+
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
                 conn.Close();
                 return false;

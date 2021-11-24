@@ -9,12 +9,12 @@ using MySql.Data.MySqlClient;
 
 namespace MESdbToERPdb
 {
-    public class sqlMESInterCon
+    public class sqlMESBaseDataCon
     {
-        
-        public MySqlConnection conn = DatabaseUtils.GetMes_InterfaceDBC();
 
-        public string sqlExecuteScalarString( string sql)
+        public MySqlConnection conn = DatabaseUtils.GetMes_Base_DataDBC();
+
+        public string sqlExecuteScalarString(string sql)
         {
             String outstring;
             conn.Open();
@@ -25,13 +25,13 @@ namespace MESdbToERPdb
                 conn.Close();
                 return outstring;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Response", ex.Message);
                 conn.Close();
                 return String.Empty;
             }
-            
+
         }
 
         public void getComboBoxData(string sql, ref ComboBox cmb)
@@ -55,7 +55,7 @@ namespace MESdbToERPdb
                     cmb.Items.Add(row[0].ToString());
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
             }
@@ -97,7 +97,7 @@ namespace MESdbToERPdb
         }
 
 
-        public void sqlDataAdapterFillDatatable( string sql, ref DataTable dt)
+        public void sqlDataAdapterFillDatatable(string sql, ref DataTable dt)
         {
             try
             {
@@ -110,7 +110,7 @@ namespace MESdbToERPdb
                     adapter.Fill(dt);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
             }

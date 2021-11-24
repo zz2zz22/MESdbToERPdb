@@ -44,3 +44,8 @@ C:\Github\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.GenerateResource.cache
 C:\Github\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.CoreCompileInputs.cache
 C:\Github\MESdbToERPdb\obj\Debug\MESdbToERPdb.exe
 C:\Github\MESdbToERPdb\obj\Debug\MESdbToERPdb.pdb
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb_MarkupCompile.cache
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb_MarkupCompile.lref
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.g.resources
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\RichTextBoxLog.g.cs
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\RichTextBoxLog.baml

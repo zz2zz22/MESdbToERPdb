@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 //using System.Text;
 
-namespace MESdbToERPdb.Controller.SubClass
+namespace MESdbToERPdb
 {
     public class INVMD
     {
