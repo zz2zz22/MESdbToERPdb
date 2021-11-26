@@ -10,12 +10,12 @@ namespace MESdbToERPdb
 {
     public class UploadMain
     {
-        string strLot = "";
+        
         public void GetListTransferOrder(DateTime dIn, DateTime dOut)
         {
             string dateIn = dIn.ToString("yyyy-MM-dd HH:mm:ss");
             string dateOut = dOut.ToString("yyyy-MM-dd HH:mm:ss");
-            string DateUp = DateTime.Now.ToString("yyyyMMdd");
+            string DateUp = DateTime.Now.ToString();
             string TimeUp = DateTime.Now.ToString("HH:mm:ss");
             try
             {
@@ -23,50 +23,96 @@ namespace MESdbToERPdb
                 ComboBox cmb_ = new ComboBox();
                 sqlMESPlanningExcutionCon data = new sqlMESPlanningExcutionCon();
                 data.getComboBoxData(sqlgetListTO, ref cmb_);
-
+                DataTable table = new DataTable();
                 for (int cmbitem = 0; cmbitem < cmb_.Items.Count; cmbitem++)
                 {
                     string jobmId = cmb_.Items[cmbitem].ToString();
-                    DataTable table = new DataTable();
+                    
                     StringBuilder sqlGetTable = new StringBuilder();
                     sqlGetTable.Append("select uuid, move_no, job_order_uuid,");
                     sqlGetTable.Append("job_no, work_order_uuid, belong_organization, work_order_process_uuid, ");
-                    sqlGetTable.Append("operation_uuid, operation_no, product_uuid, product_lot_no, move_out_date, create_by, update_by, create_date, update_date");
-                    sqlGetTable.Append("from job_move");
-                    sqlGetTable.Append("where uuid = '" + cmb_.Items[cmbitem].ToString() + "'");
+                    sqlGetTable.Append("operation_uuid, operation_no, product_uuid, product_no ,product_lot_no, move_out_date, create_by, update_by, create_date, update_date");
+                    sqlGetTable.Append(" from job_move ");
+                    sqlGetTable.Append(" where uuid = '" + cmb_.Items[cmbitem].ToString() + "'");
                     data.sqlDataAdapterFillDatatable(sqlGetTable.ToString(), ref table);
 
                     sqlMESInterCon con2 = new sqlMESInterCon();
                     string jobOrder_id = table.Rows[cmbitem]["job_order_uuid"].ToString();
                     string productLotNo = table.Rows[cmbitem]["product_lot_no"].ToString();
-                    DateTime createDate = Convert.ToDateTime(data.sqlExecuteScalarString("select distinct create_date from job_move where uuid = '" + jobmId + "'"));
 
-                    string jobOrderRecord_id = data.sqlExecuteScalarString("select distinct uuid from job_order_record where job_order_uuid = '" + jobOrder_id + "' and product_lot_no = '" + productLotNo + "' and create_date = '" + createDate.ToString("yyyy-MM-dd HH:mm:ss") + "'");
+
+                    DateTime createDateJM = Convert.ToDateTime(data.sqlExecuteScalarString("select distinct create_date from job_move where uuid = '" + jobmId + "'"));
+                    ComboBox cmb_jobRecord = new ComboBox();
+                   
+                    DataTable dtJobRecord = new DataTable();
+                    string getTableJR = "select uuid, job_order_uuid, create_date from job_order_record where job_order_uuid = '" + jobOrder_id + "'";
+                    data.sqlDataAdapterFillDatatable(getTableJR, ref dtJobRecord);
+                    TimeSpan minDate = new TimeSpan(3,0,0,0);
+                    int flag = 0;
+                    for (int i = 0; i< dtJobRecord.Rows.Count;i++)
+                    {
+                        TimeSpan subDate = Convert.ToDateTime(dtJobRecord.Rows[i]["create_date"].ToString()).Subtract(createDateJM);
+                        if ( subDate < minDate )
+                        {
+                            minDate = subDate;
+                            flag = i;
+                        }
+                    }
+                    string jobOrderRecord_id = dtJobRecord.Rows[flag]["uuid"].ToString();
+
 
                     int OKQty = int.Parse(con2.sqlExecuteScalarString("select distinct actual_pass_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
                     int NGQty = int.Parse(con2.sqlExecuteScalarString("select distinct actual_fail_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
 
 
-                    DateTime transDate = Convert.ToDateTime(table.Rows[0]["move_out_date"].ToString());
+                    DateTime transDate = Convert.ToDateTime(table.Rows[cmbitem]["move_out_date"].ToString());
 
                     string erpCode = con2.sqlExecuteScalarString("select distinct erp_order_no from job_order_record_view where uuid = '" + jobOrderRecord_id + "'");
-                    
-                    string MP = erpCode.Substring(0,4);
-                    string SP = erpCode.Substring(4);
-                    //check là mã có thuộc ( A511, B511, P511, J511 ) hay kg
-                    string operationCode = table.Rows[cmbitem]["operation_no"].ToString();
-                    insertERP_D201 classinsert = new insertERP_D201();
-                    if ((MP == "A511") || (MP == "B511") || (MP == "P511") || (MP == "J511"))
+                    string[] mesCode = (con2.sqlExecuteScalarString("select distinct order_no from job_order_record_view where uuid = '" + jobOrderRecord_id + "'")).Split('-');
+                    string checkSemiOngLon = "";
+                    if (mesCode.Length > 1)
                     {
-                        if (OKQty + NGQty > 0) // check lai
-                        {
-                            //update to realtime
-                            classinsert.InsertdataToERP_D201(MP, SP, OrgCode ,  OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
-                            classinsert.updateERPD201(MP, SP, OrgCode, OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp); //check transdate
+                         checkSemiOngLon = mesCode[1];
+                    }
+                    
+                    if (erpCode != "")
+                    {
+                        string MP = erpCode.Substring(0, 4);
+                        string SP = erpCode.Substring(4);
 
-                            string PO = table.Rows[0]["lot"].ToString().Split(';')[0];
+                        int checkD1orD2 = CheckProcess(table.Rows[cmbitem]["work_order_process_uuid"].ToString(), table.Rows[cmbitem]["operation_uuid"].ToString());
+                        //check là mã có thuộc ( A511, B511, P511, J511 ) hay kg
+                        string operationCode = table.Rows[cmbitem]["operation_no"].ToString();
+                        string ParentOrgCode = GetParentOrganizationCode(table.Rows[cmbitem]["belong_organization"].ToString());
+
+
+                        insertERP_D201 classinsertD2 = new insertERP_D201();
+                        insertERP_D101 classinsertD1 = new insertERP_D101();
+                        if ((MP == "A511") || (MP == "B511") || (MP == "P511") || (MP == "J511"))
+                        {
+                            if (OKQty + NGQty > 0)
+                            {
+                                if (checkSemiOngLon == "")
+                                {
+                                    if (checkD1orD2 == 2)
+                                    {
+                                        //update D201 to realtime
+                                        classinsertD2.InsertdataToERP_D201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
+                                        classinsertD2.updateERPD201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp); //check transdate 
+                                    }
+                                    if (checkD1orD2 == 1)
+                                    {
+                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
+                                        classinsertD1.updateERPD101(MP, SP, OKQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
+                                    }
+                                }
+                            }
                         }
-                    }             
+                    }
+                    else
+                    {
+                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có đơn");
+                    }          
                 }
             }
             catch (Exception ex)
@@ -74,10 +120,36 @@ namespace MESdbToERPdb
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "GetListTransferOrder", ex.Message);
             }
         }
-        
-        public string GetOrganization(string uuid)
-        {
 
+        public string GetParentOrganizationCode(string uuid)
+        {
+            sqlMESBaseDataCon con = new sqlMESBaseDataCon();
+            string orgCode = con.sqlExecuteScalarString("select distinct organization_code from organization_info where organization_uuid = '" + uuid + "'");
+            string parentOrgCode = orgCode.Substring(0, 3);
+            return parentOrgCode;
+        }
+
+        public int CheckProcess(string work_order_process_id, string operationID)
+        {
+            sqlMESBaseDataCon con = new sqlMESBaseDataCon();
+            sqlMESPlanningExcutionCon conEx = new sqlMESPlanningExcutionCon();
+            string productProcessListID = conEx.sqlExecuteScalarString("select distinct product_process_list_uuid from work_order_process where uuid = '" + work_order_process_id + "'");
+            int getLineNo = int.Parse(con.sqlExecuteScalarString("select distinct line_no from product_process_list where uuid = '" + productProcessListID + "' and operation_uuid = '" + operationID + "'"));
+            string processID = con.sqlExecuteScalarString("select distinct process_uuid from product_process_list where uuid = '" + productProcessListID + "'");
+            string getMQClineNo = con.sqlExecuteScalarString("select distinct line_no from process_list where process_uuid = '" + processID + "' and operation_name like '%MQC%'");
+            if (getMQClineNo != "")
+            {
+                if (getLineNo == int.Parse(getMQClineNo))
+                {
+                    return 2;
+                }
+                else if (getLineNo == (int.Parse(getMQClineNo) - 1))
+                {
+                    return 1;
+                }
+                else return 0;
+            }
+            else return 0;
         }
     }
 }

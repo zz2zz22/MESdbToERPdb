@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="390" d:DesignWidth="800">
     <Grid>
-        <RichTextBox x:Name="rtb_log" Margin="0,0,0,0" >
+        <RichTextBox x:Name="rtb_log" Margin="0,0,0,0" Background="Black">
             <FlowDocument>
                 <Paragraph>
-                    <Run Text="Log"/>
+                    <Run Text="Log" Foreground="White"/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>

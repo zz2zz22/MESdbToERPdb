@@ -1,1 +1,30 @@
 08:19:00.594 MESdbToERPdb 1.0.0 : Started 
+16:08:53.979 MESdbToERPdb 1.0.0 : Started 
+16:08:56.946 Database Responce : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'uuid = '5GMT6TLUPE81'' at line 1
+16:08:56.960 GetListTransferOrder : There is no row at position 0.
+16:08:56.960 Upload to data to ERP finished! : 
+16:11:34.709 MESdbToERPdb 1.0.0 : Started 
+16:11:36.795 Database Responce : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'uuid = '5GMT6TLUPE81'' at line 1
+16:11:36.809 GetListTransferOrder : There is no row at position 0.
+16:11:36.826 Upload to data to ERP finished! : 
+16:12:18.716 MESdbToERPdb 1.0.0 : Started 
+16:12:20.677 Database Responce : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'uuid = '5GMT6TLUPE81'' at line 1
+16:12:20.690 GetListTransferOrder : There is no row at position 0.
+16:12:20.690 Upload to data to ERP finished! : 
+16:13:24.047 MESdbToERPdb 1.0.0 : Started 
+16:13:25.689 Database Responce : You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where uuid = '5GMT6TLUPE81'' at line 1
+16:13:25.700 GetListTransferOrder : There is no row at position 0.
+16:13:25.701 Upload to data to ERP finished! : 
+16:13:52.986 MESdbToERPdb 1.0.0 : Started 
+16:15:35.468 MESdbToERPdb 1.0.0 : Started 
+16:17:22.292 Database Responce : Object reference not set to an instance of an object.
+16:19:35.721 MESdbToERPdb 1.0.0 : Started 
+16:20:18.352 MESdbToERPdb 1.0.0 : Started 
+16:21:08.478 MESdbToERPdb 1.0.0 : Started 
+16:47:37.287 MESdbToERPdb 1.0.0 : Started 
+16:49:42.164 MESdbToERPdb 1.0.0 : Started 
+16:53:30.479 MESdbToERPdb 1.0.0 : Started 
+17:03:27.276 MESdbToERPdb 1.0.0 : Started 
+17:05:48.615 MESdbToERPdb 1.0.0 : Started 
+17:10:19.698 MESdbToERPdb 1.0.0 : Started 
+17:10:48.262 GetListTransferOrder : Input string was not in a correct format.

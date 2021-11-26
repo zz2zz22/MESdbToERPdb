@@ -179,7 +179,8 @@ namespace MESdbToERPdb
             //UploadMain uploadMain = new UploadMain();
             //uploadMain.GetListLOT();
             #endregion
-
+            DateTime dIn = Convert.ToDateTime("2021-11-01 10:00:00");
+            DateTime dOut = Convert.ToDateTime("2021-11-02 12:00:00");
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
             //uploadMain.GetListTransferOrder();
@@ -187,7 +188,7 @@ namespace MESdbToERPdb
             btn_stop.Enabled = true;
             //insertERPSFCTC insert = new insertERPSFCTC();
             //insert.InsertdataToERP("B511-19120073;0010;B01;B01", "BMH1284056S02", "80", "0", "20211101", "00:00:00"); //test truyền dữ liệu tạo phiếu chuyển D201
-
+            uploadMain.GetListTransferOrder(dIn, dOut);
             //rtb_log.Text = "Upload to data to ERP finished!";
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
             ClearMemory.CleanMemory();

@@ -20,10 +20,21 @@ namespace MESdbToERPdb
         //    return DatabaseSQLServerUtils.GetDBConnection(datasource, database, username, password);
         //}
 
+        public static SqlConnection GetERPTestDBConnection() //ERP trên con .11 db - TLVN2 (dùng để test) con chính ERP trong db TECHLINK (KHÔNG ĐƯỢC ĐỘNG VÀO NẾU CHƯA TEST KĨ )
+        {
+            string datasource = "172.16.0.11"; // Main ERP test connection "TLVN2"
+            string database = "TL05112021"; // TL05112021
+            string username = "soft";
+            string password = "techlink@!@#";
+
+            //string connectionString = @"Data Source=DESKTOP-R9UCIUR/SQLEXPRESS;Initial Catalog=TLVN2; Integrated Security = True"; //Test on local server clone from mes_interface on MES database.
+            return DatabaseSQLServerUtils.GetERPDBConnection(datasource, database, username, password);
+        }
+
         public static SqlConnection GetERPDBConnection() //ERP trên con .11 db - TLVN2 (dùng để test) con chính ERP trong db TECHLINK (KHÔNG ĐƯỢC ĐỘNG VÀO NẾU CHƯA TEST KĨ )
         {
             string datasource = "172.16.0.11"; // Main ERP test connection "TLVN2"
-            string database = "TLVN2";
+            string database = "TECHLINK";
             string username = "soft";
             string password = "techlink@!@#";
 
