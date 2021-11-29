@@ -179,7 +179,7 @@ namespace MESdbToERPdb
             //UploadMain uploadMain = new UploadMain();
             //uploadMain.GetListLOT();
             #endregion
-            DateTime dIn = Convert.ToDateTime("2021-11-01 10:00:00");
+            DateTime dIn = Convert.ToDateTime("2021-11-01 11:00:00");
             DateTime dOut = Convert.ToDateTime("2021-11-02 12:00:00");
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();

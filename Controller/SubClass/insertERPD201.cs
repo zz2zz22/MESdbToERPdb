@@ -135,10 +135,10 @@ namespace MESdbToERPdb
                     sqlInsertSFCTB.Append(" TB021,TB022,TB023,TB024,TB025,TB026,TB027,TB028,TB031,TB034,TB036,TB037,TB038,TB039,");
                     sqlInsertSFCTB.Append("TB200,TB201,TB202)");
                     sqlInsertSFCTB.Append(" values ( ");
-                    sqlInsertSFCTB.Append("'TLVN2','BQC01','JG01','" + transdate + "','BQC01','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
-                    sqlInsertSFCTB.Append("'D201','" + TC002 + "','" + dateTm + "','1','" + TA006 + "','" + TA007 + "','1','" + TA006 + "','" + TA007 + "','TL',0,'N','Y','','" + transdate + "','MES','N','','','',");
+                    sqlInsertSFCTB.Append("'TLVN2','BQC01','JG01','" + dateTm + "','BQC01','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
+                    sqlInsertSFCTB.Append("'D201','" + TC002 + "','" + transdate + "','1','" + TA006 + "','" + TA007 + "','1','" + TA006 + "','" + TA007 + "','TL',0,'N','Y','','" + transdate + "','MES','N','','','',");
                     sqlInsertSFCTB.Append("'','" + MOCTA56 + "','','','" + month + "'," + MOCTA57 + ",'0','','0','" + MOCTA70 + "','VND',1,'','',");
-                    sqlInsertSFCTB.Append(TC036 + "," + output + "," + NG + " ");
+                    sqlInsertSFCTB.Append(TC036 + "," + output + "," + NG );
                     sqlInsertSFCTB.Append(")");
                     sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" + TC002);
@@ -187,14 +187,14 @@ namespace MESdbToERPdb
 
                     //update MOCTA
                     StringBuilder UpdateMOCTA = new StringBuilder();
-                    UpdateMOCTA.Append(" update MOCTA set TA018 = TA018 + " + NG + ", TA047 = TA047 + " + KLNG + " , MODIFIER ='BQC01', MODI_DATE ='" + date + "',MODI_TIME ='" + time + "', MODI_AP ='SFT', MODI_PRID ='SFCMI05'  where TA001 = '" + MP + "' and TA002 = '" + SP + "' ");
+                    UpdateMOCTA.Append(" update MOCTA set TA018 = TA018 + " + NG + ", TA047 = TA047 + " + KLNG + " , MODIFIER ='BQC01', MODI_DATE ='" + dateTm + "',MODI_TIME ='" + time + "', MODI_AP ='SFT', MODI_PRID ='SFCMI05'  where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                     sqlUpdate.sqlExecuteNonQuery(UpdateMOCTA.ToString(), false);
                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Updated code: ", MP + SP);
                 }
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "updateERPD201(string "+ MP+"-"+ SP +")", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "updateERPD201(string " + MP + "-" + SP + ")", ex.Message);
             }
         }
     }
