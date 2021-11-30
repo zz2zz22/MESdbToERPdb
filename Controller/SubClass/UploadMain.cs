@@ -121,10 +121,6 @@ namespace MESdbToERPdb
                                         }
                                     }
                                 }
-                                else
-                                {
-                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển.");
-                                }
                             }
                             else
                             {
