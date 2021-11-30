@@ -45,13 +45,14 @@ namespace MESdbToERPdb
                     ComboBox cmb_jobRecord = new ComboBox();
                    
                     DataTable dtJobRecord = new DataTable();
-                    string getTableJR = "select uuid, job_order_uuid, create_date from job_order_record where job_order_uuid = '" + jobOrder_id + "'";
+                    string getTableJR = "select uuid, job_order_uuid, create_date from job_order_record where job_order_uuid = '" + jobOrder_id + "' and product_lot_no = '"+ productLotNo +"'";
                     data.sqlDataAdapterFillDatatable(getTableJR, ref dtJobRecord);
                     TimeSpan minDate = new TimeSpan(3,0,0,0);
                     int flag = 0;
                     for (int i = 0; i< dtJobRecord.Rows.Count;i++)
                     {
-                        TimeSpan subDate = Convert.ToDateTime(dtJobRecord.Rows[i]["create_date"].ToString()).Subtract(createDateJM);
+                        TimeSpan subDate = new TimeSpan(0, 0, 0, 0);
+                        subDate = Convert.ToDateTime(dtJobRecord.Rows[i]["create_date"].ToString()).Subtract(createDateJM);
                         if ( subDate < minDate )
                         {
                             minDate = subDate;
@@ -59,7 +60,6 @@ namespace MESdbToERPdb
                         }
                     }
                     string jobOrderRecord_id = dtJobRecord.Rows[flag]["uuid"].ToString();
-
 
                     int OKQty = int.Parse(con2.sqlExecuteScalarString("select distinct actual_pass_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
                     int NGQty = int.Parse(con2.sqlExecuteScalarString("select distinct actual_fail_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
@@ -81,15 +81,55 @@ namespace MESdbToERPdb
                         string SP = erpCode.Substring(4);
 
                         int checkD1orD2 = CheckProcess(table.Rows[cmbitem]["work_order_process_uuid"].ToString(), table.Rows[cmbitem]["operation_uuid"].ToString());
-                        //check là mã có thuộc ( A511, B511, P511, J511 ) hay kg
+                        //check là mã có thuộc ( A511, B511, P511, J511, P512 ) hay kg
                         string operationCode = table.Rows[cmbitem]["operation_no"].ToString();
                         string ParentOrgCode = GetParentOrganizationCode(table.Rows[cmbitem]["belong_organization"].ToString());
+                        bool isOperationJM = false;
+                        if (table.Rows[cmbitem]["operation_no"].ToString().Substring(0, 2) == "JM")
+                        {
+                            isOperationJM = true;
+                        } else isOperationJM = false;
 
-
+                        
                         insertERP_D201 classinsertD2 = new insertERP_D201();
                         insertERP_D101 classinsertD1 = new insertERP_D101();
-                        if ((MP == "A511") || (MP == "B511") || (MP == "P511") || (MP == "J511"))
+                        if ((MP == "A511") || (MP == "B511") || (MP == "P511") || (MP == "J511") || (MP == "P512"))
                         {
+                            if (MP == "P512" && table.Rows[cmbitem]["belong_organization"].ToString() == "3VFVREIJ1R41")
+                            {
+                                if (!isOperationJM)
+                                {
+                                    if (OKQty + NGQty > 0)
+                                    {
+                                        if (checkSemiOngLon == "")
+                                        {
+                                            if (checkD1orD2 == 2)
+                                            {
+                                                //update D201 to realtime
+                                                classinsertD2.InsertdataToERP_D201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate, DateUp, TimeUp);
+                                                classinsertD2.updateERPD201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate, DateUp, TimeUp); //check transdate 
+                                            }
+                                            if (checkD1orD2 == 1)
+                                            {
+                                                classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty.ToString(), transDate, DateUp, TimeUp);
+                                                classinsertD1.updateERPD101(MP, SP, OKQty.ToString(), transDate, DateUp, TimeUp);
+                                            }
+                                            else
+                                            {
+                                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201");
+                                            }
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển.");
+                                }
+                            }
+                            else
+                            {
+
+                            }
                             if (OKQty + NGQty > 0)
                             {
                                 if (checkSemiOngLon == "")
@@ -97,13 +137,17 @@ namespace MESdbToERPdb
                                     if (checkD1orD2 == 2)
                                     {
                                         //update D201 to realtime
-                                        classinsertD2.InsertdataToERP_D201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
-                                        classinsertD2.updateERPD201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp); //check transdate 
+                                        classinsertD2.InsertdataToERP_D201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate, DateUp, TimeUp);
+                                        classinsertD2.updateERPD201(MP, SP, OKQty.ToString(), NGQty.ToString(), transDate, DateUp, TimeUp); //check transdate 
                                     }
                                     if (checkD1orD2 == 1)
                                     {
-                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
-                                        classinsertD1.updateERPD101(MP, SP, OKQty.ToString(), transDate.ToString("yyyyMMdd"), DateUp, TimeUp);
+                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty.ToString(), transDate, DateUp, TimeUp);
+                                        classinsertD1.updateERPD101(MP, SP, OKQty.ToString(), transDate, DateUp, TimeUp);
+                                    }
+                                    else
+                                    {
+                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201");
                                     }
                                 }
                             }
@@ -111,7 +155,7 @@ namespace MESdbToERPdb
                     }
                     else
                     {
-                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có đơn");
+                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển.");
                     }          
                 }
             }
@@ -128,6 +172,7 @@ namespace MESdbToERPdb
             string parentOrgCode = orgCode.Substring(0, 3);
             return parentOrgCode;
         }
+        
 
         public int CheckProcess(string work_order_process_id, string operationID)
         {

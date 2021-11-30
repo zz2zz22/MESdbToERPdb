@@ -92,6 +92,7 @@ namespace MESdbToERPdb
                 }
                 else
                 {
+                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database MES planning Responce", "");
                     conn.Close();
                     return false;
                 }

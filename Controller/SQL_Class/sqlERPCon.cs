@@ -74,7 +74,7 @@ namespace MESdbToERPdb
             }
             catch(Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database ERP Responce", ex.Message);
             }
         }
 
@@ -88,13 +88,13 @@ namespace MESdbToERPdb
                 int response = cmd.ExecuteNonQuery();
                 if (response >= 1)
                 {
-                    if (result_message_show) { SystemLog.Output(SystemLog.MSG_TYPE.War, "Successful!", "Database Responce", ""); }
+                    if (result_message_show) { SystemLog.Output(SystemLog.MSG_TYPE.War, "Successful!", "Database ERP Responce", ""); }
                     conn.Close();
                     return true;
                 }
                 else
                 {
-                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", "");
+                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database ERP Responce", "");
 
                     conn.Close();
                     return false;
@@ -102,7 +102,7 @@ namespace MESdbToERPdb
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database ERP Responce", ex.Message);
                 conn.Close();
                 return false;
             }

@@ -14,6 +14,18 @@ namespace MESdbToERPdb
         string ITEMDESCRIPTION = "";
         string TC009 = "";
 
+        public string CheckTransDate(DateTime date)
+        {
+            string transDate = date.ToString("yyyy-MM-dd");
+            DateTime dateCheckMax = Convert.ToDateTime(transDate + " 08:00:00");
+            DateTime dateCheckMin = Convert.ToDateTime(transDate + " 00:00:00");
+            TimeSpan ts = new TimeSpan(1, 0, 0, 0);
+            if ((date < dateCheckMax || date == dateCheckMax) && (date > dateCheckMin || date == dateCheckMin))
+            {
+                date = date.Subtract(ts);
+            }
+            return date.ToString("yyyyMMdd");
+        }
         public string GetTC002()
         {
             string _TC002 = "";
@@ -79,13 +91,15 @@ namespace MESdbToERPdb
             return warehouse;
         }
 
-        public void InsertdataToERP_D101(string MP, string SP, string orgCode, string output, string transdate, string date, string time)
+        public void InsertdataToERP_D101(string MP, string SP, string orgCode, string output, DateTime tdate, string date, string time)
         {
             try
             {
                 
                 string dateTm = Convert.ToDateTime(date).ToString("yyyyMMdd");
-                string month = date.Substring(2, 6);
+                string month = dateTm.Substring(2, 6);
+
+                string transdate = CheckTransDate(tdate);
 
                 sqlERPCon sqlERPCon = new sqlERPCon();
 
@@ -99,7 +113,7 @@ namespace MESdbToERPdb
                 string TC047 = sqlERPCon.sqlExecuteScalarString("select distinct TA006 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 ITEMID_TC047 = TC047;
                 string TC048 = sqlERPCon.sqlExecuteScalarString("select distinct TA034 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
-                ITEMNAME_TC048 = TC048;
+                ITEMNAME_TC048 = TC048.Replace("'","''");
                 ITEMDESCRIPTION = sqlERPCon.sqlExecuteScalarString("select distinct TA035 from MOCTA where TA006 = '" + TC047 + "'");
 
                 TC009 = sqlERPCon.sqlExecuteScalarString("select distinct TA004 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'");
@@ -137,7 +151,7 @@ namespace MESdbToERPdb
                 sqlInsertSFCTC.Append("'TLVN2','BQC01','JG01','" + dateTm + "','BQC01','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
                 sqlInsertSFCTC.Append("'D101','" + TC002 + "','0001','" + MP + "','" + SP + "','','','0010','" + TC009 + "','PCS','','','6'," + output + ",0," + NG + ",0,0,0,0,");
                 sqlInsertSFCTC.Append("0,'Y','" + TB005 + "','',0,'N','N','" + TC033 + "','" + TC034 + "','N'," + output + ",0,'" + transdate + "','0','',"); // chinh sua TC033 + TC034
-                sqlInsertSFCTC.Append("'" + TA006 + "'," + KLTotal + "," + KLOK + ",0," + KLNG + ",0,'" + TC047 + "','" + TC048 + "','" + ITEMDESCRIPTION + "','KG','0','','0','0','N','N','0'");  //check lai TC050
+                sqlInsertSFCTC.Append("'" + TA006 + "'," + KLTotal + "," + KLOK + ",0," + KLNG + ",0,'" + TC047 + "','" + ITEMNAME_TC048 + "','" + ITEMDESCRIPTION + "','KG','0','','0','0','N','N','0'");  //check lai TC050
                 sqlInsertSFCTC.Append(")");
                 sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTC.ToString(), false);
 
@@ -173,10 +187,11 @@ namespace MESdbToERPdb
             }
             else return "N";
         }
-        public void updateERPD101(string MP, string SP, string output, string transdate, string date, string time)
+        public void updateERPD101(string MP, string SP, string output, DateTime tdate, string date, string time)
         {
             try
             {
+                string transdate = CheckTransDate(tdate);
                 sqlERPCon data = new sqlERPCon();
                 string TC047 = data.sqlExecuteScalarString("select distinct TA006 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 int OutputQty = int.Parse(output);

@@ -1,0 +1,1405 @@
+08:09:38.177 MESdbToERPdb 1.0.0 : Started 
+08:09:45.986 Database MES base data Response : Object reference not set to an instance of an object.
+08:09:47.214 Database MES base data Response : Object reference not set to an instance of an object.
+08:09:48.422 Database MES base data Response : Object reference not set to an instance of an object.
+08:09:49.721 Database MES base data Response : Object reference not set to an instance of an object.
+08:09:50.961 Database MES base data Response : Object reference not set to an instance of an object.
+08:09:52.255 Database MES base data Response : Object reference not set to an instance of an object.
+08:09:53.496 Database MES base data Response : Object reference not set to an instance of an object.
+08:09:54.989 Generated Form : : D101-21110390
+08:09:55.082 Updated code:  : A51121060046
+08:09:56.398 Generated Form : : D101-21110391
+08:09:56.461 Updated code:  : A51121100078
+08:09:57.808 Generated Form : : D101-21110392
+08:09:57.868 Updated code:  : A51121050316
+08:09:59.243 Generated Form : : D101-21110393
+08:09:59.303 Updated code:  : A51121100003
+08:10:00.608 Generated Form : : D101-21110394
+08:10:00.669 Updated code:  : A51121100049
+08:10:01.961 Generated Form : : D101-21110395
+08:10:02.027 Updated code:  : A51121050293
+08:10:03.326 Generated Form : : D101-21110396
+08:10:03.391 Updated code:  : A51121060128
+08:10:04.683 Generated Form : : D101-21110397
+08:10:04.746 Updated code:  : A51121050028
+08:10:06.346 Generated Form : : D101-21110398
+08:10:06.409 Updated code:  : A51121060182
+08:10:07.881 Generated Form : : D101-21110399
+08:10:07.947 Updated code:  : A51121070116
+08:10:09.363 Generated Form : : D101-21110400
+08:10:09.426 Updated code:  : A51121020121
+08:10:10.923 Generated Form : : D101-21110401
+08:10:10.982 Updated code:  : A51121060157
+08:10:12.568 Generated Form : : D101-21110402
+08:10:12.639 Updated code:  : A51121060162
+08:10:14.174 Generated Form : : D101-21110403
+08:10:14.236 Updated code:  : A51121100076
+08:10:15.743 Generated Form : : D101-21110404
+08:10:15.953 Updated code:  : A51121070014
+08:10:17.466 Generated Form : : D101-21110405
+08:10:17.543 Updated code:  : A51121100076
+08:10:18.909 Generated Form : : D101-21110406
+08:10:18.974 Updated code:  : A51121040020
+08:10:20.296 Generated Form : : D101-21110407
+08:10:20.376 Updated code:  : A51121070090
+08:10:21.762 Generated Form : : D101-21110408
+08:10:21.838 Updated code:  : A51121050293
+08:10:23.594 Generated Form : : D101-21110409
+08:10:23.664 Updated code:  : A51121100068
+08:10:25.331 Generated Form : : D101-21110410
+08:10:25.393 Updated code:  : A51121060158
+08:10:26.860 Generated Form : : D101-21110411
+08:10:26.925 Updated code:  : A51121050291
+08:10:28.413 Generated Form : : D101-21110412
+08:10:28.473 Updated code:  : A51121060118
+08:10:29.783 Generated Form : : D101-21110413
+08:10:29.846 Updated code:  : A51121030055
+08:10:31.137 Generated Form : : D101-21110414
+08:10:31.196 Updated code:  : A51121070097
+08:10:32.511 Generated Form : : D101-21110415
+08:10:32.568 Updated code:  : A51121100049
+08:10:33.866 Generated Form : : D101-21110416
+08:10:33.929 Updated code:  : A51121100090
+08:10:35.226 Generated Form : : D101-21110417
+08:10:35.288 Updated code:  : A51121100294
+08:10:36.699 Generated Form : : D101-21110418
+08:10:36.756 Updated code:  : A51121100155
+08:10:38.071 Generated Form : : D101-21110419
+08:10:38.130 Updated code:  : A51121100294
+08:10:39.414 Generated Form : : D101-21110420
+08:10:39.472 Updated code:  : A51121070092
+08:10:41.017 Generated Form : : D101-21110421
+08:10:41.079 Updated code:  : A51121050023
+08:10:42.691 Generated Form : : D101-21110422
+08:10:42.748 Updated code:  : A51121070097
+08:10:44.435 Generated Form : : D101-21110423
+08:10:44.494 Updated code:  : A51121100155
+08:10:45.913 Generated Form : : D101-21110424
+08:10:45.977 Updated code:  : A51121100173
+08:10:47.337 Generated Form : : D101-21110425
+08:10:47.395 Updated code:  : A51121100195
+08:10:48.729 Generated Form : : D101-21110426
+08:10:48.789 Updated code:  : A51121100176
+08:10:50.181 Generated Form : : D101-21110427
+08:10:50.240 Updated code:  : A51120120081
+08:10:51.535 Generated Form : : D101-21110428
+08:10:51.594 Updated code:  : A51121100083
+08:10:52.909 Generated Form : : D101-21110429
+08:10:52.967 Updated code:  : A51121020211
+08:10:54.298 Generated Form : : D101-21110430
+08:10:54.362 Updated code:  : A51121100286
+08:10:57.944 Generated Form : : D101-21110431
+08:10:58.010 Updated code:  : A51121100286
+08:10:59.252 Database MES base data Response : Object reference not set to an instance of an object.
+08:11:00.422 Database MES base data Response : Object reference not set to an instance of an object.
+08:11:01.587 Database MES base data Response : Object reference not set to an instance of an object.
+08:11:02.790 Database MES base data Response : Object reference not set to an instance of an object.
+08:11:03.972 Database MES base data Response : Object reference not set to an instance of an object.
+08:11:05.144 Database MES base data Response : Object reference not set to an instance of an object.
+08:11:06.577 Generated Form : : D201-21110567
+08:11:06.577 Code : : A511-21060128
+08:11:06.624 Updated code:  : A51121060128
+08:11:06.624 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:08.025 Generated Form : : D201-21110568
+08:11:08.025 Code : : A511-21070116
+08:11:08.070 Updated code:  : A51121070116
+08:11:08.071 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:09.393 Generated Form : : D201-21110569
+08:11:09.393 Code : : A511-21100294
+08:11:09.438 Updated code:  : A51121100294
+08:11:09.438 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:10.848 Generated Form : : D201-21110570
+08:11:10.848 Code : : A511-21020121
+08:11:10.909 Updated code:  : A51121020121
+08:11:10.909 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:12.484 Generated Form : : D201-21110571
+08:11:12.484 Code : : A511-21070014
+08:11:12.544 Updated code:  : A51121070014
+08:11:12.545 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:14.050 Generated Form : : D201-21110572
+08:11:14.050 Code : : A511-21070090
+08:11:14.115 Updated code:  : A51121070090
+08:11:14.115 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:15.543 Generated Form : : D201-21110573
+08:11:15.543 Code : : A511-21100068
+08:11:15.599 Updated code:  : A51121100068
+08:11:15.599 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:16.921 Generated Form : : D201-21110574
+08:11:16.922 Code : : A511-21050291
+08:11:16.974 Updated code:  : A51121050291
+08:11:16.974 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:18.286 Generated Form : : D201-21110575
+08:11:18.286 Code : : A511-21050291
+08:11:18.329 Updated code:  : A51121050291
+08:11:18.329 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:19.610 Generated Form : : D201-21110576
+08:11:19.610 Code : : A511-21060046
+08:11:19.657 Updated code:  : A51121060046
+08:11:19.657 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:20.961 Generated Form : : D201-21110577
+08:11:20.961 Code : : J511-20120023
+08:11:21.004 Updated code:  : J51120120023
+08:11:21.004 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:22.306 Generated Form : : D201-21110578
+08:11:22.306 Code : : A511-21100078
+08:11:22.352 Updated code:  : A51121100078
+08:11:22.353 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:23.653 Generated Form : : D201-21110579
+08:11:23.653 Code : : J511-20120023
+08:11:23.696 Updated code:  : J51120120023
+08:11:23.696 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:24.887 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:26.301 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:27.722 Generated Form : : D201-21110580
+08:11:27.722 Code : : P511-21040031
+08:11:27.765 Updated code:  : P51121040031
+08:11:27.765 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:28.954 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:30.120 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:31.484 Generated Form : : D201-21110581
+08:11:31.484 Code : : P511-21060058
+08:11:31.540 Updated code:  : P51121060058
+08:11:31.540 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:33.105 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:34.568 Generated Form : : D201-21110582
+08:11:34.568 Code : : J511-21030014
+08:11:34.618 Updated code:  : J51121030014
+08:11:34.618 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:35.948 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:37.127 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:38.315 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:39.598 Generated Form : : D201-21110583
+08:11:39.598 Code : : A511-21050316
+08:11:39.644 Updated code:  : A51121050316
+08:11:39.644 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:41.202 Generated Form : : D201-21110584
+08:11:41.202 Code : : P511-21060043
+08:11:41.246 Updated code:  : P51121060043
+08:11:41.246 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:42.476 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:44.024 Generated Form : : D201-21110585
+08:11:44.024 Code : : A511-21100003
+08:11:44.074 Updated code:  : A51121100003
+08:11:44.074 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:45.384 Generated Form : : D201-21110586
+08:11:45.384 Code : : P511-21100003
+08:11:45.431 Updated code:  : P51121100003
+08:11:45.431 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:46.597 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:47.859 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:49.369 Generated Form : : D201-21110587
+08:11:49.369 Code : : P511-21060054
+08:11:49.434 Updated code:  : P51121060054
+08:11:49.434 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:50.847 Generated Form : : D201-21110588
+08:11:50.847 Code : : A511-21100049
+08:11:50.891 Updated code:  : A51121100049
+08:11:50.891 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:52.176 Generated Form : : D201-21110589
+08:11:52.176 Code : : P511-21060003
+08:11:52.221 Updated code:  : P51121060003
+08:11:52.221 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:53.512 Generated Form : : D201-21110590
+08:11:53.512 Code : : A511-21050293
+08:11:53.556 Updated code:  : A51121050293
+08:11:53.556 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:54.843 Generated Form : : D201-21110591
+08:11:54.843 Code : : A511-21100076
+08:11:54.906 Updated code:  : A51121100076
+08:11:54.907 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:56.224 Generated Form : : D201-21110592
+08:11:56.224 Code : : A511-21050028
+08:11:56.268 Updated code:  : A51121050028
+08:11:56.268 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:57.569 Generated Form : : D201-21110593
+08:11:57.569 Code : : A511-21050293
+08:11:57.650 Updated code:  : A51121050293
+08:11:57.650 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:11:58.985 Generated Form : : D201-21110594
+08:11:58.985 Code : : A511-21060118
+08:11:59.030 Updated code:  : A51121060118
+08:11:59.030 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:00.469 Generated Form : : D101-21110432
+08:12:00.533 Updated code:  : P51121090024
+08:12:01.881 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:03.116 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:04.413 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:05.829 Generated Form : : D201-21110595
+08:12:05.829 Code : : P511-21090024
+08:12:05.872 Updated code:  : P51121090024
+08:12:05.872 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:07.224 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:08.790 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:10.671 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:11.857 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:13.122 Database MES base data Response : Object reference not set to an instance of an object.
+08:12:14.422 Database MES base data Response : Object reference not set to an instance of an object.
+08:12:15.700 Database MES base data Response : Object reference not set to an instance of an object.
+08:12:16.883 Database MES base data Response : Object reference not set to an instance of an object.
+08:12:18.108 Database MES base data Response : Object reference not set to an instance of an object.
+08:12:19.275 Database MES base data Response : Object reference not set to an instance of an object.
+08:12:20.616 Generated Form : : D101-21110433
+08:12:20.683 Updated code:  : J51121060012
+08:12:21.993 Generated Form : : D101-21110434
+08:12:22.054 Updated code:  : J51121030028
+08:12:23.325 Generated Form : : D101-21110435
+08:12:23.382 Updated code:  : J51121030028
+08:12:24.693 Generated Form : : D101-21110436
+08:12:24.973 Updated code:  : J51121060012
+08:12:26.141 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:27.312 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:28.471 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:29.646 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:30.819 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:32.002 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:33.301 Generated Form : : D201-21110596
+08:12:33.301 Code : : J511-21060012
+08:12:33.345 Updated code:  : J51121060012
+08:12:33.345 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:34.626 Generated Form : : D201-21110597
+08:12:34.626 Code : : A511-21060162
+08:12:34.668 Updated code:  : A51121060162
+08:12:34.668 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:35.993 Generated Form : : D201-21110598
+08:12:35.993 Code : : J511-21030028
+08:12:36.040 Updated code:  : J51121030028
+08:12:36.040 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:37.342 Generated Form : : D201-21110599
+08:12:37.343 Code : : A511-21060162
+08:12:37.389 Updated code:  : A51121060162
+08:12:37.389 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:38.850 Generated Form : : D201-21110600
+08:12:38.850 Code : : J511-21030028
+08:12:38.892 Updated code:  : J51121030028
+08:12:38.892 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:40.258 Generated Form : : D201-21110601
+08:12:40.259 Code : : A511-21030159
+08:12:40.302 Updated code:  : A51121030159
+08:12:40.302 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:41.617 Generated Form : : D201-21110602
+08:12:41.617 Code : : J511-21060012
+08:12:41.660 Updated code:  : J51121060012
+08:12:41.660 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:43.043 Generated Form : : D201-21110603
+08:12:43.043 Code : : A511-21020211
+08:12:43.103 Updated code:  : A51121020211
+08:12:43.103 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:44.535 Generated Form : : D201-21110604
+08:12:44.535 Code : : A511-21100286
+08:12:44.581 Updated code:  : A51121100286
+08:12:44.581 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:45.816 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:46.977 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:48.200 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:49.559 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:51.019 Generated Form : : D101-21110437
+08:12:51.075 Updated code:  : A51121060158
+08:12:52.402 Generated Form : : D101-21110438
+08:12:52.460 Updated code:  : A51121060128
+08:12:53.768 Generated Form : : D201-21110605
+08:12:53.769 Code : : A511-21100049
+08:12:53.811 Updated code:  : A51121100049
+08:12:53.811 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:12:55.132 Generated Form : : D101-21110439
+08:12:55.188 Updated code:  : A51121070116
+08:12:56.516 Generated Form : : D101-21110440
+08:12:56.576 Updated code:  : A51121100294
+08:12:58.048 Generated Form : : D101-21110441
+08:12:58.104 Updated code:  : A51121020121
+08:12:59.315 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:00.611 Generated Form : : D201-21110606
+08:13:00.611 Code : : A511-21100090
+08:13:00.656 Updated code:  : A51121100090
+08:13:00.656 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:01.961 Generated Form : : D201-21110607
+08:13:01.961 Code : : A511-21100155
+08:13:02.013 Updated code:  : A51121100155
+08:13:02.013 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:03.385 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:04.734 Generated Form : : D101-21110442
+08:13:04.799 Updated code:  : A51121030042
+08:13:06.100 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:07.352 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:08.833 Generated Form : : D101-21110443
+08:13:08.916 Updated code:  : A51121070066
+08:13:10.275 Generated Form : : D101-21110444
+08:13:10.338 Updated code:  : A51121030159
+08:13:11.696 Generated Form : : D101-21110445
+08:13:11.755 Updated code:  : A51121040020
+08:13:13.247 Generated Form : : D101-21110446
+08:13:13.333 Updated code:  : A51121070090
+08:13:14.773 Generated Form : : D101-21110447
+08:13:14.834 Updated code:  : A51121060176
+08:13:16.137 Generated Form : : D101-21110448
+08:13:16.198 Updated code:  : A51121100068
+08:13:17.488 Generated Form : : D101-21110449
+08:13:17.548 Updated code:  : A51121050291
+08:13:18.862 Generated Form : : D201-21110608
+08:13:18.863 Code : : A511-21050023
+08:13:18.906 Updated code:  : A51121050023
+08:13:18.906 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:20.240 Generated Form : : D201-21110609
+08:13:20.240 Code : : A511-21070092
+08:13:20.285 Updated code:  : A51121070092
+08:13:20.285 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:21.581 Generated Form : : D201-21110610
+08:13:21.582 Code : : A511-21070097
+08:13:21.627 Updated code:  : A51121070097
+08:13:21.627 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:22.944 Generated Form : : D101-21110450
+08:13:23.002 Updated code:  : A51121030159
+08:13:24.299 Generated Form : : D201-21110611
+08:13:24.299 Code : : A511-21100155
+08:13:24.343 Updated code:  : A51121100155
+08:13:24.343 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:25.503 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:26.701 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:28.096 Generated Form : : D201-21110612
+08:13:28.096 Code : : A511-21100173
+08:13:28.141 Updated code:  : A51121100173
+08:13:28.141 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:29.795 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:31.350 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:32.837 Generated Form : : D201-21110613
+08:13:32.837 Code : : A511-21100195
+08:13:32.882 Updated code:  : A51121100195
+08:13:32.883 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:34.440 Generated Form : : D201-21110614
+08:13:34.440 Code : : A511-21100176
+08:13:34.510 Updated code:  : A51121100176
+08:13:34.510 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:35.970 Generated Form : : D201-21110615
+08:13:35.970 Code : : A511-20120081
+08:13:36.014 Updated code:  : A51120120081
+08:13:36.015 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:37.317 Generated Form : : D201-21110616
+08:13:37.317 Code : : A511-21100083
+08:13:37.358 Updated code:  : A51121100083
+08:13:37.359 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:38.671 Generated Form : : D201-21110617
+08:13:38.671 Code : : A511-21100286
+08:13:38.715 Updated code:  : A51121100286
+08:13:38.715 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:13:40.029 Generated Form : : D101-21110451
+08:13:40.087 Updated code:  : A51121060046
+08:13:41.390 Generated Form : : D101-21110452
+08:13:41.446 Updated code:  : A51121100078
+08:13:42.790 Generated Form : : D101-21110453
+08:13:42.848 Updated code:  : A51121100286
+08:13:44.217 Generated Form : : D101-21110454
+08:13:44.275 Updated code:  : A51121070097
+08:13:45.606 Generated Form : : D101-21110455
+08:13:45.664 Updated code:  : A51121050316
+08:13:46.976 Generated Form : : D101-21110456
+08:13:47.039 Updated code:  : A51121100003
+08:13:48.352 Generated Form : : D101-21110457
+08:13:48.414 Updated code:  : A51121050046
+08:13:49.707 Generated Form : : D101-21110458
+08:13:49.767 Updated code:  : A51121100049
+08:13:51.077 Generated Form : : D101-21110459
+08:13:51.139 Updated code:  : A51121100191
+08:13:52.430 Generated Form : : D101-21110460
+08:13:52.486 Updated code:  : A51121050293
+08:13:53.786 Generated Form : : D101-21110461
+08:13:53.867 Updated code:  : A51121100083
+08:13:55.162 Generated Form : : D101-21110462
+08:13:55.218 Updated code:  : A51121100076
+08:13:56.528 Generated Form : : D101-21110463
+08:13:56.583 Updated code:  : A51121050293
+08:13:57.922 Generated Form : : D101-21110464
+08:13:57.978 Updated code:  : A51121060118
+08:13:59.640 Generated Form : : D201-21110618
+08:13:59.640 Code : : A511-21060128
+08:13:59.683 Updated code:  : A51121060128
+08:13:59.683 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:01.333 Generated Form : : D201-21110619
+08:14:01.333 Code : : A511-21070116
+08:14:01.380 Updated code:  : A51121070116
+08:14:01.380 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:02.749 Generated Form : : D201-21110620
+08:14:02.749 Code : : A511-21100294
+08:14:02.792 Updated code:  : A51121100294
+08:14:02.792 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:04.093 Generated Form : : D201-21110621
+08:14:04.093 Code : : A511-21020121
+08:14:04.138 Updated code:  : A51121020121
+08:14:04.138 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:05.433 Generated Form : : D201-21110622
+08:14:05.433 Code : : A511-21070090
+08:14:05.491 Updated code:  : A51121070090
+08:14:05.491 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:07.222 Generated Form : : D201-21110623
+08:14:07.222 Code : : A511-21060176
+08:14:07.266 Updated code:  : A51121060176
+08:14:07.266 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:08.768 Generated Form : : D201-21110624
+08:14:08.768 Code : : A511-21100068
+08:14:08.813 Updated code:  : A51121100068
+08:14:08.813 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:10.586 Generated Form : : D201-21110625
+08:14:10.586 Code : : A511-21050291
+08:14:10.629 Updated code:  : A51121050291
+08:14:10.629 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:11.944 Generated Form : : D201-21110626
+08:14:11.944 Code : : A511-21050291
+08:14:11.990 Updated code:  : A51121050291
+08:14:11.990 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:13.290 Generated Form : : D201-21110627
+08:14:13.290 Code : : A511-21080005
+08:14:13.335 Updated code:  : A51121080005
+08:14:13.335 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:14.679 Generated Form : : D201-21110628
+08:14:14.679 Code : : A511-21060046
+08:14:14.725 Updated code:  : A51121060046
+08:14:14.725 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:15.999 Generated Form : : D201-21110629
+08:14:15.999 Code : : A511-21100078
+08:14:16.045 Updated code:  : A51121100078
+08:14:16.045 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:17.398 Generated Form : : D201-21110630
+08:14:17.398 Code : : A511-21100286
+08:14:17.466 Updated code:  : A51121100286
+08:14:17.466 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:18.808 Generated Form : : D201-21110631
+08:14:18.808 Code : : A511-21070097
+08:14:18.860 Updated code:  : A51121070097
+08:14:18.861 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:20.366 Generated Form : : D201-21110632
+08:14:20.366 Code : : A511-21050316
+08:14:20.414 Updated code:  : A51121050316
+08:14:20.414 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:21.719 Generated Form : : D201-21110633
+08:14:21.719 Code : : A511-21100003
+08:14:21.790 Updated code:  : A51121100003
+08:14:21.790 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:24.266 Generated Form : : D201-21110634
+08:14:24.266 Code : : A511-21100049
+08:14:24.311 Updated code:  : A51121100049
+08:14:24.311 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:25.632 Generated Form : : D201-21110635
+08:14:25.632 Code : : A511-21100191
+08:14:25.683 Updated code:  : A51121100191
+08:14:25.683 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:26.990 Generated Form : : D201-21110636
+08:14:26.990 Code : : A511-21050293
+08:14:27.046 Updated code:  : A51121050293
+08:14:27.046 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:28.380 Generated Form : : D201-21110637
+08:14:28.380 Code : : A511-21100083
+08:14:28.426 Updated code:  : A51121100083
+08:14:28.427 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:29.750 Generated Form : : D201-21110638
+08:14:29.750 Code : : A511-21100076
+08:14:29.794 Updated code:  : A51121100076
+08:14:29.794 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:31.440 Generated Form : : D201-21110639
+08:14:31.440 Code : : A511-21050293
+08:14:31.487 Updated code:  : A51121050293
+08:14:31.487 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:33.077 Generated Form : : D201-21110640
+08:14:33.077 Code : : A511-21060118
+08:14:33.128 Updated code:  : A51121060118
+08:14:33.128 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:34.745 Generated Form : : D201-21110641
+08:14:34.745 Code : : A511-20120149
+08:14:34.796 Updated code:  : A51120120149
+08:14:34.796 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:36.438 Generated Form : : D101-21110465
+08:14:36.498 Updated code:  : P51121060003
+08:14:37.940 Generated Form : : D101-21110466
+08:14:38.004 Updated code:  : P51121060054
+08:14:39.303 Generated Form : : D101-21110467
+08:14:39.361 Updated code:  : P51121100003
+08:14:40.657 Generated Form : : D101-21110468
+08:14:40.718 Updated code:  : P51121060043
+08:14:42.056 Generated Form : : D101-21110469
+08:14:42.125 Updated code:  : J51121030014
+08:14:43.437 Generated Form : : D101-21110470
+08:14:43.497 Updated code:  : P51121090024
+08:14:44.809 Generated Form : : D101-21110471
+08:14:44.870 Updated code:  : P51121060058
+08:14:46.185 Generated Form : : D101-21110472
+08:14:46.244 Updated code:  : P51121040031
+08:14:47.542 Generated Form : : D101-21110473
+08:14:47.626 Updated code:  : J51120120023
+08:14:48.945 Generated Form : : D201-21110642
+08:14:49.038 Code : : J511-20120023
+08:14:49.081 Updated code:  : J51120120023
+08:14:49.081 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:50.362 Generated Form : : D201-21110643
+08:14:50.362 Code : : P511-21040031
+08:14:50.404 Updated code:  : P51121040031
+08:14:50.404 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:51.693 Generated Form : : D201-21110644
+08:14:51.693 Code : : P511-21060058
+08:14:51.748 Updated code:  : P51121060058
+08:14:51.749 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:53.061 Generated Form : : D201-21110645
+08:14:53.061 Code : : P511-21090024
+08:14:53.103 Updated code:  : P51121090024
+08:14:53.104 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:54.396 Generated Form : : D201-21110646
+08:14:54.396 Code : : J511-21030014
+08:14:54.441 Updated code:  : J51121030014
+08:14:54.442 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:55.747 Generated Form : : D201-21110647
+08:14:55.748 Code : : P511-21060043
+08:14:55.790 Updated code:  : P51121060043
+08:14:55.790 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:57.083 Generated Form : : D201-21110648
+08:14:57.083 Code : : P511-21100003
+08:14:57.129 Updated code:  : P51121100003
+08:14:57.129 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:14:58.451 Generated Form : : D201-21110649
+08:14:58.451 Code : : P511-21060054
+08:14:58.502 Updated code:  : P51121060054
+08:14:58.502 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:00.047 Generated Form : : D201-21110650
+08:15:00.048 Code : : P511-21060003
+08:15:00.096 Updated code:  : P51121060003
+08:15:00.096 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:01.416 Database MES base data Response : Object reference not set to an instance of an object.
+08:15:02.714 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:04.061 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:05.247 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:06.431 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:07.605 Database MES base data Response : Object reference not set to an instance of an object.
+08:15:09.138 Database MES base data Response : Object reference not set to an instance of an object.
+08:15:10.322 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:11.495 Database MES base data Response : Object reference not set to an instance of an object.
+08:15:12.674 Database MES base data Response : Object reference not set to an instance of an object.
+08:15:13.921 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:15.366 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:16.632 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:17.806 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:19.096 Generated Form : : D201-21110651
+08:15:19.096 Code : : A511-21070097
+08:15:19.142 Updated code:  : A51121070097
+08:15:19.144 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:20.462 Generated Form : : D201-21110652
+08:15:20.462 Code : : A511-21020056
+08:15:20.509 Updated code:  : A51121020056
+08:15:20.509 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:15:21.682 Database MES base data Response : Object reference not set to an instance of an object.
+08:15:22.864 Database MES base data Response : Object reference not set to an instance of an object.
+08:15:24.053 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:44.819 MESdbToERPdb 1.0.0 : Started 
+08:16:48.052 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:49.349 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:50.611 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:51.884 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:53.170 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:54.539 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:55.915 Database MES base data Response : Object reference not set to an instance of an object.
+08:16:57.427 Generated Form : : D101-21110390
+08:16:57.491 Updated code:  : A51121060046
+08:16:58.963 Generated Form : : D101-21110391
+08:16:59.029 Updated code:  : A51121100078
+08:17:00.400 Generated Form : : D101-21110392
+08:17:00.465 Updated code:  : A51121050316
+08:17:01.879 Generated Form : : D101-21110393
+08:17:01.937 Updated code:  : A51121100003
+08:17:03.301 Generated Form : : D101-21110394
+08:17:03.362 Updated code:  : A51121100049
+08:17:04.737 Generated Form : : D101-21110395
+08:17:04.794 Updated code:  : A51121050293
+08:17:06.409 Generated Form : : D101-21110396
+08:17:06.468 Updated code:  : A51121060128
+08:17:08.007 Generated Form : : D101-21110397
+08:17:08.066 Updated code:  : A51121050028
+08:17:09.412 Generated Form : : D101-21110398
+08:17:09.472 Updated code:  : A51121060182
+08:17:10.851 Generated Form : : D101-21110399
+08:17:10.912 Updated code:  : A51121070116
+08:17:12.271 Generated Form : : D101-21110400
+08:17:12.333 Updated code:  : A51121020121
+08:17:13.934 Generated Form : : D101-21110401
+08:17:13.993 Updated code:  : A51121060157
+08:17:15.468 Generated Form : : D101-21110402
+08:17:15.527 Updated code:  : A51121060162
+08:17:16.887 Generated Form : : D101-21110403
+08:17:16.948 Updated code:  : A51121100076
+08:17:18.283 Generated Form : : D101-21110404
+08:17:18.342 Updated code:  : A51121070014
+08:17:19.676 Generated Form : : D101-21110405
+08:17:19.734 Updated code:  : A51121100076
+08:17:21.085 Generated Form : : D101-21110406
+08:17:21.144 Updated code:  : A51121040020
+08:17:22.498 Generated Form : : D101-21110407
+08:17:22.560 Updated code:  : A51121070090
+08:17:23.892 Generated Form : : D101-21110408
+08:17:23.949 Updated code:  : A51121050293
+08:17:25.516 Generated Form : : D101-21110409
+08:17:25.582 Updated code:  : A51121100068
+08:17:27.182 Generated Form : : D101-21110410
+08:17:27.241 Updated code:  : A51121060158
+08:17:28.589 Generated Form : : D101-21110390
+08:17:28.718 Updated code:  : A51121050291
+08:17:30.058 Generated Form : : D101-21110390
+08:17:30.125 Updated code:  : A51121060118
+08:17:31.467 Generated Form : : D101-21110390
+08:17:31.525 Updated code:  : A51121030055
+08:17:32.861 Generated Form : : D101-21110390
+08:17:32.920 Updated code:  : A51121070097
+08:17:34.266 Generated Form : : D101-21110391
+08:17:34.325 Updated code:  : A51121100049
+08:17:35.730 Generated Form : : D101-21110392
+08:17:35.790 Updated code:  : A51121100090
+08:17:37.110 Generated Form : : D101-21110393
+08:17:37.169 Updated code:  : A51121100294
+08:17:38.515 Generated Form : : D101-21110394
+08:17:38.577 Updated code:  : A51121100155
+08:17:39.893 Generated Form : : D101-21110395
+08:17:39.952 Updated code:  : A51121100294
+08:17:41.286 Generated Form : : D101-21110396
+08:17:41.348 Updated code:  : A51121070092
+08:17:42.679 Generated Form : : D101-21110397
+08:17:42.741 Updated code:  : A51121050023
+08:17:44.130 Generated Form : : D101-21110398
+08:17:44.194 Updated code:  : A51121070097
+08:17:45.645 Generated Form : : D101-21110399
+08:17:45.706 Updated code:  : A51121100155
+08:17:52.463 MESdbToERPdb 1.0.0 : Started 
+08:17:55.765 Database MES base data Response : Object reference not set to an instance of an object.
+08:17:56.998 Database MES base data Response : Object reference not set to an instance of an object.
+08:17:58.448 Database MES base data Response : Object reference not set to an instance of an object.
+08:17:59.928 Database MES base data Response : Object reference not set to an instance of an object.
+08:18:01.475 Database MES base data Response : Object reference not set to an instance of an object.
+08:18:02.693 Database MES base data Response : Object reference not set to an instance of an object.
+08:18:03.907 Database MES base data Response : Object reference not set to an instance of an object.
+08:18:05.358 Generated Form : : D101-21110390
+08:18:05.422 Updated code:  : A51121060046
+08:18:06.946 Generated Form : : D101-21110391
+08:18:07.006 Updated code:  : A51121100078
+08:18:08.414 Generated Form : : D101-21110392
+08:18:08.475 Updated code:  : A51121050316
+08:18:09.825 Generated Form : : D101-21110393
+08:18:09.882 Updated code:  : A51121100003
+08:18:11.229 Generated Form : : D101-21110394
+08:18:11.289 Updated code:  : A51121100049
+08:18:12.610 Generated Form : : D101-21110395
+08:18:12.672 Updated code:  : A51121050293
+08:18:14.139 Generated Form : : D101-21110396
+08:18:14.197 Updated code:  : A51121060128
+08:18:15.536 Generated Form : : D101-21110397
+08:18:15.595 Updated code:  : A51121050028
+08:18:17.102 Generated Form : : D101-21110398
+08:18:17.178 Updated code:  : A51121060182
+08:18:18.539 Generated Form : : D101-21110399
+08:18:18.600 Updated code:  : A51121070116
+08:18:19.945 Generated Form : : D101-21110400
+08:18:20.001 Updated code:  : A51121020121
+08:18:21.572 Generated Form : : D101-21110401
+08:18:21.630 Updated code:  : A51121060157
+08:18:23.074 Generated Form : : D101-21110402
+08:18:23.131 Updated code:  : A51121060162
+08:18:24.480 Generated Form : : D101-21110403
+08:18:24.538 Updated code:  : A51121100076
+08:18:25.887 Generated Form : : D101-21110404
+08:18:25.950 Updated code:  : A51121070014
+08:18:27.290 Generated Form : : D101-21110405
+08:18:27.345 Updated code:  : A51121100076
+08:18:28.730 Generated Form : : D101-21110406
+08:18:28.786 Updated code:  : A51121040020
+08:18:30.129 Generated Form : : D101-21110407
+08:18:30.187 Updated code:  : A51121070090
+08:18:31.537 Generated Form : : D101-21110408
+08:18:31.593 Updated code:  : A51121050293
+08:18:32.934 Generated Form : : D101-21110409
+08:18:32.995 Updated code:  : A51121100068
+08:18:34.430 Generated Form : : D101-21110410
+08:18:34.498 Updated code:  : A51121060158
+08:18:35.810 Generated Form : : D101-21110411
+08:18:35.869 Updated code:  : A51121050291
+08:18:37.190 Generated Form : : D101-21110412
+08:18:37.247 Updated code:  : A51121060118
+08:18:38.593 Generated Form : : D101-21110413
+08:18:38.649 Updated code:  : A51121030055
+08:18:39.973 Generated Form : : D101-21110414
+08:18:40.038 Updated code:  : A51121070097
+08:18:41.384 Generated Form : : D101-21110415
+08:18:41.446 Updated code:  : A51121100049
+08:18:42.799 Generated Form : : D101-21110416
+08:18:42.855 Updated code:  : A51121100090
+08:18:44.179 Generated Form : : D101-21110417
+08:18:44.236 Updated code:  : A51121100294
+08:18:45.718 Generated Form : : D101-21110418
+08:18:45.776 Updated code:  : A51121100155
+08:18:47.705 Generated Form : : D101-21110419
+08:18:47.763 Updated code:  : A51121100294
+08:18:49.527 Generated Form : : D101-21110420
+08:18:49.586 Updated code:  : A51121070092
+08:18:51.234 Generated Form : : D101-21110421
+08:18:51.291 Updated code:  : A51121050023
+08:18:52.619 Generated Form : : D101-21110422
+08:18:52.678 Updated code:  : A51121070097
+08:18:53.986 Generated Form : : D101-21110423
+08:18:54.044 Updated code:  : A51121100155
+08:18:55.371 Generated Form : : D101-21110424
+08:18:55.428 Updated code:  : A51121100173
+08:18:56.733 Generated Form : : D101-21110425
+08:18:56.790 Updated code:  : A51121100195
+08:18:58.102 Generated Form : : D101-21110426
+08:18:58.162 Updated code:  : A51121100176
+08:18:59.468 Generated Form : : D101-21110427
+08:18:59.525 Updated code:  : A51120120081
+08:19:00.832 Generated Form : : D101-21110428
+08:19:00.890 Updated code:  : A51121100083
+08:19:02.196 Generated Form : : D101-21110429
+08:19:02.254 Updated code:  : A51121020211
+08:19:03.594 Generated Form : : D101-21110430
+08:19:03.650 Updated code:  : A51121100286
+08:19:04.959 Generated Form : : D101-21110431
+08:19:05.017 Updated code:  : A51121100286
+08:19:08.581 Database MES base data Response : Object reference not set to an instance of an object.
+08:19:09.792 Database MES base data Response : Object reference not set to an instance of an object.
+08:19:11.010 Database MES base data Response : Object reference not set to an instance of an object.
+08:19:12.235 Database MES base data Response : Object reference not set to an instance of an object.
+08:19:13.435 Database MES base data Response : Object reference not set to an instance of an object.
+08:19:14.663 Database MES base data Response : Object reference not set to an instance of an object.
+08:19:16.026 Generated Form : : D201-21110567
+08:19:16.026 Code : : A511-21060128
+08:19:16.079 Updated code:  : A51121060128
+08:19:16.080 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:17.415 Generated Form : : D201-21110568
+08:19:17.415 Code : : A511-21070116
+08:19:17.459 Updated code:  : A51121070116
+08:19:17.459 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:18.827 Generated Form : : D201-21110569
+08:19:18.829 Code : : A511-21100294
+08:19:18.899 Updated code:  : A51121100294
+08:19:18.899 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:20.229 Generated Form : : D201-21110570
+08:19:20.229 Code : : A511-21020121
+08:19:20.274 Updated code:  : A51121020121
+08:19:20.274 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:21.615 Generated Form : : D201-21110571
+08:19:21.615 Code : : A511-21070014
+08:19:21.661 Updated code:  : A51121070014
+08:19:21.661 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:23.002 Generated Form : : D201-21110572
+08:19:23.002 Code : : A511-21070090
+08:19:23.054 Updated code:  : A51121070090
+08:19:23.054 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:24.395 Generated Form : : D201-21110573
+08:19:24.395 Code : : A511-21100068
+08:19:24.497 Updated code:  : A51121100068
+08:19:24.497 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:25.844 Generated Form : : D201-21110574
+08:19:25.844 Code : : A511-21050291
+08:19:25.888 Updated code:  : A51121050291
+08:19:25.888 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:27.249 Generated Form : : D201-21110575
+08:19:27.249 Code : : A511-21050291
+08:19:27.294 Updated code:  : A51121050291
+08:19:27.295 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:28.682 Generated Form : : D201-21110576
+08:19:28.682 Code : : A511-21060046
+08:19:28.728 Updated code:  : A51121060046
+08:19:28.728 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:30.085 Generated Form : : D201-21110577
+08:19:30.085 Code : : J511-20120023
+08:19:30.132 Updated code:  : J51120120023
+08:19:30.133 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:31.723 Generated Form : : D201-21110578
+08:19:31.723 Code : : A511-21100078
+08:19:31.767 Updated code:  : A51121100078
+08:19:31.767 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:33.287 Generated Form : : D201-21110579
+08:19:33.287 Code : : J511-20120023
+08:19:33.333 Updated code:  : J51120120023
+08:19:33.333 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:34.562 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:35.838 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:37.507 Generated Form : : D201-21110580
+08:19:37.507 Code : : P511-21040031
+08:19:37.669 Updated code:  : P51121040031
+08:19:37.670 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:39.571 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:40.942 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:42.473 Generated Form : : D201-21110581
+08:19:42.474 Code : : P511-21060058
+08:19:42.521 Updated code:  : P51121060058
+08:19:42.522 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:43.916 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:45.416 Generated Form : : D201-21110582
+08:19:45.416 Code : : J511-21030014
+08:19:45.462 Updated code:  : J51121030014
+08:19:45.463 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:46.780 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:47.989 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:49.265 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:50.811 Generated Form : : D201-21110583
+08:19:50.811 Code : : A511-21050316
+08:19:50.860 Updated code:  : A51121050316
+08:19:50.860 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:52.426 Generated Form : : D201-21110584
+08:19:52.426 Code : : P511-21060043
+08:19:52.478 Updated code:  : P51121060043
+08:19:52.478 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:53.799 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:55.295 Generated Form : : D201-21110585
+08:19:55.295 Code : : A511-21100003
+08:19:55.397 Updated code:  : A51121100003
+08:19:55.397 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:56.726 Generated Form : : D201-21110586
+08:19:56.726 Code : : P511-21100003
+08:19:56.770 Updated code:  : P51121100003
+08:19:56.770 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:58.023 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:19:59.496 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:01.144 Generated Form : : D201-21110587
+08:20:01.144 Code : : P511-21060054
+08:20:01.192 Updated code:  : P51121060054
+08:20:01.192 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:02.773 Generated Form : : D201-21110588
+08:20:02.773 Code : : A511-21100049
+08:20:02.818 Updated code:  : A51121100049
+08:20:02.818 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:04.369 Generated Form : : D201-21110589
+08:20:04.369 Code : : P511-21060003
+08:20:04.414 Updated code:  : P51121060003
+08:20:04.414 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:05.751 Generated Form : : D201-21110590
+08:20:05.751 Code : : A511-21050293
+08:20:05.796 Updated code:  : A51121050293
+08:20:05.796 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:07.124 Generated Form : : D201-21110591
+08:20:07.124 Code : : A511-21100076
+08:20:07.167 Updated code:  : A51121100076
+08:20:07.167 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:08.524 Generated Form : : D201-21110592
+08:20:08.524 Code : : A511-21050028
+08:20:08.567 Updated code:  : A51121050028
+08:20:08.567 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:09.905 Generated Form : : D201-21110593
+08:20:09.905 Code : : A511-21050293
+08:20:09.950 Updated code:  : A51121050293
+08:20:09.950 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:11.284 Generated Form : : D201-21110594
+08:20:11.284 Code : : A511-21060118
+08:20:11.330 Updated code:  : A51121060118
+08:20:11.330 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:13.771 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:14.989 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:16.200 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:17.556 Generated Form : : D201-21110595
+08:20:17.556 Code : : P511-21090024
+08:20:17.599 Updated code:  : P51121090024
+08:20:17.600 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:18.813 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:20.030 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:21.221 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:22.436 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:23.664 Database MES base data Response : Object reference not set to an instance of an object.
+08:20:25.734 Database MES base data Response : Object reference not set to an instance of an object.
+08:20:27.428 Database MES base data Response : Object reference not set to an instance of an object.
+08:20:28.702 Database MES base data Response : Object reference not set to an instance of an object.
+08:20:30.062 Database MES base data Response : Object reference not set to an instance of an object.
+08:20:31.434 Database MES base data Response : Object reference not set to an instance of an object.
+08:20:32.797 Generated Form : : D101-21110432
+08:20:32.858 Updated code:  : J51121060012
+08:20:34.330 Generated Form : : D101-21110433
+08:20:34.387 Updated code:  : J51121030028
+08:20:35.726 Generated Form : : D101-21110434
+08:20:35.784 Updated code:  : J51121030028
+08:20:37.123 Generated Form : : D101-21110435
+08:20:37.180 Updated code:  : J51121060012
+08:20:38.413 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:39.616 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:40.831 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:42.507 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:43.998 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:45.483 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:46.959 Generated Form : : D201-21110596
+08:20:46.959 Code : : J511-21060012
+08:20:47.005 Updated code:  : J51121060012
+08:20:47.005 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:48.445 Generated Form : : D201-21110597
+08:20:48.445 Code : : A511-21060162
+08:20:48.490 Updated code:  : A51121060162
+08:20:48.490 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:49.836 Generated Form : : D201-21110598
+08:20:49.836 Code : : J511-21030028
+08:20:49.878 Updated code:  : J51121030028
+08:20:49.879 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:51.220 Generated Form : : D201-21110599
+08:20:51.220 Code : : A511-21060162
+08:20:51.263 Updated code:  : A51121060162
+08:20:51.263 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:52.591 Generated Form : : D201-21110600
+08:20:52.591 Code : : J511-21030028
+08:20:52.634 Updated code:  : J51121030028
+08:20:52.634 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:53.970 Generated Form : : D201-21110601
+08:20:53.970 Code : : A511-21030159
+08:20:54.016 Updated code:  : A51121030159
+08:20:54.016 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:55.346 Generated Form : : D201-21110602
+08:20:55.346 Code : : J511-21060012
+08:20:55.391 Updated code:  : J51121060012
+08:20:55.392 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:56.711 Generated Form : : D201-21110603
+08:20:56.711 Code : : A511-21020211
+08:20:56.756 Updated code:  : A51121020211
+08:20:56.756 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:58.112 Generated Form : : D201-21110604
+08:20:58.112 Code : : A511-21100286
+08:20:58.160 Updated code:  : A51121100286
+08:20:58.160 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:20:59.425 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:00.615 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:01.815 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:03.017 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:04.352 Generated Form : : D101-21110436
+08:21:04.410 Updated code:  : A51121060158
+08:21:05.772 Generated Form : : D101-21110437
+08:21:05.831 Updated code:  : A51121060128
+08:21:07.532 Generated Form : : D201-21110605
+08:21:07.533 Code : : A511-21100049
+08:21:07.578 Updated code:  : A51121100049
+08:21:07.578 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:09.609 Generated Form : : D101-21110438
+08:21:09.666 Updated code:  : A51121070116
+08:21:11.198 Generated Form : : D101-21110439
+08:21:11.261 Updated code:  : A51121100294
+08:21:12.789 Generated Form : : D101-21110440
+08:21:12.845 Updated code:  : A51121020121
+08:21:14.291 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:15.853 Generated Form : : D201-21110606
+08:21:15.854 Code : : A511-21100090
+08:21:15.897 Updated code:  : A51121100090
+08:21:15.897 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:17.302 Generated Form : : D201-21110607
+08:21:17.302 Code : : A511-21100155
+08:21:17.346 Updated code:  : A51121100155
+08:21:17.346 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:18.604 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:20.434 Generated Form : : D101-21110441
+08:21:20.499 Updated code:  : A51121030042
+08:21:21.966 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:23.498 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:25.080 Generated Form : : D101-21110442
+08:21:25.143 Updated code:  : A51121070066
+08:21:26.923 Generated Form : : D101-21110443
+08:21:26.989 Updated code:  : A51121030159
+08:21:28.803 Generated Form : : D101-21110444
+08:21:28.862 Updated code:  : A51121040020
+08:21:30.543 Generated Form : : D101-21110445
+08:21:30.599 Updated code:  : A51121070090
+08:21:32.091 Generated Form : : D101-21110446
+08:21:32.153 Updated code:  : A51121060176
+08:21:33.462 Generated Form : : D101-21110447
+08:21:33.518 Updated code:  : A51121100068
+08:21:34.954 Generated Form : : D101-21110448
+08:21:35.011 Updated code:  : A51121050291
+08:21:36.342 Generated Form : : D201-21110608
+08:21:36.342 Code : : A511-21050023
+08:21:36.387 Updated code:  : A51121050023
+08:21:36.387 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:37.708 Generated Form : : D201-21110609
+08:21:37.708 Code : : A511-21070092
+08:21:37.760 Updated code:  : A51121070092
+08:21:37.760 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:39.381 Generated Form : : D201-21110610
+08:21:39.382 Code : : A511-21070097
+08:21:39.440 Updated code:  : A51121070097
+08:21:39.440 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:40.838 Generated Form : : D101-21110449
+08:21:40.893 Updated code:  : A51121030159
+08:21:42.207 Generated Form : : D201-21110611
+08:21:42.207 Code : : A511-21100155
+08:21:42.251 Updated code:  : A51121100155
+08:21:42.252 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:43.448 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:44.650 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:45.959 Generated Form : : D201-21110612
+08:21:45.959 Code : : A511-21100173
+08:21:46.002 Updated code:  : A51121100173
+08:21:46.002 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:47.187 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:48.383 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:49.872 Generated Form : : D201-21110613
+08:21:49.872 Code : : A511-21100195
+08:21:49.920 Updated code:  : A51121100195
+08:21:49.920 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:51.247 Generated Form : : D201-21110614
+08:21:51.247 Code : : A511-21100176
+08:21:51.292 Updated code:  : A51121100176
+08:21:51.292 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:52.660 Generated Form : : D201-21110615
+08:21:52.660 Code : : A511-20120081
+08:21:52.717 Updated code:  : A51120120081
+08:21:52.717 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:54.124 Generated Form : : D201-21110616
+08:21:54.124 Code : : A511-21100083
+08:21:54.171 Updated code:  : A51121100083
+08:21:54.171 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:55.576 Generated Form : : D201-21110617
+08:21:55.576 Code : : A511-21100286
+08:21:55.623 Updated code:  : A51121100286
+08:21:55.623 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:21:57.085 Generated Form : : D101-21110450
+08:21:57.142 Updated code:  : A51121060046
+08:21:58.489 Generated Form : : D101-21110451
+08:21:58.548 Updated code:  : A51121100078
+08:21:59.877 Generated Form : : D101-21110452
+08:21:59.940 Updated code:  : A51121100286
+08:22:01.258 Generated Form : : D101-21110453
+08:22:01.315 Updated code:  : A51121070097
+08:22:02.650 Generated Form : : D101-21110454
+08:22:02.707 Updated code:  : A51121050316
+08:22:04.483 Generated Form : : D101-21110455
+08:22:04.542 Updated code:  : A51121100003
+08:22:06.012 Generated Form : : D101-21110456
+08:22:06.070 Updated code:  : A51121050046
+08:22:07.908 Generated Form : : D101-21110457
+08:22:07.971 Updated code:  : A51121100049
+08:22:09.749 Generated Form : : D101-21110458
+08:22:09.823 Updated code:  : A51121100191
+08:22:11.585 Generated Form : : D101-21110459
+08:22:11.688 Updated code:  : A51121050293
+08:22:13.545 Generated Form : : D101-21110460
+08:22:13.684 Updated code:  : A51121100083
+08:22:15.241 Generated Form : : D101-21110461
+08:22:15.302 Updated code:  : A51121100076
+08:22:16.911 Generated Form : : D101-21110462
+08:22:17.049 Updated code:  : A51121050293
+08:22:18.398 Generated Form : : D101-21110463
+08:22:18.456 Updated code:  : A51121060118
+08:22:19.993 Generated Form : : D201-21110618
+08:22:19.993 Code : : A511-21060128
+08:22:20.038 Updated code:  : A51121060128
+08:22:20.038 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:22.088 Generated Form : : D201-21110619
+08:22:22.088 Code : : A511-21070116
+08:22:22.132 Updated code:  : A51121070116
+08:22:22.133 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:23.825 Generated Form : : D201-21110620
+08:22:23.825 Code : : A511-21100294
+08:22:23.872 Updated code:  : A51121100294
+08:22:23.872 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:25.463 Generated Form : : D201-21110621
+08:22:25.463 Code : : A511-21020121
+08:22:25.508 Updated code:  : A51121020121
+08:22:25.508 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:26.971 Generated Form : : D201-21110622
+08:22:26.971 Code : : A511-21070090
+08:22:27.014 Updated code:  : A51121070090
+08:22:27.015 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:28.532 Generated Form : : D201-21110623
+08:22:28.532 Code : : A511-21060176
+08:22:28.577 Updated code:  : A51121060176
+08:22:28.577 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:29.925 Generated Form : : D201-21110624
+08:22:29.925 Code : : A511-21100068
+08:22:29.977 Updated code:  : A51121100068
+08:22:29.977 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:31.290 Generated Form : : D201-21110625
+08:22:31.290 Code : : A511-21050291
+08:22:31.337 Updated code:  : A51121050291
+08:22:31.337 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:32.665 Generated Form : : D201-21110626
+08:22:32.665 Code : : A511-21050291
+08:22:32.709 Updated code:  : A51121050291
+08:22:32.709 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:34.051 Generated Form : : D201-21110627
+08:22:34.051 Code : : A511-21080005
+08:22:34.094 Updated code:  : A51121080005
+08:22:34.094 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:35.452 Generated Form : : D201-21110628
+08:22:35.452 Code : : A511-21060046
+08:22:35.499 Updated code:  : A51121060046
+08:22:35.499 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:36.927 Generated Form : : D201-21110629
+08:22:36.927 Code : : A511-21100078
+08:22:36.975 Updated code:  : A51121100078
+08:22:36.975 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:38.285 Generated Form : : D201-21110630
+08:22:38.285 Code : : A511-21100286
+08:22:38.327 Updated code:  : A51121100286
+08:22:38.327 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:39.649 Generated Form : : D201-21110631
+08:22:39.649 Code : : A511-21070097
+08:22:39.693 Updated code:  : A51121070097
+08:22:39.693 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:41.023 Generated Form : : D201-21110632
+08:22:41.023 Code : : A511-21050316
+08:22:41.069 Updated code:  : A51121050316
+08:22:41.069 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:42.467 Generated Form : : D201-21110633
+08:22:42.467 Code : : A511-21100003
+08:22:42.514 Updated code:  : A51121100003
+08:22:42.514 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:45.079 Generated Form : : D201-21110634
+08:22:45.079 Code : : A511-21100049
+08:22:45.124 Updated code:  : A51121100049
+08:22:45.124 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:46.469 Generated Form : : D201-21110635
+08:22:46.469 Code : : A511-21100191
+08:22:46.514 Updated code:  : A51121100191
+08:22:46.514 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:47.825 Generated Form : : D201-21110636
+08:22:47.825 Code : : A511-21050293
+08:22:47.874 Updated code:  : A51121050293
+08:22:47.874 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:49.189 Generated Form : : D201-21110637
+08:22:49.189 Code : : A511-21100083
+08:22:49.235 Updated code:  : A51121100083
+08:22:49.235 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:50.548 Generated Form : : D201-21110638
+08:22:50.548 Code : : A511-21100076
+08:22:50.598 Updated code:  : A51121100076
+08:22:50.598 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:51.915 Generated Form : : D201-21110639
+08:22:51.915 Code : : A511-21050293
+08:22:51.959 Updated code:  : A51121050293
+08:22:51.959 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:53.545 Generated Form : : D201-21110640
+08:22:53.545 Code : : A511-21060118
+08:22:53.592 Updated code:  : A51121060118
+08:22:53.593 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:55.516 Generated Form : : D201-21110641
+08:22:55.516 Code : : A511-20120149
+08:22:55.560 Updated code:  : A51120120149
+08:22:55.560 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:22:57.093 Generated Form : : D101-21110464
+08:22:57.149 Updated code:  : P51121060003
+08:22:58.641 Generated Form : : D101-21110465
+08:22:58.699 Updated code:  : P51121060054
+08:23:00.113 Generated Form : : D101-21110466
+08:23:00.174 Updated code:  : P51121100003
+08:23:01.487 Generated Form : : D101-21110467
+08:23:01.546 Updated code:  : P51121060043
+08:23:03.363 Generated Form : : D101-21110468
+08:23:03.419 Updated code:  : J51121030014
+08:23:05.102 Generated Form : : D101-21110469
+08:23:05.163 Updated code:  : P51121090024
+08:23:06.856 Generated Form : : D101-21110470
+08:23:06.918 Updated code:  : P51121060058
+08:23:08.678 Generated Form : : D101-21110471
+08:23:08.737 Updated code:  : P51121040031
+08:23:10.385 Generated Form : : D101-21110472
+08:23:10.447 Updated code:  : J51120120023
+08:23:12.139 Generated Form : : D201-21110642
+08:23:12.139 Code : : J511-20120023
+08:23:12.182 Updated code:  : J51120120023
+08:23:12.182 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:13.944 Generated Form : : D201-21110643
+08:23:13.944 Code : : P511-21040031
+08:23:13.988 Updated code:  : P51121040031
+08:23:13.988 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:15.376 Generated Form : : D201-21110644
+08:23:15.376 Code : : P511-21060058
+08:23:15.428 Updated code:  : P51121060058
+08:23:15.428 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:16.928 Generated Form : : D201-21110645
+08:23:16.928 Code : : P511-21090024
+08:23:16.997 Updated code:  : P51121090024
+08:23:16.997 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:18.454 Generated Form : : D201-21110646
+08:23:18.454 Code : : J511-21030014
+08:23:18.498 Updated code:  : J51121030014
+08:23:18.499 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:19.809 Generated Form : : D201-21110647
+08:23:19.809 Code : : P511-21060043
+08:23:19.852 Updated code:  : P51121060043
+08:23:19.852 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:21.165 Generated Form : : D201-21110648
+08:23:21.165 Code : : P511-21100003
+08:23:21.220 Updated code:  : P51121100003
+08:23:21.220 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:22.761 Generated Form : : D201-21110649
+08:23:22.761 Code : : P511-21060054
+08:23:22.804 Updated code:  : P51121060054
+08:23:22.804 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:24.274 Generated Form : : D201-21110650
+08:23:24.274 Code : : P511-21060003
+08:23:24.322 Updated code:  : P51121060003
+08:23:24.322 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:25.524 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:26.917 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:28.329 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:29.781 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:31.042 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:32.496 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:34.098 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:35.308 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:36.489 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:37.876 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:39.269 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:40.455 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:41.660 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:42.928 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:44.826 Generated Form : : D201-21110651
+08:23:44.826 Code : : A511-21070097
+08:23:44.871 Updated code:  : A51121070097
+08:23:44.871 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:46.700 Generated Form : : D201-21110652
+08:23:46.700 Code : : A511-21020056
+08:23:46.743 Updated code:  : A51121020056
+08:23:46.743 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:23:48.582 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:50.520 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:52.133 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:53.543 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:55.159 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:56.371 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:57.583 Database MES base data Response : Object reference not set to an instance of an object.
+08:23:58.883 Database MES base data Response : Object reference not set to an instance of an object.
+08:24:00.514 Database MES base data Response : Object reference not set to an instance of an object.
+08:24:01.886 Database MES base data Response : Object reference not set to an instance of an object.
+08:24:03.360 Generated Form : : D201-21110653
+08:24:03.361 Code : : A511-21060162
+08:24:03.409 Updated code:  : A51121060162
+08:24:03.409 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:04.749 Generated Form : : D201-21110654
+08:24:04.749 Code : : A511-21060162
+08:24:04.797 Updated code:  : A51121060162
+08:24:04.797 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:06.636 Generated Form : : D201-21110655
+08:24:06.636 Code : : A511-21060013
+08:24:06.683 Updated code:  : A51121060013
+08:24:06.683 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:08.141 Generated Form : : D201-21110656
+08:24:08.141 Code : : A511-21060158
+08:24:08.190 Updated code:  : A51121060158
+08:24:08.190 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:09.529 Generated Form : : D201-21110657
+08:24:09.529 Code : : A511-21060186
+08:24:09.579 Updated code:  : A51121060186
+08:24:09.579 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:10.783 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:11.983 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:13.242 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:14.723 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:16.240 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:17.425 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:18.839 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:20.746 Generated Form : : D101-21110473
+08:24:20.807 Updated code:  : J51121060012
+08:24:22.474 Generated Form : : D101-21110474
+08:24:22.534 Updated code:  : J51121030028
+08:24:24.067 Generated Form : : D101-21110475
+08:24:24.123 Updated code:  : J51121030028
+08:24:25.473 Generated Form : : D101-21110476
+08:24:25.534 Updated code:  : J51121060012
+08:24:26.744 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:27.930 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:29.312 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:31.143 Generated Form : : D201-21110658
+08:24:31.144 Code : : A511-21050046
+08:24:31.192 Updated code:  : A51121050046
+08:24:31.192 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:32.648 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:34.523 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:35.859 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:37.478 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:39.054 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:40.704 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:42.258 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:43.685 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:45.217 Generated Form : : D201-21110659
+08:24:45.217 Code : : J511-21030028
+08:24:45.265 Updated code:  : J51121030028
+08:24:45.265 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:46.708 Generated Form : : D201-21110660
+08:24:46.709 Code : : J511-21060012
+08:24:46.753 Updated code:  : J51121060012
+08:24:46.753 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:48.146 Generated Form : : D201-21110661
+08:24:48.146 Code : : J511-21030028
+08:24:48.188 Updated code:  : J51121030028
+08:24:48.188 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:49.711 Generated Form : : D201-21110662
+08:24:49.711 Code : : J511-21060012
+08:24:49.757 Updated code:  : J51121060012
+08:24:49.757 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:51.605 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:53.063 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:54.567 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:55.991 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:57.405 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:58.604 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:24:59.787 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:01.009 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:02.630 Generated Form : : D101-21110477
+08:25:02.691 Updated code:  : P51121060003
+08:25:04.366 Generated Form : : D101-21110478
+08:25:04.432 Updated code:  : P51121050021
+08:25:05.842 Generated Form : : D101-21110479
+08:25:05.900 Updated code:  : P51121060054
+08:25:07.297 Generated Form : : D101-21110480
+08:25:07.353 Updated code:  : P51121100003
+08:25:08.721 Generated Form : : D101-21110481
+08:25:08.779 Updated code:  : P51121060043
+08:25:10.393 Generated Form : : D101-21110482
+08:25:10.453 Updated code:  : A51121070076
+08:25:11.758 Generated Form : : D101-21110483
+08:25:11.817 Updated code:  : J51121030014
+08:25:13.684 Generated Form : : D101-21110484
+08:25:13.762 Updated code:  : A51121060182
+08:25:15.594 Generated Form : : D101-21110485
+08:25:15.652 Updated code:  : A51121070116
+08:25:17.182 Generated Form : : D101-21110486
+08:25:17.239 Updated code:  : A51121100294
+08:25:19.241 Generated Form : : D101-21110487
+08:25:19.304 Updated code:  : A51121020121
+08:25:20.686 Generated Form : : D101-21110488
+08:25:20.769 Updated code:  : P51121060058
+08:25:22.096 Generated Form : : D101-21110489
+08:25:22.156 Updated code:  : A51121100035
+08:25:23.568 Generated Form : : D101-21110490
+08:25:23.628 Updated code:  : A51121070066
+08:25:25.584 Generated Form : : D101-21110491
+08:25:25.643 Updated code:  : P51121040031
+08:25:27.155 Generated Form : : D101-21110492
+08:25:27.211 Updated code:  : A51121060158
+08:25:28.500 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:30.008 Generated Form : : D101-21110493
+08:25:30.067 Updated code:  : A51121040020
+08:25:31.692 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:33.473 Generated Form : : D101-21110494
+08:25:33.534 Updated code:  : A51121070090
+08:25:35.007 Generated Form : : D101-21110495
+08:25:35.068 Updated code:  : A51121060176
+08:25:36.547 Generated Form : : D101-21110496
+08:25:36.603 Updated code:  : A51121100068
+08:25:38.140 Generated Form : : D101-21110497
+08:25:38.202 Updated code:  : A51121060164
+08:25:39.906 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:41.793 Generated Form : : D101-21110498
+08:25:41.848 Updated code:  : A51121060158
+08:25:43.421 Generated Form : : D101-21110499
+08:25:43.484 Updated code:  : A51121070082
+08:25:45.220 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:46.770 Generated Form : : D101-21110500
+08:25:46.827 Updated code:  : A51121050291
+08:25:48.289 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:49.744 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:51.260 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:52.560 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:25:54.060 Database MES base data Response : Object reference not set to an instance of an object.
+08:25:55.757 Database MES base data Response : Object reference not set to an instance of an object.
+08:25:57.201 Database MES base data Response : Object reference not set to an instance of an object.
+08:25:58.786 Database MES base data Response : Object reference not set to an instance of an object.
+08:26:00.392 Database MES base data Response : Object reference not set to an instance of an object.
+08:26:01.791 Database MES base data Response : Object reference not set to an instance of an object.
+08:26:03.242 Database MES base data Response : Object reference not set to an instance of an object.
+08:26:04.588 Database MES base data Response : Object reference not set to an instance of an object.
+08:26:06.017 Database MES base data Response : Object reference not set to an instance of an object.
+08:26:07.887 Generated Form : : D101-21110501
+08:26:07.943 Updated code:  : A51121100078
+08:26:09.676 Generated Form : : D101-21110502
+08:26:09.747 Updated code:  : A51121020212
+08:26:11.418 Generated Form : : D101-21110503
+08:26:11.531 Updated code:  : A51121100286
+08:26:12.997 Generated Form : : D101-21110504
+08:26:13.137 Updated code:  : A51121070097
+08:26:14.492 Generated Form : : D101-21110505
+08:26:14.554 Updated code:  : A51121070097
+08:26:16.061 Generated Form : : D101-21110506
+08:26:16.122 Updated code:  : A51121050316
+08:26:17.707 Generated Form : : D101-21110507
+08:26:17.811 Updated code:  : A51121100003
+08:26:17.811 Upload to data to ERP finished! : 

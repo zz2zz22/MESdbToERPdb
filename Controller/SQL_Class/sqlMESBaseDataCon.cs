@@ -27,7 +27,7 @@ namespace MESdbToERPdb
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Response", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database MES base data Response", ex.Message);
                 conn.Close();
                 return String.Empty;
             }
@@ -57,7 +57,7 @@ namespace MESdbToERPdb
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database MES base data Responce", ex.Message);
             }
             conn.Close();
         }
@@ -89,7 +89,7 @@ namespace MESdbToERPdb
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database MES base data Responce", ex.Message);
 
 
             }
@@ -112,7 +112,7 @@ namespace MESdbToERPdb
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database MES base data Responce", ex.Message);
             }
         }
 
@@ -135,14 +135,14 @@ namespace MESdbToERPdb
                 }
                 else
                 {
-                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", "");
+                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database MES base data Responce", "");
                     conn.Close();
                     return false;
                 }
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database MES base data Responce", ex.Message);
                 conn.Close();
                 return false;
             }

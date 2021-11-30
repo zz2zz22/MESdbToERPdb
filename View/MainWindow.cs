@@ -111,85 +111,19 @@ namespace MESdbToERPdb
 
         #endregion
 
-        private void btn_setting_Click(object sender, EventArgs e)
-        {
-            View.SettingWindow settingW = new View.SettingWindow();
-            settingW.ShowDialog();
-        }
 
-        private void btn_support_Click(object sender, EventArgs e)
-        {
-            View.SupportWindow supportW = new View.SupportWindow();
-            supportW.ShowDialog();
-        }
-
-        private void btn_start_Click(object sender, EventArgs e) 
-        {
-            #region testgetdata
-            ////con.Open();
-            //DateTime currentDate = DateTime.Now;
-
-            //sqlMESInterCon mes = new sqlMESInterCon();
-            ////string sql = " SELECT * FROM `quality_control_order_view`  " +
-            ////    "WHERE `qc_no` LIKE '%JO202190339000001%' " +
-            ////    "AND `work_order_no` LIKE '%Y51421090017%'" +
-            ////    "AND `product_no` LIKE '%CYM0084%'";
-
-            //string inputDate = currentDate.ToString("yyyy-MM-dd HH:mm:ss");
-
-            //string sqlSelectTop30 = " SELECT * FROM `quality_control_order_view` " +
-            //    "WHERE create_date >= '" + inputDate + "' " +
-            //    " ORDER BY create_date ASC " +
-            //    "LIMIT 100";//test fill data into datagridview
-
-            ////MySqlCommand cmd = new MySqlCommand(sqlSelectTop30, con);
-
-            ////MySqlDataReader reader = cmd.ExecuteReader();
-
-            //mes.sqlExecuteScalarString(sqlSelectTop30);
-
-            //DataTable dt = new DataTable();
-            //mes.sqlDataAdapterFillDatatable(sqlSelectTop30, ref dt);
-
-            //BindingSource bSource = new BindingSource();
-            //bSource.DataSource = dt;
-            //dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
-            //dataGridView1.AllowUserToResizeRows = false;
-            //dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            //dataGridView1.AllowUserToResizeColumns = false;
-
-            //dataGridView1.DataSource = bSource;
-
-            //textBox1.Text = string.Empty;
-            //textBox2.Text = string.Empty;
-
-            ////while (reader.Read())
-            ////{
-            ////    textBox1.Text += $"{reader.GetString("qc_no")}";
-            ////    textBox2.Text += $"{reader.GetString("product_name")}";
-            ////}
-            ////con.Close();
-            ///
-
-            //tmrCallBgWorker.Start();
-            //btn_start.Text = "STARTING";
-            //btn_stop.Text = "STOP";
-            //btn_start.Enabled = false;
-            //btn_stop.Enabled = true;
-            //UploadMain uploadMain = new UploadMain();
-            //uploadMain.GetListLOT();
-            #endregion
-            DateTime dIn = Convert.ToDateTime("2021-11-01 11:00:00");
+        private void btn_start_Click(object sender, EventArgs e)
+        { 
+            DateTime dIn = Convert.ToDateTime("2021-11-01 10:00:00"); //dùng để test
             DateTime dOut = Convert.ToDateTime("2021-11-02 12:00:00");
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
-            //uploadMain.GetListTransferOrder();
+            
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
-            //insertERPSFCTC insert = new insertERPSFCTC();
-            //insert.InsertdataToERP("B511-19120073;0010;B01;B01", "BMH1284056S02", "80", "0", "20211101", "00:00:00"); //test truyền dữ liệu tạo phiếu chuyển D201
+            
             uploadMain.GetListTransferOrder(dIn, dOut);
-            //rtb_log.Text = "Upload to data to ERP finished!";
+            
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
             ClearMemory.CleanMemory();
         }
@@ -198,7 +132,7 @@ namespace MESdbToERPdb
         {   // this timer calls bgWorker again and again after regular intervals
             tmrCallBgWorker = new System.Windows.Forms.Timer();//Timer for do task
             tmrCallBgWorker.Tick += new EventHandler(timer_nextRun_Tick);
-            tmrCallBgWorker.Interval = SettingClass.TimmerBackgroudWorker > 100000 ? SettingClass.TimmerBackgroudWorker : 900000;
+            tmrCallBgWorker.Interval = int.Parse(nud_timeInterval.Value.ToString()) * 3600000;
 
             // this is our worker
             bgWorker = new BackgroundWorker();
@@ -217,25 +151,6 @@ namespace MESdbToERPdb
             btn_start.Text = "Start";
             btn_start.Enabled = true;
             btn_stop.Enabled = false;
-        }
-
-        private void btn_startTimer_Click(object sender, EventArgs e)
-        {
-            //if (txt_cycle.Value == 0)
-            //{
-            //    MessageBox.Show("Cycle must be greater than 0!", "Error!");
-            //    return;
-            //}
-            //timer_nextRun.Enabled = true;
-            //cycle = (int)txt_cycle.Value;
-            //cycle = cycle * 3600;
-            //txt_remainingSec.Text = cycle.ToString();
-            //txt_cycle.Enabled = false;
-            //btn_startTimer.Enabled = false;
-            //btn_start.Enabled = false;
-            //btn_stop.Enabled = false;
-            ////Run BW
-            //BW.RunWorkerAsync();
         }
 
         private void timer_nextRun_Tick(object sender, EventArgs e)
@@ -261,31 +176,16 @@ namespace MESdbToERPdb
             }
         }
 
-        private void btn_stopTimer_Click(object sender, EventArgs e)
-        {
-            //timer_nextRun.Enabled = false;
-            //cycle = (int)txt_cycle.Value * 3600;
-            //txt_remainingSec.Text = cycle.ToString();
-            //txt_cycle.Enabled = true;
-            //btn_startTimer.Enabled = true;
-            //btn_start.Enabled = true;
-            //btn_stop.Enabled = true;
-
-            ////Stop BW
-            //if (!BW.IsBusy && BW.WorkerSupportsCancellation)
-            //    BW.CancelAsync();
-            //else
-            //    MessageBox.Show("Timer stopped but the process may still be running! Do not close or stop the program until progress have finished!", "Warning!");
-        }
-
         private void BW_DoWork(object sender, DoWorkEventArgs e)
         {
+            //DateTime dIn = Convert.ToDateTime("2021-11-02 11:00:00"); //dùng để test
+            //DateTime dOut = Convert.ToDateTime("2021-11-02 12:00:00");
             // does a job like writing to serial communication, webservices etc
             var worker = sender as BackgroundWorker;
             try
             {
                 UploadMain uploadMain = new UploadMain();
-                //uploadMain.GetListTransferOrder();
+                //uploadMain.GetListTransferOrder(dIn,dOut);
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
                 ClearMemory.CleanMemory();
             }
@@ -300,10 +200,10 @@ namespace MESdbToERPdb
 
         private void BW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            //if (e.ProgressPercentage == -1)
-            //    pgb_backgroundWorkerProgressBar.Maximum = Convert.ToInt32(e.UserState);
-            //else
-            //    pgb_backgroundWorkerProgressBar.Value = e.ProgressPercentage;
+            if (e.ProgressPercentage == -1)
+                pgb_backgroundWorkerProgressBar.Maximum = Convert.ToInt32(e.UserState);
+            else
+                pgb_backgroundWorkerProgressBar.Value = e.ProgressPercentage;
         }
 
         private void BW_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)

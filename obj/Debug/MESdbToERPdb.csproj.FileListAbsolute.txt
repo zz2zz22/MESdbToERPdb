@@ -8,8 +8,6 @@ D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.Gener
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.CoreCompileInputs.cache
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.exe
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.pdb
-D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.SettingWindow.resources
-D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.SupportWindow.resources
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\MySql.Data.DLL
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.CopyComplete
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Renci.SshNet.Async.dll

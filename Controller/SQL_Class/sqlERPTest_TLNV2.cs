@@ -46,7 +46,7 @@ namespace MESdbToERPdb
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Test Responce", ex.Message);
             }
         }
 
@@ -66,7 +66,7 @@ namespace MESdbToERPdb
                 }
                 else
                 {
-                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", "");
+                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Test Responce", "");
 
                     conn.Close();
                     return false;
@@ -74,7 +74,7 @@ namespace MESdbToERPdb
             }
             catch (Exception ex)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Responce", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Database Test Responce", ex.Message);
                 conn.Close();
                 return false;
             }
