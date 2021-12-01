@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MESdbToERPdb.View
+namespace MESdbToERPdb
 {
-    public partial class SettingWindow : Form
+    public partial class RTBLog : UserControl
     {
-        public SettingWindow()
+        public RTBLog()
         {
             InitializeComponent();
         }

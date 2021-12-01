@@ -1,0 +1,3015 @@
+08:29:57.967 MESdbToERPdb 1.0.0 : Started 
+08:30:58.466 Database Response : Object reference not set to an instance of an object.
+08:33:04.138 Database Response : Object reference not set to an instance of an object.
+08:33:40.623 Database Response : Object reference not set to an instance of an object.
+08:33:46.162 Database Response : Object reference not set to an instance of an object.
+08:33:59.012 Database Response : Object reference not set to an instance of an object.
+08:34:15.044 Database Response : Object reference not set to an instance of an object.
+08:34:18.668 Generated Form : : D101-21110296
+08:34:18.735 Updated code:  : A51121060046
+08:34:22.549 Generated Form : : D101-21110297
+08:34:22.607 Updated code:  : A51121100078
+08:34:26.365 Generated Form : : D101-21110298
+08:34:26.427 Updated code:  : A51121050316
+08:34:29.601 Generated Form : : D101-21110299
+08:34:29.694 Updated code:  : A51121100003
+08:34:32.844 Generated Form : : D101-21110300
+08:34:32.905 Updated code:  : A51121100049
+08:34:35.851 Generated Form : : D101-21110301
+08:34:36.072 Updated code:  : A51121050293
+08:34:39.395 Generated Form : : D101-21110302
+08:34:39.459 Updated code:  : A51121060128
+08:34:42.399 Generated Form : : D101-21110303
+08:34:42.459 Updated code:  : A51121050028
+08:34:46.926 Generated Form : : D101-21110304
+08:34:46.988 Updated code:  : A51121060182
+08:34:50.043 Generated Form : : D101-21110305
+08:34:50.119 Updated code:  : A51121070116
+08:34:53.339 Generated Form : : D101-21110306
+08:34:53.399 Updated code:  : A51121020121
+08:34:56.410 Generated Form : : D101-21110307
+08:34:56.474 Updated code:  : A51121060157
+08:34:59.840 Generated Form : : D101-21110308
+08:34:59.900 Updated code:  : A51121060162
+08:35:03.540 Generated Form : : D101-21110309
+08:35:03.599 Updated code:  : A51121100076
+08:35:06.789 Generated Form : : D101-21110310
+08:35:06.859 Updated code:  : A51121070014
+08:35:09.960 Generated Form : : D101-21110311
+08:35:10.027 Updated code:  : A51121100076
+08:35:13.751 Generated Form : : D101-21110312
+08:35:13.810 Updated code:  : A51121040020
+08:35:17.280 Generated Form : : D101-21110313
+08:35:17.341 Updated code:  : A51121070090
+08:35:20.630 Generated Form : : D101-21110314
+08:35:20.687 Updated code:  : A51121050293
+08:35:24.756 Generated Form : : D101-21110315
+08:35:24.823 Updated code:  : A51121100068
+08:35:28.185 Generated Form : : D101-21110316
+08:35:28.256 Updated code:  : A51121060158
+08:35:31.241 Generated Form : : D101-21110317
+08:35:31.301 Updated code:  : A51121050291
+08:35:34.315 Generated Form : : D101-21110318
+08:35:34.373 Updated code:  : A51121060118
+08:35:37.450 Generated Form : : D101-21110319
+08:35:37.532 Updated code:  : A51121030055
+08:35:40.579 Generated Form : : D101-21110320
+08:35:40.639 Updated code:  : A51121070097
+08:35:46.186 Generated Form : : D101-21110321
+08:35:46.242 Updated code:  : A51121100049
+08:35:50.010 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:35:50.026 Generated Form : : D101-21110322
+08:35:50.096 Updated code:  : A51121100090
+08:35:54.083 Generated Form : : D101-21110323
+08:35:54.143 Updated code:  : A51121100294
+08:35:57.201 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:35:57.215 Generated Form : : D101-21110324
+08:35:57.274 Updated code:  : A51121100155
+08:36:01.493 Generated Form : : D101-21110325
+08:36:01.557 Updated code:  : A51121100294
+08:36:05.506 Generated Form : : D101-21110326
+08:36:05.573 Updated code:  : A51121070092
+08:36:14.149 Generated Form : : D101-21110327
+08:36:14.216 Updated code:  : A51121050023
+08:36:18.843 Generated Form : : D101-21110328
+08:36:18.905 Updated code:  : A51121070097
+08:36:39.417 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:36:39.430 Generated Form : : D101-21110329
+08:36:39.498 Updated code:  : A51121100155
+08:36:43.425 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:36:43.440 Generated Form : : D101-21110330
+08:36:43.510 Updated code:  : A51121100173
+08:36:47.614 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:36:47.629 Generated Form : : D101-21110331
+08:36:47.700 Updated code:  : A51121100195
+08:36:51.162 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:36:51.179 Generated Form : : D101-21110332
+08:36:51.251 Updated code:  : A51121100176
+08:36:54.347 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:36:54.361 Generated Form : : D101-21110333
+08:36:54.431 Updated code:  : A51120120081
+08:37:18.909 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:37:18.922 Generated Form : : D101-21110334
+08:37:18.992 Updated code:  : A51121100083
+08:37:24.910 Generated Form : : D101-21110335
+08:37:25.107 Updated code:  : A51121020211
+08:37:31.299 Generated Form : : D101-21110336
+08:37:31.368 Updated code:  : A51121100286
+08:37:32.933 Generated Form : : D101-21110337
+08:37:32.991 Updated code:  : A51121100286
+08:37:34.513 Database Response : Object reference not set to an instance of an object.
+08:37:35.738 Database Response : Object reference not set to an instance of an object.
+08:37:36.953 Database Response : Object reference not set to an instance of an object.
+08:37:38.176 Database Response : Object reference not set to an instance of an object.
+08:37:39.427 Database Response : Object reference not set to an instance of an object.
+08:37:40.797 Database Response : Object reference not set to an instance of an object.
+08:37:50.222 Generated Form : : D201-21110471
+08:37:50.222 Code : : A511-21060128
+08:37:50.270 Updated code:  : A51121060128
+08:37:51.754 Generated Form : : D201-21110472
+08:37:51.754 Code : : A511-21070116
+08:37:51.811 Updated code:  : A51121070116
+08:37:53.167 Generated Form : : D201-21110473
+08:37:53.168 Code : : A511-21100294
+08:37:53.213 Updated code:  : A51121100294
+08:37:54.602 Generated Form : : D201-21110474
+08:37:54.602 Code : : A511-21020121
+08:37:54.649 Updated code:  : A51121020121
+08:37:56.152 Generated Form : : D201-21110475
+08:37:56.152 Code : : A511-21070014
+08:37:56.209 Updated code:  : A51121070014
+08:37:57.591 Generated Form : : D201-21110476
+08:37:57.591 Code : : A511-21070090
+08:37:57.640 Updated code:  : A51121070090
+08:37:59.004 Generated Form : : D201-21110477
+08:37:59.004 Code : : A511-21100068
+08:37:59.052 Updated code:  : A51121100068
+08:38:00.413 Generated Form : : D201-21110478
+08:38:00.413 Code : : A511-21050291
+08:38:00.464 Updated code:  : A51121050291
+08:38:01.825 Generated Form : : D201-21110479
+08:38:01.825 Code : : A511-21050291
+08:38:01.869 Updated code:  : A51121050291
+08:38:03.251 Generated Form : : D201-21110480
+08:38:03.252 Code : : A511-21060046
+08:38:03.295 Updated code:  : A51121060046
+08:38:04.652 Generated Form : : D201-21110481
+08:38:04.652 Code : : J511-20120023
+08:38:04.701 Updated code:  : J51120120023
+08:38:06.067 Generated Form : : D201-21110482
+08:38:06.067 Code : : A511-21100078
+08:38:06.117 Updated code:  : A51121100078
+08:38:07.459 Generated Form : : D201-21110483
+08:38:07.459 Code : : J511-20120023
+08:38:07.508 Updated code:  : J51120120023
+08:38:11.320 Generated Form : : D201-21110484
+08:38:11.321 Code : : P511-21040031
+08:38:11.372 Updated code:  : P51121040031
+08:38:15.202 Generated Form : : D201-21110485
+08:38:15.202 Code : : P511-21060058
+08:38:15.257 Updated code:  : P51121060058
+08:38:18.054 Generated Form : : D201-21110486
+08:38:18.054 Code : : J511-21030014
+08:38:18.109 Updated code:  : J51121030014
+08:38:24.792 Generated Form : : D201-21110487
+08:38:24.792 Code : : A511-21050316
+08:38:24.843 Updated code:  : A51121050316
+08:38:26.357 Generated Form : : D201-21110488
+08:38:26.357 Code : : P511-21060043
+08:38:26.401 Updated code:  : P51121060043
+08:38:28.945 Generated Form : : D201-21110489
+08:38:28.945 Code : : A511-21100003
+08:38:29.000 Updated code:  : A51121100003
+08:38:30.548 Generated Form : : D201-21110490
+08:38:30.549 Code : : P511-21100003
+08:38:30.670 Updated code:  : P51121100003
+08:38:35.998 Generated Form : : D201-21110491
+08:38:35.998 Code : : P511-21060054
+08:38:36.045 Updated code:  : P51121060054
+08:38:37.649 Generated Form : : D201-21110492
+08:38:37.649 Code : : A511-21100049
+08:38:37.693 Updated code:  : A51121100049
+08:38:39.054 Generated Form : : D201-21110493
+08:38:39.055 Code : : P511-21060003
+08:38:39.101 Updated code:  : P51121060003
+08:38:40.436 Generated Form : : D201-21110494
+08:38:40.437 Code : : A511-21050293
+08:38:40.483 Updated code:  : A51121050293
+08:38:41.790 Generated Form : : D201-21110495
+08:38:41.790 Code : : A511-21100076
+08:38:41.835 Updated code:  : A51121100076
+08:38:43.336 Generated Form : : D201-21110496
+08:38:43.336 Code : : A511-21050028
+08:38:43.377 Updated code:  : A51121050028
+08:38:44.839 Generated Form : : D201-21110497
+08:38:44.839 Code : : A511-21050293
+08:38:44.883 Updated code:  : A51121050293
+08:38:46.386 Generated Form : : D201-21110498
+08:38:46.386 Code : : A511-21060118
+08:38:46.431 Updated code:  : A51121060118
+08:38:48.046 Generated Form : : D101-21110338
+08:38:48.111 Updated code:  : P51121090024
+08:38:52.897 Generated Form : : D201-21110499
+08:38:52.897 Code : : P511-21090024
+08:38:52.952 Updated code:  : P51121090024
+08:38:59.280 Database Response : Object reference not set to an instance of an object.
+08:39:00.459 Database Response : Object reference not set to an instance of an object.
+08:39:01.650 Database Response : Object reference not set to an instance of an object.
+08:39:02.822 Database Response : Object reference not set to an instance of an object.
+08:39:03.999 Database Response : Object reference not set to an instance of an object.
+08:39:05.272 Database Response : Object reference not set to an instance of an object.
+08:39:06.807 Generated Form : : D101-21110339
+08:39:06.887 Updated code:  : J51121060012
+08:39:08.229 Generated Form : : D101-21110340
+08:39:08.290 Updated code:  : J51121030028
+08:39:09.712 Generated Form : : D101-21110341
+08:39:09.781 Updated code:  : J51121030028
+08:39:11.308 Generated Form : : D101-21110342
+08:39:11.366 Updated code:  : J51121060012
+08:39:19.876 Generated Form : : D201-21110500
+08:39:19.876 Code : : J511-21060012
+08:39:19.924 Updated code:  : J51121060012
+08:39:21.391 Generated Form : : D201-21110501
+08:39:21.391 Code : : A511-21060162
+08:39:21.436 Updated code:  : A51121060162
+08:39:22.730 Generated Form : : D201-21110502
+08:39:22.730 Code : : J511-21030028
+08:39:22.776 Updated code:  : J51121030028
+08:39:24.054 Generated Form : : D201-21110503
+08:39:24.055 Code : : A511-21060162
+08:39:24.102 Updated code:  : A51121060162
+08:39:25.413 Generated Form : : D201-21110504
+08:39:25.413 Code : : J511-21030028
+08:39:25.458 Updated code:  : J51121030028
+08:39:27.093 Generated Form : : D201-21110505
+08:39:27.093 Code : : A511-21030159
+08:39:27.148 Updated code:  : A51121030159
+08:39:28.498 Generated Form : : D201-21110506
+08:39:28.498 Code : : J511-21060012
+08:39:28.544 Updated code:  : J51121060012
+08:39:30.095 Generated Form : : D201-21110507
+08:39:30.095 Code : : A511-21020211
+08:39:30.144 Updated code:  : A51121020211
+08:39:31.530 Generated Form : : D201-21110508
+08:39:31.530 Code : : A511-21100286
+08:39:31.574 Updated code:  : A51121100286
+08:39:37.955 Generated Form : : D101-21110343
+08:39:38.018 Updated code:  : A51121060158
+08:39:39.834 Generated Form : : D101-21110344
+08:39:39.891 Updated code:  : A51121060128
+08:39:41.379 Generated Form : : D201-21110509
+08:39:41.379 Code : : A511-21100049
+08:39:41.443 Updated code:  : A51121100049
+08:39:42.752 Generated Form : : D101-21110345
+08:39:42.816 Updated code:  : A51121070116
+08:39:44.123 Generated Form : : D101-21110346
+08:39:44.186 Updated code:  : A51121100294
+08:39:45.486 Generated Form : : D101-21110347
+08:39:45.544 Updated code:  : A51121020121
+08:39:47.997 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:39:48.010 Generated Form : : D201-21110510
+08:39:48.010 Code : : A511-21100090
+08:39:48.055 Updated code:  : A51121100090
+08:39:50.046 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:39:50.059 Generated Form : : D201-21110511
+08:39:50.059 Code : : A511-21100155
+08:39:50.107 Updated code:  : A51121100155
+08:39:52.903 Generated Form : : D101-21110348
+08:39:52.975 Updated code:  : A51121030042
+08:39:57.662 Generated Form : : D101-21110349
+08:39:57.729 Updated code:  : A51121070066
+08:39:59.027 Generated Form : : D101-21110350
+08:39:59.089 Updated code:  : A51121030159
+08:40:00.388 Generated Form : : D101-21110351
+08:40:00.446 Updated code:  : A51121040020
+08:40:01.742 Generated Form : : D101-21110352
+08:40:01.807 Updated code:  : A51121070090
+08:40:03.123 Generated Form : : D101-21110353
+08:40:03.184 Updated code:  : A51121060176
+08:40:04.464 Generated Form : : D101-21110354
+08:40:04.521 Updated code:  : A51121100068
+08:40:05.840 Generated Form : : D101-21110355
+08:40:05.904 Updated code:  : A51121050291
+08:40:07.222 Generated Form : : D201-21110512
+08:40:07.222 Code : : A511-21050023
+08:40:07.268 Updated code:  : A51121050023
+08:40:08.558 Generated Form : : D201-21110513
+08:40:08.558 Code : : A511-21070092
+08:40:08.608 Updated code:  : A51121070092
+08:40:09.906 Generated Form : : D201-21110514
+08:40:09.906 Code : : A511-21070097
+08:40:09.950 Updated code:  : A51121070097
+08:40:11.267 Generated Form : : D101-21110356
+08:40:11.329 Updated code:  : A51121030159
+08:40:12.627 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:40:12.641 Generated Form : : D201-21110515
+08:40:12.641 Code : : A511-21100155
+08:40:12.685 Updated code:  : A51121100155
+08:40:16.381 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:40:16.394 Generated Form : : D201-21110516
+08:40:16.394 Code : : A511-21100173
+08:40:16.442 Updated code:  : A51121100173
+08:40:20.078 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:40:20.092 Generated Form : : D201-21110517
+08:40:20.092 Code : : A511-21100195
+08:40:20.138 Updated code:  : A51121100195
+08:40:21.448 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:40:21.463 Generated Form : : D201-21110518
+08:40:21.463 Code : : A511-21100176
+08:40:21.506 Updated code:  : A51121100176
+08:40:22.886 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:40:22.901 Generated Form : : D201-21110519
+08:40:22.901 Code : : A511-20120081
+08:40:22.950 Updated code:  : A51120120081
+08:40:24.234 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:40:24.247 Generated Form : : D201-21110520
+08:40:24.247 Code : : A511-21100083
+08:40:24.305 Updated code:  : A51121100083
+08:40:25.618 Generated Form : : D201-21110521
+08:40:25.618 Code : : A511-21100286
+08:40:25.673 Updated code:  : A51121100286
+08:40:26.987 Generated Form : : D101-21110357
+08:40:27.044 Updated code:  : A51121060046
+08:40:28.344 Generated Form : : D101-21110358
+08:40:28.405 Updated code:  : A51121100078
+08:40:29.709 Generated Form : : D101-21110359
+08:40:29.768 Updated code:  : A51121100286
+08:40:31.057 Generated Form : : D101-21110360
+08:40:31.115 Updated code:  : A51121070097
+08:40:32.404 Generated Form : : D101-21110361
+08:40:32.467 Updated code:  : A51121050316
+08:40:33.766 Generated Form : : D101-21110362
+08:40:33.824 Updated code:  : A51121100003
+08:40:35.123 Generated Form : : D101-21110363
+08:40:35.187 Updated code:  : A51121050046
+08:40:36.481 Generated Form : : D101-21110364
+08:40:36.537 Updated code:  : A51121100049
+08:40:37.883 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:40:37.898 Generated Form : : D101-21110365
+08:40:37.965 Updated code:  : A51121100191
+08:40:39.264 Generated Form : : D101-21110366
+08:40:39.353 Updated code:  : A51121050293
+08:40:40.713 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:40:40.725 Generated Form : : D101-21110367
+08:40:40.789 Updated code:  : A51121100083
+08:40:42.168 Generated Form : : D101-21110368
+08:40:42.234 Updated code:  : A51121100076
+08:40:43.539 Generated Form : : D101-21110369
+08:40:43.603 Updated code:  : A51121050293
+08:40:44.984 Generated Form : : D101-21110370
+08:40:45.042 Updated code:  : A51121060118
+08:40:46.497 Generated Form : : D201-21110522
+08:40:46.497 Code : : A511-21060128
+08:40:46.542 Updated code:  : A51121060128
+08:40:47.861 Generated Form : : D201-21110523
+08:40:47.861 Code : : A511-21070116
+08:40:47.905 Updated code:  : A51121070116
+08:40:49.186 Generated Form : : D201-21110524
+08:40:49.186 Code : : A511-21100294
+08:40:49.233 Updated code:  : A51121100294
+08:40:50.554 Generated Form : : D201-21110525
+08:40:50.555 Code : : A511-21020121
+08:40:50.601 Updated code:  : A51121020121
+08:40:51.900 Generated Form : : D201-21110526
+08:40:51.900 Code : : A511-21070090
+08:40:51.947 Updated code:  : A51121070090
+08:40:53.235 Generated Form : : D201-21110527
+08:40:53.235 Code : : A511-21060176
+08:40:53.303 Updated code:  : A51121060176
+08:40:54.611 Generated Form : : D201-21110528
+08:40:54.611 Code : : A511-21100068
+08:40:54.665 Updated code:  : A51121100068
+08:40:55.977 Generated Form : : D201-21110529
+08:40:55.977 Code : : A511-21050291
+08:40:56.024 Updated code:  : A51121050291
+08:40:57.323 Generated Form : : D201-21110530
+08:40:57.323 Code : : A511-21050291
+08:40:57.372 Updated code:  : A51121050291
+08:40:58.756 Generated Form : : D201-21110531
+08:40:58.756 Code : : A511-21080005
+08:40:58.847 Updated code:  : A51121080005
+08:41:00.169 Generated Form : : D201-21110532
+08:41:00.169 Code : : A511-21060046
+08:41:00.218 Updated code:  : A51121060046
+08:41:01.538 Generated Form : : D201-21110533
+08:41:01.538 Code : : A511-21100078
+08:41:01.592 Updated code:  : A51121100078
+08:41:02.918 Generated Form : : D201-21110534
+08:41:02.918 Code : : A511-21100286
+08:41:02.974 Updated code:  : A51121100286
+08:41:04.316 Generated Form : : D201-21110535
+08:41:04.316 Code : : A511-21070097
+08:41:04.365 Updated code:  : A51121070097
+08:41:05.674 Generated Form : : D201-21110536
+08:41:05.675 Code : : A511-21050316
+08:41:05.722 Updated code:  : A51121050316
+08:41:07.009 Generated Form : : D201-21110537
+08:41:07.009 Code : : A511-21100003
+08:41:07.056 Updated code:  : A51121100003
+08:41:09.535 Generated Form : : D201-21110538
+08:41:09.535 Code : : A511-21100049
+08:41:09.581 Updated code:  : A51121100049
+08:41:10.882 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:41:10.897 Generated Form : : D201-21110539
+08:41:10.897 Code : : A511-21100191
+08:41:10.943 Updated code:  : A51121100191
+08:41:12.232 Generated Form : : D201-21110540
+08:41:12.232 Code : : A511-21050293
+08:41:12.281 Updated code:  : A51121050293
+08:41:13.579 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:41:13.599 Generated Form : : D201-21110541
+08:41:13.599 Code : : A511-21100083
+08:41:13.668 Updated code:  : A51121100083
+08:41:14.996 Generated Form : : D201-21110542
+08:41:14.996 Code : : A511-21100076
+08:41:15.044 Updated code:  : A51121100076
+08:41:16.406 Generated Form : : D201-21110543
+08:41:16.406 Code : : A511-21050293
+08:41:16.452 Updated code:  : A51121050293
+08:41:17.785 Generated Form : : D201-21110544
+08:41:17.785 Code : : A511-21060118
+08:41:17.835 Updated code:  : A51121060118
+08:41:19.182 Generated Form : : D201-21110545
+08:41:19.182 Code : : A511-20120149
+08:41:19.236 Updated code:  : A51120120149
+08:41:20.524 Generated Form : : D101-21110371
+08:41:20.583 Updated code:  : P51121060003
+08:41:22.068 Generated Form : : D101-21110372
+08:41:22.128 Updated code:  : P51121060054
+08:41:23.834 Generated Form : : D101-21110373
+08:41:23.900 Updated code:  : P51121100003
+08:41:25.189 Generated Form : : D101-21110374
+08:41:25.250 Updated code:  : P51121060043
+08:41:26.805 Generated Form : : D101-21110375
+08:41:26.865 Updated code:  : J51121030014
+08:41:28.275 Generated Form : : D101-21110376
+08:41:28.336 Updated code:  : P51121090024
+08:41:29.675 Generated Form : : D101-21110377
+08:41:29.739 Updated code:  : P51121060058
+08:41:31.053 Generated Form : : D101-21110378
+08:41:31.114 Updated code:  : P51121040031
+08:41:32.415 Generated Form : : D101-21110379
+08:41:32.500 Updated code:  : J51120120023
+08:41:33.971 Generated Form : : D201-21110546
+08:41:33.971 Code : : J511-20120023
+08:41:34.016 Updated code:  : J51120120023
+08:41:35.479 Generated Form : : D201-21110547
+08:41:35.479 Code : : P511-21040031
+08:41:35.526 Updated code:  : P51121040031
+08:41:36.837 Generated Form : : D201-21110548
+08:41:36.837 Code : : P511-21060058
+08:41:36.895 Updated code:  : P51121060058
+08:41:38.209 Generated Form : : D201-21110549
+08:41:38.209 Code : : P511-21090024
+08:41:38.259 Updated code:  : P51121090024
+08:41:39.587 Generated Form : : D201-21110550
+08:41:39.587 Code : : J511-21030014
+08:41:39.635 Updated code:  : J51121030014
+08:41:40.940 Generated Form : : D201-21110551
+08:41:40.940 Code : : P511-21060043
+08:41:40.988 Updated code:  : P51121060043
+08:41:42.350 Generated Form : : D201-21110552
+08:41:42.350 Code : : P511-21100003
+08:41:42.396 Updated code:  : P51121100003
+08:41:43.817 Generated Form : : D201-21110553
+08:41:43.817 Code : : P511-21060054
+08:41:43.863 Updated code:  : P51121060054
+08:41:45.192 Generated Form : : D201-21110554
+08:41:45.192 Code : : P511-21060003
+08:41:45.238 Updated code:  : P51121060003
+08:41:46.465 Database Response : Object reference not set to an instance of an object.
+08:41:52.315 Database Response : Object reference not set to an instance of an object.
+08:41:53.512 Database Response : Object reference not set to an instance of an object.
+08:41:55.910 Database Response : Object reference not set to an instance of an object.
+08:41:57.120 Database Response : Object reference not set to an instance of an object.
+08:42:03.614 Generated Form : : D201-21110555
+08:42:03.614 Code : : A511-21070097
+08:42:03.660 Updated code:  : A51121070097
+08:42:05.122 Generated Form : : D201-21110556
+08:42:05.122 Code : : A511-21020056
+08:42:05.169 Updated code:  : A51121020056
+08:42:06.776 Database Response : Object reference not set to an instance of an object.
+08:42:08.044 Database Response : Object reference not set to an instance of an object.
+08:42:09.238 Database Response : Object reference not set to an instance of an object.
+08:42:10.444 Database Response : Object reference not set to an instance of an object.
+08:42:11.647 Database Response : Object reference not set to an instance of an object.
+08:42:12.867 Database Response : Object reference not set to an instance of an object.
+08:42:14.087 Database Response : Object reference not set to an instance of an object.
+08:42:15.299 Database Response : Object reference not set to an instance of an object.
+08:42:16.586 Database Response : Object reference not set to an instance of an object.
+08:42:17.914 Database Response : Object reference not set to an instance of an object.
+08:42:20.020 Generated Form : : D201-21110557
+08:42:20.020 Code : : A511-21060162
+08:42:20.069 Updated code:  : A51121060162
+08:42:21.714 Generated Form : : D201-21110558
+08:42:21.714 Code : : A511-21060162
+08:42:21.763 Updated code:  : A51121060162
+08:42:23.265 Generated Form : : D201-21110559
+08:42:23.265 Code : : A511-21060013
+08:42:23.341 Updated code:  : A51121060013
+08:42:24.896 Generated Form : : D201-21110560
+08:42:24.896 Code : : A511-21060158
+08:42:24.941 Updated code:  : A51121060158
+08:42:26.419 Generated Form : : D201-21110561
+08:42:26.419 Code : : A511-21060186
+08:42:26.469 Updated code:  : A51121060186
+08:42:36.832 Generated Form : : D101-21110380
+08:42:36.894 Updated code:  : J51121060012
+08:42:38.234 Generated Form : : D101-21110381
+08:42:38.295 Updated code:  : J51121030028
+08:42:39.605 Generated Form : : D101-21110382
+08:42:39.667 Updated code:  : J51121030028
+08:42:41.193 Generated Form : : D101-21110383
+08:42:41.255 Updated code:  : J51121060012
+08:42:47.298 Generated Form : : D201-21110562
+08:42:47.298 Code : : A511-21050046
+08:42:47.347 Updated code:  : A51121050046
+08:42:59.592 Generated Form : : D201-21110563
+08:42:59.592 Code : : J511-21030028
+08:42:59.639 Updated code:  : J51121030028
+08:43:01.013 Generated Form : : D201-21110564
+08:43:01.014 Code : : J511-21060012
+08:43:01.067 Updated code:  : J51121060012
+08:43:02.521 Generated Form : : D201-21110565
+08:43:02.522 Code : : J511-21030028
+08:43:02.572 Updated code:  : J51121030028
+08:43:03.928 Generated Form : : D201-21110566
+08:43:03.928 Code : : J511-21060012
+08:43:03.978 Updated code:  : J51121060012
+08:43:15.401 Generated Form : : D101-21110384
+08:43:15.474 Updated code:  : P51121060003
+08:43:16.869 Generated Form : : D101-21110385
+08:43:16.955 Updated code:  : P51121050021
+08:43:18.316 Generated Form : : D101-21110386
+08:43:18.374 Updated code:  : P51121060054
+08:43:19.766 Generated Form : : D101-21110387
+08:43:19.828 Updated code:  : P51121100003
+08:43:21.276 Generated Form : : D101-21110388
+08:43:21.334 Updated code:  : P51121060043
+08:43:22.711 Generated Form : : D101-21110389
+08:43:22.781 Updated code:  : A51121070076
+08:43:35.811 MESdbToERPdb 1.0.0 : Started 
+08:43:58.200 MESdbToERPdb 1.0.0 : Started 
+08:44:01.717 Database Response : Object reference not set to an instance of an object.
+08:44:02.991 Database Response : Object reference not set to an instance of an object.
+08:44:04.632 Database Response : Object reference not set to an instance of an object.
+08:44:06.220 Database Response : Object reference not set to an instance of an object.
+08:44:07.848 Database Response : Object reference not set to an instance of an object.
+08:44:09.329 Database Response : Object reference not set to an instance of an object.
+08:44:10.924 Generated Form : : D101-21110390
+08:44:10.988 Updated code:  : A51121060046
+08:44:12.309 Generated Form : : D101-21110391
+08:44:12.369 Updated code:  : A51121100078
+08:44:13.696 Generated Form : : D101-21110392
+08:44:13.768 Updated code:  : A51121050316
+08:44:15.093 Generated Form : : D101-21110393
+08:44:15.153 Updated code:  : A51121100003
+08:44:17.005 Generated Form : : D101-21110394
+08:44:17.066 Updated code:  : A51121100049
+08:44:18.583 Generated Form : : D101-21110395
+08:44:18.653 Updated code:  : A51121050293
+08:44:19.979 Generated Form : : D101-21110396
+08:44:20.040 Updated code:  : A51121060128
+08:44:21.405 Generated Form : : D101-21110397
+08:44:21.465 Updated code:  : A51121050028
+08:44:22.844 Generated Form : : D101-21110398
+08:44:22.908 Updated code:  : A51121060182
+08:44:24.458 Generated Form : : D101-21110399
+08:44:24.518 Updated code:  : A51121070116
+08:44:26.073 Generated Form : : D101-21110400
+08:44:26.137 Updated code:  : A51121020121
+08:44:27.557 Generated Form : : D101-21110401
+08:44:27.618 Updated code:  : A51121060157
+08:44:29.081 Generated Form : : D101-21110402
+08:44:29.142 Updated code:  : A51121060162
+08:44:30.606 Generated Form : : D101-21110403
+08:44:30.669 Updated code:  : A51121100076
+08:44:32.209 Generated Form : : D101-21110404
+08:44:32.270 Updated code:  : A51121070014
+08:44:33.580 Generated Form : : D101-21110405
+08:44:33.641 Updated code:  : A51121100076
+08:44:34.953 Generated Form : : D101-21110406
+08:44:35.017 Updated code:  : A51121040020
+08:44:36.867 Generated Form : : D101-21110407
+08:44:36.927 Updated code:  : A51121070090
+08:44:38.404 Generated Form : : D101-21110408
+08:44:38.463 Updated code:  : A51121050293
+08:44:39.770 Generated Form : : D101-21110409
+08:44:39.829 Updated code:  : A51121100068
+08:44:41.319 Generated Form : : D101-21110410
+08:44:41.375 Updated code:  : A51121060158
+08:44:42.861 Generated Form : : D101-21110411
+08:44:42.925 Updated code:  : A51121050291
+08:44:44.455 Generated Form : : D101-21110412
+08:44:44.515 Updated code:  : A51121060118
+08:44:46.337 Generated Form : : D101-21110413
+08:44:46.414 Updated code:  : A51121030055
+08:44:48.074 Generated Form : : D101-21110414
+08:44:48.136 Updated code:  : A51121070097
+08:44:49.980 Generated Form : : D101-21110415
+08:44:50.049 Updated code:  : A51121100049
+08:44:51.569 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:44:51.584 Generated Form : : D101-21110416
+08:44:51.654 Updated code:  : A51121100090
+08:44:53.258 Generated Form : : D101-21110417
+08:44:53.328 Updated code:  : A51121100294
+08:44:55.034 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:44:55.047 Generated Form : : D101-21110418
+08:44:55.114 Updated code:  : A51121100155
+08:44:56.992 Generated Form : : D101-21110419
+08:44:57.066 Updated code:  : A51121100294
+08:44:59.078 Generated Form : : D101-21110420
+08:44:59.152 Updated code:  : A51121070092
+08:45:00.895 Generated Form : : D101-21110421
+08:45:00.962 Updated code:  : A51121050023
+08:45:02.448 Generated Form : : D101-21110422
+08:45:02.508 Updated code:  : A51121070097
+08:45:04.054 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:45:04.071 Generated Form : : D101-21110423
+08:45:04.128 Updated code:  : A51121100155
+08:45:05.578 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:45:05.592 Generated Form : : D101-21110424
+08:45:05.659 Updated code:  : A51121100173
+08:45:06.958 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:45:06.975 Generated Form : : D101-21110425
+08:45:07.041 Updated code:  : A51121100195
+08:45:08.331 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:45:08.343 Generated Form : : D101-21110426
+08:45:08.411 Updated code:  : A51121100176
+08:45:09.863 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:45:09.880 Generated Form : : D101-21110427
+08:45:09.963 Updated code:  : A51120120081
+08:45:11.351 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:45:11.365 Generated Form : : D101-21110428
+08:45:11.421 Updated code:  : A51121100083
+08:45:12.899 Generated Form : : D101-21110429
+08:45:12.966 Updated code:  : A51121020211
+08:45:14.773 Generated Form : : D101-21110430
+08:45:14.833 Updated code:  : A51121100286
+08:45:16.826 Generated Form : : D101-21110431
+08:45:16.880 Updated code:  : A51121100286
+08:45:18.126 Database Response : Object reference not set to an instance of an object.
+08:45:19.894 Database Response : Object reference not set to an instance of an object.
+08:45:22.200 Database Response : Object reference not set to an instance of an object.
+08:45:24.028 Database Response : Object reference not set to an instance of an object.
+08:45:25.217 Database Response : Object reference not set to an instance of an object.
+08:45:26.851 Database Response : Object reference not set to an instance of an object.
+08:45:28.301 Generated Form : : D201-21110567
+08:45:28.301 Code : : A511-21060128
+08:45:28.361 Updated code:  : A51121060128
+08:45:29.751 Generated Form : : D201-21110568
+08:45:29.751 Code : : A511-21070116
+08:45:29.795 Updated code:  : A51121070116
+08:45:31.112 Generated Form : : D201-21110569
+08:45:31.112 Code : : A511-21100294
+08:45:31.154 Updated code:  : A51121100294
+08:45:32.471 Generated Form : : D201-21110570
+08:45:32.471 Code : : A511-21020121
+08:45:32.518 Updated code:  : A51121020121
+08:45:34.129 Generated Form : : D201-21110571
+08:45:34.129 Code : : A511-21070014
+08:45:34.173 Updated code:  : A51121070014
+08:45:36.382 Generated Form : : D201-21110572
+08:45:36.382 Code : : A511-21070090
+08:45:36.434 Updated code:  : A51121070090
+08:45:37.912 Generated Form : : D201-21110573
+08:45:37.912 Code : : A511-21100068
+08:45:37.960 Updated code:  : A51121100068
+08:45:39.326 Generated Form : : D201-21110574
+08:45:39.326 Code : : A511-21050291
+08:45:39.371 Updated code:  : A51121050291
+08:45:40.880 Generated Form : : D201-21110575
+08:45:40.880 Code : : A511-21050291
+08:45:40.929 Updated code:  : A51121050291
+08:45:42.415 Generated Form : : D201-21110576
+08:45:42.415 Code : : A511-21060046
+08:45:42.470 Updated code:  : A51121060046
+08:45:44.189 Generated Form : : D201-21110577
+08:45:44.189 Code : : J511-20120023
+08:45:44.254 Updated code:  : J51120120023
+08:45:46.254 Generated Form : : D201-21110578
+08:45:46.254 Code : : A511-21100078
+08:45:46.342 Updated code:  : A51121100078
+08:45:48.419 Generated Form : : D201-21110579
+08:45:48.419 Code : : J511-20120023
+08:45:48.467 Updated code:  : J51120120023
+08:45:53.330 Generated Form : : D201-21110580
+08:45:53.330 Code : : P511-21040031
+08:45:53.376 Updated code:  : P51121040031
+08:45:57.278 Generated Form : : D201-21110581
+08:45:57.278 Code : : P511-21060058
+08:45:57.333 Updated code:  : P51121060058
+08:45:59.804 Generated Form : : D201-21110582
+08:45:59.804 Code : : J511-21030014
+08:45:59.860 Updated code:  : J51121030014
+08:46:04.776 Generated Form : : D201-21110583
+08:46:04.776 Code : : A511-21050316
+08:46:04.828 Updated code:  : A51121050316
+08:46:06.141 Generated Form : : D201-21110584
+08:46:06.141 Code : : P511-21060043
+08:46:06.188 Updated code:  : P51121060043
+08:46:10.017 Generated Form : : D201-21110585
+08:46:10.018 Code : : A511-21100003
+08:46:10.069 Updated code:  : A51121100003
+08:46:11.469 Generated Form : : D201-21110586
+08:46:11.469 Code : : P511-21100003
+08:46:11.515 Updated code:  : P51121100003
+08:46:15.623 Generated Form : : D201-21110587
+08:46:15.623 Code : : P511-21060054
+08:46:15.670 Updated code:  : P51121060054
+08:46:17.228 Generated Form : : D201-21110588
+08:46:17.228 Code : : A511-21100049
+08:46:17.275 Updated code:  : A51121100049
+08:46:18.920 Generated Form : : D201-21110589
+08:46:18.920 Code : : P511-21060003
+08:46:18.975 Updated code:  : P51121060003
+08:46:20.823 Generated Form : : D201-21110590
+08:46:20.823 Code : : A511-21050293
+08:46:20.876 Updated code:  : A51121050293
+08:46:22.587 Generated Form : : D201-21110591
+08:46:22.587 Code : : A511-21100076
+08:46:22.635 Updated code:  : A51121100076
+08:46:24.114 Generated Form : : D201-21110592
+08:46:24.114 Code : : A511-21050028
+08:46:24.168 Updated code:  : A51121050028
+08:46:25.484 Generated Form : : D201-21110593
+08:46:25.484 Code : : A511-21050293
+08:46:25.530 Updated code:  : A51121050293
+08:46:26.859 Generated Form : : D201-21110594
+08:46:26.859 Code : : A511-21060118
+08:46:26.906 Updated code:  : A51121060118
+08:46:28.697 Generated Form : : D101-21110432
+08:46:28.763 Updated code:  : P51121090024
+08:46:33.868 Generated Form : : D201-21110595
+08:46:33.869 Code : : P511-21090024
+08:46:33.977 Updated code:  : P51121090024
+08:46:40.581 Database Response : Object reference not set to an instance of an object.
+08:46:42.035 Database Response : Object reference not set to an instance of an object.
+08:46:43.787 Database Response : Object reference not set to an instance of an object.
+08:46:45.121 Database Response : Object reference not set to an instance of an object.
+08:46:46.456 Database Response : Object reference not set to an instance of an object.
+08:46:47.653 Database Response : Object reference not set to an instance of an object.
+08:46:49.067 Generated Form : : D101-21110433
+08:46:49.156 Updated code:  : J51121060012
+08:46:50.782 Generated Form : : D101-21110434
+08:46:50.857 Updated code:  : J51121030028
+08:46:52.947 Generated Form : : D101-21110435
+08:46:53.011 Updated code:  : J51121030028
+08:46:54.932 Generated Form : : D101-21110436
+08:46:55.000 Updated code:  : J51121060012
+08:47:04.796 Generated Form : : D201-21110596
+08:47:04.796 Code : : J511-21060012
+08:47:04.840 Updated code:  : J51121060012
+08:47:06.414 Generated Form : : D201-21110597
+08:47:06.414 Code : : A511-21060162
+08:47:06.460 Updated code:  : A51121060162
+08:47:08.074 Generated Form : : D201-21110598
+08:47:08.074 Code : : J511-21030028
+08:47:08.118 Updated code:  : J51121030028
+08:47:10.068 Generated Form : : D201-21110599
+08:47:10.068 Code : : A511-21060162
+08:47:10.124 Updated code:  : A51121060162
+08:47:12.044 Generated Form : : D201-21110600
+08:47:12.044 Code : : J511-21030028
+08:47:12.090 Updated code:  : J51121030028
+08:47:13.579 Generated Form : : D201-21110601
+08:47:13.579 Code : : A511-21030159
+08:47:13.632 Updated code:  : A51121030159
+08:47:14.958 Generated Form : : D201-21110602
+08:47:14.958 Code : : J511-21060012
+08:47:15.003 Updated code:  : J51121060012
+08:47:16.391 Generated Form : : D201-21110603
+08:47:16.392 Code : : A511-21020211
+08:47:16.436 Updated code:  : A51121020211
+08:47:17.761 Generated Form : : D201-21110604
+08:47:17.761 Code : : A511-21100286
+08:47:17.805 Updated code:  : A51121100286
+08:47:23.974 Generated Form : : D101-21110437
+08:47:24.035 Updated code:  : A51121060158
+08:47:25.372 Generated Form : : D101-21110438
+08:47:25.434 Updated code:  : A51121060128
+08:47:26.736 Generated Form : : D201-21110605
+08:47:26.736 Code : : A511-21100049
+08:47:26.780 Updated code:  : A51121100049
+08:47:28.585 Generated Form : : D101-21110439
+08:47:28.644 Updated code:  : A51121070116
+08:47:29.994 Generated Form : : D101-21110440
+08:47:30.056 Updated code:  : A51121100294
+08:47:31.794 Generated Form : : D101-21110441
+08:47:31.863 Updated code:  : A51121020121
+08:47:34.594 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:47:34.609 Generated Form : : D201-21110606
+08:47:34.609 Code : : A511-21100090
+08:47:34.656 Updated code:  : A51121100090
+08:47:35.957 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:47:35.971 Generated Form : : D201-21110607
+08:47:35.972 Code : : A511-21100155
+08:47:36.023 Updated code:  : A51121100155
+08:47:38.537 Generated Form : : D101-21110442
+08:47:38.619 Updated code:  : A51121030042
+08:47:45.145 Generated Form : : D101-21110443
+08:47:45.348 Updated code:  : A51121070066
+08:47:47.227 Generated Form : : D101-21110444
+08:47:47.284 Updated code:  : A51121030159
+08:47:49.005 Generated Form : : D101-21110445
+08:47:49.068 Updated code:  : A51121040020
+08:47:50.472 Generated Form : : D101-21110446
+08:47:50.539 Updated code:  : A51121070090
+08:47:51.837 Generated Form : : D101-21110447
+08:47:51.898 Updated code:  : A51121060176
+08:47:53.204 Generated Form : : D101-21110448
+08:47:53.264 Updated code:  : A51121100068
+08:47:54.619 Generated Form : : D101-21110449
+08:47:54.680 Updated code:  : A51121050291
+08:47:55.994 Generated Form : : D201-21110608
+08:47:55.994 Code : : A511-21050023
+08:47:56.043 Updated code:  : A51121050023
+08:47:57.347 Generated Form : : D201-21110609
+08:47:57.347 Code : : A511-21070092
+08:47:57.396 Updated code:  : A51121070092
+08:47:58.743 Generated Form : : D201-21110610
+08:47:58.743 Code : : A511-21070097
+08:47:58.788 Updated code:  : A51121070097
+08:48:00.197 Generated Form : : D101-21110450
+08:48:00.281 Updated code:  : A51121030159
+08:48:01.772 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:48:01.785 Generated Form : : D201-21110611
+08:48:01.785 Code : : A511-21100155
+08:48:01.829 Updated code:  : A51121100155
+08:48:05.649 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:48:05.663 Generated Form : : D201-21110612
+08:48:05.663 Code : : A511-21100173
+08:48:05.707 Updated code:  : A51121100173
+08:48:09.761 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:48:09.778 Generated Form : : D201-21110613
+08:48:09.778 Code : : A511-21100195
+08:48:09.830 Updated code:  : A51121100195
+08:48:11.142 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:48:11.158 Generated Form : : D201-21110614
+08:48:11.159 Code : : A511-21100176
+08:48:11.207 Updated code:  : A51121100176
+08:48:12.522 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:48:12.545 Generated Form : : D201-21110615
+08:48:12.545 Code : : A511-20120081
+08:48:12.594 Updated code:  : A51120120081
+08:48:13.970 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:48:13.984 Generated Form : : D201-21110616
+08:48:13.984 Code : : A511-21100083
+08:48:14.037 Updated code:  : A51121100083
+08:48:15.347 Generated Form : : D201-21110617
+08:48:15.347 Code : : A511-21100286
+08:48:15.396 Updated code:  : A51121100286
+08:48:16.783 Generated Form : : D101-21110451
+08:48:16.840 Updated code:  : A51121060046
+08:48:18.152 Generated Form : : D101-21110452
+08:48:18.213 Updated code:  : A51121100078
+08:48:20.090 Generated Form : : D101-21110453
+08:48:20.156 Updated code:  : A51121100286
+08:48:22.132 Generated Form : : D101-21110454
+08:48:22.196 Updated code:  : A51121070097
+08:48:24.412 Generated Form : : D101-21110455
+08:48:24.475 Updated code:  : A51121050316
+08:48:26.407 Generated Form : : D101-21110456
+08:48:26.469 Updated code:  : A51121100003
+08:48:28.096 Generated Form : : D101-21110457
+08:48:28.163 Updated code:  : A51121050046
+08:48:29.666 Generated Form : : D101-21110458
+08:48:29.744 Updated code:  : A51121100049
+08:48:31.080 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:48:31.098 Generated Form : : D101-21110459
+08:48:31.164 Updated code:  : A51121100191
+08:48:33.137 Generated Form : : D101-21110460
+08:48:33.196 Updated code:  : A51121050293
+08:48:34.839 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ',0)'.
+08:48:34.856 Generated Form : : D101-21110461
+08:48:34.943 Updated code:  : A51121100083
+08:48:36.657 Generated Form : : D101-21110462
+08:48:36.721 Updated code:  : A51121100076
+08:48:38.097 Generated Form : : D101-21110463
+08:48:38.158 Updated code:  : A51121050293
+08:48:39.955 Generated Form : : D101-21110464
+08:48:40.076 Updated code:  : A51121060118
+08:48:41.577 Generated Form : : D201-21110618
+08:48:41.577 Code : : A511-21060128
+08:48:41.870 Updated code:  : A51121060128
+08:48:43.253 Generated Form : : D201-21110619
+08:48:43.253 Code : : A511-21070116
+08:48:43.301 Updated code:  : A51121070116
+08:48:44.683 Generated Form : : D201-21110620
+08:48:44.683 Code : : A511-21100294
+08:48:44.729 Updated code:  : A51121100294
+08:48:46.067 Generated Form : : D201-21110621
+08:48:46.067 Code : : A511-21020121
+08:48:46.120 Updated code:  : A51121020121
+08:48:47.466 Generated Form : : D201-21110622
+08:48:47.466 Code : : A511-21070090
+08:48:47.518 Updated code:  : A51121070090
+08:48:49.140 Generated Form : : D201-21110623
+08:48:49.140 Code : : A511-21060176
+08:48:49.185 Updated code:  : A51121060176
+08:48:50.832 Generated Form : : D201-21110624
+08:48:50.832 Code : : A511-21100068
+08:48:50.880 Updated code:  : A51121100068
+08:48:52.149 Generated Form : : D201-21110625
+08:48:52.149 Code : : A511-21050291
+08:48:52.197 Updated code:  : A51121050291
+08:48:54.247 Generated Form : : D201-21110626
+08:48:54.247 Code : : A511-21050291
+08:48:54.291 Updated code:  : A51121050291
+08:48:56.395 Generated Form : : D201-21110627
+08:48:56.396 Code : : A511-21080005
+08:48:56.443 Updated code:  : A51121080005
+08:48:58.197 Generated Form : : D201-21110628
+08:48:58.197 Code : : A511-21060046
+08:48:58.343 Updated code:  : A51121060046
+08:48:59.923 Generated Form : : D201-21110629
+08:48:59.923 Code : : A511-21100078
+08:48:59.967 Updated code:  : A51121100078
+08:49:01.311 Generated Form : : D201-21110630
+08:49:01.311 Code : : A511-21100286
+08:49:01.359 Updated code:  : A51121100286
+08:49:02.890 Generated Form : : D201-21110631
+08:49:02.890 Code : : A511-21070097
+08:49:02.935 Updated code:  : A51121070097
+08:49:04.349 Generated Form : : D201-21110632
+08:49:04.349 Code : : A511-21050316
+08:49:04.395 Updated code:  : A51121050316
+08:49:06.206 Generated Form : : D201-21110633
+08:49:06.206 Code : : A511-21100003
+08:49:06.254 Updated code:  : A51121100003
+08:49:09.439 Generated Form : : D201-21110634
+08:49:09.439 Code : : A511-21100049
+08:49:09.488 Updated code:  : A51121100049
+08:49:10.807 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:49:10.820 Generated Form : : D201-21110635
+08:49:10.821 Code : : A511-21100191
+08:49:10.871 Updated code:  : A51121100191
+08:49:12.231 Generated Form : : D201-21110636
+08:49:12.231 Code : : A511-21050293
+08:49:12.295 Updated code:  : A51121050293
+08:49:14.151 Database Responce : Incorrect syntax near 'S'.
+Incorrect syntax near the keyword 'with'. If this statement is a common table expression, an xmlnamespaces clause or a change tracking context clause, the previous statement must be terminated with a semicolon.
+Unclosed quotation mark after the character string ')'.
+08:49:14.193 Generated Form : : D201-21110637
+08:49:14.193 Code : : A511-21100083
+08:49:14.393 Updated code:  : A51121100083
+08:49:16.119 Generated Form : : D201-21110638
+08:49:16.119 Code : : A511-21100076
+08:49:16.165 Updated code:  : A51121100076
+08:49:17.714 Generated Form : : D201-21110639
+08:49:17.714 Code : : A511-21050293
+08:49:17.764 Updated code:  : A51121050293
+08:49:19.209 Generated Form : : D201-21110640
+08:49:19.209 Code : : A511-21060118
+08:49:19.254 Updated code:  : A51121060118
+08:49:21.229 Generated Form : : D201-21110641
+08:49:21.229 Code : : A511-20120149
+08:49:21.292 Updated code:  : A51120120149
+08:49:23.127 Generated Form : : D101-21110465
+08:49:23.206 Updated code:  : P51121060003
+08:49:24.890 Generated Form : : D101-21110466
+08:49:25.022 Updated code:  : P51121060054
+08:49:26.493 Generated Form : : D101-21110467
+08:49:26.554 Updated code:  : P51121100003
+08:49:27.870 Generated Form : : D101-21110468
+08:49:27.930 Updated code:  : P51121060043
+08:49:29.249 Generated Form : : D101-21110469
+08:49:29.307 Updated code:  : J51121030014
+08:49:30.744 Generated Form : : D101-21110470
+08:49:30.843 Updated code:  : P51121090024
+08:49:32.348 Generated Form : : D101-21110471
+08:49:32.405 Updated code:  : P51121060058
+08:49:33.742 Generated Form : : D101-21110472
+08:49:33.802 Updated code:  : P51121040031
+08:49:35.105 Generated Form : : D101-21110473
+08:49:35.186 Updated code:  : J51120120023
+08:49:36.976 Generated Form : : D201-21110642
+08:49:36.976 Code : : J511-20120023
+08:49:37.037 Updated code:  : J51120120023
+08:49:39.094 Generated Form : : D201-21110643
+08:49:39.094 Code : : P511-21040031
+08:49:39.147 Updated code:  : P51121040031
+08:49:40.711 Generated Form : : D201-21110644
+08:49:40.711 Code : : P511-21060058
+08:49:40.760 Updated code:  : P51121060058
+08:49:42.213 Generated Form : : D201-21110645
+08:49:42.214 Code : : P511-21090024
+08:49:42.266 Updated code:  : P51121090024
+08:49:43.801 Generated Form : : D201-21110646
+08:49:43.802 Code : : J511-21030014
+08:49:43.848 Updated code:  : J51121030014
+08:49:45.145 Generated Form : : D201-21110647
+08:49:45.145 Code : : P511-21060043
+08:49:45.190 Updated code:  : P51121060043
+08:49:46.563 Generated Form : : D201-21110648
+08:49:46.563 Code : : P511-21100003
+08:49:46.623 Updated code:  : P51121100003
+08:49:47.935 Generated Form : : D201-21110649
+08:49:47.935 Code : : P511-21060054
+08:49:47.981 Updated code:  : P51121060054
+08:49:49.307 Generated Form : : D201-21110650
+08:49:49.307 Code : : P511-21060003
+08:49:49.349 Updated code:  : P51121060003
+08:49:50.514 Database Response : Object reference not set to an instance of an object.
+08:49:57.181 Database Response : Object reference not set to an instance of an object.
+08:49:58.370 Database Response : Object reference not set to an instance of an object.
+08:50:00.849 Database Response : Object reference not set to an instance of an object.
+08:50:02.226 Database Response : Object reference not set to an instance of an object.
+08:50:08.556 Generated Form : : D201-21110651
+08:50:08.557 Code : : A511-21070097
+08:50:08.677 Updated code:  : A51121070097
+08:50:09.975 Generated Form : : D201-21110652
+08:50:09.975 Code : : A511-21020056
+08:50:10.023 Updated code:  : A51121020056
+08:50:11.212 Database Response : Object reference not set to an instance of an object.
+08:50:12.406 Database Response : Object reference not set to an instance of an object.
+08:50:13.583 Database Response : Object reference not set to an instance of an object.
+08:50:14.772 Database Response : Object reference not set to an instance of an object.
+08:50:15.948 Database Response : Object reference not set to an instance of an object.
+08:50:17.205 Database Response : Object reference not set to an instance of an object.
+08:50:18.740 Database Response : Object reference not set to an instance of an object.
+08:50:19.929 Database Response : Object reference not set to an instance of an object.
+08:50:21.134 Database Response : Object reference not set to an instance of an object.
+08:50:22.383 Database Response : Object reference not set to an instance of an object.
+08:50:23.711 Generated Form : : D201-21110653
+08:50:23.711 Code : : A511-21060162
+08:50:23.764 Updated code:  : A51121060162
+08:50:25.076 Generated Form : : D201-21110654
+08:50:25.076 Code : : A511-21060162
+08:50:25.121 Updated code:  : A51121060162
+08:50:26.536 Generated Form : : D201-21110655
+08:50:26.536 Code : : A511-21060013
+08:50:26.582 Updated code:  : A51121060013
+08:50:27.932 Generated Form : : D201-21110656
+08:50:27.932 Code : : A511-21060158
+08:50:28.016 Updated code:  : A51121060158
+08:50:29.306 Generated Form : : D201-21110657
+08:50:29.306 Code : : A511-21060186
+08:50:29.349 Updated code:  : A51121060186
+08:50:38.915 Generated Form : : D101-21110474
+08:50:38.975 Updated code:  : J51121060012
+08:50:40.275 Generated Form : : D101-21110475
+08:50:40.337 Updated code:  : J51121030028
+08:50:41.690 Generated Form : : D101-21110476
+08:50:41.754 Updated code:  : J51121030028
+08:50:43.069 Generated Form : : D101-21110477
+08:50:43.186 Updated code:  : J51121060012
+08:50:48.272 Generated Form : : D201-21110658
+08:50:48.272 Code : : A511-21050046
+08:50:48.318 Updated code:  : A51121050046
+08:51:00.101 Generated Form : : D201-21110659
+08:51:00.101 Code : : J511-21030028
+08:51:00.153 Updated code:  : J51121030028
+08:51:01.522 Generated Form : : D201-21110660
+08:51:01.522 Code : : J511-21060012
+08:51:01.569 Updated code:  : J51121060012
+08:51:03.209 Generated Form : : D201-21110661
+08:51:03.209 Code : : J511-21030028
+08:51:03.252 Updated code:  : J51121030028
+08:51:04.579 Generated Form : : D201-21110662
+08:51:04.579 Code : : J511-21060012
+08:51:04.627 Updated code:  : J51121060012
+08:51:15.396 Generated Form : : D101-21110478
+08:51:15.468 Updated code:  : P51121060003
+08:51:16.843 Generated Form : : D101-21110479
+08:51:16.902 Updated code:  : P51121050021
+08:51:18.240 Generated Form : : D101-21110480
+08:51:18.303 Updated code:  : P51121060054
+08:51:19.606 Generated Form : : D101-21110481
+08:51:19.671 Updated code:  : P51121100003
+08:51:20.959 Generated Form : : D101-21110482
+08:51:21.019 Updated code:  : P51121060043
+08:51:22.317 Generated Form : : D101-21110483
+08:51:22.380 Updated code:  : A51121070076
+08:51:23.710 Generated Form : : D101-21110484
+08:51:23.766 Updated code:  : J51121030014
+08:51:25.078 Generated Form : : D101-21110485
+08:51:25.158 Updated code:  : A51121060182
+08:51:26.476 Generated Form : : D101-21110486
+08:51:26.534 Updated code:  : A51121070116
+08:51:27.854 Generated Form : : D101-21110487
+08:51:27.928 Updated code:  : A51121100294
+08:51:29.604 Generated Form : : D101-21110488
+08:51:29.775 Updated code:  : A51121020121
+08:51:31.103 Generated Form : : D101-21110489
+08:51:31.161 Updated code:  : P51121060058
+08:51:32.496 Generated Form : : D101-21110490
+08:51:32.562 Updated code:  : A51121100035
+08:51:33.883 Generated Form : : D101-21110491
+08:51:33.972 Updated code:  : A51121070066
+08:51:35.650 Generated Form : : D101-21110492
+08:51:35.729 Updated code:  : P51121040031
+08:51:37.050 Generated Form : : D101-21110493
+08:51:37.113 Updated code:  : A51121060158
+08:51:39.592 Generated Form : : D101-21110494
+08:51:39.649 Updated code:  : A51121040020
+08:51:42.149 Generated Form : : D101-21110495
+08:51:42.209 Updated code:  : A51121070090
+08:51:43.606 Generated Form : : D101-21110496
+08:51:43.700 Updated code:  : A51121060176
+08:51:45.014 Generated Form : : D101-21110497
+08:51:45.163 Updated code:  : A51121100068
+08:51:46.556 Generated Form : : D101-21110498
+08:51:46.623 Updated code:  : A51121060164
+08:51:49.126 Generated Form : : D101-21110499
+08:51:49.188 Updated code:  : A51121060158
+08:51:50.522 Generated Form : : D101-21110500
+08:51:50.597 Updated code:  : A51121070082
+08:51:53.267 Generated Form : : D101-21110501
+08:51:53.328 Updated code:  : A51121050291
+08:51:59.340 Database Response : Object reference not set to an instance of an object.
+08:52:00.784 Database Response : Object reference not set to an instance of an object.
+08:52:02.029 Database Response : Object reference not set to an instance of an object.
+08:52:03.212 Database Response : Object reference not set to an instance of an object.
+08:52:04.639 Database Response : Object reference not set to an instance of an object.
+08:52:05.843 Database Response : Object reference not set to an instance of an object.
+08:52:07.069 Database Response : Object reference not set to an instance of an object.
+08:52:08.496 Database Response : Object reference not set to an instance of an object.
+08:52:09.706 Database Response : Object reference not set to an instance of an object.
+08:52:11.320 Generated Form : : D101-21110502
+08:52:11.384 Updated code:  : A51121100078
+08:52:12.723 Generated Form : : D101-21110503
+08:52:12.798 Updated code:  : A51121020212
+08:52:14.119 Generated Form : : D101-21110504
+08:52:14.183 Updated code:  : A51121100286
+08:52:15.511 Generated Form : : D101-21110505
+08:52:15.576 Updated code:  : A51121070097
+08:52:16.922 Generated Form : : D101-21110506
+08:52:16.984 Updated code:  : A51121070097
+08:52:18.336 Generated Form : : D101-21110507
+08:52:18.397 Updated code:  : A51121050316
+08:52:19.726 Generated Form : : D101-21110508
+08:52:19.790 Updated code:  : A51121100003
+08:52:19.790 Upload to data to ERP finished! : 
+08:58:59.519 Upload to data to ERP finished! : 
+09:13:59.514 Upload to data to ERP finished! : 
+10:43:38.408 MESdbToERPdb 1.0.0 : Started 
+10:44:04.754 MESdbToERPdb 1.0.0 : Started 
+10:44:31.182 MESdbToERPdb 1.0.0 : Started 
+10:57:37.640 MESdbToERPdb 1.0.0 : Started 
+10:57:49.447 Generated Form : : D101-21110509
+10:57:49.545 Updated code:  : A51121060164
+10:57:52.511 Generated Form : : D101-21110510
+10:57:52.579 Updated code:  : A51121060158
+10:57:54.111 Generated Form : : D101-21110511
+10:57:54.175 Updated code:  : A51121070082
+10:57:57.177 Generated Form : : D101-21110512
+10:57:57.239 Updated code:  : A51121050291
+10:58:03.688 Database Response : Object reference not set to an instance of an object.
+10:58:05.023 Database Response : Object reference not set to an instance of an object.
+10:58:06.436 Database Response : Object reference not set to an instance of an object.
+10:58:07.692 Database Response : Object reference not set to an instance of an object.
+10:58:08.948 Database Response : Object reference not set to an instance of an object.
+10:58:10.197 Database Response : Object reference not set to an instance of an object.
+10:58:11.515 Database Response : Object reference not set to an instance of an object.
+10:58:12.784 Database Response : Object reference not set to an instance of an object.
+10:58:14.093 Database Response : Object reference not set to an instance of an object.
+10:58:15.504 Generated Form : : D101-21110513
+10:58:15.565 Updated code:  : A51121100078
+10:58:16.953 Generated Form : : D101-21110514
+10:58:17.018 Updated code:  : A51121020212
+10:58:18.401 Generated Form : : D101-21110515
+10:58:18.488 Updated code:  : A51121100286
+10:58:19.862 Generated Form : : D101-21110516
+10:58:19.925 Updated code:  : A51121070097
+10:58:21.270 Generated Form : : D101-21110517
+10:58:21.328 Updated code:  : A51121070097
+10:58:22.712 Generated Form : : D101-21110518
+10:58:22.779 Updated code:  : A51121050316
+10:58:24.136 Generated Form : : D101-21110519
+10:58:24.206 Updated code:  : A51121100003
+10:58:24.206 Upload to data to ERP finished! : 
+11:07:46.741 Upload to data to ERP finished! : 
+11:09:48.284 MESdbToERPdb 1.0.0 : Started 
+11:10:21.358 MESdbToERPdb 1.0.0 : Started 
+11:10:25.176 Generated Form : : D101-21110520
+11:10:25.245 Updated code:  : A51121060164
+11:10:27.836 Generated Form : : D101-21110521
+11:10:27.899 Updated code:  : A51121060158
+11:10:29.269 Generated Form : : D101-21110522
+11:10:29.363 Updated code:  : A51121070082
+11:10:32.306 Generated Form : : D101-21110523
+11:10:32.371 Updated code:  : A51121050291
+11:10:38.972 Database Response : Object reference not set to an instance of an object.
+11:10:40.203 Database Response : Object reference not set to an instance of an object.
+11:10:41.446 Database Response : Object reference not set to an instance of an object.
+11:10:42.682 Database Response : Object reference not set to an instance of an object.
+11:10:43.972 Database Response : Object reference not set to an instance of an object.
+11:10:45.204 Database Response : Object reference not set to an instance of an object.
+11:10:46.554 Database Response : Object reference not set to an instance of an object.
+11:10:47.832 Database Response : Object reference not set to an instance of an object.
+11:10:49.184 Database Response : Object reference not set to an instance of an object.
+11:10:50.773 Generated Form : : D101-21110524
+11:10:50.851 Updated code:  : A51121100078
+11:10:52.363 Generated Form : : D101-21110525
+11:10:52.452 Updated code:  : A51121020212
+11:10:53.947 Generated Form : : D101-21110526
+11:10:54.020 Updated code:  : A51121100286
+11:10:55.456 Generated Form : : D101-21110527
+11:10:55.526 Updated code:  : A51121070097
+11:10:56.997 Generated Form : : D101-21110528
+11:10:57.068 Updated code:  : A51121070097
+11:10:58.508 Generated Form : : D101-21110529
+11:10:58.570 Updated code:  : A51121050316
+11:10:59.931 Generated Form : : D101-21110530
+11:11:00.016 Updated code:  : A51121100003
+11:11:00.016 Upload to data to ERP finished! : 
+11:15:24.707 Generated Form : : D101-21110531
+11:15:24.779 Updated code:  : A51121060164
+11:15:27.344 Generated Form : : D101-21110532
+11:15:27.403 Updated code:  : A51121060158
+11:15:28.773 Generated Form : : D101-21110533
+11:15:28.827 Updated code:  : A51121070082
+11:15:32.409 Generated Form : : D101-21110534
+11:15:32.463 Updated code:  : A51121050291
+11:15:38.805 Database Response : Object reference not set to an instance of an object.
+11:15:40.010 Database Response : Object reference not set to an instance of an object.
+11:15:41.227 Database Response : Object reference not set to an instance of an object.
+11:15:42.439 Database Response : Object reference not set to an instance of an object.
+11:15:43.671 Database Response : Object reference not set to an instance of an object.
+11:15:44.899 Database Response : Object reference not set to an instance of an object.
+11:15:46.120 Database Response : Object reference not set to an instance of an object.
+11:15:47.361 Database Response : Object reference not set to an instance of an object.
+11:15:48.569 Database Response : Object reference not set to an instance of an object.
+11:15:50.251 Generated Form : : D101-21110535
+11:15:50.321 Updated code:  : A51121100078
+11:15:52.358 Generated Form : : D101-21110536
+11:15:52.425 Updated code:  : A51121020212
+11:15:54.013 Generated Form : : D101-21110537
+11:15:54.068 Updated code:  : A51121100286
+11:15:55.375 Generated Form : : D101-21110538
+11:15:55.429 Updated code:  : A51121070097
+11:15:56.740 Generated Form : : D101-21110539
+11:15:56.791 Updated code:  : A51121070097
+11:15:58.122 Generated Form : : D101-21110540
+11:15:58.178 Updated code:  : A51121050316
+11:15:59.519 Generated Form : : D101-21110541
+11:15:59.576 Updated code:  : A51121100003
+11:15:59.576 Upload to data to ERP finished! : 
+11:22:55.214 MESdbToERPdb 1.0.0 : Started 
+11:23:20.403 Generated Form : : D101-21110542
+11:23:20.477 Updated code:  : A51121060164
+11:23:23.122 Generated Form : : D101-21110543
+11:23:23.209 Updated code:  : A51121060158
+11:23:24.701 Generated Form : : D101-21110544
+11:23:24.769 Updated code:  : A51121070082
+11:23:27.357 Generated Form : : D101-21110545
+11:23:27.425 Updated code:  : A51121050291
+11:23:33.897 Database Response : Object reference not set to an instance of an object.
+11:23:35.103 Database Response : Object reference not set to an instance of an object.
+11:23:36.517 Database Response : Object reference not set to an instance of an object.
+11:23:37.920 Database Response : Object reference not set to an instance of an object.
+11:23:39.163 Database Response : Object reference not set to an instance of an object.
+11:23:40.402 Database Response : Object reference not set to an instance of an object.
+11:23:41.625 Database Response : Object reference not set to an instance of an object.
+11:23:42.825 Database Response : Object reference not set to an instance of an object.
+11:23:44.019 Database Response : Object reference not set to an instance of an object.
+11:23:45.386 Generated Form : : D101-21110546
+11:23:45.454 Updated code:  : A51121100078
+11:23:46.922 Generated Form : : D101-21110547
+11:23:46.991 Updated code:  : A51121020212
+11:23:48.572 Generated Form : : D101-21110548
+11:23:48.643 Updated code:  : A51121100286
+11:23:50.030 Generated Form : : D101-21110549
+11:23:50.118 Updated code:  : A51121070097
+11:23:51.735 Generated Form : : D101-21110550
+11:23:51.800 Updated code:  : A51121070097
+11:23:53.415 Generated Form : : D101-21110551
+11:23:53.481 Updated code:  : A51121050316
+11:23:55.153 Generated Form : : D101-21110552
+11:23:55.221 Updated code:  : A51121100003
+11:23:55.221 Upload to data to ERP finished! : 
+11:25:18.854 Generated Form : : D101-21110553
+11:25:18.917 Updated code:  : A51121060164
+11:25:21.592 Generated Form : : D101-21110554
+11:25:21.664 Updated code:  : A51121060158
+11:25:23.122 Generated Form : : D101-21110555
+11:25:23.191 Updated code:  : A51121070082
+11:25:25.992 Generated Form : : D101-21110556
+11:25:26.075 Updated code:  : A51121050291
+11:25:32.388 Database Response : Object reference not set to an instance of an object.
+11:25:33.642 Database Response : Object reference not set to an instance of an object.
+11:25:34.938 Database Response : Object reference not set to an instance of an object.
+11:25:36.196 Database Response : Object reference not set to an instance of an object.
+11:25:37.507 Database Response : Object reference not set to an instance of an object.
+11:25:38.757 Database Response : Object reference not set to an instance of an object.
+11:25:39.964 Database Response : Object reference not set to an instance of an object.
+11:25:41.183 Database Response : Object reference not set to an instance of an object.
+11:25:42.513 Database Response : Object reference not set to an instance of an object.
+11:25:43.983 Generated Form : : D101-21110557
+11:25:44.054 Updated code:  : A51121100078
+11:25:45.582 Generated Form : : D101-21110558
+11:25:45.808 Updated code:  : A51121020212
+11:25:47.280 Generated Form : : D101-21110559
+11:25:47.373 Updated code:  : A51121100286
+11:25:48.745 Generated Form : : D101-21110560
+11:25:48.838 Updated code:  : A51121070097
+11:25:50.205 Generated Form : : D101-21110561
+11:25:50.275 Updated code:  : A51121070097
+11:25:51.621 Generated Form : : D101-21110562
+11:25:51.690 Updated code:  : A51121050316
+11:25:53.059 Generated Form : : D101-21110563
+11:25:53.134 Updated code:  : A51121100003
+11:25:53.135 Upload to data to ERP finished! : 
+11:27:17.737 Generated Form : : D101-21110564
+11:27:17.799 Updated code:  : A51121060164
+11:27:20.416 Generated Form : : D101-21110565
+11:27:20.489 Updated code:  : A51121060158
+11:27:21.839 Generated Form : : D101-21110566
+11:27:21.910 Updated code:  : A51121070082
+11:27:24.464 Generated Form : : D101-21110567
+11:27:24.530 Updated code:  : A51121050291
+11:27:30.519 Database Response : Object reference not set to an instance of an object.
+11:27:31.772 Database Response : Object reference not set to an instance of an object.
+11:27:32.987 Database Response : Object reference not set to an instance of an object.
+11:27:34.190 Database Response : Object reference not set to an instance of an object.
+11:27:35.413 Database Response : Object reference not set to an instance of an object.
+11:27:36.627 Database Response : Object reference not set to an instance of an object.
+11:27:37.825 Database Response : Object reference not set to an instance of an object.
+11:27:39.037 Database Response : Object reference not set to an instance of an object.
+11:27:40.251 Database Response : Object reference not set to an instance of an object.
+11:27:41.664 Generated Form : : D101-21110568
+11:27:41.730 Updated code:  : A51121100078
+11:27:43.062 Generated Form : : D101-21110569
+11:27:43.123 Updated code:  : A51121020212
+11:27:44.469 Generated Form : : D101-21110570
+11:27:44.531 Updated code:  : A51121100286
+11:27:45.852 Generated Form : : D101-21110571
+11:27:45.922 Updated code:  : A51121070097
+11:27:47.293 Generated Form : : D101-21110572
+11:27:47.353 Updated code:  : A51121070097
+11:27:48.713 Generated Form : : D101-21110573
+11:27:48.776 Updated code:  : A51121050316
+11:27:50.097 Generated Form : : D101-21110574
+11:27:50.162 Updated code:  : A51121100003
+11:27:50.162 Upload to data to ERP finished! : 
+11:29:16.792 Generated Form : : D101-21110575
+11:29:16.859 Updated code:  : A51121060164
+11:29:19.385 Generated Form : : D101-21110576
+11:29:19.449 Updated code:  : A51121060158
+11:29:21.225 Generated Form : : D101-21110577
+11:29:21.285 Updated code:  : A51121070082
+11:29:23.857 Generated Form : : D101-21110578
+11:29:24.013 Updated code:  : A51121050291
+11:29:30.133 Database Response : Object reference not set to an instance of an object.
+11:29:31.428 Database Response : Object reference not set to an instance of an object.
+11:29:32.678 Database Response : Object reference not set to an instance of an object.
+11:29:33.863 Database Response : Object reference not set to an instance of an object.
+11:29:35.063 Database Response : Object reference not set to an instance of an object.
+11:29:36.452 Database Response : Object reference not set to an instance of an object.
+11:29:37.730 Database Response : Object reference not set to an instance of an object.
+11:29:39.013 Database Response : Object reference not set to an instance of an object.
+11:29:40.197 Database Response : Object reference not set to an instance of an object.
+11:29:41.566 Generated Form : : D101-21110579
+11:29:41.633 Updated code:  : A51121100078
+11:29:43.415 Generated Form : : D101-21110580
+11:29:43.488 Updated code:  : A51121020212
+11:29:44.974 Generated Form : : D101-21110581
+11:29:45.045 Updated code:  : A51121100286
+11:29:46.346 Generated Form : : D101-21110582
+11:29:46.414 Updated code:  : A51121070097
+11:29:47.728 Generated Form : : D101-21110583
+11:29:47.799 Updated code:  : A51121070097
+11:29:49.176 Generated Form : : D101-21110584
+11:29:49.242 Updated code:  : A51121050316
+11:29:50.616 Generated Form : : D101-21110585
+11:29:50.701 Updated code:  : A51121100003
+11:29:50.848 Upload to data to ERP finished! : 
+12:35:38.876 MESdbToERPdb 1.0.0 : Started 
+12:39:00.262 MESdbToERPdb 1.0.0 : Started 
+12:40:31.840 MESdbToERPdb 1.0.0 : Started 
+12:40:38.804 Database Response : Object reference not set to an instance of an object.
+12:40:40.042 Database Response : Object reference not set to an instance of an object.
+12:40:41.255 Database Response : Object reference not set to an instance of an object.
+12:40:42.480 Database Response : Object reference not set to an instance of an object.
+12:40:43.711 Database Response : Object reference not set to an instance of an object.
+12:40:44.936 Database Response : Object reference not set to an instance of an object.
+12:40:46.156 Database Response : Object reference not set to an instance of an object.
+12:40:47.630 Generated Form : : D101-21110390
+12:40:47.701 Updated code:  : A51121060046
+12:40:49.043 Generated Form : : D101-21110391
+12:40:49.105 Updated code:  : A51121100078
+12:40:50.451 Generated Form : : D101-21110392
+12:40:50.516 Updated code:  : A51121050316
+12:45:14.017 MESdbToERPdb 1.0.0 : Started 
+12:46:42.457 MESdbToERPdb 1.0.0 : Started 
+12:46:46.343 Database MES base data Response : Object reference not set to an instance of an object.
+12:46:47.589 Database MES base data Response : Object reference not set to an instance of an object.
+12:46:48.830 Database MES base data Response : Object reference not set to an instance of an object.
+12:46:50.075 Database MES base data Response : Object reference not set to an instance of an object.
+12:46:51.349 Database MES base data Response : Object reference not set to an instance of an object.
+12:46:52.626 Database MES base data Response : Object reference not set to an instance of an object.
+12:46:53.868 Database MES base data Response : Object reference not set to an instance of an object.
+12:48:49.391 MESdbToERPdb 1.0.0 : Started 
+12:48:59.558 Database MES base data Response : Object reference not set to an instance of an object.
+12:49:00.850 Database MES base data Response : Object reference not set to an instance of an object.
+12:49:02.146 Database MES base data Response : Object reference not set to an instance of an object.
+12:49:03.373 Database MES base data Response : Object reference not set to an instance of an object.
+12:49:04.589 Database MES base data Response : Object reference not set to an instance of an object.
+12:49:05.795 Database MES base data Response : Object reference not set to an instance of an object.
+12:49:07.014 Database MES base data Response : Object reference not set to an instance of an object.
+12:49:29.565 Generated Form : : D101-21110390
+12:51:28.041 MESdbToERPdb 1.0.0 : Started 
+12:51:31.017 Database MES base data Response : Object reference not set to an instance of an object.
+12:51:32.278 Database MES base data Response : Object reference not set to an instance of an object.
+12:51:33.490 Database MES base data Response : Object reference not set to an instance of an object.
+12:51:34.695 Database MES base data Response : Object reference not set to an instance of an object.
+12:51:36.045 Database MES base data Response : Object reference not set to an instance of an object.
+12:51:37.302 Database MES base data Response : Object reference not set to an instance of an object.
+12:51:38.544 Database MES base data Response : Object reference not set to an instance of an object.
+12:53:49.006 Generated Form : : D101-21110390
+12:53:49.078 Updated code:  : A51121060046
+12:53:50.521 Generated Form : : D101-21110391
+12:53:50.588 Updated code:  : A51121100078
+12:53:51.938 Generated Form : : D101-21110392
+12:53:51.998 Updated code:  : A51121050316
+12:53:53.380 Generated Form : : D101-21110393
+12:53:53.449 Updated code:  : A51121100003
+12:53:55.062 Generated Form : : D101-21110394
+12:53:55.130 Updated code:  : A51121100049
+12:53:56.628 Generated Form : : D101-21110395
+12:53:56.695 Updated code:  : A51121050293
+12:53:58.049 Generated Form : : D101-21110396
+12:53:58.113 Updated code:  : A51121060128
+12:53:59.462 Generated Form : : D101-21110397
+12:53:59.546 Updated code:  : A51121050028
+12:54:00.899 Generated Form : : D101-21110398
+12:54:00.963 Updated code:  : A51121060182
+12:54:02.354 Generated Form : : D101-21110399
+12:54:02.444 Updated code:  : A51121070116
+12:54:03.867 Generated Form : : D101-21110400
+12:54:03.929 Updated code:  : A51121020121
+12:54:05.314 Generated Form : : D101-21110401
+12:54:05.378 Updated code:  : A51121060157
+12:54:06.737 Generated Form : : D101-21110402
+12:54:06.803 Updated code:  : A51121060162
+12:54:08.155 Generated Form : : D101-21110403
+12:54:08.223 Updated code:  : A51121100076
+12:54:09.552 Generated Form : : D101-21110404
+12:54:09.612 Updated code:  : A51121070014
+12:54:11.238 Generated Form : : D101-21110405
+12:54:11.294 Updated code:  : A51121100076
+12:54:12.795 Generated Form : : D101-21110406
+12:54:12.926 Updated code:  : A51121040020
+12:54:14.759 Generated Form : : D101-21110407
+12:54:14.832 Updated code:  : A51121070090
+12:54:16.141 Generated Form : : D101-21110408
+12:54:16.200 Updated code:  : A51121050293
+12:54:17.584 Generated Form : : D101-21110409
+12:54:17.648 Updated code:  : A51121100068
+12:54:18.981 Generated Form : : D101-21110410
+12:54:19.045 Updated code:  : A51121060158
+12:54:20.359 Generated Form : : D101-21110411
+12:54:20.419 Updated code:  : A51121050291
+12:54:21.746 Generated Form : : D101-21110412
+12:54:21.822 Updated code:  : A51121060118
+12:54:23.154 Generated Form : : D101-21110413
+12:54:23.226 Updated code:  : A51121030055
+12:54:24.539 Generated Form : : D101-21110414
+12:54:24.602 Updated code:  : A51121070097
+12:54:25.927 Generated Form : : D101-21110415
+12:54:25.999 Updated code:  : A51121100049
+13:34:41.087 MESdbToERPdb 1.0.0 : Started 
+13:34:45.352 Database MES base data Response : Object reference not set to an instance of an object.
+13:34:47.203 Database MES base data Response : Object reference not set to an instance of an object.
+13:34:48.535 Database MES base data Response : Object reference not set to an instance of an object.
+13:34:49.792 Database MES base data Response : Object reference not set to an instance of an object.
+13:34:51.131 Database MES base data Response : Object reference not set to an instance of an object.
+13:34:52.664 Database MES base data Response : Object reference not set to an instance of an object.
+13:34:54.065 Database MES base data Response : Object reference not set to an instance of an object.
+13:34:55.559 Generated Form : : D101-21110390
+13:34:55.625 Updated code:  : A51121060046
+13:34:57.541 Generated Form : : D101-21110391
+13:34:57.607 Updated code:  : A51121100078
+13:34:59.079 Generated Form : : D101-21110392
+13:34:59.151 Updated code:  : A51121050316
+13:35:00.784 Generated Form : : D101-21110393
+13:35:00.848 Updated code:  : A51121100003
+13:35:02.665 Generated Form : : D101-21110394
+13:35:02.734 Updated code:  : A51121100049
+13:35:04.606 Generated Form : : D101-21110395
+13:35:04.674 Updated code:  : A51121050293
+13:35:06.236 Generated Form : : D101-21110396
+13:35:06.302 Updated code:  : A51121060128
+13:35:08.094 Generated Form : : D101-21110397
+13:35:08.154 Updated code:  : A51121050028
+13:35:09.497 Generated Form : : D101-21110398
+13:35:09.559 Updated code:  : A51121060182
+13:35:11.250 Generated Form : : D101-21110399
+13:35:11.313 Updated code:  : A51121070116
+13:35:13.345 Generated Form : : D101-21110400
+13:35:13.407 Updated code:  : A51121020121
+13:35:15.697 Generated Form : : D101-21110401
+13:35:15.760 Updated code:  : A51121060157
+13:35:17.999 Generated Form : : D101-21110402
+13:35:18.071 Updated code:  : A51121060162
+13:35:19.460 Generated Form : : D101-21110403
+13:35:19.519 Updated code:  : A51121100076
+13:35:21.219 Generated Form : : D101-21110404
+13:35:21.282 Updated code:  : A51121070014
+13:35:23.595 Generated Form : : D101-21110405
+13:35:23.675 Updated code:  : A51121100076
+13:35:26.080 Generated Form : : D101-21110406
+13:35:26.141 Updated code:  : A51121040020
+13:35:28.100 Generated Form : : D101-21110407
+13:35:28.160 Updated code:  : A51121070090
+13:35:30.406 Generated Form : : D101-21110408
+13:35:30.472 Updated code:  : A51121050293
+13:35:32.045 Generated Form : : D101-21110409
+13:35:32.107 Updated code:  : A51121100068
+13:35:33.573 Generated Form : : D101-21110410
+13:35:33.634 Updated code:  : A51121060158
+13:35:35.061 Generated Form : : D101-21110411
+13:35:35.129 Updated code:  : A51121050291
+13:35:36.625 Generated Form : : D101-21110412
+13:35:36.687 Updated code:  : A51121060118
+13:35:38.606 Generated Form : : D101-21110413
+13:35:38.668 Updated code:  : A51121030055
+13:35:41.112 Generated Form : : D101-21110414
+13:35:41.180 Updated code:  : A51121070097
+13:35:42.792 Generated Form : : D101-21110415
+13:35:42.882 Updated code:  : A51121100049
+13:35:44.541 Generated Form : : D101-21110416
+13:35:44.610 Updated code:  : A51121100090
+13:35:46.507 Generated Form : : D101-21110417
+13:35:46.571 Updated code:  : A51121100294
+13:35:48.503 Generated Form : : D101-21110418
+13:35:48.572 Updated code:  : A51121100155
+13:35:50.286 Generated Form : : D101-21110419
+13:35:50.347 Updated code:  : A51121100294
+13:35:51.962 Generated Form : : D101-21110420
+13:35:52.044 Updated code:  : A51121070092
+13:35:53.444 Generated Form : : D101-21110421
+13:35:53.512 Updated code:  : A51121050023
+13:35:55.184 Generated Form : : D101-21110422
+13:35:55.246 Updated code:  : A51121070097
+13:35:56.610 Generated Form : : D101-21110423
+13:35:56.673 Updated code:  : A51121100155
+13:36:04.024 Generated Form : : D101-21110424
+13:36:04.107 Updated code:  : A51121100173
+13:36:05.779 Generated Form : : D101-21110425
+13:36:05.843 Updated code:  : A51121100195
+13:36:07.421 Generated Form : : D101-21110426
+13:36:07.491 Updated code:  : A51121100176
+13:36:09.334 Generated Form : : D101-21110427
+13:36:09.403 Updated code:  : A51120120081
+13:36:11.256 Generated Form : : D101-21110428
+13:36:11.322 Updated code:  : A51121100083
+13:36:13.028 Generated Form : : D101-21110429
+13:36:13.098 Updated code:  : A51121020211
+13:36:14.699 Generated Form : : D101-21110430
+13:36:14.784 Updated code:  : A51121100286
+13:36:16.496 Generated Form : : D101-21110431
+13:36:16.557 Updated code:  : A51121100286
+13:36:18.251 Database MES base data Response : Object reference not set to an instance of an object.
+13:36:20.252 Database MES base data Response : Object reference not set to an instance of an object.
+13:36:21.657 Database MES base data Response : Object reference not set to an instance of an object.
+13:36:23.070 Database MES base data Response : Object reference not set to an instance of an object.
+13:36:24.500 Database MES base data Response : Object reference not set to an instance of an object.
+13:36:25.767 Database MES base data Response : Object reference not set to an instance of an object.
+13:36:27.375 Generated Form : : D201-21110567
+13:36:27.375 Code : : A511-21060128
+13:36:27.424 Updated code:  : A51121060128
+13:36:29.246 Generated Form : : D201-21110568
+13:36:29.246 Code : : A511-21070116
+13:36:29.294 Updated code:  : A51121070116
+13:36:31.145 Generated Form : : D201-21110569
+13:36:31.145 Code : : A511-21100294
+13:36:31.194 Updated code:  : A51121100294
+13:36:32.618 Generated Form : : D201-21110570
+13:36:32.618 Code : : A511-21020121
+13:36:32.669 Updated code:  : A51121020121
+13:36:34.137 Generated Form : : D201-21110571
+13:36:34.137 Code : : A511-21070014
+13:36:34.187 Updated code:  : A51121070014
+13:36:35.799 Generated Form : : D201-21110572
+13:36:35.799 Code : : A511-21070090
+13:36:35.853 Updated code:  : A51121070090
+13:36:37.517 Generated Form : : D201-21110573
+13:36:37.517 Code : : A511-21100068
+13:36:37.563 Updated code:  : A51121100068
+13:36:38.944 Generated Form : : D201-21110574
+13:36:38.972 Code : : A511-21050291
+13:36:39.020 Updated code:  : A51121050291
+13:36:40.322 Generated Form : : D201-21110575
+13:36:40.322 Code : : A511-21050291
+13:36:40.374 Updated code:  : A51121050291
+13:36:42.505 Generated Form : : D201-21110576
+13:36:42.505 Code : : A511-21060046
+13:36:42.556 Updated code:  : A51121060046
+13:36:44.293 Generated Form : : D201-21110577
+13:36:44.293 Code : : J511-20120023
+13:36:44.345 Updated code:  : J51120120023
+13:36:45.758 Generated Form : : D201-21110578
+13:36:45.758 Code : : A511-21100078
+13:36:45.809 Updated code:  : A51121100078
+13:36:47.147 Generated Form : : D201-21110579
+13:36:47.148 Code : : J511-20120023
+13:36:47.199 Updated code:  : J51120120023
+13:36:53.292 Generated Form : : D201-21110580
+13:36:53.292 Code : : P511-21040031
+13:36:53.359 Updated code:  : P51121040031
+13:36:58.236 Generated Form : : D201-21110581
+13:36:58.236 Code : : P511-21060058
+13:36:58.296 Updated code:  : P51121060058
+13:37:00.773 Generated Form : : D201-21110582
+13:37:00.773 Code : : J511-21030014
+13:37:00.830 Updated code:  : J51121030014
+13:37:06.603 Generated Form : : D201-21110583
+13:37:06.604 Code : : A511-21050316
+13:37:06.658 Updated code:  : A51121050316
+13:37:08.017 Generated Form : : D201-21110584
+13:37:08.017 Code : : P511-21060043
+13:37:08.065 Updated code:  : P51121060043
+13:37:11.156 Generated Form : : D201-21110585
+13:37:11.156 Code : : A511-21100003
+13:37:11.204 Updated code:  : A51121100003
+13:37:12.632 Generated Form : : D201-21110586
+13:37:12.632 Code : : P511-21100003
+13:37:12.721 Updated code:  : P51121100003
+13:37:16.404 Generated Form : : D201-21110587
+13:37:16.405 Code : : P511-21060054
+13:37:16.452 Updated code:  : P51121060054
+13:37:18.214 Generated Form : : D201-21110588
+13:37:18.215 Code : : A511-21100049
+13:37:18.263 Updated code:  : A51121100049
+13:37:19.757 Generated Form : : D201-21110589
+13:37:19.757 Code : : P511-21060003
+13:37:19.805 Updated code:  : P51121060003
+13:37:21.102 Generated Form : : D201-21110590
+13:37:21.102 Code : : A511-21050293
+13:37:21.148 Updated code:  : A51121050293
+13:37:22.506 Generated Form : : D201-21110591
+13:37:22.506 Code : : A511-21100076
+13:37:22.556 Updated code:  : A51121100076
+13:37:23.846 Generated Form : : D201-21110592
+13:37:23.846 Code : : A511-21050028
+13:37:23.899 Updated code:  : A51121050028
+13:37:25.197 Generated Form : : D201-21110593
+13:37:25.197 Code : : A511-21050293
+13:37:25.243 Updated code:  : A51121050293
+13:37:26.590 Generated Form : : D201-21110594
+13:37:26.590 Code : : A511-21060118
+13:37:26.643 Updated code:  : A51121060118
+13:37:28.257 Generated Form : : D101-21110432
+13:37:28.322 Updated code:  : P51121090024
+13:37:35.371 Generated Form : : D201-21110595
+13:37:35.371 Code : : P511-21090024
+13:37:35.453 Updated code:  : P51121090024
+13:37:42.477 Database MES base data Response : Object reference not set to an instance of an object.
+13:37:44.151 Database MES base data Response : Object reference not set to an instance of an object.
+13:37:45.596 Database MES base data Response : Object reference not set to an instance of an object.
+13:37:47.493 Database MES base data Response : Object reference not set to an instance of an object.
+13:37:48.962 Database MES base data Response : Object reference not set to an instance of an object.
+13:37:50.638 Database MES base data Response : Object reference not set to an instance of an object.
+13:37:52.176 Generated Form : : D101-21110433
+13:37:52.242 Updated code:  : J51121060012
+13:37:53.589 Generated Form : : D101-21110434
+13:37:53.652 Updated code:  : J51121030028
+13:37:55.484 Generated Form : : D101-21110435
+13:37:55.546 Updated code:  : J51121030028
+13:37:57.231 Generated Form : : D101-21110436
+13:37:57.291 Updated code:  : J51121060012
+13:38:06.817 Generated Form : : D201-21110596
+13:38:06.817 Code : : J511-21060012
+13:38:06.869 Updated code:  : J51121060012
+13:38:08.272 Generated Form : : D201-21110597
+13:38:08.272 Code : : A511-21060162
+13:38:08.322 Updated code:  : A51121060162
+13:38:10.476 Generated Form : : D201-21110598
+13:38:10.476 Code : : J511-21030028
+13:38:10.523 Updated code:  : J51121030028
+13:38:12.261 Generated Form : : D201-21110599
+13:38:12.261 Code : : A511-21060162
+13:38:12.314 Updated code:  : A51121060162
+13:38:14.251 Generated Form : : D201-21110600
+13:38:14.251 Code : : J511-21030028
+13:38:14.304 Updated code:  : J51121030028
+13:38:16.283 Generated Form : : D201-21110601
+13:38:16.283 Code : : A511-21030159
+13:38:16.332 Updated code:  : A51121030159
+13:38:17.909 Generated Form : : D201-21110602
+13:38:17.909 Code : : J511-21060012
+13:38:17.957 Updated code:  : J51121060012
+13:38:19.309 Generated Form : : D201-21110603
+13:38:19.309 Code : : A511-21020211
+13:38:19.358 Updated code:  : A51121020211
+13:38:21.190 Generated Form : : D201-21110604
+13:38:21.191 Code : : A511-21100286
+13:38:21.240 Updated code:  : A51121100286
+13:38:28.334 Generated Form : : D101-21110437
+13:38:28.405 Updated code:  : A51121060158
+13:38:30.441 Generated Form : : D101-21110438
+13:38:30.510 Updated code:  : A51121060128
+13:38:32.438 Generated Form : : D201-21110605
+13:38:32.438 Code : : A511-21100049
+13:38:32.485 Updated code:  : A51121100049
+13:38:34.269 Generated Form : : D101-21110439
+13:38:34.329 Updated code:  : A51121070116
+13:38:35.772 Generated Form : : D101-21110440
+13:38:35.835 Updated code:  : A51121100294
+13:38:37.283 Generated Form : : D101-21110441
+13:38:37.345 Updated code:  : A51121020121
+13:38:40.257 Generated Form : : D201-21110606
+13:38:40.257 Code : : A511-21100090
+13:38:40.307 Updated code:  : A51121100090
+13:38:41.701 Generated Form : : D201-21110607
+13:38:41.701 Code : : A511-21100155
+13:38:41.753 Updated code:  : A51121100155
+13:38:44.384 Generated Form : : D101-21110442
+13:38:44.456 Updated code:  : A51121030042
+13:38:48.144 Generated Form : : D101-21110443
+13:38:48.263 Updated code:  : A51121070066
+13:38:50.053 Generated Form : : D101-21110444
+13:38:50.121 Updated code:  : A51121030159
+13:38:51.682 Generated Form : : D101-21110445
+13:38:51.744 Updated code:  : A51121040020
+13:38:53.277 Generated Form : : D101-21110446
+13:38:53.334 Updated code:  : A51121070090
+13:38:55.391 Generated Form : : D101-21110447
+13:38:55.461 Updated code:  : A51121060176
+13:38:57.517 Generated Form : : D101-21110448
+13:38:57.576 Updated code:  : A51121100068
+13:38:59.465 Generated Form : : D101-21110449
+13:38:59.527 Updated code:  : A51121050291
+13:39:01.219 Generated Form : : D201-21110608
+13:39:01.219 Code : : A511-21050023
+13:39:01.275 Updated code:  : A51121050023
+13:39:02.762 Generated Form : : D201-21110609
+13:39:02.762 Code : : A511-21070092
+13:39:02.807 Updated code:  : A51121070092
+13:39:04.553 Generated Form : : D201-21110610
+13:39:04.553 Code : : A511-21070097
+13:39:04.607 Updated code:  : A51121070097
+13:39:06.321 Generated Form : : D101-21110450
+13:39:06.380 Updated code:  : A51121030159
+13:39:08.050 Generated Form : : D201-21110611
+13:39:08.050 Code : : A511-21100155
+13:39:08.100 Updated code:  : A51121100155
+13:39:13.364 Generated Form : : D201-21110612
+13:39:13.364 Code : : A511-21100173
+13:39:13.408 Updated code:  : A51121100173
+13:39:19.199 Generated Form : : D201-21110613
+13:39:19.199 Code : : A511-21100195
+13:39:19.245 Updated code:  : A51121100195
+13:39:20.820 Generated Form : : D201-21110614
+13:39:20.820 Code : : A511-21100176
+13:39:20.866 Updated code:  : A51121100176
+13:39:22.629 Generated Form : : D201-21110615
+13:39:22.629 Code : : A511-20120081
+13:39:22.684 Updated code:  : A51120120081
+13:39:24.652 Generated Form : : D201-21110616
+13:39:24.652 Code : : A511-21100083
+13:39:24.707 Updated code:  : A51121100083
+13:39:26.725 Generated Form : : D201-21110617
+13:39:26.725 Code : : A511-21100286
+13:39:26.775 Updated code:  : A51121100286
+13:39:28.560 Generated Form : : D101-21110451
+13:39:28.622 Updated code:  : A51121060046
+13:39:30.104 Generated Form : : D101-21110452
+13:39:30.165 Updated code:  : A51121100078
+13:39:31.631 Generated Form : : D101-21110453
+13:39:31.694 Updated code:  : A51121100286
+13:39:33.330 Generated Form : : D101-21110454
+13:39:33.395 Updated code:  : A51121070097
+13:39:35.157 Generated Form : : D101-21110455
+13:39:35.220 Updated code:  : A51121050316
+13:39:36.546 Generated Form : : D101-21110456
+13:39:36.607 Updated code:  : A51121100003
+13:39:38.091 Generated Form : : D101-21110457
+13:39:38.162 Updated code:  : A51121050046
+13:39:39.744 Generated Form : : D101-21110458
+13:39:39.803 Updated code:  : A51121100049
+13:39:41.419 Generated Form : : D101-21110459
+13:39:41.486 Updated code:  : A51121100191
+13:39:42.823 Generated Form : : D101-21110460
+13:39:42.885 Updated code:  : A51121050293
+13:39:44.221 Generated Form : : D101-21110461
+13:39:44.285 Updated code:  : A51121100083
+13:39:45.601 Generated Form : : D101-21110462
+13:39:45.661 Updated code:  : A51121100076
+13:39:47.280 Generated Form : : D101-21110463
+13:39:47.342 Updated code:  : A51121050293
+13:39:48.683 Generated Form : : D101-21110464
+13:39:48.744 Updated code:  : A51121060118
+13:39:50.240 Generated Form : : D201-21110618
+13:39:50.240 Code : : A511-21060128
+13:39:50.289 Updated code:  : A51121060128
+13:39:51.586 Generated Form : : D201-21110619
+13:39:51.586 Code : : A511-21070116
+13:39:51.632 Updated code:  : A51121070116
+13:39:53.296 Generated Form : : D201-21110620
+13:39:53.296 Code : : A511-21100294
+13:39:53.346 Updated code:  : A51121100294
+13:39:54.664 Generated Form : : D201-21110621
+13:39:54.664 Code : : A511-21020121
+13:39:54.708 Updated code:  : A51121020121
+13:39:56.321 Generated Form : : D201-21110622
+13:39:56.321 Code : : A511-21070090
+13:39:56.366 Updated code:  : A51121070090
+13:39:57.660 Generated Form : : D201-21110623
+13:39:57.660 Code : : A511-21060176
+13:39:57.708 Updated code:  : A51121060176
+13:39:59.010 Generated Form : : D201-21110624
+13:39:59.010 Code : : A511-21100068
+13:39:59.055 Updated code:  : A51121100068
+13:40:00.360 Generated Form : : D201-21110625
+13:40:00.360 Code : : A511-21050291
+13:40:00.411 Updated code:  : A51121050291
+13:40:02.257 Generated Form : : D201-21110626
+13:40:02.258 Code : : A511-21050291
+13:40:02.303 Updated code:  : A51121050291
+13:40:03.739 Generated Form : : D201-21110627
+13:40:03.739 Code : : A511-21080005
+13:40:03.786 Updated code:  : A51121080005
+13:40:05.184 Generated Form : : D201-21110628
+13:40:05.184 Code : : A511-21060046
+13:40:05.233 Updated code:  : A51121060046
+13:40:06.529 Generated Form : : D201-21110629
+13:40:06.529 Code : : A511-21100078
+13:40:06.579 Updated code:  : A51121100078
+13:40:07.875 Generated Form : : D201-21110630
+13:40:07.875 Code : : A511-21100286
+13:40:07.924 Updated code:  : A51121100286
+13:40:09.230 Generated Form : : D201-21110631
+13:40:09.231 Code : : A511-21070097
+13:40:09.282 Updated code:  : A51121070097
+13:40:10.579 Generated Form : : D201-21110632
+13:40:10.579 Code : : A511-21050316
+13:40:10.626 Updated code:  : A51121050316
+13:40:11.936 Generated Form : : D201-21110633
+13:40:11.936 Code : : A511-21100003
+13:40:11.983 Updated code:  : A51121100003
+13:40:14.618 Generated Form : : D201-21110634
+13:40:14.618 Code : : A511-21100049
+13:40:14.668 Updated code:  : A51121100049
+13:40:16.576 Generated Form : : D201-21110635
+13:40:16.576 Code : : A511-21100191
+13:40:16.628 Updated code:  : A51121100191
+13:40:18.460 Generated Form : : D201-21110636
+13:40:18.460 Code : : A511-21050293
+13:40:18.507 Updated code:  : A51121050293
+13:40:20.152 Generated Form : : D201-21110637
+13:40:20.152 Code : : A511-21100083
+13:40:20.214 Updated code:  : A51121100083
+13:40:21.762 Generated Form : : D201-21110638
+13:40:21.762 Code : : A511-21100076
+13:40:21.811 Updated code:  : A51121100076
+13:40:23.485 Generated Form : : D201-21110639
+13:40:23.485 Code : : A511-21050293
+13:40:23.534 Updated code:  : A51121050293
+13:40:24.837 Generated Form : : D201-21110640
+13:40:24.837 Code : : A511-21060118
+13:40:24.886 Updated code:  : A51121060118
+13:40:26.388 Generated Form : : D201-21110641
+13:40:26.388 Code : : A511-20120149
+13:40:26.438 Updated code:  : A51120120149
+13:40:28.159 Generated Form : : D101-21110465
+13:40:28.227 Updated code:  : P51121060003
+13:40:29.670 Generated Form : : D101-21110466
+13:40:29.734 Updated code:  : P51121060054
+13:40:31.313 Generated Form : : D101-21110467
+13:40:31.380 Updated code:  : P51121100003
+13:40:33.041 Generated Form : : D101-21110468
+13:40:33.111 Updated code:  : P51121060043
+13:40:34.520 Generated Form : : D101-21110469
+13:40:34.583 Updated code:  : J51121030014
+13:40:36.485 Generated Form : : D101-21110470
+13:40:36.542 Updated code:  : P51121090024
+13:40:39.052 Generated Form : : D101-21110471
+13:40:39.118 Updated code:  : P51121060058
+13:40:40.816 Generated Form : : D101-21110472
+13:40:40.881 Updated code:  : P51121040031
+13:40:42.394 Generated Form : : D101-21110473
+13:40:42.524 Updated code:  : J51120120023
+13:40:44.181 Generated Form : : D201-21110642
+13:40:44.181 Code : : J511-20120023
+13:40:44.238 Updated code:  : J51120120023
+13:40:45.712 Generated Form : : D201-21110643
+13:40:45.712 Code : : P511-21040031
+13:40:45.761 Updated code:  : P51121040031
+13:40:47.112 Generated Form : : D201-21110644
+13:40:47.113 Code : : P511-21060058
+13:40:47.158 Updated code:  : P51121060058
+13:40:48.499 Generated Form : : D201-21110645
+13:40:48.499 Code : : P511-21090024
+13:40:48.543 Updated code:  : P51121090024
+13:40:50.262 Generated Form : : D201-21110646
+13:40:50.263 Code : : J511-21030014
+13:40:50.317 Updated code:  : J51121030014
+13:40:52.293 Generated Form : : D201-21110647
+13:40:52.294 Code : : P511-21060043
+13:40:52.345 Updated code:  : P51121060043
+13:40:54.236 Generated Form : : D201-21110648
+13:40:54.236 Code : : P511-21100003
+13:40:54.285 Updated code:  : P51121100003
+13:40:55.803 Generated Form : : D201-21110649
+13:40:55.803 Code : : P511-21060054
+13:40:55.850 Updated code:  : P51121060054
+13:40:57.730 Generated Form : : D201-21110650
+13:40:57.730 Code : : P511-21060003
+13:40:57.776 Updated code:  : P51121060003
+13:40:59.364 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:06.081 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:07.303 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:10.748 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:12.574 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:20.650 Generated Form : : D201-21110651
+13:41:20.650 Code : : A511-21070097
+13:41:20.718 Updated code:  : A51121070097
+13:41:22.663 Generated Form : : D201-21110652
+13:41:22.663 Code : : A511-21020056
+13:41:22.710 Updated code:  : A51121020056
+13:41:24.195 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:25.416 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:26.628 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:27.856 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:29.450 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:30.985 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:32.330 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:33.725 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:35.224 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:37.001 Database MES base data Response : Object reference not set to an instance of an object.
+13:41:38.566 Generated Form : : D201-21110653
+13:41:38.566 Code : : A511-21060162
+13:41:38.613 Updated code:  : A51121060162
+13:41:40.268 Generated Form : : D201-21110654
+13:41:40.268 Code : : A511-21060162
+13:41:40.317 Updated code:  : A51121060162
+13:41:41.772 Generated Form : : D201-21110655
+13:41:41.772 Code : : A511-21060013
+13:41:41.818 Updated code:  : A51121060013
+13:41:43.169 Generated Form : : D201-21110656
+13:41:43.170 Code : : A511-21060158
+13:41:43.221 Updated code:  : A51121060158
+13:41:44.537 Generated Form : : D201-21110657
+13:41:44.537 Code : : A511-21060186
+13:41:44.586 Updated code:  : A51121060186
+13:41:56.358 Generated Form : : D101-21110474
+13:41:56.419 Updated code:  : J51121060012
+13:41:58.475 Generated Form : : D101-21110475
+13:41:58.537 Updated code:  : J51121030028
+13:42:00.505 Generated Form : : D101-21110476
+13:42:00.563 Updated code:  : J51121030028
+13:42:02.526 Generated Form : : D101-21110477
+13:42:02.582 Updated code:  : J51121060012
+13:42:08.842 Generated Form : : D201-21110658
+13:42:08.842 Code : : A511-21050046
+13:42:08.920 Updated code:  : A51121050046
+13:42:24.997 Generated Form : : D201-21110659
+13:42:24.997 Code : : J511-21030028
+13:42:25.046 Updated code:  : J51121030028
+13:42:26.689 Generated Form : : D201-21110660
+13:42:26.689 Code : : J511-21060012
+13:42:26.735 Updated code:  : J51121060012
+13:42:28.306 Generated Form : : D201-21110661
+13:42:28.306 Code : : J511-21030028
+13:42:28.352 Updated code:  : J51121030028
+13:42:29.787 Generated Form : : D201-21110662
+13:42:29.787 Code : : J511-21060012
+13:42:29.835 Updated code:  : J51121060012
+13:42:45.094 Generated Form : : D101-21110478
+13:42:45.158 Updated code:  : P51121060003
+13:42:46.621 Generated Form : : D101-21110479
+13:42:46.686 Updated code:  : P51121050021
+13:42:48.095 Generated Form : : D101-21110480
+13:42:48.155 Updated code:  : P51121060054
+13:42:49.607 Generated Form : : D101-21110481
+13:42:49.671 Updated code:  : P51121100003
+13:42:51.701 Generated Form : : D101-21110482
+13:42:51.768 Updated code:  : P51121060043
+13:42:53.731 Generated Form : : D101-21110483
+13:42:53.795 Updated code:  : A51121070076
+13:42:55.380 Generated Form : : D101-21110484
+13:42:55.442 Updated code:  : J51121030014
+13:42:57.158 Generated Form : : D101-21110485
+13:42:57.225 Updated code:  : A51121060182
+13:42:58.851 Generated Form : : D101-21110486
+13:42:58.915 Updated code:  : A51121070116
+13:43:00.373 Generated Form : : D101-21110487
+13:43:00.436 Updated code:  : A51121100294
+13:43:01.875 Generated Form : : D101-21110488
+13:43:01.933 Updated code:  : A51121020121
+13:43:03.241 Generated Form : : D101-21110489
+13:43:03.300 Updated code:  : P51121060058
+13:43:04.826 Generated Form : : D101-21110490
+13:43:04.896 Updated code:  : A51121100035
+13:43:06.188 Generated Form : : D101-21110491
+13:43:06.251 Updated code:  : A51121070066
+13:43:07.737 Generated Form : : D101-21110492
+13:43:07.806 Updated code:  : P51121040031
+13:43:09.366 Generated Form : : D101-21110493
+13:43:09.428 Updated code:  : A51121060158
+13:43:12.774 Generated Form : : D101-21110494
+13:43:12.838 Updated code:  : A51121040020
+13:43:15.509 Generated Form : : D101-21110495
+13:43:15.571 Updated code:  : A51121070090
+13:43:17.047 Generated Form : : D101-21110496
+13:43:17.104 Updated code:  : A51121060176
+13:43:18.765 Generated Form : : D101-21110497
+13:43:18.826 Updated code:  : A51121100068
+13:43:20.501 Generated Form : : D101-21110498
+13:43:20.561 Updated code:  : A51121060164
+13:43:23.651 Generated Form : : D101-21110499
+13:43:23.709 Updated code:  : A51121060158
+13:43:25.808 Generated Form : : D101-21110500
+13:43:25.869 Updated code:  : A51121070082
+13:43:28.737 Generated Form : : D101-21110501
+13:43:28.800 Updated code:  : A51121050291
+13:43:36.315 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:38.166 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:39.728 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:41.423 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:42.946 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:44.221 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:45.492 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:47.478 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:49.163 Database MES base data Response : Object reference not set to an instance of an object.
+13:43:50.627 Generated Form : : D101-21110502
+13:43:50.685 Updated code:  : A51121100078
+13:43:52.338 Generated Form : : D101-21110503
+13:43:52.399 Updated code:  : A51121020212
+13:43:53.794 Generated Form : : D101-21110504
+13:43:53.853 Updated code:  : A51121100286
+13:43:55.435 Generated Form : : D101-21110505
+13:43:55.501 Updated code:  : A51121070097
+13:43:57.425 Generated Form : : D101-21110506
+13:43:57.483 Updated code:  : A51121070097
+13:43:58.853 Generated Form : : D101-21110507
+13:43:58.922 Updated code:  : A51121050316
+13:44:00.538 Generated Form : : D101-21110508
+13:44:00.602 Updated code:  : A51121100003
+13:44:00.603 Upload to data to ERP finished! : 
+15:12:29.292 MESdbToERPdb 1.0.0 : Started 
+15:12:34.316 Generated Form : : D201-21110663
+15:12:34.316 Code : : A511-21050291
+15:12:34.365 Updated code:  : A51121050291
+15:12:34.365 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:12:35.740 Generated Form : : D201-21110664
+15:12:35.740 Code : : A511-21050291
+15:12:35.784 Updated code:  : A51121050291
+15:12:35.784 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:12:37.157 Generated Form : : D201-21110665
+15:12:37.158 Code : : A511-21050291
+15:12:37.203 Updated code:  : A51121050291
+15:12:37.203 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:14:19.150 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+15:16:44.977 MESdbToERPdb 1.0.0 : Started 
+15:16:57.313 Database MES base data Response : Object reference not set to an instance of an object.
+15:17:31.715 Database MES base data Response : Object reference not set to an instance of an object.
+15:17:32.962 Database MES base data Response : Object reference not set to an instance of an object.
+15:17:34.299 Database MES base data Response : Object reference not set to an instance of an object.
+15:17:35.570 Database MES base data Response : Object reference not set to an instance of an object.
+15:17:36.796 Database MES base data Response : Object reference not set to an instance of an object.
+15:17:38.032 Database MES base data Response : Object reference not set to an instance of an object.
+15:17:39.529 Generated Form : : D101-21110390
+15:17:39.590 Updated code:  : A51121060046
+15:17:40.970 Generated Form : : D101-21110391
+15:17:41.028 Updated code:  : A51121100078
+15:17:42.807 Generated Form : : D101-21110392
+15:17:42.865 Updated code:  : A51121050316
+15:17:44.696 Generated Form : : D101-21110393
+15:17:44.752 Updated code:  : A51121100003
+15:17:46.387 Generated Form : : D101-21110394
+15:17:46.446 Updated code:  : A51121100049
+15:17:47.860 Generated Form : : D101-21110395
+15:17:47.919 Updated code:  : A51121050293
+15:17:49.760 Generated Form : : D101-21110396
+15:17:49.819 Updated code:  : A51121060128
+15:17:51.451 Generated Form : : D101-21110397
+15:17:51.507 Updated code:  : A51121050028
+15:17:53.037 Generated Form : : D101-21110398
+15:17:53.097 Updated code:  : A51121060182
+15:17:55.135 Generated Form : : D101-21110399
+15:17:55.191 Updated code:  : A51121070116
+15:17:57.220 Generated Form : : D101-21110400
+15:17:57.281 Updated code:  : A51121020121
+15:17:58.794 Generated Form : : D101-21110401
+15:17:58.851 Updated code:  : A51121060157
+15:18:00.283 Generated Form : : D101-21110402
+15:18:00.339 Updated code:  : A51121060162
+15:18:01.863 Generated Form : : D101-21110403
+15:18:01.923 Updated code:  : A51121100076
+15:18:03.597 Generated Form : : D101-21110404
+15:18:03.653 Updated code:  : A51121070014
+15:18:05.974 Generated Form : : D101-21110405
+15:18:06.038 Updated code:  : A51121100076
+15:18:07.782 Generated Form : : D101-21110406
+15:18:07.852 Updated code:  : A51121040020
+15:18:09.300 Generated Form : : D101-21110407
+15:18:09.358 Updated code:  : A51121070090
+15:18:11.027 Generated Form : : D101-21110408
+15:18:11.087 Updated code:  : A51121050293
+15:18:12.987 Generated Form : : D101-21110409
+15:18:13.047 Updated code:  : A51121100068
+15:18:15.092 Generated Form : : D101-21110410
+15:18:15.148 Updated code:  : A51121060158
+15:18:16.618 Generated Form : : D101-21110411
+15:18:16.676 Updated code:  : A51121050291
+15:18:18.036 Generated Form : : D101-21110412
+15:18:18.136 Updated code:  : A51121060118
+15:18:19.584 Generated Form : : D101-21110413
+15:18:19.642 Updated code:  : A51121030055
+15:18:20.995 Generated Form : : D101-21110414
+15:18:21.055 Updated code:  : A51121070097
+15:18:22.378 Generated Form : : D101-21110415
+15:18:22.435 Updated code:  : A51121100049
+15:18:23.753 Generated Form : : D101-21110416
+15:18:23.810 Updated code:  : A51121100090
+15:18:25.149 Generated Form : : D101-21110417
+15:18:25.206 Updated code:  : A51121100294
+15:18:27.079 Generated Form : : D101-21110418
+15:18:27.136 Updated code:  : A51121100155
+15:18:28.674 Generated Form : : D101-21110419
+15:18:28.736 Updated code:  : A51121100294
+15:18:30.114 Generated Form : : D101-21110420
+15:18:30.174 Updated code:  : A51121070092
+15:18:31.566 Generated Form : : D101-21110421
+15:18:31.622 Updated code:  : A51121050023
+15:18:32.943 Generated Form : : D101-21110422
+15:18:33.005 Updated code:  : A51121070097
+15:18:34.330 Generated Form : : D101-21110423
+15:18:34.389 Updated code:  : A51121100155
+15:18:35.690 Generated Form : : D101-21110424
+15:18:35.749 Updated code:  : A51121100173
+15:18:37.332 Generated Form : : D101-21110425
+15:18:37.388 Updated code:  : A51121100195
+15:18:39.086 Generated Form : : D101-21110426
+15:18:39.146 Updated code:  : A51121100176
+15:18:40.772 Generated Form : : D101-21110427
+15:18:40.827 Updated code:  : A51120120081
+15:19:36.500 Database Responce : Timeout expired.  The timeout period elapsed prior to completion of the operation or the server is not responding.
+15:19:36.547 GetListTransferOrder : String was not recognized as a valid DateTime.
+15:19:36.547 Upload to data to ERP finished! : 
+15:22:05.747 MESdbToERPdb 1.0.0 : Started 
+15:22:09.208 Database MES base data Response : Object reference not set to an instance of an object.
+15:22:10.588 Database MES base data Response : Object reference not set to an instance of an object.
+15:22:12.080 Database MES base data Response : Object reference not set to an instance of an object.
+15:22:13.846 Database MES base data Response : Object reference not set to an instance of an object.
+15:22:15.257 Database MES base data Response : Object reference not set to an instance of an object.
+15:22:16.513 Database MES base data Response : Object reference not set to an instance of an object.
+15:22:17.753 Database MES base data Response : Object reference not set to an instance of an object.
+15:22:19.175 Generated Form : : D101-21110390
+15:22:19.239 Updated code:  : A51121060046
+15:22:20.625 Generated Form : : D101-21110391
+15:22:20.685 Updated code:  : A51121100078
+15:22:22.076 Generated Form : : D101-21110392
+15:22:22.136 Updated code:  : A51121050316
+15:22:24.111 Generated Form : : D101-21110393
+15:22:24.175 Updated code:  : A51121100003
+15:22:25.728 Generated Form : : D101-21110394
+15:22:25.794 Updated code:  : A51121100049
+15:22:27.217 Generated Form : : D101-21110395
+15:22:27.278 Updated code:  : A51121050293
+15:22:28.854 Generated Form : : D101-21110396
+15:22:28.916 Updated code:  : A51121060128
+15:22:30.333 Generated Form : : D101-21110397
+15:22:30.395 Updated code:  : A51121050028
+15:22:31.922 Generated Form : : D101-21110398
+15:22:31.981 Updated code:  : A51121060182
+15:22:33.916 Generated Form : : D101-21110399
+15:22:33.977 Updated code:  : A51121070116
+15:22:35.665 Generated Form : : D101-21110400
+15:22:35.725 Updated code:  : A51121020121
+15:22:37.223 Generated Form : : D101-21110401
+15:22:37.286 Updated code:  : A51121060157
+15:22:38.670 Generated Form : : D101-21110402
+15:22:38.735 Updated code:  : A51121060162
+15:22:40.057 Generated Form : : D101-21110403
+15:22:40.116 Updated code:  : A51121100076
+15:22:41.439 Generated Form : : D101-21110404
+15:22:41.499 Updated code:  : A51121070014
+15:22:43.152 Generated Form : : D101-21110405
+15:22:43.211 Updated code:  : A51121100076
+15:22:44.857 Generated Form : : D101-21110406
+15:22:44.917 Updated code:  : A51121040020
+15:22:46.418 Generated Form : : D101-21110407
+15:22:46.477 Updated code:  : A51121070090
+15:22:47.783 Generated Form : : D101-21110408
+15:22:47.842 Updated code:  : A51121050293
+15:22:49.147 Generated Form : : D101-21110409
+15:22:49.211 Updated code:  : A51121100068
+15:22:50.526 Generated Form : : D101-21110410
+15:22:50.587 Updated code:  : A51121060158
+15:22:51.895 Generated Form : : D101-21110411
+15:22:51.952 Updated code:  : A51121050291
+15:22:53.391 Generated Form : : D101-21110412
+15:22:53.455 Updated code:  : A51121060118
+15:22:54.764 Generated Form : : D101-21110413
+15:22:54.823 Updated code:  : A51121030055
+15:22:56.132 Generated Form : : D101-21110414
+15:22:56.192 Updated code:  : A51121070097
+15:22:57.560 Generated Form : : D101-21110415
+15:22:57.622 Updated code:  : A51121100049
+15:22:59.130 Generated Form : : D101-21110416
+15:22:59.189 Updated code:  : A51121100090
+15:23:00.478 Generated Form : : D101-21110417
+15:23:00.537 Updated code:  : A51121100294
+15:23:01.829 Generated Form : : D101-21110418
+15:23:01.891 Updated code:  : A51121100155
+15:23:03.187 Generated Form : : D101-21110419
+15:23:03.251 Updated code:  : A51121100294
+15:23:04.564 Generated Form : : D101-21110420
+15:23:04.624 Updated code:  : A51121070092
+15:23:06.322 Generated Form : : D101-21110421
+15:23:06.382 Updated code:  : A51121050023
+15:23:07.924 Generated Form : : D101-21110422
+15:23:07.986 Updated code:  : A51121070097
+15:23:09.620 Generated Form : : D101-21110423
+15:23:09.678 Updated code:  : A51121100155
+15:23:10.989 Generated Form : : D101-21110424
+15:23:11.051 Updated code:  : A51121100173
+15:23:12.367 Generated Form : : D101-21110425
+15:23:12.428 Updated code:  : A51121100195
+15:23:14.052 Generated Form : : D101-21110426
+15:23:14.144 Updated code:  : A51121100176
+15:23:15.478 Generated Form : : D101-21110427
+15:23:15.539 Updated code:  : A51120120081
+15:23:16.858 Generated Form : : D101-21110428
+15:23:16.921 Updated code:  : A51121100083
+15:23:18.254 Generated Form : : D101-21110429
+15:23:18.320 Updated code:  : A51121020211
+15:23:19.643 Generated Form : : D101-21110430
+15:23:19.704 Updated code:  : A51121100286
+15:23:21.053 Generated Form : : D101-21110431
+15:23:21.111 Updated code:  : A51121100286
+15:23:27.968 Database MES base data Response : Object reference not set to an instance of an object.
+15:23:29.251 Database MES base data Response : Object reference not set to an instance of an object.
+15:23:30.455 Database MES base data Response : Object reference not set to an instance of an object.
+15:23:31.823 Database MES base data Response : Object reference not set to an instance of an object.
+15:23:33.356 Database MES base data Response : Object reference not set to an instance of an object.
+15:23:34.792 Database MES base data Response : Object reference not set to an instance of an object.
+15:23:36.307 Generated Form : : D201-21110567
+15:23:36.307 Code : : A511-21060128
+15:23:36.358 Updated code:  : A51121060128
+15:23:36.358 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:37.809 Generated Form : : D201-21110568
+15:23:37.809 Code : : A511-21070116
+15:23:37.859 Updated code:  : A51121070116
+15:23:37.859 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:39.239 Generated Form : : D201-21110569
+15:23:39.239 Code : : A511-21100294
+15:23:39.285 Updated code:  : A51121100294
+15:23:39.285 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:40.936 Generated Form : : D201-21110570
+15:23:40.936 Code : : A511-21020121
+15:23:40.981 Updated code:  : A51121020121
+15:23:40.981 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:42.287 Generated Form : : D201-21110571
+15:23:42.287 Code : : A511-21070014
+15:23:42.333 Updated code:  : A51121070014
+15:23:42.333 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:43.834 Generated Form : : D201-21110572
+15:23:43.834 Code : : A511-21070090
+15:23:43.883 Updated code:  : A51121070090
+15:23:43.883 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:45.905 Generated Form : : D201-21110573
+15:23:45.906 Code : : A511-21100068
+15:23:45.961 Updated code:  : A51121100068
+15:23:45.964 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:47.519 Generated Form : : D201-21110574
+15:23:47.519 Code : : A511-21050291
+15:23:47.564 Updated code:  : A51121050291
+15:23:47.564 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:48.865 Generated Form : : D201-21110575
+15:23:48.865 Code : : A511-21050291
+15:23:48.915 Updated code:  : A51121050291
+15:23:48.916 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:50.259 Generated Form : : D201-21110576
+15:23:50.259 Code : : A511-21060046
+15:23:50.313 Updated code:  : A51121060046
+15:23:50.313 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:51.887 Generated Form : : D201-21110577
+15:23:51.887 Code : : J511-20120023
+15:23:51.940 Updated code:  : J51120120023
+15:23:51.940 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:53.562 Generated Form : : D201-21110578
+15:23:53.563 Code : : A511-21100078
+15:23:53.610 Updated code:  : A51121100078
+15:23:53.610 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:54.973 Generated Form : : D201-21110579
+15:23:54.974 Code : : J511-20120023
+15:23:55.025 Updated code:  : J51120120023
+15:23:55.025 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:56.193 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:57.383 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:23:58.863 Generated Form : : D201-21110580
+15:23:58.863 Code : : P511-21040031
+15:23:58.913 Updated code:  : P51121040031
+15:23:58.913 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:00.266 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:01.665 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:03.016 Generated Form : : D201-21110581
+15:24:03.016 Code : : P511-21060058
+15:24:03.072 Updated code:  : P51121060058
+15:24:03.072 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:04.254 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:05.857 Generated Form : : D201-21110582
+15:24:05.857 Code : : J511-21030014
+15:24:05.903 Updated code:  : J51121030014
+15:24:05.903 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:07.139 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:08.537 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:09.766 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:11.123 Generated Form : : D201-21110583
+15:24:11.123 Code : : A511-21050316
+15:24:11.173 Updated code:  : A51121050316
+15:24:11.173 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:13.033 Generated Form : : D201-21110584
+15:24:13.033 Code : : P511-21060043
+15:24:13.085 Updated code:  : P51121060043
+15:24:13.085 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:14.909 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:16.583 Generated Form : : D201-21110585
+15:24:16.583 Code : : A511-21100003
+15:24:16.634 Updated code:  : A51121100003
+15:24:16.634 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:18.479 Generated Form : : D201-21110586
+15:24:18.479 Code : : P511-21100003
+15:24:18.550 Updated code:  : P51121100003
+15:24:18.550 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:19.855 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:21.398 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:22.888 Generated Form : : D201-21110587
+15:24:22.888 Code : : P511-21060054
+15:24:22.939 Updated code:  : P51121060054
+15:24:22.939 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:24.243 Generated Form : : D201-21110588
+15:24:24.243 Code : : A511-21100049
+15:24:24.295 Updated code:  : A51121100049
+15:24:24.295 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:26.060 Generated Form : : D201-21110589
+15:24:26.060 Code : : P511-21060003
+15:24:26.110 Updated code:  : P51121060003
+15:24:26.110 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:27.510 Generated Form : : D201-21110590
+15:24:27.510 Code : : A511-21050293
+15:24:27.561 Updated code:  : A51121050293
+15:24:27.561 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:29.068 Generated Form : : D201-21110591
+15:24:29.068 Code : : A511-21100076
+15:24:29.116 Updated code:  : A51121100076
+15:24:29.116 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:30.545 Generated Form : : D201-21110592
+15:24:30.546 Code : : A511-21050028
+15:24:30.649 Updated code:  : A51121050028
+15:24:30.649 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:32.027 Generated Form : : D201-21110593
+15:24:32.032 Code : : A511-21050293
+15:24:32.086 Updated code:  : A51121050293
+15:24:32.086 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:33.504 Generated Form : : D201-21110594
+15:24:33.504 Code : : A511-21060118
+15:24:33.566 Updated code:  : A51121060118
+15:24:33.566 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:34.967 Generated Form : : D101-21110432
+15:24:35.049 Updated code:  : P51121090024
+15:24:36.227 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:37.413 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:38.562 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:39.983 Generated Form : : D201-21110595
+15:24:39.984 Code : : P511-21090024
+15:24:40.030 Updated code:  : P51121090024
+15:24:40.030 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:41.384 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:42.549 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:43.733 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:44.887 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:24:46.124 Database MES base data Response : Object reference not set to an instance of an object.
+15:24:47.549 Database MES base data Response : Object reference not set to an instance of an object.
+15:24:48.712 Database MES base data Response : Object reference not set to an instance of an object.
+15:24:49.883 Database MES base data Response : Object reference not set to an instance of an object.
+15:24:51.344 Database MES base data Response : Object reference not set to an instance of an object.
+15:24:52.626 Database MES base data Response : Object reference not set to an instance of an object.
+15:24:54.084 Generated Form : : D101-21110433
+15:24:54.170 Updated code:  : J51121060012
+15:24:55.764 Generated Form : : D101-21110434
+15:24:55.828 Updated code:  : J51121030028
+15:24:57.342 Generated Form : : D101-21110435
+15:24:57.403 Updated code:  : J51121030028
+15:24:58.755 Generated Form : : D101-21110436
+15:24:58.819 Updated code:  : J51121060012
+15:25:00.026 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:01.231 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:02.685 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:04.024 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:05.269 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:06.422 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:07.940 Generated Form : : D201-21110596
+15:25:07.940 Code : : J511-21060012
+15:25:07.989 Updated code:  : J51121060012
+15:25:07.989 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:09.480 Generated Form : : D201-21110597
+15:25:09.480 Code : : A511-21060162
+15:25:09.529 Updated code:  : A51121060162
+15:25:09.529 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:11.065 Generated Form : : D201-21110598
+15:25:11.065 Code : : J511-21030028
+15:25:11.112 Updated code:  : J51121030028
+15:25:11.112 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:13.119 Generated Form : : D201-21110599
+15:25:13.119 Code : : A511-21060162
+15:25:13.171 Updated code:  : A51121060162
+15:25:13.171 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:14.968 Generated Form : : D201-21110600
+15:25:14.968 Code : : J511-21030028
+15:25:15.017 Updated code:  : J51121030028
+15:25:15.017 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:17.068 Generated Form : : D201-21110601
+15:25:17.068 Code : : A511-21030159
+15:25:17.113 Updated code:  : A51121030159
+15:25:17.114 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:18.682 Generated Form : : D201-21110602
+15:25:18.682 Code : : J511-21060012
+15:25:18.728 Updated code:  : J51121060012
+15:25:18.729 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:20.297 Generated Form : : D201-21110603
+15:25:20.297 Code : : A511-21020211
+15:25:20.352 Updated code:  : A51121020211
+15:25:20.352 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:21.963 Generated Form : : D201-21110604
+15:25:21.963 Code : : A511-21100286
+15:25:22.009 Updated code:  : A51121100286
+15:25:22.009 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:23.441 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:25.016 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:26.392 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:27.937 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:29.474 Generated Form : : D101-21110437
+15:25:29.535 Updated code:  : A51121060158
+15:25:30.909 Generated Form : : D101-21110438
+15:25:30.977 Updated code:  : A51121060128
+15:25:32.343 Generated Form : : D201-21110605
+15:25:32.343 Code : : A511-21100049
+15:25:32.392 Updated code:  : A51121100049
+15:25:32.392 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:33.772 Generated Form : : D101-21110439
+15:25:33.833 Updated code:  : A51121070116
+15:25:35.379 Generated Form : : D101-21110440
+15:25:35.442 Updated code:  : A51121100294
+15:25:36.980 Generated Form : : D101-21110441
+15:25:37.042 Updated code:  : A51121020121
+15:25:38.365 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:39.693 Generated Form : : D201-21110606
+15:25:39.693 Code : : A511-21100090
+15:25:39.740 Updated code:  : A51121100090
+15:25:39.740 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:41.301 Generated Form : : D201-21110607
+15:25:41.301 Code : : A511-21100155
+15:25:41.349 Updated code:  : A51121100155
+15:25:41.349 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:43.077 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:44.702 Generated Form : : D101-21110442
+15:25:44.767 Updated code:  : A51121030042
+15:25:46.713 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:48.203 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:25:50.301 Generated Form : : D101-21110443
+15:25:50.362 Updated code:  : A51121070066
+15:25:52.391 Generated Form : : D101-21110444
+15:25:52.459 Updated code:  : A51121030159
+15:25:53.859 Generated Form : : D101-21110445
+15:25:53.923 Updated code:  : A51121040020
+15:25:55.522 Generated Form : : D101-21110446
+15:25:55.587 Updated code:  : A51121070090
+15:25:57.275 Generated Form : : D101-21110447
+15:25:57.340 Updated code:  : A51121060176
+15:25:58.966 Generated Form : : D101-21110448
+15:25:59.032 Updated code:  : A51121100068
+15:26:01.239 Generated Form : : D101-21110449
+15:26:01.302 Updated code:  : A51121050291
+15:26:03.281 Generated Form : : D201-21110608
+15:26:03.281 Code : : A511-21050023
+15:26:03.331 Updated code:  : A51121050023
+15:26:03.461 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:05.020 Generated Form : : D201-21110609
+15:26:05.020 Code : : A511-21070092
+15:26:05.070 Updated code:  : A51121070092
+15:26:05.070 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:07.175 Generated Form : : D201-21110610
+15:26:07.175 Code : : A511-21070097
+15:26:07.223 Updated code:  : A51121070097
+15:26:07.223 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:08.984 Generated Form : : D101-21110450
+15:26:09.052 Updated code:  : A51121030159
+15:26:10.666 Generated Form : : D201-21110611
+15:26:10.666 Code : : A511-21100155
+15:26:10.713 Updated code:  : A51121100155
+15:26:10.713 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:12.313 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:13.597 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:15.256 Generated Form : : D201-21110612
+15:26:15.256 Code : : A511-21100173
+15:26:15.304 Updated code:  : A51121100173
+15:26:15.304 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:17.407 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:18.943 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:20.370 Generated Form : : D201-21110613
+15:26:20.370 Code : : A511-21100195
+15:26:20.416 Updated code:  : A51121100195
+15:26:20.416 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:22.067 Generated Form : : D201-21110614
+15:26:22.068 Code : : A511-21100176
+15:26:22.114 Updated code:  : A51121100176
+15:26:22.114 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:23.944 Generated Form : : D201-21110615
+15:26:23.944 Code : : A511-20120081
+15:26:23.991 Updated code:  : A51120120081
+15:26:23.991 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:25.413 Generated Form : : D201-21110616
+15:26:25.414 Code : : A511-21100083
+15:26:25.464 Updated code:  : A51121100083
+15:26:25.464 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:27.064 Generated Form : : D201-21110617
+15:26:27.064 Code : : A511-21100286
+15:26:27.109 Updated code:  : A51121100286
+15:26:27.109 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:28.851 Generated Form : : D101-21110451
+15:26:28.914 Updated code:  : A51121060046
+15:26:30.935 Generated Form : : D101-21110452
+15:26:30.994 Updated code:  : A51121100078
+15:26:33.236 Generated Form : : D101-21110453
+15:26:33.310 Updated code:  : A51121100286
+15:26:35.097 Generated Form : : D101-21110454
+15:26:35.186 Updated code:  : A51121070097
+15:26:37.367 Generated Form : : D101-21110455
+15:26:37.427 Updated code:  : A51121050316
+15:26:39.528 Generated Form : : D101-21110456
+15:26:39.585 Updated code:  : A51121100003
+15:26:41.342 Generated Form : : D101-21110457
+15:26:41.408 Updated code:  : A51121050046
+15:26:42.920 Generated Form : : D101-21110458
+15:26:42.987 Updated code:  : A51121100049
+15:26:44.334 Generated Form : : D101-21110459
+15:26:44.482 Updated code:  : A51121100191
+15:26:46.236 Generated Form : : D101-21110460
+15:26:46.295 Updated code:  : A51121050293
+15:26:48.606 Generated Form : : D101-21110461
+15:26:48.711 Updated code:  : A51121100083
+15:26:51.068 Generated Form : : D101-21110462
+15:26:51.143 Updated code:  : A51121100076
+15:26:52.964 Generated Form : : D101-21110463
+15:26:53.027 Updated code:  : A51121050293
+15:26:54.532 Generated Form : : D101-21110464
+15:26:54.593 Updated code:  : A51121060118
+15:26:56.487 Generated Form : : D201-21110618
+15:26:56.487 Code : : A511-21060128
+15:26:56.538 Updated code:  : A51121060128
+15:26:56.538 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:58.232 Generated Form : : D201-21110619
+15:26:58.232 Code : : A511-21070116
+15:26:58.286 Updated code:  : A51121070116
+15:26:58.286 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:26:59.742 Generated Form : : D201-21110620
+15:26:59.742 Code : : A511-21100294
+15:26:59.799 Updated code:  : A51121100294
+15:26:59.799 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:01.144 Generated Form : : D201-21110621
+15:27:01.144 Code : : A511-21020121
+15:27:01.203 Updated code:  : A51121020121
+15:27:01.203 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:02.543 Generated Form : : D201-21110622
+15:27:02.543 Code : : A511-21070090
+15:27:02.590 Updated code:  : A51121070090
+15:27:02.590 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:04.078 Generated Form : : D201-21110623
+15:27:04.079 Code : : A511-21060176
+15:27:04.126 Updated code:  : A51121060176
+15:27:04.127 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:05.613 Generated Form : : D201-21110624
+15:27:05.613 Code : : A511-21100068
+15:27:05.662 Updated code:  : A51121100068
+15:27:05.662 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:07.047 Generated Form : : D201-21110625
+15:27:07.047 Code : : A511-21050291
+15:27:07.093 Updated code:  : A51121050291
+15:27:07.093 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:08.497 Generated Form : : D201-21110626
+15:27:08.497 Code : : A511-21050291
+15:27:08.544 Updated code:  : A51121050291
+15:27:08.544 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:09.891 Generated Form : : D201-21110627
+15:27:09.891 Code : : A511-21080005
+15:27:09.943 Updated code:  : A51121080005
+15:27:09.943 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:11.455 Generated Form : : D201-21110628
+15:27:11.455 Code : : A511-21060046
+15:27:11.505 Updated code:  : A51121060046
+15:27:11.505 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:13.123 Generated Form : : D201-21110629
+15:27:13.123 Code : : A511-21100078
+15:27:13.170 Updated code:  : A51121100078
+15:27:13.170 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:15.229 Generated Form : : D201-21110630
+15:27:15.229 Code : : A511-21100286
+15:27:15.277 Updated code:  : A51121100286
+15:27:15.277 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:17.516 Generated Form : : D201-21110631
+15:27:17.516 Code : : A511-21070097
+15:27:17.569 Updated code:  : A51121070097
+15:27:17.570 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:19.575 Generated Form : : D201-21110632
+15:27:19.575 Code : : A511-21050316
+15:27:19.623 Updated code:  : A51121050316
+15:27:19.623 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:21.465 Generated Form : : D201-21110633
+15:27:21.465 Code : : A511-21100003
+15:27:21.517 Updated code:  : A51121100003
+15:27:21.517 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:24.820 Generated Form : : D201-21110634
+15:27:24.821 Code : : A511-21100049
+15:27:24.870 Updated code:  : A51121100049
+15:27:24.870 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:26.417 Generated Form : : D201-21110635
+15:27:26.417 Code : : A511-21100191
+15:27:26.467 Updated code:  : A51121100191
+15:27:26.468 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:28.669 Generated Form : : D201-21110636
+15:27:28.669 Code : : A511-21050293
+15:27:28.715 Updated code:  : A51121050293
+15:27:28.715 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:30.636 Generated Form : : D201-21110637
+15:27:30.637 Code : : A511-21100083
+15:27:30.702 Updated code:  : A51121100083
+15:27:30.703 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:32.165 Generated Form : : D201-21110638
+15:27:32.166 Code : : A511-21100076
+15:27:32.210 Updated code:  : A51121100076
+15:27:32.210 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:34.049 Generated Form : : D201-21110639
+15:27:34.050 Code : : A511-21050293
+15:27:34.106 Updated code:  : A51121050293
+15:27:34.106 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:35.772 Generated Form : : D201-21110640
+15:27:35.772 Code : : A511-21060118
+15:27:35.824 Updated code:  : A51121060118
+15:27:35.824 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:38.055 Generated Form : : D201-21110641
+15:27:38.055 Code : : A511-20120149
+15:27:38.103 Updated code:  : A51120120149
+15:27:38.103 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:39.811 Generated Form : : D101-21110465
+15:27:39.881 Updated code:  : P51121060003
+15:27:41.238 Generated Form : : D101-21110466
+15:27:41.318 Updated code:  : P51121060054
+15:27:42.694 Generated Form : : D101-21110467
+15:27:42.755 Updated code:  : P51121100003
+15:27:44.146 Generated Form : : D101-21110468
+15:27:44.216 Updated code:  : P51121060043
+15:27:45.833 Generated Form : : D101-21110469
+15:27:45.905 Updated code:  : J51121030014
+15:27:47.247 Generated Form : : D101-21110470
+15:27:47.309 Updated code:  : P51121090024
+15:27:48.669 Generated Form : : D101-21110471
+15:27:48.736 Updated code:  : P51121060058
+15:27:50.110 Generated Form : : D101-21110472
+15:27:50.179 Updated code:  : P51121040031
+15:27:51.778 Generated Form : : D101-21110473
+15:27:51.838 Updated code:  : J51120120023
+15:27:53.599 Generated Form : : D201-21110642
+15:27:53.599 Code : : J511-20120023
+15:27:53.644 Updated code:  : J51120120023
+15:27:53.644 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:55.388 Generated Form : : D201-21110643
+15:27:55.388 Code : : P511-21040031
+15:27:55.436 Updated code:  : P51121040031
+15:27:55.436 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:56.895 Generated Form : : D201-21110644
+15:27:56.895 Code : : P511-21060058
+15:27:57.052 Updated code:  : P51121060058
+15:27:57.052 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:27:58.453 Generated Form : : D201-21110645
+15:27:58.453 Code : : P511-21090024
+15:27:58.500 Updated code:  : P51121090024
+15:27:58.500 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:00.073 Generated Form : : D201-21110646
+15:28:00.073 Code : : J511-21030014
+15:28:00.121 Updated code:  : J51121030014
+15:28:00.121 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:01.572 Generated Form : : D201-21110647
+15:28:01.572 Code : : P511-21060043
+15:28:01.619 Updated code:  : P51121060043
+15:28:01.619 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:03.046 Generated Form : : D201-21110648
+15:28:03.047 Code : : P511-21100003
+15:28:03.093 Updated code:  : P51121100003
+15:28:03.153 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:04.509 Generated Form : : D201-21110649
+15:28:04.509 Code : : P511-21060054
+15:28:04.555 Updated code:  : P51121060054
+15:28:04.555 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:05.949 Generated Form : : D201-21110650
+15:28:05.949 Code : : P511-21060003
+15:28:05.999 Updated code:  : P51121060003
+15:28:06.000 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:07.265 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:08.437 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:09.670 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:10.833 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:12.006 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:13.245 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:14.479 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:15.648 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:16.825 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:17.995 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:19.157 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:20.327 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:21.491 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:23.009 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:24.734 Generated Form : : D201-21110651
+15:28:24.734 Code : : A511-21070097
+15:28:24.784 Updated code:  : A51121070097
+15:28:24.785 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:26.183 Generated Form : : D201-21110652
+15:28:26.183 Code : : A511-21020056
+15:28:26.232 Updated code:  : A51121020056
+15:28:26.232 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:27.460 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:29.025 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:30.214 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:31.392 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:32.566 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:33.745 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:34.995 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:36.602 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:37.782 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:38.960 Database MES base data Response : Object reference not set to an instance of an object.
+15:28:40.278 Generated Form : : D201-21110653
+15:28:40.278 Code : : A511-21060162
+15:28:40.327 Updated code:  : A51121060162
+15:28:40.327 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:41.628 Generated Form : : D201-21110654
+15:28:41.629 Code : : A511-21060162
+15:28:41.676 Updated code:  : A51121060162
+15:28:41.676 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:42.983 Generated Form : : D201-21110655
+15:28:42.983 Code : : A511-21060013
+15:28:43.032 Updated code:  : A51121060013
+15:28:43.032 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:44.520 Generated Form : : D201-21110656
+15:28:44.520 Code : : A511-21060158
+15:28:44.569 Updated code:  : A51121060158
+15:28:44.569 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:45.919 Generated Form : : D201-21110657
+15:28:45.920 Code : : A511-21060186
+15:28:45.970 Updated code:  : A51121060186
+15:28:45.970 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:47.174 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:48.621 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:50.184 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:51.848 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:53.146 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:54.820 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:56.081 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:28:57.377 Generated Form : : D101-21110474
+15:28:57.467 Updated code:  : J51121060012
+15:28:58.802 Generated Form : : D101-21110475
+15:28:58.867 Updated code:  : J51121030028
+15:29:00.147 Generated Form : : D101-21110476
+15:29:00.207 Updated code:  : J51121030028
+15:29:01.503 Generated Form : : D101-21110477
+15:29:01.572 Updated code:  : J51121060012
+15:29:02.718 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:03.860 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:05.005 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:06.502 Generated Form : : D201-21110658
+15:29:06.502 Code : : A511-21050046
+15:29:06.551 Updated code:  : A51121050046
+15:29:06.552 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:07.825 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:10.184 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:12.081 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:13.740 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:15.233 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:16.711 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:17.997 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:20.129 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:22.093 Generated Form : : D201-21110659
+15:29:22.093 Code : : J511-21030028
+15:29:22.184 Updated code:  : J51121030028
+15:29:22.184 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:23.951 Generated Form : : D201-21110660
+15:29:23.951 Code : : J511-21060012
+15:29:24.081 Updated code:  : J51121060012
+15:29:24.081 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:25.380 Generated Form : : D201-21110661
+15:29:25.380 Code : : J511-21030028
+15:29:25.426 Updated code:  : J51121030028
+15:29:25.426 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:27.271 Generated Form : : D201-21110662
+15:29:27.271 Code : : J511-21060012
+15:29:27.321 Updated code:  : J51121060012
+15:29:27.321 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:29.007 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:30.811 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:32.336 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:34.134 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:36.133 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:38.094 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:39.827 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:41.127 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:29:42.561 Generated Form : : D101-21110478
+15:29:42.623 Updated code:  : P51121060003
+15:29:44.399 Generated Form : : D101-21110479
+15:29:44.465 Updated code:  : P51121050021
+15:29:46.447 Generated Form : : D101-21110480
+15:29:46.510 Updated code:  : P51121060054
+15:29:48.375 Generated Form : : D101-21110481
+15:29:48.436 Updated code:  : P51121100003
+15:29:50.038 Generated Form : : D101-21110482
+15:29:50.103 Updated code:  : P51121060043
+15:29:51.785 Generated Form : : D101-21110483
+15:29:51.850 Updated code:  : A51121070076
+15:29:53.181 Generated Form : : D101-21110484
+15:29:53.244 Updated code:  : J51121030014
+15:29:55.365 Generated Form : : D101-21110485
+15:29:55.426 Updated code:  : A51121060182
+15:29:57.474 Generated Form : : D101-21110486
+15:29:57.538 Updated code:  : A51121070116
+15:29:59.210 Generated Form : : D101-21110487
+15:29:59.275 Updated code:  : A51121100294
+15:30:01.106 Generated Form : : D101-21110488
+15:30:01.166 Updated code:  : A51121020121
+15:30:03.016 Generated Form : : D101-21110489
+15:30:03.085 Updated code:  : P51121060058
+15:30:05.205 Generated Form : : D101-21110490
+15:30:05.271 Updated code:  : A51121100035
+15:30:07.311 Generated Form : : D101-21110491
+15:30:07.378 Updated code:  : A51121070066
+15:30:09.037 Generated Form : : D101-21110492
+15:30:09.107 Updated code:  : P51121040031
+15:30:10.865 Generated Form : : D101-21110493
+15:30:10.931 Updated code:  : A51121060158
+15:30:13.797 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:15.206 Generated Form : : D101-21110494
+15:30:15.268 Updated code:  : A51121040020
+15:30:17.336 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:18.928 Generated Form : : D101-21110495
+15:30:18.990 Updated code:  : A51121070090
+15:30:20.579 Generated Form : : D101-21110496
+15:30:20.642 Updated code:  : A51121060176
+15:30:22.474 Generated Form : : D101-21110497
+15:30:22.536 Updated code:  : A51121100068
+15:30:23.956 Generated Form : : D101-21110498
+15:30:24.019 Updated code:  : A51121060164
+15:30:25.189 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:26.609 Generated Form : : D101-21110499
+15:30:26.692 Updated code:  : A51121060158
+15:30:27.999 Generated Form : : D101-21110500
+15:30:28.062 Updated code:  : A51121070082
+15:30:29.449 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:31.290 Generated Form : : D101-21110501
+15:30:31.356 Updated code:  : A51121050291
+15:30:32.662 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:34.849 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:36.177 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:37.617 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+15:30:38.969 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:40.323 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:41.599 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:42.912 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:44.097 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:45.269 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:46.453 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:47.647 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:48.840 Database MES base data Response : Object reference not set to an instance of an object.
+15:30:50.413 Generated Form : : D101-21110502
+15:30:50.480 Updated code:  : A51121100078
+15:30:52.376 Generated Form : : D101-21110503
+15:30:52.449 Updated code:  : A51121020212
+15:30:53.827 Generated Form : : D101-21110504
+15:30:53.897 Updated code:  : A51121100286
+15:30:55.198 Generated Form : : D101-21110505
+15:30:55.259 Updated code:  : A51121070097
+15:30:56.581 Generated Form : : D101-21110506
+15:30:56.649 Updated code:  : A51121070097
+15:30:58.087 Generated Form : : D101-21110507
+15:30:58.154 Updated code:  : A51121050316
+15:30:59.768 Generated Form : : D101-21110508
+15:30:59.828 Updated code:  : A51121100003
+15:30:59.890 Upload to data to ERP finished! : 
+16:50:01.786 MESdbToERPdb 1.0.0 : Started 
+16:50:45.305 MESdbToERPdb 1.0.0 : Started 
+16:50:48.538 Database MES base data Response : Object reference not set to an instance of an object.
+16:50:50.021 Database MES base data Response : Object reference not set to an instance of an object.
+16:50:51.538 Database MES base data Response : Object reference not set to an instance of an object.
+16:50:58.068 MESdbToERPdb 1.0.0 : Started 
+16:51:17.505 MESdbToERPdb 1.0.0 : Started 
+16:54:19.314 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:55:09.487 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:55:41.937 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:56:04.060 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:56:33.613 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:56:54.071 Generated Form : : D201-21110663
+16:56:54.071 Code : : A511-21070059
+16:56:54.120 Updated code:  : A51121070059
+16:56:54.120 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:57:22.811 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:57:50.355 Generated Form : : D201-21110664
+16:57:50.355 Code : : A511-21070058
+16:57:50.399 Updated code:  : A51121070058
+16:57:50.399 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:58:04.840 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:58:17.645 Generated Form : : D201-21110665
+16:58:17.645 Code : : A511-21060189
+16:58:17.693 Updated code:  : A51121060189
+16:58:17.693 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:58:35.937 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:58:54.772 Generated Form : : D201-21110666
+16:58:54.772 Code : : P511-21040031
+16:58:54.821 Updated code:  : P51121040031
+16:58:54.821 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:59:17.039 Generated Form : : D201-21110667
+16:59:17.039 Code : : A511-21030042
+16:59:17.084 Updated code:  : A51121030042
+16:59:17.084 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:59:31.109 Generated Form : : D201-21110668
+16:59:31.109 Code : : A511-21060162
+16:59:31.155 Updated code:  : A51121060162
+16:59:31.155 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:59:43.276 Generated Form : : D201-21110669
+16:59:43.276 Code : : P511-21100015
+16:59:43.331 Updated code:  : P51121100015
+16:59:43.331 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+16:59:53.943 Generated Form : : D201-21110670
+16:59:53.943 Code : : P511-21060058
+16:59:54.020 Updated code:  : P51121060058
+16:59:54.020 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+17:00:06.310 Generated Form : : D201-21110671
+17:00:06.310 Code : : A511-21070058
+17:00:06.357 Updated code:  : A51121070058
+17:00:06.357 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+17:00:22.594 Generated Form : : D201-21110672
+17:00:22.594 Code : : P511-21090024
+17:00:22.639 Updated code:  : P51121090024
+17:00:22.639 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+17:00:37.690 Generated Form : : D201-21110673
+17:00:37.690 Code : : A511-21100015
+17:00:37.739 Updated code:  : A51121100015
+17:00:37.739 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+17:00:55.505 Generated Form : : D201-21110674
+17:00:55.505 Code : : J511-21030014
+17:00:55.554 Updated code:  : J51121030014
+17:00:55.554 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+17:01:15.432 Generated Form : : D201-21110675
+17:01:15.433 Code : : A511-20090030
+17:01:15.493 Updated code:  : A51120090030
+17:01:15.494 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+17:05:29.059 MESdbToERPdb 1.0.0 : Started 

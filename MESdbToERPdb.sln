@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31808.319
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESdbToERPdb", "MESdbToERPdb.csproj", "{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D6B9435-6178-49D8-B006-E567192D7700}
+	EndGlobalSection
+EndGlobal

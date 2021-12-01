@@ -33,8 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\MySql.Data\MySql.Data.DLL</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Renci.SshNet.Async, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Renci.SshNet.Async.1.4.0\lib\net40\Renci.SshNet.Async.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,21 +57,35 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Logfile\ClearMemmory.cs" />
+    <Compile Include="Controller\Logfile\EventBroker.cs" />
+    <Compile Include="Controller\Logfile\SaveObject.cs" />
+    <Compile Include="Controller\Logfile\SystemLog.cs" />
+    <Compile Include="Controller\SQL_Class\sqlERPTest_TLNV2.cs" />
+    <Compile Include="Controller\SQL_Class\sqlMESBaseDataCon.cs" />
+    <Compile Include="Controller\SQL_Class\sqlMESPlanningExcution.cs" />
+    <Compile Include="Controller\SQL_Class\sqlMESQualityControlCon.cs" />
     <Compile Include="Controller\SQL_Class\DatabaseSQLServerUtils.cs" />
     <Compile Include="Controller\SQL_Class\DatabaseUtils.cs" />
     <Compile Include="Controller\SQL_Class\sqlERPCon.cs" />
+    <Compile Include="Controller\SQL_Class\sqlMESInterCon.cs" />
+    <Compile Include="Controller\SubClass\insertERPD101.cs" />
+    <Compile Include="Controller\SubClass\insertERPD201.cs" />
+    <Compile Include="Controller\SQL_Class\INVMD.cs" />
+    <Compile Include="Controller\SubClass\SettingClass.cs" />
+    <Compile Include="Controller\SubClass\UploadMain.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="View\SettingWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SettingWindow.Designer.cs">
-      <DependentUpon>SettingWindow.cs</DependentUpon>
+    <Compile Include="RichTextBoxLog.xaml.cs">
+      <DependentUpon>RichTextBoxLog.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainWindow.cs">
       <SubType>Form</SubType>
@@ -68,15 +95,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\SupportWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\SupportWindow.Designer.cs">
-      <DependentUpon>SupportWindow.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="View\SettingWindow.resx">
-      <DependentUpon>SettingWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,9 +103,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SupportWindow.resx">
-      <DependentUpon>SupportWindow.cs</DependentUpon>
-    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -102,7 +118,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Folder Include="Controller\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="RichTextBoxLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
