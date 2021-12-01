@@ -33,7 +33,7 @@ namespace MESdbToERPdb
 
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
         object lockObject = new object();
-        System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
+        //System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
         SettingClass SettingClass = null; 
         private void InitializeVersion()
         {
@@ -114,8 +114,8 @@ namespace MESdbToERPdb
 
         private void btn_start_Click(object sender, EventArgs e)
         { 
-            DateTime dIn = Convert.ToDateTime("2021-11-01 10:00:00"); //dùng để test
-            DateTime dOut = Convert.ToDateTime("2021-11-02 12:00:00");
+            string dIn = "2021-11-03 08:00:00"; //dùng để test
+            string dOut = "2021-11-03 17:00:00";
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
             
