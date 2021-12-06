@@ -52,6 +52,7 @@ namespace MESdbToERPdb
             LoadLogfileInitialize();
             this.Text = Title;
             SystemLog.Output(SystemLog.MSG_TYPE.War, Title, "Started ");
+            
         }
 
         #region LogFile
@@ -113,16 +114,19 @@ namespace MESdbToERPdb
 
 
         private void btn_start_Click(object sender, EventArgs e)
-        { 
-            string dIn = "2021-11-03 08:00:00"; //dùng để test
-            string dOut = "2021-11-03 17:00:00";
+        {
+            nud_timeInterval.Enabled = false;
+            string dStart = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss");
+
+            DateTime ts = DateTime.Now.AddHours(int.Parse(nud_timeInterval.Value.ToString());
+            string dEnd = "";
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
             
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
             
-            uploadMain.GetListTransferOrder(dIn, dOut);
+            uploadMain.GetListTransferOrder(dStart, dEnd);
             
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
             ClearMemory.CleanMemory();

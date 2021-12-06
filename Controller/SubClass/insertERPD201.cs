@@ -94,12 +94,12 @@ namespace MESdbToERPdb
         //    string countFormatup = countUp.ToString("0000");
         //    return countFormatup;
         //}
-        public void InsertdataToERP_D201(string MP, string SP, string orgCode, double output, double NG, DateTime tdate, string date, string time, string timeIn, string timeOut)
+        public void InsertdataToERP_D201(string MP, string SP, string orgCode, double output, double NG,double RW, DateTime tdate, string date, string time, string timeIn, string timeOut)
         {
             try
             {
                 string dateTm = Convert.ToDateTime(date).ToString("yyyyMMdd");
-                string month = dateTm.Substring(2, 6);
+                string month = dateTm.Substring(0, 6);
 
                 string mesTransDate = CheckTransDate(tdate);
 
@@ -120,7 +120,7 @@ namespace MESdbToERPdb
                 string TA006 = sqlERPCon.sqlExecuteScalarString("select distinct TA006 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 string TA007 = sqlERPCon.sqlExecuteScalarString("select distinct TA007 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 
-                double TC036 = output + NG;
+                double TC036 = (output + NG) - RW ;
                 string MOCTA56 = sqlERPCon.sqlExecuteScalarString("select distinct TA056 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 double MOCTA57 = double.Parse(sqlERPCon.sqlExecuteScalarString("select distinct TA057 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'"));
                 string MOCTA70 = sqlERPCon.sqlExecuteScalarString("select distinct TA070 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
@@ -129,17 +129,17 @@ namespace MESdbToERPdb
                 string MB024 = sqlERPCon.sqlExecuteScalarString("select distinct MB024 from INVMB where MB001 = '" + TC047 + "'");
                 string TC033 = "";
                 string TC034 = "";
-                if (MB023 != String.Empty)
+                if (MB023 != String.Empty && MB023 != "0")
                 {
                     TC033 = (Convert.ToDateTime(mesTransDate).AddDays(int.Parse(MB023))).ToString("yyyyMMdd");
                 }
-                if (MB024 != String.Empty)
+                if (MB024 != String.Empty && MB024 != "0")
                 {
                     TC034 = (Convert.ToDateTime(mesTransDate).AddDays(int.Parse(MB024))).ToString("yyyyMMdd");
                 }
 
 
-                double Total = output + NG;
+                double Total = (output + NG) - RW;
                 double DLDonvi = GetDonVi(TC047);
                 double KLOK = DLDonvi * output;
                 double KLNG = DLDonvi * NG;
@@ -193,12 +193,12 @@ namespace MESdbToERPdb
                         sqlInsertSFCTB.Append("insert into SFCTB ");
                         sqlInsertSFCTB.Append("(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
                         sqlInsertSFCTB.Append("TB001,TB002,TB003,TB004,TB005,TB006,TB007,TB008,TB009,TB010,TB011,TB012,TB013,TB014,TB015,TB016,TB017,TB018,TB019,TB020,");
-                        sqlInsertSFCTB.Append(" TB021,TB022,TB023,TB024,TB025,TB026,TB027,TB028,TB031,TB034,TB036,TB037,TB038,TB039,");
+                        sqlInsertSFCTB.Append(" TB021,TB022,TB023,TB024,TB025,TB026,TB027,TB028,TB029,TB030,TB031,TB034,TB036,TB037,TB038,TB039,");
                         sqlInsertSFCTB.Append("TB200,TB201,TB202)");
                         sqlInsertSFCTB.Append(" values ( ");
                         sqlInsertSFCTB.Append("'TL05112021','BQC01','JG01','" + dateTm + "','MES','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
                         sqlInsertSFCTB.Append("'D201','" + TC002 + "','" + transdate + "','1','" + TA006 + "','" + TA007 + "','1','" + TA006 + "','" + TA007 + "','TL',0,'N','"+ TB013 +"','','" + transdate + "','MES','N','','','',");
-                        sqlInsertSFCTB.Append("'','" + MOCTA56 + "','','','" + month + "'," + MOCTA57 + ",'0','','0','" + MOCTA70 + "','VND',1,'','',");
+                        sqlInsertSFCTB.Append("'','" + MOCTA56 + "','1','N','" + month + "'," + MOCTA57 + ",'0','','0','0','0','" + MOCTA70 + "','VND',1,'','',");
                         sqlInsertSFCTB.Append(TC036 + "," + output + "," + NG);
                         sqlInsertSFCTB.Append(")");
                         sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
@@ -309,7 +309,7 @@ namespace MESdbToERPdb
             }
             else return "N";
         }
-        public void updateERPD201(string MP, string SP, double output, double NG,  string date, string time)
+        public void updateERPD201(string MP, string SP, double output, double NG, double RW,  string date, string time)
         {
             try
             {
@@ -317,7 +317,7 @@ namespace MESdbToERPdb
                 sqlERPCon data = new sqlERPCon();
                 string TC047 = data.sqlExecuteScalarString("select distinct TA006 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
                 
-                double Total = output + NG;
+                double Total = (output + NG) - RW;
                 double DLDonvi = GetDonVi(TC047);
                 double KLOK = DLDonvi * output;
                 double KLNG = DLDonvi * NG;
@@ -361,14 +361,15 @@ namespace MESdbToERPdb
                         }
                         else
                         {
-                            updateSFCTA.Append("update SFCTA set TA012 = TA012 + " + NG + ",TA017 = TA017 + " + Total + ", TA032 = '" + CheckTA032_D201_0010(MP, SP) + "', TA045 = TA045 + " + KLTotal + " where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010' and TA004 = '" + TC007 + "'");
+                            updateSFCTA.Append("update SFCTA set TA017 = TA017 + " + Total + ", TA032 = '" + CheckTA032_D201_0010(MP, SP) + "', TA045 = TA045 + " + KLTotal + " where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010' and TA004 = '" + TC007 + "'");
                             sqlUpdate.sqlExecuteNonQuery(updateSFCTA.ToString(), false);
                         }
 
-
+                        double SFCTA011Updated = double.Parse(con.sqlExecuteScalarString("select distinct TA011 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'"));
+                        double SFCTA039Updated = double.Parse(con.sqlExecuteScalarString("select distinct TA039 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'"));
                         //update SFCTA 0020
                         StringBuilder updateSFCTA02 = new StringBuilder();
-                        updateSFCTA02.Append("update SFCTA set TA010 = TA010 + " + output + ", TA030= '" + firstD2Date + "', TA032 = '" + CheckTA032_D201_0020(MP, SP) + "', TA038 = TA038 + " + KLOK + " , MODIFIER ='MES', MODI_DATE ='" + dateTm + "',MODI_TIME ='" + time + "', MODI_AP ='SFT', MODI_PRID ='SFCMI05' where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 ='0020' and TA004 = '" + TC009 + "' ");
+                        updateSFCTA02.Append("update SFCTA set TA010 = " + SFCTA011Updated + ", TA030= '" + firstD2Date + "', TA032 = '" + CheckTA032_D201_0020(MP, SP) + "', TA038 = " + SFCTA039Updated + " , MODIFIER ='MES', MODI_DATE ='" + dateTm + "',MODI_TIME ='" + time + "', MODI_AP ='SFT', MODI_PRID ='SFCMI05' where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 ='0020' and TA004 = '" + TC009 + "' ");
                         sqlUpdate.sqlExecuteNonQuery(updateSFCTA02.ToString(), false);
 
                         //update MOCTA

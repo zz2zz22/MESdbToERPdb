@@ -23,7 +23,7 @@ namespace MESdbToERPdb
         public static SqlConnection GetERPTestDBConnection() //ERP trên con .11 db - TLVN2 (dùng để test) con chính ERP trong db TECHLINK (KHÔNG ĐƯỢC ĐỘNG VÀO NẾU CHƯA TEST KĨ )
         {
             string datasource = "172.16.0.11"; // Main ERP test connection "TLVN2"
-            string database = "TL05112021"; // TL05112021
+            string database = "TEST20211203"; // TEST20211201 // TECHLINK (kho chính)
             string username = "soft";
             string password = "techlink@!@#";
 

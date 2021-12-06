@@ -114,7 +114,7 @@ namespace MESdbToERPdb
             {
                 
                 string dateTm = Convert.ToDateTime(date).ToString("yyyyMMdd");
-                string month = dateTm.Substring(2, 6);
+                string month = dateTm.Substring(0, 6);
 
                 string mesTransDate = CheckTransDate(tdate);
 
@@ -144,11 +144,11 @@ namespace MESdbToERPdb
                 string MB024 = sqlERPCon.sqlExecuteScalarString("select distinct MB024 from INVMB where MB001 = '" + TC047 + "'");
                 string TC033 = "";
                 string TC034 = "";
-                if (MB023 != String.Empty)
+                if (MB023 != String.Empty && MB023 != "0")
                 {
                     TC033 = (Convert.ToDateTime(mesTransDate).AddDays(int.Parse(MB023))).ToString("yyyyMMdd");
                 }
-                if (MB024 != String.Empty)
+                if (MB024 != String.Empty && MB024 != "0")
                 {
                     TC034 = (Convert.ToDateTime(mesTransDate).AddDays(int.Parse(MB024))).ToString("yyyyMMdd");
                 }
@@ -156,7 +156,7 @@ namespace MESdbToERPdb
                 double SFCTA010 = double.Parse(data.sqlExecuteScalarString("select distinct TA010 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'"));
                 double MOCTA015 = double.Parse(data.sqlExecuteScalarString("select distinct TA015 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'"));
                 bool checkQty = false;
-                if (SFCTA010 > MOCTA015)
+                if (SFCTA010 > MOCTA015 || SFCTA010 == MOCTA015)
                 {
                     checkQty = true;
                 }
@@ -208,7 +208,7 @@ namespace MESdbToERPdb
                     }
                     else
                     {
-                        SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA010 > MOCTA015.", SFCTA010 + ">" + MOCTA015 + " (Code : "+MP+"-"+SP+")");
+                        SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.", SFCTA010 + " : " + MOCTA015 + " (Code : "+ MP +"-"+ SP +")");
                     }
                 
                 //else
@@ -299,7 +299,7 @@ namespace MESdbToERPdb
                 double SFCTA010 = double.Parse(con.sqlExecuteScalarString("select distinct TA010 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'"));
                 double MOCTA015 = double.Parse(con.sqlExecuteScalarString("select distinct TA015 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'"));
                 bool checkQty = false;
-                if (SFCTA010 > MOCTA015)
+                if (SFCTA010 > MOCTA015 || SFCTA010 == MOCTA015)
                 {
                     checkQty = true;
                 }
@@ -325,7 +325,7 @@ namespace MESdbToERPdb
                 }
                 else
                 {
-                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể cập nhật do SFCTA010 > MOCTA015.", SFCTA010 + ">" + MOCTA015 + " (Code : " + MP + "-" + SP + ")");
+                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể cập nhật do SFCTA010 lớn hơn hoặc bằng MOCTA015.", SFCTA010 + " : " + MOCTA015 + " (Code : " + MP + "-" + SP + ")");
                 }
             }
             catch (Exception ex)
