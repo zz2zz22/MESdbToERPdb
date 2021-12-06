@@ -7,7 +7,7 @@ using System.Data;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Windows;
 
-namespace MESdbToERPdb.Controller.SubClass
+namespace MESdbToERPdb
 {
     public class DataReport
     {
