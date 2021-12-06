@@ -25,7 +25,7 @@ namespace MESdbToERPdb
         EventBroker.EventObserver m_observerLog = null;
 
         EventBroker.EventParam m_timerEvent = null;
-
+        string dIn = "";
         FlowDocument m_flowDoc = null; //Hien log vao richtextbox
         System.Windows.Forms.Timer tmrCallBgWorker;
         //Khoi tao bg worker
@@ -118,8 +118,9 @@ namespace MESdbToERPdb
             nud_timeInterval.Enabled = false;
             string dStart = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss");
 
-            DateTime ts = DateTime.Now.AddHours(int.Parse(nud_timeInterval.Value.ToString());
-            string dEnd = "";
+            DateTime ts = DateTime.Now.AddHours(int.Parse(nud_timeInterval.Value.ToString()));
+            string dEnd = ts.ToString("yyyy-MM-dd HH:mm:ss");
+            dIn = dEnd;
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
             
@@ -151,6 +152,7 @@ namespace MESdbToERPdb
         private void btn_stop_Click(object sender, EventArgs e)
         {
             tmrCallBgWorker.Stop();
+            nud_timeInterval.Enabled = true;
             btn_stop.Text = "Stopping";
             btn_start.Text = "Start";
             btn_start.Enabled = true;
@@ -184,12 +186,17 @@ namespace MESdbToERPdb
         {
             //DateTime dIn = Convert.ToDateTime("2021-11-02 11:00:00"); //dùng để test
             //DateTime dOut = Convert.ToDateTime("2021-11-02 12:00:00");
+
+            
             // does a job like writing to serial communication, webservices etc
             var worker = sender as BackgroundWorker;
             try
             {
+                string dOut = (Convert.ToDateTime(dIn)).AddHours(int.Parse(nud_timeInterval.Value.ToString())).ToString("yyyy-MM-dd HH:mm:ss");
+                
                 UploadMain uploadMain = new UploadMain();
-                //uploadMain.GetListTransferOrder(dIn,dOut);
+                uploadMain.GetListTransferOrder(dIn,dOut);
+                dIn = dOut;
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
                 ClearMemory.CleanMemory();
             }

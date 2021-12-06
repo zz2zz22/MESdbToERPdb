@@ -33,6 +33,9 @@ namespace MESdbToERPdb
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mes2ERPMainWin));
             this.panel_Controller = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lb_timeDV = new System.Windows.Forms.Label();
+            this.lb_pickTime = new System.Windows.Forms.Label();
+            this.nud_timeInterval = new System.Windows.Forms.NumericUpDown();
             this.btn_start = new System.Windows.Forms.Button();
             this.btn_stop = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
@@ -40,21 +43,18 @@ namespace MESdbToERPdb
             this.lb_logText = new System.Windows.Forms.Label();
             this.pgb_backgroundWorkerProgressBar = new System.Windows.Forms.ProgressBar();
             this.panel_LogText = new System.Windows.Forms.Panel();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
             this.lb_progress_percentage = new System.Windows.Forms.Label();
             this.pic_title = new System.Windows.Forms.PictureBox();
             this.BW = new System.ComponentModel.BackgroundWorker();
             this.timer_nextRun = new System.Windows.Forms.Timer(this.components);
-            this.nud_timeInterval = new System.Windows.Forms.NumericUpDown();
-            this.lb_pickTime = new System.Windows.Forms.Label();
-            this.lb_timeDV = new System.Windows.Forms.Label();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
             this.panel_Controller.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_timeInterval)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
             this.panel_LogText.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_title)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_timeInterval)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Controller
@@ -78,6 +78,44 @@ namespace MESdbToERPdb
             this.groupBox1.Size = new System.Drawing.Size(415, 541);
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
+            // 
+            // lb_timeDV
+            // 
+            this.lb_timeDV.AutoSize = true;
+            this.lb_timeDV.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_timeDV.Location = new System.Drawing.Point(310, 177);
+            this.lb_timeDV.Name = "lb_timeDV";
+            this.lb_timeDV.Size = new System.Drawing.Size(33, 21);
+            this.lb_timeDV.TabIndex = 8;
+            this.lb_timeDV.Text = "giờ";
+            // 
+            // lb_pickTime
+            // 
+            this.lb_pickTime.AutoSize = true;
+            this.lb_pickTime.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_pickTime.Location = new System.Drawing.Point(6, 177);
+            this.lb_pickTime.Name = "lb_pickTime";
+            this.lb_pickTime.Size = new System.Drawing.Size(209, 21);
+            this.lb_pickTime.TabIndex = 7;
+            this.lb_pickTime.Text = "Chọn khoảng lấy dữ liệu :";
+            // 
+            // nud_timeInterval
+            // 
+            this.nud_timeInterval.Location = new System.Drawing.Point(221, 176);
+            this.nud_timeInterval.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_timeInterval.Name = "nud_timeInterval";
+            this.nud_timeInterval.Size = new System.Drawing.Size(83, 22);
+            this.nud_timeInterval.TabIndex = 6;
+            this.nud_timeInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_timeInterval.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btn_start
             // 
@@ -153,6 +191,16 @@ namespace MESdbToERPdb
             this.panel_LogText.Size = new System.Drawing.Size(811, 649);
             this.panel_LogText.TabIndex = 1;
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elementHost1.Location = new System.Drawing.Point(3, 140);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(805, 441);
+            this.elementHost1.TabIndex = 7;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.richTextBoxLog1;
+            // 
             // lb_progress_percentage
             // 
             this.lb_progress_percentage.AutoSize = true;
@@ -184,56 +232,8 @@ namespace MESdbToERPdb
             // 
             // timer_nextRun
             // 
-            this.timer_nextRun.Interval = 500;
+            this.timer_nextRun.Interval = 1000;
             this.timer_nextRun.Tick += new System.EventHandler(this.timer_nextRun_Tick);
-            // 
-            // nud_timeInterval
-            // 
-            this.nud_timeInterval.Location = new System.Drawing.Point(221, 176);
-            this.nud_timeInterval.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nud_timeInterval.Name = "nud_timeInterval";
-            this.nud_timeInterval.Size = new System.Drawing.Size(83, 22);
-            this.nud_timeInterval.TabIndex = 6;
-            this.nud_timeInterval.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.nud_timeInterval.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // lb_pickTime
-            // 
-            this.lb_pickTime.AutoSize = true;
-            this.lb_pickTime.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_pickTime.Location = new System.Drawing.Point(6, 177);
-            this.lb_pickTime.Name = "lb_pickTime";
-            this.lb_pickTime.Size = new System.Drawing.Size(209, 21);
-            this.lb_pickTime.TabIndex = 7;
-            this.lb_pickTime.Text = "Chọn khoảng lấy dữ liệu :";
-            // 
-            // lb_timeDV
-            // 
-            this.lb_timeDV.AutoSize = true;
-            this.lb_timeDV.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_timeDV.Location = new System.Drawing.Point(310, 177);
-            this.lb_timeDV.Name = "lb_timeDV";
-            this.lb_timeDV.Size = new System.Drawing.Size(33, 21);
-            this.lb_timeDV.TabIndex = 8;
-            this.lb_timeDV.Text = "giờ";
-            // 
-            // elementHost1
-            // 
-            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elementHost1.Location = new System.Drawing.Point(3, 140);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(805, 441);
-            this.elementHost1.TabIndex = 7;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.richTextBoxLog1;
             // 
             // mes2ERPMainWin
             // 
@@ -253,11 +253,11 @@ namespace MESdbToERPdb
             this.panel_Controller.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_timeInterval)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel_LogText.ResumeLayout(false);
             this.panel_LogText.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_title)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_timeInterval)).EndInit();
             this.ResumeLayout(false);
 
         }
