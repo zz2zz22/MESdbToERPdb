@@ -8,7 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Windows.Documents;
@@ -34,7 +34,7 @@ namespace MESdbToERPdb
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
         object lockObject = new object();
         //System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
-        SettingClass SettingClass = null; 
+        SettingClass settingClass = new SettingClass(); 
         private void InitializeVersion()
         {
              
@@ -116,11 +116,11 @@ namespace MESdbToERPdb
         private void btn_start_Click(object sender, EventArgs e)
         {
             nud_timeInterval.Enabled = false;
-            string dStart = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss");
-
-            DateTime ts = DateTime.Now.AddHours(int.Parse(nud_timeInterval.Value.ToString()));
-            string dEnd = ts.ToString("yyyy-MM-dd HH:mm:ss");
-            dIn = dEnd;
+            settingClass.Interval = int.Parse(nud_timeInterval.Value.ToString());
+            string dEnd = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss"); // khi bat dau se kg lay du lieu nhung bay gio tét thi set lan dau lay ve truoc
+            TimeSpan ts = new TimeSpan(int.Parse(nud_timeInterval.Value.ToString()), 0, 0);
+            string dStart = (DateTime.Now.Subtract(ts)).ToString("yyyy-MM-dd HH:mm:ss");
+            tmrCallBgWorker.Interval = settingClass.Interval * 3600000;
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
             
@@ -128,6 +128,7 @@ namespace MESdbToERPdb
             btn_stop.Enabled = true;
             
             uploadMain.GetListTransferOrder(dStart, dEnd);
+            settingClass.dIn = dEnd;
             
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
             ClearMemory.CleanMemory();
@@ -137,7 +138,7 @@ namespace MESdbToERPdb
         {   // this timer calls bgWorker again and again after regular intervals
             tmrCallBgWorker = new System.Windows.Forms.Timer();//Timer for do task
             tmrCallBgWorker.Tick += new EventHandler(timer_nextRun_Tick);
-            tmrCallBgWorker.Interval = int.Parse(nud_timeInterval.Value.ToString()) * 3600000;
+            tmrCallBgWorker.Interval = (int.Parse(nud_timeInterval.Value.ToString()) * 3600000);
 
             // this is our worker
             bgWorker = new BackgroundWorker();
@@ -147,7 +148,6 @@ namespace MESdbToERPdb
             bgWorker.ProgressChanged += BW_ProgressChanged;
             bgWorker.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BW_RunWorkerCompleted);
             bgWorker.WorkerReportsProgress = true;
-
         }
         private void btn_stop_Click(object sender, EventArgs e)
         {
@@ -192,11 +192,13 @@ namespace MESdbToERPdb
             var worker = sender as BackgroundWorker;
             try
             {
-                string dOut = (Convert.ToDateTime(dIn)).AddHours(int.Parse(nud_timeInterval.Value.ToString())).ToString("yyyy-MM-dd HH:mm:ss");
+                int itv = settingClass.Interval;
+                string timeIN = settingClass.dIn;
+                string dOut = (Convert.ToDateTime(timeIN)).AddHours(itv).ToString("yyyy-MM-dd HH:mm:ss");
                 
                 UploadMain uploadMain = new UploadMain();
-                uploadMain.GetListTransferOrder(dIn,dOut);
-                dIn = dOut;
+                uploadMain.GetListTransferOrder(timeIN,dOut);
+                settingClass.dIn = dOut;
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
                 ClearMemory.CleanMemory();
             }
@@ -269,10 +271,10 @@ namespace MESdbToERPdb
 
         private void mes2ERPMainWin_Load(object sender, EventArgs e)
         {
-            SettingClass = new SettingClass();
+            
             if (File.Exists(SaveObject.Pathsave))
-                SettingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);
-
+                settingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);
+            
             LoadBackgroundWorker();
         }
     }

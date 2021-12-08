@@ -9,6 +9,17 @@ namespace MESdbToERPdb
     [Serializable]
     public class SettingClass
     {
-        public string dIn { get; set; }
+        private string din;
+        private int interval;
+        public string dIn 
+        { 
+            get { return din;}
+            set { din = value; }
+        }
+        public int Interval
+        {
+            get { return interval;}
+            set { interval = value; }
+        }
     }
 }

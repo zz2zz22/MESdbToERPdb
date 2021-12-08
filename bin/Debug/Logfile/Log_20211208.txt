@@ -1,0 +1,207 @@
+00:36:04.074 Upload to data to ERP finished! : 
+01:36:04.093 Upload to data to ERP finished! : 
+02:36:04.074 Upload to data to ERP finished! : 
+03:36:04.109 Upload to data to ERP finished! : 
+04:36:04.080 Upload to data to ERP finished! : 
+05:36:04.094 Upload to data to ERP finished! : 
+06:36:04.204 Upload to data to ERP finished! : 
+07:36:04.092 Upload to data to ERP finished! : 
+08:39:21.600 MESdbToERPdb 1.0.0 : Started 
+08:39:29.077 JM uuid : 5I0WSMRG3Z41
+08:39:30.168 Database Response : Object reference not set to an instance of an object.
+08:39:30.842 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:30.842 JM uuid : 5I0WTUN79341
+08:39:31.768 Database Response : Object reference not set to an instance of an object.
+08:39:32.375 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:32.376 JM uuid : 5I0WTUR6UU81
+08:39:33.161 Database Response : Object reference not set to an instance of an object.
+08:39:33.754 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:33.756 JM uuid : 5I0WTUU7QLC1
+08:39:34.517 Database Response : Object reference not set to an instance of an object.
+08:39:35.118 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:35.118 JM uuid : 5I0WUJVODCG1
+08:39:35.892 Database Response : Object reference not set to an instance of an object.
+08:39:36.487 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:36.489 JM uuid : 5I0WUJYOLY81
+08:39:37.251 Database Response : Object reference not set to an instance of an object.
+08:39:37.844 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:37.845 JM uuid : 5I0WUK44IF41
+08:39:38.609 Database Response : Object reference not set to an instance of an object.
+08:39:39.198 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:39.198 JM uuid : 5I0WV9FQ5LS1
+08:39:39.973 Database Response : Object reference not set to an instance of an object.
+08:39:40.842 Generated Form : : D201-21120127
+08:39:40.844 Code : : B511-21100035
+08:39:40.996 Updated code:  : B51121100035
+08:39:40.996 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:40.997 JM uuid : 5I0WVP4S8F41
+08:39:41.751 Database Response : Object reference not set to an instance of an object.
+08:39:42.353 JM uuid : 5I0WVPAI7JK1
+08:39:42.795 GetListTransferOrder : Không có phiếu chuyển.
+08:39:42.795 JM uuid : 5I0WVPEOGHS1
+08:39:43.531 GetListTransferOrder : Không có phiếu chuyển.
+08:39:43.533 JM uuid : 5I0WVRW0JTC1
+08:39:44.420 Database Response : Object reference not set to an instance of an object.
+08:39:45.116 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 896 : 896 (Code : B511-21090002)
+08:39:45.147 Không thể cập nhật do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 896 : 896 (Code : B511-21090002)
+08:39:45.147 JM uuid : 5I0WVX5NJF41
+08:39:45.882 Database Response : Object reference not set to an instance of an object.
+08:39:46.552 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 896 : 896 (Code : B511-21090002)
+08:39:46.579 Không thể cập nhật do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 896 : 896 (Code : B511-21090002)
+08:39:46.579 JM uuid : 5I0XU76AG4G1
+08:39:46.978 GetListTransferOrder : Không có phiếu chuyển.
+08:39:46.978 JM uuid : 5I0XYRZC4IO1
+08:39:47.732 Database Response : Object reference not set to an instance of an object.
+08:39:48.436 Generated Form : : D201-21120128
+08:39:48.437 Code : : B511-21100050
+08:39:48.574 Updated code:  : B51121100050
+08:39:48.575 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:48.576 JM uuid : 5I0XZTXUFW01
+08:39:48.986 GetListTransferOrder : Không có phiếu chuyển.
+08:39:48.986 JM uuid : 5I0XZVH694W1
+08:39:49.726 Database Response : Object reference not set to an instance of an object.
+08:39:50.565 Generated Form : : D201-21120129
+08:39:50.567 Code : : B511-21100048
+08:39:50.719 Updated code:  : B51121100048
+08:39:50.720 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:50.721 JM uuid : 5I0XZVLX2TS1
+08:39:51.129 GetListTransferOrder : Không có phiếu chuyển.
+08:39:51.131 JM uuid : 5I0XZVQN9DC1
+08:39:51.550 GetListTransferOrder : Không có phiếu chuyển.
+08:39:51.552 JM uuid : 5I0Y08WN37K1
+08:39:51.969 GetListTransferOrder : Không có phiếu chuyển.
+08:39:51.970 JM uuid : 5I0Y09638KW1
+08:39:52.380 GetListTransferOrder : Không có phiếu chuyển.
+08:39:52.381 JM uuid : 5I0Y0K1564W1
+08:39:52.783 GetListTransferOrder : Không có phiếu chuyển.
+08:39:52.784 JM uuid : 5I0Y0R6NKPC1
+08:39:53.542 Database Response : Object reference not set to an instance of an object.
+08:39:54.345 Generated Form : : D201-21120130
+08:39:54.345 Code : : B511-21100054
+08:39:54.468 Updated code:  : B51121100054
+08:39:54.470 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:54.470 JM uuid : 5I0Y2IQA9801
+08:39:55.898 Database Response : Object reference not set to an instance of an object.
+08:39:56.660 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.675 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.689 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.702 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.715 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.773 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.781 InsertdataToERP(string barcode, string output, string NG) : Input string was not in a correct format.
+08:39:56.805 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.828 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:39:56.835 updateERPD201(string B511-21120001) : Input string was not in a correct format.
+08:39:56.835 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:56.835 JM uuid : 5I0Y3SEOFHC1
+08:39:57.671 Database Response : Object reference not set to an instance of an object.
+08:39:58.528 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:58.528 JM uuid : 5I0Y3ZH0LE81
+08:39:59.275 Database Response : Object reference not set to an instance of an object.
+08:39:59.880 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:39:59.896 JM uuid : 5I0Y3ZL49R41
+08:40:00.701 Database Response : Object reference not set to an instance of an object.
+08:40:01.314 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:40:01.315 JM uuid : 5I0Y3ZO8D8W1
+08:40:02.055 Database Response : Object reference not set to an instance of an object.
+08:40:02.647 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:40:02.647 JM uuid : 5I0Y4F6XR1C1
+08:40:03.415 Database Response : Object reference not set to an instance of an object.
+08:40:04.026 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:40:04.038 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:40:04.065 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:40:04.231 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:40:04.275 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:40:04.283 InsertdataToERP(string barcode, string output, string NG) : Input string was not in a correct format.
+08:40:04.308 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:40:04.334 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+08:40:04.341 updateERPD101(string B511-21120001) : Input string was not in a correct format.
+08:40:04.341 JM uuid : 5I0Y64FO1A81
+08:40:05.074 Database Response : Object reference not set to an instance of an object.
+08:40:05.681 JM uuid : 5I0Y69K8U8W1
+08:40:06.476 Database Response : Object reference not set to an instance of an object.
+08:40:07.067 JM uuid : 5I0Y69OX3CG1
+08:40:07.810 Database Response : Object reference not set to an instance of an object.
+08:40:08.395 JM uuid : 5I0Y69SIC4G1
+08:40:09.141 Database Response : Object reference not set to an instance of an object.
+08:40:09.749 JM uuid : 5I0Y6NJQWTS1
+08:40:11.077 JM uuid : 5I0YUNBTI341
+08:40:11.788 Database Response : Object reference not set to an instance of an object.
+08:40:12.382 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:40:12.382 JM uuid : 5I0YV2MEBGW1
+08:40:13.246 Database Response : Object reference not set to an instance of an object.
+08:40:13.868 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:40:13.869 JM uuid : 5I0YV2QB4WW1
+08:40:14.723 Database Response : Object reference not set to an instance of an object.
+08:40:15.463 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:40:15.464 JM uuid : 5I0YV2T90N41
+08:40:16.333 Database Response : Object reference not set to an instance of an object.
+08:40:16.920 GetListTransferOrder : Không có phiếu chuyển D101 hay D201
+08:40:16.921 JM uuid : 5I0YVJLDRW01
+08:40:17.318 GetListTransferOrder : Không có phiếu chuyển.
+08:40:17.320 JM uuid : 5I0YVLFQBJK1
+08:40:18.044 Database Response : Object reference not set to an instance of an object.
+08:40:18.709 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 6720 : 6720 (Code : B511-21100056)
+08:40:18.739 Không thể cập nhật do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 6720 : 6720 (Code : B511-21100056)
+08:40:18.739 JM uuid : 5I0YVZS9CU81
+08:40:19.145 GetListTransferOrder : Không có phiếu chuyển.
+08:40:19.145 JM uuid : 5I0Z050QZR41
+08:40:19.540 GetListTransferOrder : Không có phiếu chuyển.
+08:40:19.541 JM uuid : 5I0Z0IA1KA81
+08:40:19.967 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:20.870 JM uuid : 5I0Z0LD6Z7K1
+08:40:21.327 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:22.260 JM uuid : 5I0Z0W9VUOG1
+08:40:22.665 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:23.574 JM uuid : 5I0Z12QGEPS1
+08:40:24.020 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:24.953 JM uuid : 5I0Z1BZWNHS1
+08:40:25.372 GetListTransferOrder : Không có phiếu chuyển.
+08:40:25.372 JM uuid : 5I0Z1DWR0681
+08:40:25.810 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:27.303 JM uuid : 5I0Z1TU3NG01
+08:40:27.763 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:28.375 Database Response : Object reference not set to an instance of an object.
+08:40:28.989 JM uuid : 5I0Z1WI4NLS1
+08:40:29.508 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:37.206 Database Response : Object reference not set to an instance of an object.
+08:40:37.815 JM uuid : 5I0Z1ZHM1G01
+08:40:38.263 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:38.578 Database Response : Object reference not set to an instance of an object.
+08:40:39.174 JM uuid : 5I0Z2APXXSG1
+08:40:39.595 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:39.906 Database Response : Object reference not set to an instance of an object.
+08:40:40.524 JM uuid : 5I0Z2FG5ZCW1
+08:40:40.953 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:41.268 Database Response : Object reference not set to an instance of an object.
+08:40:41.867 JM uuid : 5I0Z2V8NY1S1
+08:40:42.338 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:42.691 Database Response : Object reference not set to an instance of an object.
+08:40:43.688 JM uuid : 5I0Z2WH3QN41
+08:40:44.289 GetListTransferOrder : Không có phiếu chuyển.
+08:40:44.289 JM uuid : 5I0Z2XJPHI81
+08:40:44.724 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:45.287 Database Response : Object reference not set to an instance of an object.
+08:40:45.908 JM uuid : 5I0Z36GQUBK1
+08:40:46.386 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:46.713 Database Response : Object reference not set to an instance of an object.
+08:40:47.466 JM uuid : 5I0Z39354A81
+08:40:47.915 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:48.382 Database Response : Object reference not set to an instance of an object.
+08:40:48.985 JM uuid : 5I0Z3BLUQ0G1
+08:40:49.522 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:49.843 Database Response : Object reference not set to an instance of an object.
+08:40:50.453 JM uuid : 5I0Z5FQ34LS1
+08:40:50.870 GetListTransferOrder : Không có phiếu chuyển.
+08:40:50.870 JM uuid : 5I0Z6IN1SR41
+08:40:51.315 GetListTransferOrder : Không có phiếu chuyển.
+08:40:51.315 JM uuid : 5I0Z7YK6OG01
+08:40:51.724 GetListTransferOrder : Không có phiếu chuyển.
+08:40:51.724 JM uuid : 5I0Z955RVB41
+08:40:52.158 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:53.072 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+08:40:53.072 JM uuid : 5I0Z98KBQGW1
+08:40:53.491 Database MES base data Response : Object reference not set to an instance of an object.
+08:40:54.408 JM uuid : 5I0ZAJIP7S01
+08:40:54.826 GetListTransferOrder : Không có phiếu chuyển.
+08:40:54.827 Upload to data to ERP finished! : 
