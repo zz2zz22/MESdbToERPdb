@@ -39,16 +39,17 @@ namespace MESdbToERPdb
             this.btn_start = new System.Windows.Forms.Button();
             this.btn_stop = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
-            this.lb_progress = new System.Windows.Forms.Label();
             this.lb_logText = new System.Windows.Forms.Label();
-            this.pgb_backgroundWorkerProgressBar = new System.Windows.Forms.ProgressBar();
             this.panel_LogText = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
             this.lb_progress_percentage = new System.Windows.Forms.Label();
             this.pic_title = new System.Windows.Forms.PictureBox();
             this.BW = new System.ComponentModel.BackgroundWorker();
             this.timer_nextRun = new System.Windows.Forms.Timer(this.components);
+            this.lb_progress = new System.Windows.Forms.Label();
+            this.pgb_backgroundWorkerProgressBar = new System.Windows.Forms.ProgressBar();
             this.panel_Controller.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_timeInterval)).BeginInit();
@@ -85,9 +86,9 @@ namespace MESdbToERPdb
             this.lb_timeDV.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_timeDV.Location = new System.Drawing.Point(310, 177);
             this.lb_timeDV.Name = "lb_timeDV";
-            this.lb_timeDV.Size = new System.Drawing.Size(33, 21);
+            this.lb_timeDV.Size = new System.Drawing.Size(47, 21);
             this.lb_timeDV.TabIndex = 8;
-            this.lb_timeDV.Text = "giờ";
+            this.lb_timeDV.Text = "hour";
             // 
             // lb_pickTime
             // 
@@ -95,9 +96,9 @@ namespace MESdbToERPdb
             this.lb_pickTime.Font = new System.Drawing.Font("Century", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_pickTime.Location = new System.Drawing.Point(6, 177);
             this.lb_pickTime.Name = "lb_pickTime";
-            this.lb_pickTime.Size = new System.Drawing.Size(209, 21);
+            this.lb_pickTime.Size = new System.Drawing.Size(146, 21);
             this.lb_pickTime.TabIndex = 7;
-            this.lb_pickTime.Text = "Chọn khoảng lấy dữ liệu :";
+            this.lb_pickTime.Text = "Fetching interval";
             // 
             // nud_timeInterval
             // 
@@ -151,16 +152,6 @@ namespace MESdbToERPdb
             this.pic_logo.TabIndex = 3;
             this.pic_logo.TabStop = false;
             // 
-            // lb_progress
-            // 
-            this.lb_progress.AutoSize = true;
-            this.lb_progress.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_progress.Location = new System.Drawing.Point(757, 601);
-            this.lb_progress.Name = "lb_progress";
-            this.lb_progress.Size = new System.Drawing.Size(37, 23);
-            this.lb_progress.TabIndex = 5;
-            this.lb_progress.Text = "0%";
-            // 
             // lb_logText
             // 
             this.lb_logText.AutoSize = true;
@@ -171,15 +162,9 @@ namespace MESdbToERPdb
             this.lb_logText.TabIndex = 4;
             this.lb_logText.Text = "Log output : ";
             // 
-            // pgb_backgroundWorkerProgressBar
-            // 
-            this.pgb_backgroundWorkerProgressBar.Location = new System.Drawing.Point(3, 587);
-            this.pgb_backgroundWorkerProgressBar.Name = "pgb_backgroundWorkerProgressBar";
-            this.pgb_backgroundWorkerProgressBar.Size = new System.Drawing.Size(739, 53);
-            this.pgb_backgroundWorkerProgressBar.TabIndex = 2;
-            // 
             // panel_LogText
             // 
+            this.panel_LogText.Controls.Add(this.button1);
             this.panel_LogText.Controls.Add(this.lb_progress);
             this.panel_LogText.Controls.Add(this.lb_logText);
             this.panel_LogText.Controls.Add(this.elementHost1);
@@ -190,6 +175,16 @@ namespace MESdbToERPdb
             this.panel_LogText.Name = "panel_LogText";
             this.panel_LogText.Size = new System.Drawing.Size(811, 649);
             this.panel_LogText.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.Location = new System.Drawing.Point(734, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(60, 60);
+            this.button1.TabIndex = 8;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // elementHost1
             // 
@@ -235,6 +230,23 @@ namespace MESdbToERPdb
             this.timer_nextRun.Interval = 1000;
             this.timer_nextRun.Tick += new System.EventHandler(this.timer_nextRun_Tick);
             // 
+            // lb_progress
+            // 
+            this.lb_progress.AutoSize = true;
+            this.lb_progress.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_progress.Location = new System.Drawing.Point(757, 601);
+            this.lb_progress.Name = "lb_progress";
+            this.lb_progress.Size = new System.Drawing.Size(37, 23);
+            this.lb_progress.TabIndex = 5;
+            this.lb_progress.Text = "0%";
+            // 
+            // pgb_backgroundWorkerProgressBar
+            // 
+            this.pgb_backgroundWorkerProgressBar.Location = new System.Drawing.Point(3, 587);
+            this.pgb_backgroundWorkerProgressBar.Name = "pgb_backgroundWorkerProgressBar";
+            this.pgb_backgroundWorkerProgressBar.Size = new System.Drawing.Size(739, 53);
+            this.pgb_backgroundWorkerProgressBar.TabIndex = 2;
+            // 
             // mes2ERPMainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -266,22 +278,23 @@ namespace MESdbToERPdb
 
         private System.Windows.Forms.Panel panel_Controller;
         private System.Windows.Forms.Panel panel_LogText;
-        private System.Windows.Forms.ProgressBar pgb_backgroundWorkerProgressBar;
         private System.Windows.Forms.PictureBox pic_title;
         private System.Windows.Forms.PictureBox pic_logo;
         private System.Windows.Forms.Label lb_logText;
         private System.Windows.Forms.Label lb_progress_percentage;
-        private System.Windows.Forms.Label lb_progress;
         private System.Windows.Forms.Button btn_stop;
         private System.Windows.Forms.Button btn_start;
         private System.ComponentModel.BackgroundWorker BW;
         private System.Windows.Forms.Timer timer_nextRun;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
-        private RichTextBoxLog richTextBoxLog1;
-        private System.Windows.Forms.Label lb_pickTime;
+        public System.Windows.Forms.Label lb_pickTime;
         private System.Windows.Forms.NumericUpDown nud_timeInterval;
         private System.Windows.Forms.Label lb_timeDV;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lb_progress;
+        private RichTextBoxLog richTextBoxLog1;
+        private System.Windows.Forms.ProgressBar pgb_backgroundWorkerProgressBar;
     }
 }
 

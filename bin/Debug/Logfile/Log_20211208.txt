@@ -205,3 +205,4 @@
 08:40:54.408 JM uuid : 5I0ZAJIP7S01
 08:40:54.826 GetListTransferOrder : Không có phiếu chuyển.
 08:40:54.827 Upload to data to ERP finished! : 
+11:23:12.311 MESdbToERPdb 1.0.0 : Started 

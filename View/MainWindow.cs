@@ -15,6 +15,7 @@ using System.Windows.Documents;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Data;
 
 
 namespace MESdbToERPdb
@@ -25,7 +26,7 @@ namespace MESdbToERPdb
         EventBroker.EventObserver m_observerLog = null;
 
         EventBroker.EventParam m_timerEvent = null;
-        string dIn = "";
+        Properties.Settings settings = new Properties.Settings();
         FlowDocument m_flowDoc = null; //Hien log vao richtextbox
         System.Windows.Forms.Timer tmrCallBgWorker;
         //Khoi tao bg worker
@@ -34,7 +35,7 @@ namespace MESdbToERPdb
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
         object lockObject = new object();
         //System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
-        SettingClass settingClass = new SettingClass(); 
+        SettingClass settingClass = null; 
         private void InitializeVersion()
         {
              
@@ -116,21 +117,28 @@ namespace MESdbToERPdb
         private void btn_start_Click(object sender, EventArgs e)
         {
             nud_timeInterval.Enabled = false;
-            settingClass.Interval = int.Parse(nud_timeInterval.Value.ToString());
-            string dEnd = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss"); // khi bat dau se kg lay du lieu nhung bay gio tét thi set lan dau lay ve truoc
+            settings.interval = int.Parse(nud_timeInterval.Value.ToString());
+            settings.Save();
+            //string dEnd = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss"); // khi bat dau se kg lay du lieu nhung bay gio tét thi set lan dau lay ve truoc
+            string dEnd = "2021-12-11 10:00:00";
             TimeSpan ts = new TimeSpan(int.Parse(nud_timeInterval.Value.ToString()), 0, 0);
-            string dStart = (DateTime.Now.Subtract(ts)).ToString("yyyy-MM-dd HH:mm:ss");
-            tmrCallBgWorker.Interval = settingClass.Interval * 3600000;
+            string dStart = ((Convert.ToDateTime(dEnd)).Subtract(ts)).ToString("yyyy-MM-dd HH:mm:ss");
+            tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
-            
+            DataReport dataReport = new DataReport();
+            DataTable failTest = dataReport.createFailReportDT();
+            DataTable successTest = dataReport.createSuccessReportDT();
+
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
             
             uploadMain.GetListTransferOrder(dStart, dEnd);
-            settingClass.dIn = dEnd;
+            settings.dIn = dEnd;
+            settings.Save();
             
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
+            DataReport.ExportToExcel(failTest, successTest, "", DateTime.Now.ToString("yyyyMMdd-HHmm") + ".xlsx");
             ClearMemory.CleanMemory();
         }
         #region backgroundworker
@@ -138,7 +146,7 @@ namespace MESdbToERPdb
         {   // this timer calls bgWorker again and again after regular intervals
             tmrCallBgWorker = new System.Windows.Forms.Timer();//Timer for do task
             tmrCallBgWorker.Tick += new EventHandler(timer_nextRun_Tick);
-            tmrCallBgWorker.Interval = (int.Parse(nud_timeInterval.Value.ToString()) * 3600000);
+            tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
 
             // this is our worker
             bgWorker = new BackgroundWorker();
@@ -192,20 +200,31 @@ namespace MESdbToERPdb
             var worker = sender as BackgroundWorker;
             try
             {
-                int itv = settingClass.Interval;
-                string timeIN = settingClass.dIn;
-                string dOut = (Convert.ToDateTime(timeIN)).AddHours(itv).ToString("yyyy-MM-dd HH:mm:ss");
                 
+                string timeIN = settings.dIn;
+                string dOut = (Convert.ToDateTime(timeIN)).AddHours(settings.interval).ToString("yyyy-MM-dd HH:mm:ss");
+                for (int i = 0; i <= 100; i++)
+                {
+                    if (bgWorker.CancellationPending)
+                    {
+                        e.Cancel = true;
+                        return;
+                    }
+                    Thread.Sleep(100);
+                    bgWorker.ReportProgress(i);
+                }
                 UploadMain uploadMain = new UploadMain();
                 uploadMain.GetListTransferOrder(timeIN,dOut);
-                settingClass.dIn = dOut;
-                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
+                settings.dIn = dOut;
+                settings.Save();
+                
+
+                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
                 ClearMemory.CleanMemory();
             }
             catch (Exception ex)
             {
-
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Upload to data to ERP not successful!", ex.Message);
+                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Chuyển đổi từ MES sang ERP không thành công!", ex.Message + "\n");
             }
 
             System.Threading.Thread.Sleep(100);
@@ -213,9 +232,6 @@ namespace MESdbToERPdb
 
         private void BW_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            if (e.ProgressPercentage == -1)
-                pgb_backgroundWorkerProgressBar.Maximum = Convert.ToInt32(e.UserState);
-            else
                 pgb_backgroundWorkerProgressBar.Value = e.ProgressPercentage;
         }
 
@@ -271,11 +287,19 @@ namespace MESdbToERPdb
 
         private void mes2ERPMainWin_Load(object sender, EventArgs e)
         {
-            
+            settingClass = new SettingClass();
             if (File.Exists(SaveObject.Pathsave))
                 settingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);
+            nud_timeInterval.Value = settings.interval;
             
             LoadBackgroundWorker();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            View.Setting setting = new View.Setting();
+            setting.Show();
+            
         }
     }
 }

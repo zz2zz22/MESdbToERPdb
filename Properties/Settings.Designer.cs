@@ -34,5 +34,65 @@ namespace MESdbToERPdb.Properties {
                 this["dIn"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int interval {
+            get {
+                return ((int)(this["interval"]));
+            }
+            set {
+                this["interval"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string cfg_senders {
+            get {
+                return ((string)(this["cfg_senders"]));
+            }
+            set {
+                this["cfg_senders"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string cfg_receivers {
+            get {
+                return ((string)(this["cfg_receivers"]));
+            }
+            set {
+                this["cfg_receivers"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string smtp_server {
+            get {
+                return ((string)(this["smtp_server"]));
+            }
+            set {
+                this["smtp_server"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string smtp_port {
+            get {
+                return ((string)(this["smtp_port"]));
+            }
+            set {
+                this["smtp_port"] = value;
+            }
+        }
     }
 }
