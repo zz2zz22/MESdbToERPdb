@@ -13,7 +13,7 @@ namespace MESdbToERPdb
         string ITEMNAME_TC048 = "";
         string ITEMDESCRIPTION = "";
         string TC009 = "";
-        DataReport dataReport = new DataReport();
+        
 
         public string CheckTransDate(DateTime date)
         {
