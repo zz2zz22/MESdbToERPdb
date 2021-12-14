@@ -120,9 +120,9 @@ namespace MESdbToERPdb
             settings.interval = int.Parse(nud_timeInterval.Value.ToString());
             settings.Save();
             //string dEnd = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss"); // khi bat dau se kg lay du lieu nhung bay gio tét thi set lan dau lay ve truoc
-            string dEnd = "2021-12-11 10:00:00";
+            string dEnd = "2021-12-12 06:00:00";
             TimeSpan ts = new TimeSpan(int.Parse(nud_timeInterval.Value.ToString()), 0, 0);
-            string dStart = ((Convert.ToDateTime(dEnd)).Subtract(ts)).ToString("yyyy-MM-dd HH:mm:ss");
+            string dStart = "2021-12-12 02:00:00";//((Convert.ToDateTime(dEnd)).Subtract(ts)).ToString("yyyy-MM-dd HH:mm:ss");
             tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();

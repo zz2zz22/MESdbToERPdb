@@ -28,8 +28,6 @@ namespace MESdbToERPdb
                 {
                     string jobmId = cmb_.Items[cmbitem].ToString();
 
-                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Đơn chuyển", table.Rows[cmbitem]["move_no"].ToString() + "(" + jobmId + ").");
-
                     StringBuilder sqlGetTable = new StringBuilder();
                     sqlGetTable.Append("select uuid, move_no, job_order_uuid,");
                     sqlGetTable.Append("job_no, work_order_uuid, belong_organization, work_order_process_uuid, ");
@@ -37,6 +35,8 @@ namespace MESdbToERPdb
                     sqlGetTable.Append(" from job_move ");
                     sqlGetTable.Append(" where uuid = '" + cmb_.Items[cmbitem].ToString() + "'");
                     data.sqlDataAdapterFillDatatable(sqlGetTable.ToString(), ref table);
+
+                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Đơn chuyển", table.Rows[cmbitem]["move_no"].ToString() + "(" + jobmId + ").");
 
                     sqlMESInterCon con2 = new sqlMESInterCon();
                     string jobOrder_id = table.Rows[cmbitem]["job_order_uuid"].ToString();
