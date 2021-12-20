@@ -24,6 +24,7 @@ namespace MESdbToERPdb
     {
         string Title = "";
         EventBroker.EventObserver m_observerLog = null;
+        
 
         EventBroker.EventParam m_timerEvent = null;
         Properties.Settings settings = new Properties.Settings();
@@ -35,10 +36,10 @@ namespace MESdbToERPdb
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
         object lockObject = new object();
         //System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
-        SettingClass settingClass = null; 
+        SettingClass settingClass = null;
+        
         private void InitializeVersion()
         {
-             
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString(); //AssemblyVersion을 가져온다.
             version += "." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Minor.ToString();
             version += "." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
@@ -52,10 +53,7 @@ namespace MESdbToERPdb
             InitializeVersion();
             LoadLogfileInitialize();
             this.Text = Title;
-            SystemLog.Output(SystemLog.MSG_TYPE.War, Title, "Started ");
-            
         }
-
         #region LogFile
 
         private void LoadLogfileInitialize()
@@ -120,15 +118,12 @@ namespace MESdbToERPdb
             settings.interval = int.Parse(nud_timeInterval.Value.ToString());
             settings.Save();
             //string dEnd = (DateTime.Now).ToString("yyyy-MM-dd HH:mm:ss"); // khi bat dau se kg lay du lieu nhung bay gio tét thi set lan dau lay ve truoc
-            string dEnd = "2021-12-12 06:00:00";
+            string dEnd = "2021-11-03 11:00:00";
             TimeSpan ts = new TimeSpan(int.Parse(nud_timeInterval.Value.ToString()), 0, 0);
-            string dStart = "2021-12-12 02:00:00";//((Convert.ToDateTime(dEnd)).Subtract(ts)).ToString("yyyy-MM-dd HH:mm:ss");
+            string dStart = "2021-11-03 09:00:00";//((Convert.ToDateTime(dEnd)).Subtract(ts)).ToString("yyyy-MM-dd HH:mm:ss");
             tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
             tmrCallBgWorker.Start();
             UploadMain uploadMain = new UploadMain();
-            DataReport dataReport = new DataReport();
-            DataTable failTest = dataReport.createFailReportDT();
-            DataTable successTest = dataReport.createSuccessReportDT();
 
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
@@ -138,7 +133,7 @@ namespace MESdbToERPdb
             settings.Save();
             
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
-            DataReport.ExportToExcel(failTest, successTest, "", DateTime.Now.ToString("yyyyMMdd-HHmm") + ".xlsx");
+            DataReport.SaveExcel("", "Report" + DateTime.Now.ToString("yyyyMMdd") + ".xlsx");
             ClearMemory.CleanMemory();
         }
         #region backgroundworker
@@ -200,7 +195,7 @@ namespace MESdbToERPdb
             var worker = sender as BackgroundWorker;
             try
             {
-                
+                SystemLog.Output(SystemLog.MSG_TYPE.War, "Background worker", "Started ");
                 string timeIN = settings.dIn;
                 string dOut = (Convert.ToDateTime(timeIN)).AddHours(settings.interval).ToString("yyyy-MM-dd HH:mm:ss");
                 for (int i = 0; i <= 100; i++)
@@ -287,6 +282,7 @@ namespace MESdbToERPdb
 
         private void mes2ERPMainWin_Load(object sender, EventArgs e)
         {
+            SystemLog.Output(SystemLog.MSG_TYPE.War, Title, "Started ");
             settingClass = new SettingClass();
             if (File.Exists(SaveObject.Pathsave))
                 settingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);

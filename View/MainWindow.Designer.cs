@@ -290,7 +290,7 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         public System.Windows.Forms.Label lb_pickTime;
         private System.Windows.Forms.NumericUpDown nud_timeInterval;
-        private System.Windows.Forms.Label lb_timeDV;
+        public System.Windows.Forms.Label lb_timeDV;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lb_progress;
         private RichTextBoxLog richTextBoxLog1;

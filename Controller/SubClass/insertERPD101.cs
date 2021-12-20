@@ -206,6 +206,7 @@ namespace MESdbToERPdb
                         sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D101-" + TC002);
                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
+                        DataReport.addReport(DataReport.RP_TYPE.Success, "D101", TC002, MP + SP, MES_move_no, "Y", "Đã tạo đơn chuyển thành công");
                     //dataReport.addSuccessReport("D101", TC002, MP + SP, MES_move_no, "Tạo thành công phiếu D101.");
                     }
                     else

@@ -94,5 +94,29 @@ namespace MESdbToERPdb.Properties {
                 this["smtp_port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string selectedReceiver {
+            get {
+                return ((string)(this["selectedReceiver"]));
+            }
+            set {
+                this["selectedReceiver"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int cfg_language {
+            get {
+                return ((int)(this["cfg_language"]));
+            }
+            set {
+                this["cfg_language"] = value;
+            }
+        }
     }
 }

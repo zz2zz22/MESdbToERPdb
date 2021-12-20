@@ -31,7 +31,13 @@ namespace MESdbToERPdb.View
         {
             this.pn_general = new System.Windows.Forms.Panel();
             this.pn_mail = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_saveReceiver = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txb_receiverConfig = new System.Windows.Forms.TextBox();
+            this.btn_deleteEmail = new System.Windows.Forms.Button();
+            this.btn_addReceiver = new System.Windows.Forms.Button();
+            this.lb_listMail = new System.Windows.Forms.Label();
+            this.dtgv_receivers = new System.Windows.Forms.DataGridView();
             this.btn_checkMailCon = new System.Windows.Forms.Button();
             this.txb_password = new System.Windows.Forms.TextBox();
             this.txb_email = new System.Windows.Forms.TextBox();
@@ -40,16 +46,13 @@ namespace MESdbToERPdb.View
             this.lb_configMailTitle = new System.Windows.Forms.Label();
             this.btn_settingCancel = new System.Windows.Forms.Button();
             this.btn_settingSave = new System.Windows.Forms.Button();
-            this.lb_listMail = new System.Windows.Forms.Label();
-            this.btn_addEmail = new System.Windows.Forms.Button();
-            this.btn_editEmail = new System.Windows.Forms.Button();
-            this.btn_deleteEmail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lb_languageConfig = new System.Windows.Forms.Label();
-            this.btn_languageEnglish = new System.Windows.Forms.Button();
             this.btn_languageVietnam = new System.Windows.Forms.Button();
+            this.btn_languageEnglish = new System.Windows.Forms.Button();
+            this.lb_languageConfig = new System.Windows.Forms.Label();
+            this.btn_deleteAllReceiver = new System.Windows.Forms.Button();
             this.pn_mail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_receivers)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,11 +65,14 @@ namespace MESdbToERPdb.View
             // 
             // pn_mail
             // 
+            this.pn_mail.Controls.Add(this.btn_deleteAllReceiver);
+            this.pn_mail.Controls.Add(this.btn_saveReceiver);
+            this.pn_mail.Controls.Add(this.label1);
+            this.pn_mail.Controls.Add(this.txb_receiverConfig);
             this.pn_mail.Controls.Add(this.btn_deleteEmail);
-            this.pn_mail.Controls.Add(this.btn_editEmail);
-            this.pn_mail.Controls.Add(this.btn_addEmail);
+            this.pn_mail.Controls.Add(this.btn_addReceiver);
             this.pn_mail.Controls.Add(this.lb_listMail);
-            this.pn_mail.Controls.Add(this.dataGridView1);
+            this.pn_mail.Controls.Add(this.dtgv_receivers);
             this.pn_mail.Controls.Add(this.btn_checkMailCon);
             this.pn_mail.Controls.Add(this.txb_password);
             this.pn_mail.Controls.Add(this.txb_email);
@@ -75,18 +81,87 @@ namespace MESdbToERPdb.View
             this.pn_mail.Controls.Add(this.lb_configMailTitle);
             this.pn_mail.Location = new System.Drawing.Point(806, 12);
             this.pn_mail.Name = "pn_mail";
-            this.pn_mail.Size = new System.Drawing.Size(444, 457);
+            this.pn_mail.Size = new System.Drawing.Size(444, 572);
             this.pn_mail.TabIndex = 1;
             // 
-            // dataGridView1
+            // btn_saveReceiver
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 137);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(309, 317);
-            this.dataGridView1.TabIndex = 6;
+            this.btn_saveReceiver.BackColor = System.Drawing.Color.OldLace;
+            this.btn_saveReceiver.Enabled = false;
+            this.btn_saveReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_saveReceiver.Location = new System.Drawing.Point(321, 119);
+            this.btn_saveReceiver.Name = "btn_saveReceiver";
+            this.btn_saveReceiver.Size = new System.Drawing.Size(119, 45);
+            this.btn_saveReceiver.TabIndex = 13;
+            this.btn_saveReceiver.Text = "SAVE";
+            this.btn_saveReceiver.UseVisualStyleBackColor = false;
+            this.btn_saveReceiver.Click += new System.EventHandler(this.btn_saveReceiver_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(4, 119);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 20);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Receiver:";
+            // 
+            // txb_receiverConfig
+            // 
+            this.txb_receiverConfig.Enabled = false;
+            this.txb_receiverConfig.Location = new System.Drawing.Point(3, 142);
+            this.txb_receiverConfig.Name = "txb_receiverConfig";
+            this.txb_receiverConfig.Size = new System.Drawing.Size(295, 22);
+            this.txb_receiverConfig.TabIndex = 11;
+            // 
+            // btn_deleteEmail
+            // 
+            this.btn_deleteEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deleteEmail.Location = new System.Drawing.Point(318, 269);
+            this.btn_deleteEmail.Name = "btn_deleteEmail";
+            this.btn_deleteEmail.Size = new System.Drawing.Size(119, 54);
+            this.btn_deleteEmail.TabIndex = 10;
+            this.btn_deleteEmail.Text = "DELETE";
+            this.btn_deleteEmail.UseVisualStyleBackColor = true;
+            this.btn_deleteEmail.Click += new System.EventHandler(this.btn_deleteEmail_Click);
+            // 
+            // btn_addReceiver
+            // 
+            this.btn_addReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addReceiver.Location = new System.Drawing.Point(318, 209);
+            this.btn_addReceiver.Name = "btn_addReceiver";
+            this.btn_addReceiver.Size = new System.Drawing.Size(119, 54);
+            this.btn_addReceiver.TabIndex = 8;
+            this.btn_addReceiver.Text = "ADD";
+            this.btn_addReceiver.UseVisualStyleBackColor = true;
+            this.btn_addReceiver.Click += new System.EventHandler(this.btn_addReceiver_Click);
+            // 
+            // lb_listMail
+            // 
+            this.lb_listMail.AutoSize = true;
+            this.lb_listMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_listMail.Location = new System.Drawing.Point(4, 186);
+            this.lb_listMail.Name = "lb_listMail";
+            this.lb_listMail.Size = new System.Drawing.Size(130, 20);
+            this.lb_listMail.TabIndex = 7;
+            this.lb_listMail.Text = "List of receivers";
+            // 
+            // dtgv_receivers
+            // 
+            this.dtgv_receivers.AllowUserToAddRows = false;
+            this.dtgv_receivers.AllowUserToDeleteRows = false;
+            this.dtgv_receivers.AllowUserToResizeColumns = false;
+            this.dtgv_receivers.AllowUserToResizeRows = false;
+            this.dtgv_receivers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_receivers.Location = new System.Drawing.Point(3, 209);
+            this.dtgv_receivers.Name = "dtgv_receivers";
+            this.dtgv_receivers.ReadOnly = true;
+            this.dtgv_receivers.RowHeadersWidth = 51;
+            this.dtgv_receivers.RowTemplate.Height = 24;
+            this.dtgv_receivers.Size = new System.Drawing.Size(309, 317);
+            this.dtgv_receivers.TabIndex = 6;
+            this.dtgv_receivers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_receivers_CellClick);
             // 
             // btn_checkMailCon
             // 
@@ -118,7 +193,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_mailPW.AutoSize = true;
             this.lb_mailPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_mailPW.Location = new System.Drawing.Point(3, 76);
+            this.lb_mailPW.Location = new System.Drawing.Point(5, 72);
             this.lb_mailPW.Name = "lb_mailPW";
             this.lb_mailPW.Size = new System.Drawing.Size(79, 18);
             this.lb_mailPW.TabIndex = 2;
@@ -128,7 +203,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_username.AutoSize = true;
             this.lb_username.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_username.Location = new System.Drawing.Point(3, 42);
+            this.lb_username.Location = new System.Drawing.Point(5, 43);
             this.lb_username.Name = "lb_username";
             this.lb_username.Size = new System.Drawing.Size(53, 18);
             this.lb_username.TabIndex = 1;
@@ -137,10 +212,10 @@ namespace MESdbToERPdb.View
             // lb_configMailTitle
             // 
             this.lb_configMailTitle.AutoSize = true;
-            this.lb_configMailTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_configMailTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_configMailTitle.Location = new System.Drawing.Point(3, 10);
             this.lb_configMailTitle.Name = "lb_configMailTitle";
-            this.lb_configMailTitle.Size = new System.Drawing.Size(239, 18);
+            this.lb_configMailTitle.Size = new System.Drawing.Size(273, 20);
             this.lb_configMailTitle.TabIndex = 0;
             this.lb_configMailTitle.Text = "Input sender\'s email and password:";
             // 
@@ -153,6 +228,7 @@ namespace MESdbToERPdb.View
             this.btn_settingCancel.TabIndex = 0;
             this.btn_settingCancel.Text = "CANCEL";
             this.btn_settingCancel.UseVisualStyleBackColor = true;
+            this.btn_settingCancel.Click += new System.EventHandler(this.btn_settingCancel_Click);
             // 
             // btn_settingSave
             // 
@@ -165,55 +241,38 @@ namespace MESdbToERPdb.View
             this.btn_settingSave.Text = "SAVE";
             this.btn_settingSave.UseVisualStyleBackColor = false;
             // 
-            // lb_listMail
-            // 
-            this.lb_listMail.AutoSize = true;
-            this.lb_listMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_listMail.Location = new System.Drawing.Point(3, 116);
-            this.lb_listMail.Name = "lb_listMail";
-            this.lb_listMail.Size = new System.Drawing.Size(112, 18);
-            this.lb_listMail.TabIndex = 7;
-            this.lb_listMail.Text = "List of receivers";
-            // 
-            // btn_addEmail
-            // 
-            this.btn_addEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addEmail.Location = new System.Drawing.Point(322, 137);
-            this.btn_addEmail.Name = "btn_addEmail";
-            this.btn_addEmail.Size = new System.Drawing.Size(119, 65);
-            this.btn_addEmail.TabIndex = 8;
-            this.btn_addEmail.Text = "ADD";
-            this.btn_addEmail.UseVisualStyleBackColor = true;
-            // 
-            // btn_editEmail
-            // 
-            this.btn_editEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_editEmail.Location = new System.Drawing.Point(321, 208);
-            this.btn_editEmail.Name = "btn_editEmail";
-            this.btn_editEmail.Size = new System.Drawing.Size(119, 65);
-            this.btn_editEmail.TabIndex = 9;
-            this.btn_editEmail.Text = "EDIT";
-            this.btn_editEmail.UseVisualStyleBackColor = true;
-            // 
-            // btn_deleteEmail
-            // 
-            this.btn_deleteEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deleteEmail.Location = new System.Drawing.Point(321, 279);
-            this.btn_deleteEmail.Name = "btn_deleteEmail";
-            this.btn_deleteEmail.Size = new System.Drawing.Size(119, 65);
-            this.btn_deleteEmail.TabIndex = 10;
-            this.btn_deleteEmail.Text = "DELETE";
-            this.btn_deleteEmail.UseVisualStyleBackColor = true;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btn_languageVietnam);
             this.panel1.Controls.Add(this.btn_languageEnglish);
             this.panel1.Controls.Add(this.lb_languageConfig);
-            this.panel1.Location = new System.Drawing.Point(806, 475);
+            this.panel1.Location = new System.Drawing.Point(12, 590);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(440, 109);
+            this.panel1.Size = new System.Drawing.Size(346, 71);
             this.panel1.TabIndex = 3;
+            // 
+            // btn_languageVietnam
+            // 
+            this.btn_languageVietnam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_languageVietnam.Location = new System.Drawing.Point(175, 25);
+            this.btn_languageVietnam.Name = "btn_languageVietnam";
+            this.btn_languageVietnam.Size = new System.Drawing.Size(160, 42);
+            this.btn_languageVietnam.TabIndex = 2;
+            this.btn_languageVietnam.Text = "Vietnamese";
+            this.btn_languageVietnam.UseVisualStyleBackColor = true;
+            this.btn_languageVietnam.Click += new System.EventHandler(this.btn_languageVietnam_Click);
+            // 
+            // btn_languageEnglish
+            // 
+            this.btn_languageEnglish.Enabled = false;
+            this.btn_languageEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_languageEnglish.Location = new System.Drawing.Point(9, 25);
+            this.btn_languageEnglish.Name = "btn_languageEnglish";
+            this.btn_languageEnglish.Size = new System.Drawing.Size(160, 42);
+            this.btn_languageEnglish.TabIndex = 1;
+            this.btn_languageEnglish.Text = "English";
+            this.btn_languageEnglish.UseVisualStyleBackColor = true;
+            this.btn_languageEnglish.Click += new System.EventHandler(this.btn_languageEnglish_Click);
             // 
             // lb_languageConfig
             // 
@@ -225,27 +284,16 @@ namespace MESdbToERPdb.View
             this.lb_languageConfig.TabIndex = 0;
             this.lb_languageConfig.Text = "Choose your language";
             // 
-            // btn_languageEnglish
+            // btn_deleteAllReceiver
             // 
-            this.btn_languageEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_languageEnglish.Location = new System.Drawing.Point(29, 37);
-            this.btn_languageEnglish.Name = "btn_languageEnglish";
-            this.btn_languageEnglish.Size = new System.Drawing.Size(190, 51);
-            this.btn_languageEnglish.TabIndex = 1;
-            this.btn_languageEnglish.Text = "English";
-            this.btn_languageEnglish.UseVisualStyleBackColor = true;
-            this.btn_languageEnglish.Click += new System.EventHandler(this.btn_languageEnglish_Click);
-            // 
-            // btn_languageVietnam
-            // 
-            this.btn_languageVietnam.Enabled = false;
-            this.btn_languageVietnam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_languageVietnam.Location = new System.Drawing.Point(225, 37);
-            this.btn_languageVietnam.Name = "btn_languageVietnam";
-            this.btn_languageVietnam.Size = new System.Drawing.Size(190, 51);
-            this.btn_languageVietnam.TabIndex = 2;
-            this.btn_languageVietnam.Text = "Vietnamese";
-            this.btn_languageVietnam.UseVisualStyleBackColor = true;
+            this.btn_deleteAllReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deleteAllReceiver.Location = new System.Drawing.Point(318, 454);
+            this.btn_deleteAllReceiver.Name = "btn_deleteAllReceiver";
+            this.btn_deleteAllReceiver.Size = new System.Drawing.Size(119, 72);
+            this.btn_deleteAllReceiver.TabIndex = 14;
+            this.btn_deleteAllReceiver.Text = "DELETE ALL";
+            this.btn_deleteAllReceiver.UseVisualStyleBackColor = true;
+            this.btn_deleteAllReceiver.Click += new System.EventHandler(this.btn_deleteAllReceiver_Click);
             // 
             // Setting
             // 
@@ -258,10 +306,12 @@ namespace MESdbToERPdb.View
             this.Controls.Add(this.pn_mail);
             this.Controls.Add(this.pn_general);
             this.Name = "Setting";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting";
+            this.Load += new System.EventHandler(this.Setting_Load);
             this.pn_mail.ResumeLayout(false);
             this.pn_mail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_receivers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -280,14 +330,17 @@ namespace MESdbToERPdb.View
         private System.Windows.Forms.Label lb_configMailTitle;
         private System.Windows.Forms.Button btn_settingCancel;
         private System.Windows.Forms.Button btn_settingSave;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dtgv_receivers;
         private System.Windows.Forms.Button btn_deleteEmail;
-        private System.Windows.Forms.Button btn_editEmail;
-        private System.Windows.Forms.Button btn_addEmail;
+        private System.Windows.Forms.Button btn_addReceiver;
         private System.Windows.Forms.Label lb_listMail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_languageConfig;
         private System.Windows.Forms.Button btn_languageVietnam;
         private System.Windows.Forms.Button btn_languageEnglish;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txb_receiverConfig;
+        private System.Windows.Forms.Button btn_saveReceiver;
+        private System.Windows.Forms.Button btn_deleteAllReceiver;
     }
 }
