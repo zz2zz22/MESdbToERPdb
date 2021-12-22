@@ -41,3 +41,11 @@
 09:25:14.703 MESdbToERPdb 1.0.0 : Started 
 09:45:11.523 MESdbToERPdb 1.0.0 : Started 
 09:57:02.399 MESdbToERPdb 1.0.0 : Started 
+17:01:34.461 MESdbToERPdb 1.0.0 : Started 
+17:02:47.743 MESdbToERPdb 1.0.0 : Started 
+17:05:12.743 MESdbToERPdb 1.0.0 : Started 
+17:08:37.292 MESdbToERPdb 1.0.0 : Started 
+17:10:26.112 MESdbToERPdb 1.0.0 : Started 
+17:11:38.584 MESdbToERPdb 1.0.0 : Started 
+17:13:43.976 MESdbToERPdb 1.0.0 : Started 
+17:15:34.458 MESdbToERPdb 1.0.0 : Started 

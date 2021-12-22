@@ -15,6 +15,7 @@ namespace MESdbToERPdb
     public class DataReport
     {
         static DataReport s_drInstance = null;
+        static DataReport s_mailInstance = null;
 
         Properties.Settings settings = new Properties.Settings();
         DataTable successReportTB = null;
@@ -88,6 +89,14 @@ namespace MESdbToERPdb
             }
             s_drInstance.writeReport(rpType, LP, MP, erpCode, moveNo, confirmStatus, status);
         }
+        public static void SendMail(string excelFilePath, string sender, string sender_pw)
+        {
+            if ( s_mailInstance == null)
+            {
+                s_mailInstance = new DataReport();
+            }
+            s_mailInstance.SendReport(excelFilePath, sender, sender_pw);
+        }
         private void writeReport(RP_TYPE rpType, string LP, string MP, string erpCode, string moveNo, string confirmStatus, string status)
         {
             if ( rpType == RP_TYPE.Fail)
@@ -133,6 +142,8 @@ namespace MESdbToERPdb
                 {
                     wb.SaveAs(Path.Combine(excelFilePath, fileName));
                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Report is exported and save at ", Path.Combine(excelFilePath, fileName));
+                    settings.excelFilePath = Path.Combine(excelFilePath, fileName);
+                    settings.Save();
                 }
                 catch (Exception ex)
                 {
@@ -142,13 +153,13 @@ namespace MESdbToERPdb
             else { // no file path is given
                 wb.SaveAs(Path.Combine(path, fileName));
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã xuất file excel và lưu tại ", Path.Combine(path, fileName));
-                
+                settings.excelFilePath = Path.Combine(path, fileName);
+                settings.Save();
             }
         }
 
-        public void SendReport(string excelFilePath, string fileName, string sender, string sender_pw)
+        public void SendReport(string excelFilePath, string sender, string sender_pw)
         {
-            string filePath = Path.Combine(excelFilePath, fileName);
             MailMessage mail = new MailMessage();
             string smtp = sender.Substring(sender.IndexOf('@'));
             if (smtp == "@gmail.com")
@@ -171,10 +182,11 @@ namespace MESdbToERPdb
                 mail.Body = "test mail";
 
                 System.Net.Mail.Attachment attachment;
-                attachment = new System.Net.Mail.Attachment(excelFilePath + fileName);
+                attachment = new System.Net.Mail.Attachment(excelFilePath);
                 mail.Attachments.Add(attachment);
 
                 SmtpServer.Port = int.Parse(settings.smtp_port);
+                SmtpServer.UseDefaultCredentials = false;
                 SmtpServer.Credentials = new System.Net.NetworkCredential(sender, sender_pw);
                 SmtpServer.EnableSsl = true;
 

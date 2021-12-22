@@ -29,10 +29,33 @@ namespace MESdbToERPdb.View
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
             this.pn_general = new System.Windows.Forms.Panel();
-            this.pn_mail = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txb_excelFilePath = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.lb_sendMailIntervalUnit = new System.Windows.Forms.Label();
+            this.nud_sendMailIntervalPicker = new System.Windows.Forms.NumericUpDown();
+            this.lb_bgIntervalPicker = new System.Windows.Forms.Label();
+            this.lb_sendMailInterval = new System.Windows.Forms.Label();
+            this.nud_bgIntervalPicker = new System.Windows.Forms.NumericUpDown();
+            this.lb_bgIntervalUnit = new System.Windows.Forms.Label();
+            this.lb_excelFilePath = new System.Windows.Forms.Label();
+            this.pn_mainSetting = new System.Windows.Forms.Panel();
+            this.txb_produceCodeSearch = new System.Windows.Forms.TextBox();
+            this.btn_deleteProduceCode = new System.Windows.Forms.Button();
+            this.btn_addProduceCode = new System.Windows.Forms.Button();
+            this.dtgv_produceCodeList = new System.Windows.Forms.DataGridView();
+            this.lb_listProduceCodes = new System.Windows.Forms.Label();
+            this.btn_saveProduceCodeConfig = new System.Windows.Forms.Button();
+            this.lb_produceCodeConfig = new System.Windows.Forms.Label();
+            this.txb_produceCodeConfig = new System.Windows.Forms.TextBox();
+            this.lb_mainSettingWarning = new System.Windows.Forms.Label();
+            this.pn_mailSetting = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btn_deleteAllReceiver = new System.Windows.Forms.Button();
             this.btn_saveReceiver = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lb_receiverConfig = new System.Windows.Forms.Label();
             this.txb_receiverConfig = new System.Windows.Forms.TextBox();
             this.btn_deleteEmail = new System.Windows.Forms.Button();
             this.btn_addReceiver = new System.Windows.Forms.Button();
@@ -45,50 +68,309 @@ namespace MESdbToERPdb.View
             this.lb_username = new System.Windows.Forms.Label();
             this.lb_configMailTitle = new System.Windows.Forms.Label();
             this.btn_settingCancel = new System.Windows.Forms.Button();
-            this.btn_settingSave = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_languageVietnam = new System.Windows.Forms.Button();
             this.btn_languageEnglish = new System.Windows.Forms.Button();
             this.lb_languageConfig = new System.Windows.Forms.Label();
-            this.btn_deleteAllReceiver = new System.Windows.Forms.Button();
-            this.pn_mail.SuspendLayout();
+            this.pn_general.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_sendMailIntervalPicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_bgIntervalPicker)).BeginInit();
+            this.pn_mainSetting.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_produceCodeList)).BeginInit();
+            this.pn_mailSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_receivers)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pn_general
             // 
+            this.pn_general.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pn_general.Controls.Add(this.pictureBox1);
+            this.pn_general.Controls.Add(this.txb_excelFilePath);
+            this.pn_general.Controls.Add(this.panel3);
+            this.pn_general.Controls.Add(this.lb_excelFilePath);
+            this.pn_general.Controls.Add(this.pn_mainSetting);
+            this.pn_general.Controls.Add(this.lb_mainSettingWarning);
             this.pn_general.Location = new System.Drawing.Point(12, 12);
             this.pn_general.Name = "pn_general";
             this.pn_general.Size = new System.Drawing.Size(788, 572);
             this.pn_general.TabIndex = 0;
             // 
-            // pn_mail
+            // pictureBox1
             // 
-            this.pn_mail.Controls.Add(this.btn_deleteAllReceiver);
-            this.pn_mail.Controls.Add(this.btn_saveReceiver);
-            this.pn_mail.Controls.Add(this.label1);
-            this.pn_mail.Controls.Add(this.txb_receiverConfig);
-            this.pn_mail.Controls.Add(this.btn_deleteEmail);
-            this.pn_mail.Controls.Add(this.btn_addReceiver);
-            this.pn_mail.Controls.Add(this.lb_listMail);
-            this.pn_mail.Controls.Add(this.dtgv_receivers);
-            this.pn_mail.Controls.Add(this.btn_checkMailCon);
-            this.pn_mail.Controls.Add(this.txb_password);
-            this.pn_mail.Controls.Add(this.txb_email);
-            this.pn_mail.Controls.Add(this.lb_mailPW);
-            this.pn_mail.Controls.Add(this.lb_username);
-            this.pn_mail.Controls.Add(this.lb_configMailTitle);
-            this.pn_mail.Location = new System.Drawing.Point(806, 12);
-            this.pn_mail.Name = "pn_mail";
-            this.pn_mail.Size = new System.Drawing.Size(444, 572);
-            this.pn_mail.TabIndex = 1;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(374, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 11;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txb_excelFilePath
+            // 
+            this.txb_excelFilePath.Location = new System.Drawing.Point(9, 521);
+            this.txb_excelFilePath.Name = "txb_excelFilePath";
+            this.txb_excelFilePath.Size = new System.Drawing.Size(566, 22);
+            this.txb_excelFilePath.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.lb_sendMailIntervalUnit);
+            this.panel3.Controls.Add(this.nud_sendMailIntervalPicker);
+            this.panel3.Controls.Add(this.lb_bgIntervalPicker);
+            this.panel3.Controls.Add(this.lb_sendMailInterval);
+            this.panel3.Controls.Add(this.nud_bgIntervalPicker);
+            this.panel3.Controls.Add(this.lb_bgIntervalUnit);
+            this.panel3.Location = new System.Drawing.Point(3, 170);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(374, 311);
+            this.panel3.TabIndex = 10;
+            // 
+            // lb_sendMailIntervalUnit
+            // 
+            this.lb_sendMailIntervalUnit.AutoSize = true;
+            this.lb_sendMailIntervalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_sendMailIntervalUnit.Location = new System.Drawing.Point(135, 174);
+            this.lb_sendMailIntervalUnit.Name = "lb_sendMailIntervalUnit";
+            this.lb_sendMailIntervalUnit.Size = new System.Drawing.Size(46, 20);
+            this.lb_sendMailIntervalUnit.TabIndex = 2;
+            this.lb_sendMailIntervalUnit.Text = "hour";
+            // 
+            // nud_sendMailIntervalPicker
+            // 
+            this.nud_sendMailIntervalPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud_sendMailIntervalPicker.Location = new System.Drawing.Point(10, 169);
+            this.nud_sendMailIntervalPicker.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_sendMailIntervalPicker.Name = "nud_sendMailIntervalPicker";
+            this.nud_sendMailIntervalPicker.Size = new System.Drawing.Size(119, 27);
+            this.nud_sendMailIntervalPicker.TabIndex = 1;
+            this.nud_sendMailIntervalPicker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_sendMailIntervalPicker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_sendMailIntervalPicker.ValueChanged += new System.EventHandler(this.nud_sendMailIntervalPicker_ValueChanged);
+            // 
+            // lb_bgIntervalPicker
+            // 
+            this.lb_bgIntervalPicker.AutoSize = true;
+            this.lb_bgIntervalPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_bgIntervalPicker.Location = new System.Drawing.Point(6, 24);
+            this.lb_bgIntervalPicker.Name = "lb_bgIntervalPicker";
+            this.lb_bgIntervalPicker.Size = new System.Drawing.Size(196, 20);
+            this.lb_bgIntervalPicker.TabIndex = 1;
+            this.lb_bgIntervalPicker.Text = "Data fetching interval:";
+            // 
+            // lb_sendMailInterval
+            // 
+            this.lb_sendMailInterval.AutoSize = true;
+            this.lb_sendMailInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_sendMailInterval.Location = new System.Drawing.Point(6, 146);
+            this.lb_sendMailInterval.Name = "lb_sendMailInterval";
+            this.lb_sendMailInterval.Size = new System.Drawing.Size(166, 20);
+            this.lb_sendMailInterval.TabIndex = 0;
+            this.lb_sendMailInterval.Text = "Send mail interval:";
+            // 
+            // nud_bgIntervalPicker
+            // 
+            this.nud_bgIntervalPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud_bgIntervalPicker.Location = new System.Drawing.Point(10, 51);
+            this.nud_bgIntervalPicker.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_bgIntervalPicker.Name = "nud_bgIntervalPicker";
+            this.nud_bgIntervalPicker.Size = new System.Drawing.Size(118, 27);
+            this.nud_bgIntervalPicker.TabIndex = 2;
+            this.nud_bgIntervalPicker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.nud_bgIntervalPicker.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nud_bgIntervalPicker.ValueChanged += new System.EventHandler(this.nud_bgIntervalPicker_ValueChanged);
+            // 
+            // lb_bgIntervalUnit
+            // 
+            this.lb_bgIntervalUnit.AutoSize = true;
+            this.lb_bgIntervalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_bgIntervalUnit.Location = new System.Drawing.Point(134, 53);
+            this.lb_bgIntervalUnit.Name = "lb_bgIntervalUnit";
+            this.lb_bgIntervalUnit.Size = new System.Drawing.Size(46, 20);
+            this.lb_bgIntervalUnit.TabIndex = 3;
+            this.lb_bgIntervalUnit.Text = "hour";
+            // 
+            // lb_excelFilePath
+            // 
+            this.lb_excelFilePath.AutoSize = true;
+            this.lb_excelFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_excelFilePath.Location = new System.Drawing.Point(10, 498);
+            this.lb_excelFilePath.Name = "lb_excelFilePath";
+            this.lb_excelFilePath.Size = new System.Drawing.Size(247, 20);
+            this.lb_excelFilePath.TabIndex = 3;
+            this.lb_excelFilePath.Text = "Excel report export location:";
+            // 
+            // pn_mainSetting
+            // 
+            this.pn_mainSetting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pn_mainSetting.Controls.Add(this.txb_produceCodeSearch);
+            this.pn_mainSetting.Controls.Add(this.btn_deleteProduceCode);
+            this.pn_mainSetting.Controls.Add(this.btn_addProduceCode);
+            this.pn_mainSetting.Controls.Add(this.dtgv_produceCodeList);
+            this.pn_mainSetting.Controls.Add(this.lb_listProduceCodes);
+            this.pn_mainSetting.Controls.Add(this.btn_saveProduceCodeConfig);
+            this.pn_mainSetting.Controls.Add(this.lb_produceCodeConfig);
+            this.pn_mainSetting.Controls.Add(this.txb_produceCodeConfig);
+            this.pn_mainSetting.Location = new System.Drawing.Point(383, 3);
+            this.pn_mainSetting.Name = "pn_mainSetting";
+            this.pn_mainSetting.Size = new System.Drawing.Size(400, 478);
+            this.pn_mainSetting.TabIndex = 9;
+            // 
+            // txb_produceCodeSearch
+            // 
+            this.txb_produceCodeSearch.Location = new System.Drawing.Point(4, 129);
+            this.txb_produceCodeSearch.Name = "txb_produceCodeSearch";
+            this.txb_produceCodeSearch.Size = new System.Drawing.Size(249, 22);
+            this.txb_produceCodeSearch.TabIndex = 11;
+            // 
+            // btn_deleteProduceCode
+            // 
+            this.btn_deleteProduceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deleteProduceCode.Location = new System.Drawing.Point(267, 217);
+            this.btn_deleteProduceCode.Name = "btn_deleteProduceCode";
+            this.btn_deleteProduceCode.Size = new System.Drawing.Size(125, 54);
+            this.btn_deleteProduceCode.TabIndex = 10;
+            this.btn_deleteProduceCode.Text = "DELETE";
+            this.btn_deleteProduceCode.UseVisualStyleBackColor = true;
+            // 
+            // btn_addProduceCode
+            // 
+            this.btn_addProduceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addProduceCode.Location = new System.Drawing.Point(268, 157);
+            this.btn_addProduceCode.Name = "btn_addProduceCode";
+            this.btn_addProduceCode.Size = new System.Drawing.Size(124, 54);
+            this.btn_addProduceCode.TabIndex = 9;
+            this.btn_addProduceCode.Text = "ADD";
+            this.btn_addProduceCode.UseVisualStyleBackColor = true;
+            // 
+            // dtgv_produceCodeList
+            // 
+            this.dtgv_produceCodeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_produceCodeList.Location = new System.Drawing.Point(3, 157);
+            this.dtgv_produceCodeList.Name = "dtgv_produceCodeList";
+            this.dtgv_produceCodeList.RowHeadersWidth = 51;
+            this.dtgv_produceCodeList.RowTemplate.Height = 24;
+            this.dtgv_produceCodeList.Size = new System.Drawing.Size(250, 316);
+            this.dtgv_produceCodeList.TabIndex = 8;
+            // 
+            // lb_listProduceCodes
+            // 
+            this.lb_listProduceCodes.AutoSize = true;
+            this.lb_listProduceCodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_listProduceCodes.Location = new System.Drawing.Point(-1, 103);
+            this.lb_listProduceCodes.Name = "lb_listProduceCodes";
+            this.lb_listProduceCodes.Size = new System.Drawing.Size(261, 20);
+            this.lb_listProduceCodes.TabIndex = 7;
+            this.lb_listProduceCodes.Text = "List of produce code headers:";
+            // 
+            // btn_saveProduceCodeConfig
+            // 
+            this.btn_saveProduceCodeConfig.BackColor = System.Drawing.Color.OldLace;
+            this.btn_saveProduceCodeConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_saveProduceCodeConfig.Location = new System.Drawing.Point(267, 28);
+            this.btn_saveProduceCodeConfig.Name = "btn_saveProduceCodeConfig";
+            this.btn_saveProduceCodeConfig.Size = new System.Drawing.Size(125, 50);
+            this.btn_saveProduceCodeConfig.TabIndex = 6;
+            this.btn_saveProduceCodeConfig.Text = "SAVE";
+            this.btn_saveProduceCodeConfig.UseVisualStyleBackColor = false;
+            // 
+            // lb_produceCodeConfig
+            // 
+            this.lb_produceCodeConfig.AutoSize = true;
+            this.lb_produceCodeConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_produceCodeConfig.Location = new System.Drawing.Point(3, 28);
+            this.lb_produceCodeConfig.Name = "lb_produceCodeConfig";
+            this.lb_produceCodeConfig.Size = new System.Drawing.Size(193, 20);
+            this.lb_produceCodeConfig.TabIndex = 4;
+            this.lb_produceCodeConfig.Text = "Produce code header:";
+            // 
+            // txb_produceCodeConfig
+            // 
+            this.txb_produceCodeConfig.Location = new System.Drawing.Point(3, 51);
+            this.txb_produceCodeConfig.Name = "txb_produceCodeConfig";
+            this.txb_produceCodeConfig.Size = new System.Drawing.Size(254, 22);
+            this.txb_produceCodeConfig.TabIndex = 5;
+            // 
+            // lb_mainSettingWarning
+            // 
+            this.lb_mainSettingWarning.AutoSize = true;
+            this.lb_mainSettingWarning.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_mainSettingWarning.ForeColor = System.Drawing.Color.Red;
+            this.lb_mainSettingWarning.Location = new System.Drawing.Point(5, 107);
+            this.lb_mainSettingWarning.Name = "lb_mainSettingWarning";
+            this.lb_mainSettingWarning.Size = new System.Drawing.Size(330, 60);
+            this.lb_mainSettingWarning.TabIndex = 0;
+            this.lb_mainSettingWarning.Text = "Settings in \"bold\" style can ONLY be \r\nconfig before started or after stopped \r\nt" +
+    "he program!";
+            // 
+            // pn_mailSetting
+            // 
+            this.pn_mailSetting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pn_mailSetting.Controls.Add(this.textBox3);
+            this.pn_mailSetting.Controls.Add(this.btn_deleteAllReceiver);
+            this.pn_mailSetting.Controls.Add(this.btn_saveReceiver);
+            this.pn_mailSetting.Controls.Add(this.lb_receiverConfig);
+            this.pn_mailSetting.Controls.Add(this.txb_receiverConfig);
+            this.pn_mailSetting.Controls.Add(this.btn_deleteEmail);
+            this.pn_mailSetting.Controls.Add(this.btn_addReceiver);
+            this.pn_mailSetting.Controls.Add(this.lb_listMail);
+            this.pn_mailSetting.Controls.Add(this.dtgv_receivers);
+            this.pn_mailSetting.Controls.Add(this.btn_checkMailCon);
+            this.pn_mailSetting.Controls.Add(this.txb_password);
+            this.pn_mailSetting.Controls.Add(this.txb_email);
+            this.pn_mailSetting.Controls.Add(this.lb_mailPW);
+            this.pn_mailSetting.Controls.Add(this.lb_username);
+            this.pn_mailSetting.Controls.Add(this.lb_configMailTitle);
+            this.pn_mailSetting.Location = new System.Drawing.Point(806, 12);
+            this.pn_mailSetting.Name = "pn_mailSetting";
+            this.pn_mailSetting.Size = new System.Drawing.Size(444, 572);
+            this.pn_mailSetting.TabIndex = 1;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(8, 221);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(308, 22);
+            this.textBox3.TabIndex = 15;
+            // 
+            // btn_deleteAllReceiver
+            // 
+            this.btn_deleteAllReceiver.BackColor = System.Drawing.Color.Red;
+            this.btn_deleteAllReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deleteAllReceiver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_deleteAllReceiver.Location = new System.Drawing.Point(320, 461);
+            this.btn_deleteAllReceiver.Name = "btn_deleteAllReceiver";
+            this.btn_deleteAllReceiver.Size = new System.Drawing.Size(119, 72);
+            this.btn_deleteAllReceiver.TabIndex = 14;
+            this.btn_deleteAllReceiver.Text = "DELETE ALL";
+            this.btn_deleteAllReceiver.UseVisualStyleBackColor = false;
+            this.btn_deleteAllReceiver.Click += new System.EventHandler(this.btn_deleteAllReceiver_Click);
             // 
             // btn_saveReceiver
             // 
             this.btn_saveReceiver.BackColor = System.Drawing.Color.OldLace;
             this.btn_saveReceiver.Enabled = false;
-            this.btn_saveReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_saveReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_saveReceiver.Location = new System.Drawing.Point(321, 119);
             this.btn_saveReceiver.Name = "btn_saveReceiver";
             this.btn_saveReceiver.Size = new System.Drawing.Size(119, 45);
@@ -97,15 +379,15 @@ namespace MESdbToERPdb.View
             this.btn_saveReceiver.UseVisualStyleBackColor = false;
             this.btn_saveReceiver.Click += new System.EventHandler(this.btn_saveReceiver_Click);
             // 
-            // label1
+            // lb_receiverConfig
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 119);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Receiver:";
+            this.lb_receiverConfig.AutoSize = true;
+            this.lb_receiverConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_receiverConfig.Location = new System.Drawing.Point(4, 119);
+            this.lb_receiverConfig.Name = "lb_receiverConfig";
+            this.lb_receiverConfig.Size = new System.Drawing.Size(80, 20);
+            this.lb_receiverConfig.TabIndex = 12;
+            this.lb_receiverConfig.Text = "Receiver:";
             // 
             // txb_receiverConfig
             // 
@@ -117,8 +399,8 @@ namespace MESdbToERPdb.View
             // 
             // btn_deleteEmail
             // 
-            this.btn_deleteEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deleteEmail.Location = new System.Drawing.Point(318, 269);
+            this.btn_deleteEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deleteEmail.Location = new System.Drawing.Point(321, 308);
             this.btn_deleteEmail.Name = "btn_deleteEmail";
             this.btn_deleteEmail.Size = new System.Drawing.Size(119, 54);
             this.btn_deleteEmail.TabIndex = 10;
@@ -128,8 +410,8 @@ namespace MESdbToERPdb.View
             // 
             // btn_addReceiver
             // 
-            this.btn_addReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addReceiver.Location = new System.Drawing.Point(318, 209);
+            this.btn_addReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addReceiver.Location = new System.Drawing.Point(320, 248);
             this.btn_addReceiver.Name = "btn_addReceiver";
             this.btn_addReceiver.Size = new System.Drawing.Size(119, 54);
             this.btn_addReceiver.TabIndex = 8;
@@ -141,11 +423,11 @@ namespace MESdbToERPdb.View
             // 
             this.lb_listMail.AutoSize = true;
             this.lb_listMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_listMail.Location = new System.Drawing.Point(4, 186);
+            this.lb_listMail.Location = new System.Drawing.Point(4, 195);
             this.lb_listMail.Name = "lb_listMail";
-            this.lb_listMail.Size = new System.Drawing.Size(130, 20);
+            this.lb_listMail.Size = new System.Drawing.Size(135, 20);
             this.lb_listMail.TabIndex = 7;
-            this.lb_listMail.Text = "List of receivers";
+            this.lb_listMail.Text = "List of receivers:";
             // 
             // dtgv_receivers
             // 
@@ -154,26 +436,26 @@ namespace MESdbToERPdb.View
             this.dtgv_receivers.AllowUserToResizeColumns = false;
             this.dtgv_receivers.AllowUserToResizeRows = false;
             this.dtgv_receivers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_receivers.Location = new System.Drawing.Point(3, 209);
+            this.dtgv_receivers.Location = new System.Drawing.Point(7, 248);
             this.dtgv_receivers.Name = "dtgv_receivers";
             this.dtgv_receivers.ReadOnly = true;
             this.dtgv_receivers.RowHeadersWidth = 51;
             this.dtgv_receivers.RowTemplate.Height = 24;
-            this.dtgv_receivers.Size = new System.Drawing.Size(309, 317);
+            this.dtgv_receivers.Size = new System.Drawing.Size(309, 285);
             this.dtgv_receivers.TabIndex = 6;
             this.dtgv_receivers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_receivers_CellClick);
             // 
             // btn_checkMailCon
             // 
             this.btn_checkMailCon.BackColor = System.Drawing.Color.OldLace;
-            this.btn_checkMailCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_checkMailCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_checkMailCon.Location = new System.Drawing.Point(342, 42);
             this.btn_checkMailCon.Name = "btn_checkMailCon";
             this.btn_checkMailCon.Size = new System.Drawing.Size(99, 51);
             this.btn_checkMailCon.TabIndex = 5;
-            this.btn_checkMailCon.Text = "CHECK";
+            this.btn_checkMailCon.Text = "SAVE";
             this.btn_checkMailCon.UseVisualStyleBackColor = false;
-            this.btn_checkMailCon.Click += new System.EventHandler(this.button2_Click);
+            this.btn_checkMailCon.Click += new System.EventHandler(this.btn_checkMailCon_Click);
             // 
             // txb_password
             // 
@@ -222,7 +504,7 @@ namespace MESdbToERPdb.View
             // btn_settingCancel
             // 
             this.btn_settingCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_settingCancel.Location = new System.Drawing.Point(927, 601);
+            this.btn_settingCancel.Location = new System.Drawing.Point(1110, 601);
             this.btn_settingCancel.Name = "btn_settingCancel";
             this.btn_settingCancel.Size = new System.Drawing.Size(140, 60);
             this.btn_settingCancel.TabIndex = 0;
@@ -230,31 +512,21 @@ namespace MESdbToERPdb.View
             this.btn_settingCancel.UseVisualStyleBackColor = true;
             this.btn_settingCancel.Click += new System.EventHandler(this.btn_settingCancel_Click);
             // 
-            // btn_settingSave
-            // 
-            this.btn_settingSave.BackColor = System.Drawing.SystemColors.Info;
-            this.btn_settingSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_settingSave.Location = new System.Drawing.Point(1110, 601);
-            this.btn_settingSave.Name = "btn_settingSave";
-            this.btn_settingSave.Size = new System.Drawing.Size(140, 60);
-            this.btn_settingSave.TabIndex = 2;
-            this.btn_settingSave.Text = "SAVE";
-            this.btn_settingSave.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btn_languageVietnam);
             this.panel1.Controls.Add(this.btn_languageEnglish);
             this.panel1.Controls.Add(this.lb_languageConfig);
             this.panel1.Location = new System.Drawing.Point(12, 590);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(346, 71);
+            this.panel1.Size = new System.Drawing.Size(416, 79);
             this.panel1.TabIndex = 3;
             // 
             // btn_languageVietnam
             // 
-            this.btn_languageVietnam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_languageVietnam.Location = new System.Drawing.Point(175, 25);
+            this.btn_languageVietnam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_languageVietnam.Location = new System.Drawing.Point(230, 25);
             this.btn_languageVietnam.Name = "btn_languageVietnam";
             this.btn_languageVietnam.Size = new System.Drawing.Size(160, 42);
             this.btn_languageVietnam.TabIndex = 2;
@@ -265,8 +537,8 @@ namespace MESdbToERPdb.View
             // btn_languageEnglish
             // 
             this.btn_languageEnglish.Enabled = false;
-            this.btn_languageEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_languageEnglish.Location = new System.Drawing.Point(9, 25);
+            this.btn_languageEnglish.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_languageEnglish.Location = new System.Drawing.Point(26, 25);
             this.btn_languageEnglish.Name = "btn_languageEnglish";
             this.btn_languageEnglish.Size = new System.Drawing.Size(160, 42);
             this.btn_languageEnglish.TabIndex = 1;
@@ -284,33 +556,31 @@ namespace MESdbToERPdb.View
             this.lb_languageConfig.TabIndex = 0;
             this.lb_languageConfig.Text = "Choose your language";
             // 
-            // btn_deleteAllReceiver
-            // 
-            this.btn_deleteAllReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deleteAllReceiver.Location = new System.Drawing.Point(318, 454);
-            this.btn_deleteAllReceiver.Name = "btn_deleteAllReceiver";
-            this.btn_deleteAllReceiver.Size = new System.Drawing.Size(119, 72);
-            this.btn_deleteAllReceiver.TabIndex = 14;
-            this.btn_deleteAllReceiver.Text = "DELETE ALL";
-            this.btn_deleteAllReceiver.UseVisualStyleBackColor = true;
-            this.btn_deleteAllReceiver.Click += new System.EventHandler(this.btn_deleteAllReceiver_Click);
-            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_settingSave);
             this.Controls.Add(this.btn_settingCancel);
-            this.Controls.Add(this.pn_mail);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pn_mailSetting);
             this.Controls.Add(this.pn_general);
             this.Name = "Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting";
             this.Load += new System.EventHandler(this.Setting_Load);
-            this.pn_mail.ResumeLayout(false);
-            this.pn_mail.PerformLayout();
+            this.pn_general.ResumeLayout(false);
+            this.pn_general.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_sendMailIntervalPicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_bgIntervalPicker)).EndInit();
+            this.pn_mainSetting.ResumeLayout(false);
+            this.pn_mainSetting.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_produceCodeList)).EndInit();
+            this.pn_mailSetting.ResumeLayout(false);
+            this.pn_mailSetting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_receivers)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -321,7 +591,7 @@ namespace MESdbToERPdb.View
         #endregion
 
         private System.Windows.Forms.Panel pn_general;
-        private System.Windows.Forms.Panel pn_mail;
+        private System.Windows.Forms.Panel pn_mailSetting;
         private System.Windows.Forms.Button btn_checkMailCon;
         private System.Windows.Forms.TextBox txb_password;
         private System.Windows.Forms.TextBox txb_email;
@@ -329,7 +599,6 @@ namespace MESdbToERPdb.View
         private System.Windows.Forms.Label lb_username;
         private System.Windows.Forms.Label lb_configMailTitle;
         private System.Windows.Forms.Button btn_settingCancel;
-        private System.Windows.Forms.Button btn_settingSave;
         public System.Windows.Forms.DataGridView dtgv_receivers;
         private System.Windows.Forms.Button btn_deleteEmail;
         private System.Windows.Forms.Button btn_addReceiver;
@@ -338,9 +607,30 @@ namespace MESdbToERPdb.View
         private System.Windows.Forms.Label lb_languageConfig;
         private System.Windows.Forms.Button btn_languageVietnam;
         private System.Windows.Forms.Button btn_languageEnglish;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lb_receiverConfig;
         private System.Windows.Forms.TextBox txb_receiverConfig;
         private System.Windows.Forms.Button btn_saveReceiver;
         private System.Windows.Forms.Button btn_deleteAllReceiver;
+        private System.Windows.Forms.Label lb_bgIntervalPicker;
+        private System.Windows.Forms.Label lb_mainSettingWarning;
+        private System.Windows.Forms.Label lb_bgIntervalUnit;
+        private System.Windows.Forms.NumericUpDown nud_bgIntervalPicker;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pn_mainSetting;
+        private System.Windows.Forms.Button btn_deleteProduceCode;
+        private System.Windows.Forms.Button btn_addProduceCode;
+        private System.Windows.Forms.DataGridView dtgv_produceCodeList;
+        private System.Windows.Forms.Label lb_listProduceCodes;
+        private System.Windows.Forms.Button btn_saveProduceCodeConfig;
+        private System.Windows.Forms.Label lb_produceCodeConfig;
+        private System.Windows.Forms.TextBox txb_produceCodeConfig;
+        private System.Windows.Forms.Label lb_sendMailIntervalUnit;
+        private System.Windows.Forms.NumericUpDown nud_sendMailIntervalPicker;
+        private System.Windows.Forms.Label lb_sendMailInterval;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txb_excelFilePath;
+        private System.Windows.Forms.Label lb_excelFilePath;
+        private System.Windows.Forms.TextBox txb_produceCodeSearch;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

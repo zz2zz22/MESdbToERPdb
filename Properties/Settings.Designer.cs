@@ -118,5 +118,89 @@ namespace MESdbToERPdb.Properties {
                 this["cfg_language"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isStarted {
+            get {
+                return ((bool)(this["isStarted"]));
+            }
+            set {
+                this["isStarted"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int intervalMail {
+            get {
+                return ((int)(this["intervalMail"]));
+            }
+            set {
+                this["intervalMail"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string selectedProduceCode {
+            get {
+                return ((string)(this["selectedProduceCode"]));
+            }
+            set {
+                this["selectedProduceCode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string cfg_produceCodes {
+            get {
+                return ((string)(this["cfg_produceCodes"]));
+            }
+            set {
+                this["cfg_produceCodes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string excelFileName {
+            get {
+                return ((string)(this["excelFileName"]));
+            }
+            set {
+                this["excelFileName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string excelFilePath {
+            get {
+                return ((string)(this["excelFilePath"]));
+            }
+            set {
+                this["excelFilePath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string cfg_senderPW {
+            get {
+                return ((string)(this["cfg_senderPW"]));
+            }
+            set {
+                this["cfg_senderPW"] = value;
+            }
+        }
     }
 }

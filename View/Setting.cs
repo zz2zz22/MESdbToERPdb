@@ -12,8 +12,6 @@ namespace MESdbToERPdb.View
 {
     public partial class Setting : Form
     {
-        public delegate void AdviseParentEventHandler(string text);
-        public event AdviseParentEventHandler AdviseParent;
         Properties.Settings settings = new Properties.Settings();
         mes2ERPMainWin mainWin = new mes2ERPMainWin();
         
@@ -22,9 +20,11 @@ namespace MESdbToERPdb.View
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_checkMailCon_Click(object sender, EventArgs e)
         {
-
+            settings.cfg_senders = txb_email.Text;
+            settings.cfg_senderPW = txb_password.Text;
+            settings.Save();
         }
 
         private void btn_languageEnglish_Click(object sender, EventArgs e)
@@ -39,10 +39,23 @@ namespace MESdbToERPdb.View
             btn_languageVietnam.Enabled = true;
             btn_languageEnglish.Text = "English";
             btn_languageVietnam.Text = "Vietnamese";
-            mainWin.lb_pickTime.Text = "Fetching interval:";
-            mainWin.lb_timeDV.Text = "hour";
+            lb_receiverConfig.Text = "Receiver:";
+            btn_saveReceiver.Text = "SAVE";
+            lb_listMail.Text = "List of receivers:";
             lb_languageConfig.Text = "Choose your language";
             lb_configMailTitle.Text = "Input sender's email and password:";
+            btn_checkMailCon.Text = "SAVE";
+            btn_addReceiver.Text = "ADD";
+            btn_deleteEmail.Text = "DELETE";
+            btn_deleteAllReceiver.Text = "DELETE ALL";
+            lb_mainSettingWarning.Text = "Settings in \"bold\" style can ONLY be \nconfig before started or after stopped \nthe program!";
+            lb_bgIntervalPicker.Text = "Data fetching interval:";
+            lb_bgIntervalUnit.Text = "hour";
+            lb_produceCodeConfig.Text = "Produce code header:";
+            btn_saveProduceCodeConfig.Text = "SAVE";
+            lb_listProduceCodes.Text = "List of produce code headers:";
+            btn_addProduceCode.Text = "ADD";
+            btn_deleteProduceCode.Text = "DELETE";
         }
         private void btn_languageVietnam_Click(object sender, EventArgs e)
         {
@@ -56,12 +69,23 @@ namespace MESdbToERPdb.View
             btn_languageEnglish.Enabled = true;
             btn_languageEnglish.Text = "Anh";
             btn_languageVietnam.Text = "Việt";
-            if (AdviseParent != null)
-                AdviseParent("Khoảng thời gian nạp:");
-            mainWin.lb_pickTime.Text = "Khoảng thời gian nạp:";
-            mainWin.lb_timeDV.Text = "giờ";
+            lb_receiverConfig.Text = "Người nhận:";
+            btn_saveReceiver.Text = "LƯU";
+            lb_listMail.Text = "Danh sách người nhận:";
             lb_languageConfig.Text = "Chọn ngôn ngữ của bạn";
             lb_configMailTitle.Text = "Nhập vào địa chỉ email và password email của người gửi:";
+            btn_checkMailCon.Text = "LƯU";
+            btn_addReceiver.Text = "THÊM";
+            btn_deleteEmail.Text = "XÓA";
+            btn_deleteAllReceiver.Text = "XÓA TẤT CẢ";
+            lb_mainSettingWarning.Text = "Những cài đặt \"in đậm\" CHỈ chỉnh sửa \nđược trước khi bắt đầu hoặc sau khi \ndừng chương trình!";
+            lb_bgIntervalPicker.Text = "Khoảng lấy dữ liệu:";
+            lb_bgIntervalUnit.Text = "giờ";
+            lb_produceCodeConfig.Text = "Đầu mã sản xuất:";
+            btn_saveProduceCodeConfig.Text = "LƯU";
+            lb_listProduceCodes.Text = "Danh sách các đầu mã:";
+            btn_addProduceCode.Text = "THÊM";
+            btn_deleteProduceCode.Text = "XÓA";
         }
 
         private void Setting_Load(object sender, EventArgs e)
@@ -76,11 +100,19 @@ namespace MESdbToERPdb.View
             }else if (settings.cfg_language == 0) {
                 ChangeLanguageToVietnamese();
             }
+            nud_bgIntervalPicker.Value = Convert.ToDecimal(settings.interval.ToString());
+            nud_sendMailIntervalPicker.Value = Convert.ToDecimal(settings.intervalMail.ToString());
+            txb_email.Text = settings.cfg_senders;
+            txb_password.Text = settings.cfg_senderPW;
             LoadReceiverGrid();
         }
         
         public void LoadReceiverGrid()
         {
+            if (settings.cfg_receivers == "")
+            {
+                settings.cfg_receivers = null;
+            }
             this.dtgv_receivers.Rows.Clear();
             this.dtgv_receivers.Columns.Clear();
             string[] receivers;
@@ -108,7 +140,7 @@ namespace MESdbToERPdb.View
 
         private void btn_deleteEmail_Click(object sender, EventArgs e)
         {
-            if(settings.selectedReceiver == null)
+            if(txb_receiverConfig.Text == "")
             {
                 if (settings.cfg_language == 1)
                     MessageBox.Show("Please select receiver need to delete !");
@@ -117,11 +149,38 @@ namespace MESdbToERPdb.View
             }
             else
             {
-                string remainReceiver = settings.cfg_receivers;
-                settings.cfg_receivers = remainReceiver.Replace("-" + settings.selectedReceiver, String.Empty);
+                DialogResult dialogResult;
+                if (settings.cfg_language == 1)
+                {
+                    dialogResult = MessageBox.Show("Delete '" + txb_receiverConfig.Text + "' from receivers list ?", "Delete receiver confirmation", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    dialogResult = MessageBox.Show("Xóa địa chỉ '" + txb_receiverConfig.Text + "' khỏi danh sách người nhận ?", "Xác nhận xóa", MessageBoxButtons.OKCancel);
+                }
+                if ( dialogResult == DialogResult.OK)
+                {
+                    string remainReceiver = settings.cfg_receivers;
+                    string[] receivers = settings.cfg_receivers.Split('-');
+                    if (receivers[0] == settings.selectedReceiver)
+                    {
+                        if (remainReceiver == settings.selectedReceiver)
+                        {
+                            settings.cfg_receivers = remainReceiver.Replace(settings.selectedReceiver, null);
+                        }
+                        else
+                        {
+                            settings.cfg_receivers = remainReceiver.Replace(settings.selectedReceiver + "-", null);
+                        }
+                    }
+                    else
+                    {
+                        settings.cfg_receivers = remainReceiver.Replace("-" + settings.selectedReceiver, null);
+                    }
+                    settings.Save();
+                    LoadReceiverGrid();
+                }
                 txb_receiverConfig.Clear();
-                settings.Save();
-                LoadReceiverGrid();
             }
         }
 
@@ -135,38 +194,54 @@ namespace MESdbToERPdb.View
 
         private void btn_saveReceiver_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Do you want to add '" + txb_receiverConfig.Text + "' to list of receivers ?", "Confirmation", MessageBoxButtons.OKCancel);
-            if (dialogResult == DialogResult.OK)
+            if (settings.cfg_receivers != null && settings.cfg_receivers.Contains(txb_receiverConfig.Text))
             {
-                if (txb_receiverConfig != null)
+                if (txb_receiverConfig.Text == "")
                 {
-                    if (settings.cfg_receivers == null)
-                    {
-                        settings.cfg_receivers += txb_receiverConfig.Text;
-                        settings.Save();
-                    }
-                    else if (settings.cfg_receivers != null)
-                    {
-                        settings.cfg_receivers += "-" + txb_receiverConfig.Text;
-                        settings.Save();
-                    }
-                    LoadReceiverGrid();
-                    txb_receiverConfig.Enabled = false;
-                    btn_saveReceiver.Enabled = false;
+                    if (settings.cfg_language == 1) { MessageBox.Show("Receiver address is empty! Please input a value before press save!"); }
+
+                    else { MessageBox.Show("Địa chỉ mail người nhận trống! Xin hãy nhập địa chỉ mail trước khi chọn lưu!"); }
                 }
                 else
                 {
-                    MessageBox.Show("Please in put receiver email address !");
+                    if (settings.cfg_language == 1) { MessageBox.Show("Receiver '" + txb_receiverConfig.Text + "' have existed!"); }
+
+                    else { MessageBox.Show("Địa chỉ '" + txb_receiverConfig.Text + "' đã tồn tại!"); }
                 }
+                txb_receiverConfig.Clear();
+                txb_receiverConfig.Enabled = false;
+                btn_saveReceiver.Enabled = false;
             }
             else
             {
-                if(dialogResult == DialogResult.Cancel)
+                DialogResult dialogResult = MessageBox.Show("Do you want to add '" + txb_receiverConfig.Text + "' to list of receivers ?", "Confirmation", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
                 {
-                    txb_receiverConfig.Enabled = false;
-                    btn_saveReceiver.Enabled = false;
+                    if (txb_receiverConfig != null)
+                    {
+                        if (settings.cfg_receivers == null)
+                        {
+                            settings.cfg_receivers += txb_receiverConfig.Text;
+                            settings.Save();
+                        }
+                        else if (settings.cfg_receivers != null)
+                        {
+                            settings.cfg_receivers += "-" + txb_receiverConfig.Text;
+                            settings.Save();
+                        }
+                        LoadReceiverGrid();
+                        txb_receiverConfig.Clear();
+                        
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please in put receiver email address !");
+                    }
                 }
+                txb_receiverConfig.Enabled = false;
+                btn_saveReceiver.Enabled = false;
             }
+            
         }
 
         private void dtgv_receivers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -196,6 +271,18 @@ namespace MESdbToERPdb.View
         private void btn_settingCancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void nud_bgIntervalPicker_ValueChanged(object sender, EventArgs e)
+        {
+            settings.interval = int.Parse(nud_bgIntervalPicker.Value.ToString());
+            settings.Save();
+        }
+
+        private void nud_sendMailIntervalPicker_ValueChanged(object sender, EventArgs e)
+        {
+            settings.intervalMail = int.Parse(nud_sendMailIntervalPicker.Value.ToString());
+            settings.Save();
         }
     }
 }
