@@ -39,14 +39,12 @@ namespace MESdbToERPdb
             this.lb_logText = new System.Windows.Forms.Label();
             this.panel_LogText = new System.Windows.Forms.Panel();
             this.btn_settingForm = new System.Windows.Forms.Button();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
             this.lb_progress_percentage = new System.Windows.Forms.Label();
             this.pic_title = new System.Windows.Forms.PictureBox();
             this.BW = new System.ComponentModel.BackgroundWorker();
             this.timer_nextRun = new System.Windows.Forms.Timer(this.components);
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
-            this.BW_sendMail = new System.ComponentModel.BackgroundWorker();
-            this.timer_nextSend = new System.Windows.Forms.Timer(this.components);
             this.panel_Controller.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
@@ -139,13 +137,23 @@ namespace MESdbToERPdb
             this.btn_settingForm.UseVisualStyleBackColor = true;
             this.btn_settingForm.Click += new System.EventHandler(this.btn_settingForm_Click);
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elementHost1.Location = new System.Drawing.Point(3, 140);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(805, 506);
+            this.elementHost1.TabIndex = 7;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.richTextBoxLog1;
+            // 
             // lb_progress_percentage
             // 
             this.lb_progress_percentage.AutoSize = true;
             this.lb_progress_percentage.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_progress_percentage.Location = new System.Drawing.Point(70, 584);
             this.lb_progress_percentage.Name = "lb_progress_percentage";
-            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 23);
+            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 22);
             this.lb_progress_percentage.TabIndex = 6;
             // 
             // pic_title
@@ -172,27 +180,6 @@ namespace MESdbToERPdb
             // 
             this.timer_nextRun.Interval = 1000;
             this.timer_nextRun.Tick += new System.EventHandler(this.timer_nextRun_Tick);
-            // 
-            // elementHost1
-            // 
-            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elementHost1.Location = new System.Drawing.Point(3, 140);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(805, 506);
-            this.elementHost1.TabIndex = 7;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.richTextBoxLog1;
-            // 
-            // BW_sendMail
-            // 
-            this.BW_sendMail.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_sendMail_DoWork);
-            this.BW_sendMail.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BW_sendMail_ProgressChanged);
-            this.BW_sendMail.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BW_sendMail_RunWorkerCompleted);
-            // 
-            // timer_nextSend
-            // 
-            this.timer_nextSend.Interval = 1000;
-            this.timer_nextSend.Tick += new System.EventHandler(this.timer_nextSend_Tick);
             // 
             // mes2ERPMainWin
             // 
@@ -235,8 +222,6 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private System.Windows.Forms.Button btn_settingForm;
         private RichTextBoxLog richTextBoxLog1;
-        private System.ComponentModel.BackgroundWorker BW_sendMail;
-        private System.Windows.Forms.Timer timer_nextSend;
     }
 }
 

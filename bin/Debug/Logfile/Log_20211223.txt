@@ -1,0 +1,86 @@
+01:10:51.882 MESdbToERPdb 1.0.0 : Started 
+01:15:08.440 MESdbToERPdb 1.0.0 : Started 
+01:27:35.490 Send reports : Sending
+01:27:36.627 Đã xuất file excel và lưu tại  : C:\Github\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-011735.xlsx
+01:35:56.751 MESdbToERPdb 1.0.0 : Started 
+01:46:04.597 Send reports : Sending
+01:46:04.598 Background worker : Started 
+01:46:05.631 Đã xuất file excel và lưu tại  : C:\Github\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-013604.xlsx
+01:50:51.138 MESdbToERPdb 1.0.0 : Started 
+02:16:04.535 MESdbToERPdb 1.0.0 : Started 
+02:19:01.483 MESdbToERPdb 1.0.0 : Started 
+02:29:03.093 Background worker : Started 
+02:29:04.298 Đơn chuyển : MV20211223021933171(5JHXJSA2ZW01).
+02:29:05.930 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+02:29:06.381 Đơn chuyển : MV20211223022029071(5JHXK851P0W1).
+02:29:07.082 Database Response : Object reference not set to an instance of an object.
+02:29:07.876 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+02:29:08.286 Đơn chuyển : MV20211223022111439(5JHXKLRG0KW1).
+02:29:09.924 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+02:29:10.455 Đơn chuyển : MV20211223022150094(5JHXKS5L4GW1).
+02:29:11.164 Database Response : Object reference not set to an instance of an object.
+02:29:11.972 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+02:29:12.382 Đơn chuyển : MV20211223022226384(5JHXL4RSPVK1).
+02:29:13.815 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+02:29:14.327 Đơn chuyển : MV20211223022325656(5JHXLL6U5J41).
+02:29:15.999 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:29:16.011 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:29:16.089 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:29:16.100 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:29:16.183 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:29:16.192 InsertdataToERP(string barcode, string output, string NG) : Input string was not in a correct format.
+02:29:16.216 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:29:16.293 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:29:16.301 updateERPD101(string B511-21120021) : Input string was not in a correct format.
+02:29:16.302 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
+
+02:29:17.163 Đã xuất file excel và lưu tại  : C:\Github\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-021903.xlsx
+02:39:23.986 MESdbToERPdb 1.0.0 : Started 
+02:49:32.283 Background worker : Started 
+02:49:33.432 Đơn chuyển : MV20211223024238941(5JHXUDM1J2O1).
+02:49:34.210 Database Response : Object reference not set to an instance of an object.
+02:49:35.293 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.305 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.317 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.384 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.396 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.487 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.497 InsertdataToERP(string barcode, string output, string NG) : Input string was not in a correct format.
+02:49:35.517 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.595 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+02:49:35.605 updateERPD201(string B511-21120021) : Input string was not in a correct format.
+02:49:35.991 Đơn chuyển : MV20211223024343238(5JHXUUUZZVK1).
+02:49:36.542 Database Response : Object reference not set to an instance of an object.
+02:49:37.322 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+02:49:37.731 Đơn chuyển : MV20211223024343776(5JHXUUY7B401).
+02:49:38.365 Database Response : Object reference not set to an instance of an object.
+02:49:39.164 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+02:49:39.574 Đơn chuyển : MV20211223024344477(5JHXUV2DK281).
+02:49:40.139 Database Response : Object reference not set to an instance of an object.
+02:49:41.008 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+02:49:41.009 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
+
+02:49:41.869 Đã xuất file excel và lưu tại  : C:\Github\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-023932.xlsx
+02:49:41.921 Chuyển đổi từ MES sang ERP không thành công! : The process cannot access the file 'C:\Github\MESdbToERPdb\bin\Debug\MES2ERP_Reports\Report_20211223-021903.xlsx' because it is being used by another process.
+
+02:54:34.021 MESdbToERPdb 1.0.0 : Started 
+03:04:35.764 Background worker : Started 
+03:04:36.931 Đơn chuyển : MV20211223025521419(5JHY09PL2NK1).
+03:04:37.601 Database Response : Object reference not set to an instance of an object.
+03:04:38.622 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.680 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.695 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.712 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.778 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.824 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.830 InsertdataToERP(string barcode, string output, string NG) : Input string was not in a correct format.
+03:04:38.892 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.913 sqlExecuteScalarString(string sql) : Object reference not set to an instance of an object.
+03:04:38.921 updateERPD201(string B511-21120008) : Input string was not in a correct format.
+03:04:39.385 Đơn chuyển : MV20211223025626762(5JHY0R4RQG01).
+03:04:39.939 Database Response : Object reference not set to an instance of an object.
+03:04:41.051 Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012. :  (Code : B511-21070001)
+03:04:41.156 Không thể cập nhật do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012. :  (Code : B511-21070001)
+03:04:41.156 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
+
+03:04:42.010 Đã xuất file excel và lưu tại  : C:\Github\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-025435.xlsx

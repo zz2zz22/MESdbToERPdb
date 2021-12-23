@@ -30,15 +30,15 @@ namespace MESdbToERPdb
         Properties.Settings settings = new Properties.Settings();
         FlowDocument m_flowDoc = null; //Hien log vao richtextbox
         System.Windows.Forms.Timer tmrCallBgWorker;
-        System.Windows.Forms.Timer tmrCallMailBW;
+        
         //Khoi tao bg worker
         BackgroundWorker bgWorker;
-        BackgroundWorker mailBW;
+        
 
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
-        System.Threading.Timer tmrEnsureMailWorkerGetsCalled;
+        
         object lockObject = new object();
-        object lockMailObject = new object();
+        
         //System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
         SettingClass settingClass = null;
         
@@ -118,11 +118,9 @@ namespace MESdbToERPdb
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
+            tmrCallBgWorker.Interval = settings.interval * 600000; //3600000;
             tmrCallBgWorker.Start();
-            tmrCallMailBW.Interval = settings.intervalMail * 3600000;
-            tmrCallMailBW.Start();
-            UploadMain uploadMain = new UploadMain();
+            //UploadMain uploadMain = new UploadMain();
             btn_stop.Text = "Stop";
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
@@ -131,13 +129,10 @@ namespace MESdbToERPdb
             settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
             settings.Save();
 
-            string dStart = "2021-12-20 08:00:00";
-            string dEnd = "2021-12-20 09:00:00";
-
-            uploadMain.GetListTransferOrder(dStart, dEnd);           
-            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
-            DataReport.SaveExcel("", settings.excelFileName);
-            DataReport.SendMail(settings.excelFilePath, settings.cfg_senders, settings.cfg_senderPW);
+            
+            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
+            //DataReport.SaveExcel("", settings.excelFileName);
+            //DataReport.SendMail(settings.excelFilePath, settings.cfg_senders, settings.cfg_senderPW);
 
             ClearMemory.CleanMemory();
         }
@@ -199,15 +194,24 @@ namespace MESdbToERPdb
                 SystemLog.Output(SystemLog.MSG_TYPE.War, "Background worker", "Started ");
                 
                 string timeIN = settings.dIn;
-                string dOut = (Convert.ToDateTime(timeIN)).AddHours(settings.interval).ToString("yyyy-MM-dd HH:mm:ss");
+                string dOut = (Convert.ToDateTime(timeIN)).AddMinutes(settings.interval * 10).ToString("yyyy-MM-dd HH:mm:ss");
                 
                 UploadMain uploadMain = new UploadMain();
                 uploadMain.GetListTransferOrder(timeIN,dOut);
                 settings.dIn = dOut;
-                settings.Save();
-                
-
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
+                settings.intervalCounter += settings.interval;
+                settings.Save();
+                if (settings.intervalCounter > settings.intervalMail || settings.intervalCounter == settings.intervalMail)
+                {
+                    DataReport.SaveExcel("", settings.excelFileName);
+                    settings.Save();
+                    System.Threading.Thread.Sleep(100);
+                    DataReport.SendMail(settings.excelFilePath, settings.cfg_senders, settings.cfg_senderPW);
+                    settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
+                    settings.intervalCounter = 0;
+                    settings.Save();
+                }
                 ClearMemory.CleanMemory();
             }
             catch (Exception ex)
@@ -260,11 +264,6 @@ namespace MESdbToERPdb
             bgWorker.ProgressChanged -= BW_ProgressChanged;
             bgWorker.RunWorkerCompleted -= new RunWorkerCompletedEventHandler(BW_RunWorkerCompleted);
 
-            tmrCallMailBW.Tick -= new EventHandler(timer_nextSend_Tick);
-            mailBW.DoWork -= new DoWorkEventHandler(BW_sendMail_DoWork);
-            mailBW.ProgressChanged -= BW_sendMail_ProgressChanged;
-            mailBW.RunWorkerCompleted -= new RunWorkerCompletedEventHandler(BW_sendMail_RunWorkerCompleted);
-
             if (m_timerEvent != null)
                 EventBroker.RemoveTimeEvent(EventBroker.EventID.etUpdateMe, m_timerEvent);
             EventBroker.RemoveObserver(EventBroker.EventID.etLog, m_observerLog);
@@ -285,7 +284,7 @@ namespace MESdbToERPdb
             if (File.Exists(SaveObject.Pathsave))
                 settingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);
             LoadBackgroundWorker();
-            LoadSendMailBackgroundWorker();
+            
         }
 
         private void btn_settingForm_Click(object sender, EventArgs e)
@@ -295,91 +294,6 @@ namespace MESdbToERPdb
         }
 
 
-        private void LoadSendMailBackgroundWorker()
-        {   // this timer calls bgWorker again and again after regular intervals
-            tmrCallMailBW = new System.Windows.Forms.Timer();//Timer for do task
-            tmrCallMailBW.Tick += new EventHandler(timer_nextSend_Tick);
-            tmrCallMailBW.Interval = settings.intervalMail * 3600000; //3600000;
-
-            // this is our worker
-            mailBW = new BackgroundWorker();
-
-            // work happens in this method
-            mailBW.DoWork += new DoWorkEventHandler(BW_sendMail_DoWork);
-            mailBW.ProgressChanged += BW_sendMail_ProgressChanged;
-            mailBW.RunWorkerCompleted += new RunWorkerCompletedEventHandler(BW_sendMail_RunWorkerCompleted);
-            mailBW.WorkerReportsProgress = true;
-        }
-        private void BW_sendMail_DoWork(object sender, DoWorkEventArgs e)
-        {
-            try
-            {
-                SystemLog.Output(SystemLog.MSG_TYPE.War, "Send reports", "Sending");
-                DataReport.SaveExcel("", settings.excelFileName);
-                DataReport.SendMail(settings.excelFilePath, settings.cfg_senders, settings.cfg_senderPW);
-                settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
-                settings.Save();
-            }
-            catch (Exception ex)
-            {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Gửi mail không thành công!", ex.Message + "\n");
-            }
-            System.Threading.Thread.Sleep(100);
-        }
-
-        private void BW_sendMail_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            try
-            {
-            }
-            catch (Exception ex)
-            {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "update UI error", ex.Message);
-            }
-        }
-
-        private void BW_sendMail_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-
-        }
-
-        private void timer_nextSend_Tick(object sender, EventArgs e)
-        {
-            if (Monitor.TryEnter(lockMailObject))
-            {
-                try
-                {
-                    // if bgworker is not busy the call the worker
-                    if (!bgWorker.IsBusy)
-                        mailBW.RunWorkerAsync();
-                }
-                finally
-                {
-                    Monitor.Exit(lockMailObject);
-                }
-            }
-            else
-            {
-                // as the bgworker is busy we will start a timer that will try to call the bgworker again after some time
-                tmrEnsureMailWorkerGetsCalled = new System.Threading.Timer(new TimerCallback(tmrEnsureMailWorkerGetsCalled_Callback), null, 0, 10);
-            }
-        }
-        void tmrEnsureMailWorkerGetsCalled_Callback(object obj)
-        {
-            // this timer was started as the bgworker was busy before now it will try to call the bgworker again
-            if (Monitor.TryEnter(lockMailObject))
-            {
-                try
-                {
-                    if (!bgWorker.IsBusy)
-                        mailBW.RunWorkerAsync();
-                }
-                finally
-                {
-                    Monitor.Exit(lockMailObject);
-                }
-                tmrEnsureMailWorkerGetsCalled = null;
-            }
-        }
+        
     }
 }

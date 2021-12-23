@@ -107,3 +107,4 @@ D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\System.Runtime.CompilerSe
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.ResolveComReference.cache
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.Setting.resources
+C:\Github\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.Setting.resources
