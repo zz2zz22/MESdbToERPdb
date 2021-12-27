@@ -1,2 +1,0 @@
-14:23:26.968 MESdbToERPdb 1.0.0 : Started 
-14:23:53.205 MESdbToERPdb 1.0.0 : Started 
