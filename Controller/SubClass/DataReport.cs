@@ -15,7 +15,7 @@ namespace MESdbToERPdb
     public class DataReport
     {
         static DataReport s_drInstance = null;
-        static DataReport s_mailInstance = null;
+        
 
         Properties.Settings settings = new Properties.Settings();
         DataTable successReportTB = null;
@@ -89,14 +89,6 @@ namespace MESdbToERPdb
             }
             s_drInstance.writeReport(rpType, LP, MP, erpCode, moveNo, confirmStatus, status);
         }
-        public static void SendMail(string excelFilePath, string sender, string sender_pw)
-        {
-            if ( s_mailInstance == null)
-            {
-                s_mailInstance = new DataReport();
-            }
-            s_mailInstance.SendReport(excelFilePath, sender, sender_pw);
-        }
         private void writeReport(RP_TYPE rpType, string LP, string MP, string erpCode, string moveNo, string confirmStatus, string status)
         {
             if ( rpType == RP_TYPE.Fail)
@@ -114,13 +106,14 @@ namespace MESdbToERPdb
             Success
         };
         #endregion
-        public static void SaveExcel(string excelFilePath, string fileName)
+        public static void SaveExcel(string excelFilePath, string fileName, string sender, string sender_pw)
         {
             if (s_drInstance ==null)
             {
                 s_drInstance = new DataReport();
             }
             s_drInstance.ExportToExcel(excelFilePath, fileName);
+            s_drInstance.SendReport(sender, sender_pw);
         }
 
         public void ExportToExcel(string excelFilePath, string fileName)
@@ -158,7 +151,7 @@ namespace MESdbToERPdb
             }
         }
 
-        public void SendReport(string excelFilePath, string sender, string sender_pw)
+        public void SendReport(string sender, string sender_pw)
         {
             MailMessage mail = new MailMessage();
             string smtp = sender.Substring(sender.IndexOf('@'));
@@ -168,13 +161,15 @@ namespace MESdbToERPdb
                 settings.smtp_port = "587";
             }else if (smtp == "@techlink.vn")
             {
-                settings.smtp_server = "smtp.gg.com";
-                settings.smtp_port = "465";
+                settings.smtp_server = "pro56.emailserver.vn";
+                settings.smtp_port = "587";
             }
+            
             settings.Save();
             string[] receivers = settings.cfg_receivers.Split('-');
             for (int i = 0; i < receivers.Length; i ++)
             {
+                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Send mail to", receivers[i]);
                 SmtpClient SmtpServer = new SmtpClient(settings.smtp_server);
                 mail.From = new MailAddress(sender);
                 mail.To.Add(receivers[i]);
@@ -182,7 +177,7 @@ namespace MESdbToERPdb
                 mail.Body = "test mail";
 
                 System.Net.Mail.Attachment attachment;
-                attachment = new System.Net.Mail.Attachment(excelFilePath);
+                attachment = new System.Net.Mail.Attachment(settings.excelFilePath);
                 mail.Attachments.Add(attachment);
 
                 SmtpServer.Port = int.Parse(settings.smtp_port);

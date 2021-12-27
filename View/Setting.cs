@@ -20,11 +20,31 @@ namespace MESdbToERPdb.View
             InitializeComponent();
         }
 
-        private void btn_checkMailCon_Click(object sender, EventArgs e)
+        private void btn_editSender_Click(object sender, EventArgs e)
         {
-            settings.cfg_senders = txb_email.Text;
-            settings.cfg_senderPW = txb_password.Text;
-            settings.Save();
+            txb_email.Enabled = true;
+            txb_password.Enabled = true;
+        }
+        private void btn_saveSender_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult;
+            if (settings.cfg_language == 1)
+            {
+                dialogResult = MessageBox.Show("Do you want to set this sender ?", "Confirmation", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                dialogResult = MessageBox.Show("Bạn có muốn lưu người gửi này không ?", "Confirmation", MessageBoxButtons.OKCancel);
+            }
+            if (dialogResult == DialogResult.OK)
+            {
+                settings.cfg_senders = txb_email.Text;
+                settings.cfg_senderPW = txb_password.Text;
+                settings.Save();
+                MessageBox.Show("Lưu người gửi thành công!");
+            }
+            txb_email.Enabled = false;
+            txb_password.Enabled = false;
         }
 
         private void btn_languageEnglish_Click(object sender, EventArgs e)
@@ -44,7 +64,7 @@ namespace MESdbToERPdb.View
             lb_listMail.Text = "List of receivers:";
             lb_languageConfig.Text = "Choose your language";
             lb_configMailTitle.Text = "Input sender's email and password:";
-            btn_checkMailCon.Text = "SAVE";
+            btn_editSender.Text = "SAVE";
             btn_addReceiver.Text = "ADD";
             btn_deleteEmail.Text = "DELETE";
             btn_deleteAllReceiver.Text = "DELETE ALL";
@@ -56,6 +76,8 @@ namespace MESdbToERPdb.View
             lb_listProduceCodes.Text = "List of produce code headers:";
             btn_addProduceCode.Text = "ADD";
             btn_deleteProduceCode.Text = "DELETE";
+            btn_saveSender.Text = "SAVE";
+            btn_editSender.Text = "EDIT";
         }
         private void btn_languageVietnam_Click(object sender, EventArgs e)
         {
@@ -74,7 +96,7 @@ namespace MESdbToERPdb.View
             lb_listMail.Text = "Danh sách người nhận:";
             lb_languageConfig.Text = "Chọn ngôn ngữ của bạn";
             lb_configMailTitle.Text = "Nhập vào địa chỉ email và password email của người gửi:";
-            btn_checkMailCon.Text = "LƯU";
+            btn_editSender.Text = "LƯU";
             btn_addReceiver.Text = "THÊM";
             btn_deleteEmail.Text = "XÓA";
             btn_deleteAllReceiver.Text = "XÓA TẤT CẢ";
@@ -86,6 +108,8 @@ namespace MESdbToERPdb.View
             lb_listProduceCodes.Text = "Danh sách các đầu mã:";
             btn_addProduceCode.Text = "THÊM";
             btn_deleteProduceCode.Text = "XÓA";
+            btn_saveSender.Text = "LƯU";
+            btn_editSender.Text = "SỬA";
         }
 
         private void Setting_Load(object sender, EventArgs e)
@@ -104,6 +128,8 @@ namespace MESdbToERPdb.View
             nud_sendMailIntervalPicker.Value = Convert.ToDecimal(settings.intervalMail.ToString());
             txb_email.Text = settings.cfg_senders;
             txb_password.Text = settings.cfg_senderPW;
+            txb_email.Enabled = false;
+            txb_password.Enabled = false;
             LoadReceiverGrid();
         }
         
@@ -134,6 +160,49 @@ namespace MESdbToERPdb.View
                 for (int i = 0; i < receivers.Length; i++)
                 {
                     this.dtgv_receivers.Rows.Add(receivers[i]);
+                }
+            }
+        }
+        private void txb_searchReceivers_TextChanged(object sender, EventArgs e)
+        {
+            this.dtgv_receivers.Rows.Clear();
+            this.dtgv_receivers.Columns.Clear();
+            dtgv_receivers.RowHeadersVisible = false;
+            dtgv_receivers.ColumnHeadersVisible = false;
+            dtgv_receivers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_receivers.Columns.Add("receiver", "Receivers");
+            string receiverSearch = "";
+            string[] receivers;
+            if (settings.cfg_receivers != null)
+            {
+                receivers = settings.cfg_receivers.Split('-');
+            }
+            else
+            {
+                receivers = null;
+            }
+            
+            for (int i = 0; i< receivers.Length; i++ )
+            {
+                if (receivers[i].Contains(txb_searchReceivers.Text))
+                {
+                    if (receiverSearch == "")
+                    {
+                        receiverSearch += receivers[i];
+                    }
+                    else
+                    {
+                        receiverSearch += "-" + receivers[i];
+                    }
+                    
+                }
+            }
+            string[] receiverSearchList = receiverSearch.Split('-');
+            if (receiverSearchList != null)
+            {
+                for (int j = 0; j < receiverSearchList.Length; j++)
+                {
+                    this.dtgv_receivers.Rows.Add(receiverSearchList[j]);
                 }
             }
         }
@@ -177,10 +246,12 @@ namespace MESdbToERPdb.View
                     {
                         settings.cfg_receivers = remainReceiver.Replace("-" + settings.selectedReceiver, null);
                     }
+                    MessageBox.Show("Xóa thành công " + settings.selectedReceiver +" khỏi danh sách người nhận!");
                     settings.Save();
                     LoadReceiverGrid();
                 }
                 txb_receiverConfig.Clear();
+                txb_searchReceivers.Clear();
             }
         }
 
@@ -214,7 +285,15 @@ namespace MESdbToERPdb.View
             }
             else
             {
-                DialogResult dialogResult = MessageBox.Show("Do you want to add '" + txb_receiverConfig.Text + "' to list of receivers ?", "Confirmation", MessageBoxButtons.OKCancel);
+                DialogResult dialogResult; 
+                if ( settings.cfg_language == 1)
+                {
+                    dialogResult = MessageBox.Show("Do you want to add '" + txb_receiverConfig.Text + "' to list of receivers ?", "Confirmation", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    dialogResult = MessageBox.Show("Thêm người nhận '" + txb_receiverConfig.Text + "' vào danh sách người nhận ?", "Xác nhận", MessageBoxButtons.OKCancel);
+                }
                 if (dialogResult == DialogResult.OK)
                 {
                     if (txb_receiverConfig != null)
@@ -284,5 +363,7 @@ namespace MESdbToERPdb.View
             settings.intervalMail = int.Parse(nud_sendMailIntervalPicker.Value.ToString());
             settings.Save();
         }
+
+        
     }
 }

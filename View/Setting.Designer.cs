@@ -52,7 +52,8 @@ namespace MESdbToERPdb.View
             this.txb_produceCodeConfig = new System.Windows.Forms.TextBox();
             this.lb_mainSettingWarning = new System.Windows.Forms.Label();
             this.pn_mailSetting = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btn_saveSender = new System.Windows.Forms.Button();
+            this.txb_searchReceivers = new System.Windows.Forms.TextBox();
             this.btn_deleteAllReceiver = new System.Windows.Forms.Button();
             this.btn_saveReceiver = new System.Windows.Forms.Button();
             this.lb_receiverConfig = new System.Windows.Forms.Label();
@@ -61,7 +62,7 @@ namespace MESdbToERPdb.View
             this.btn_addReceiver = new System.Windows.Forms.Button();
             this.lb_listMail = new System.Windows.Forms.Label();
             this.dtgv_receivers = new System.Windows.Forms.DataGridView();
-            this.btn_checkMailCon = new System.Windows.Forms.Button();
+            this.btn_editSender = new System.Windows.Forms.Button();
             this.txb_password = new System.Windows.Forms.TextBox();
             this.txb_email = new System.Windows.Forms.TextBox();
             this.lb_mailPW = new System.Windows.Forms.Label();
@@ -286,6 +287,7 @@ namespace MESdbToERPdb.View
             // btn_saveProduceCodeConfig
             // 
             this.btn_saveProduceCodeConfig.BackColor = System.Drawing.Color.OldLace;
+            this.btn_saveProduceCodeConfig.Enabled = false;
             this.btn_saveProduceCodeConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_saveProduceCodeConfig.Location = new System.Drawing.Point(267, 28);
             this.btn_saveProduceCodeConfig.Name = "btn_saveProduceCodeConfig";
@@ -306,6 +308,7 @@ namespace MESdbToERPdb.View
             // 
             // txb_produceCodeConfig
             // 
+            this.txb_produceCodeConfig.Enabled = false;
             this.txb_produceCodeConfig.Location = new System.Drawing.Point(3, 51);
             this.txb_produceCodeConfig.Name = "txb_produceCodeConfig";
             this.txb_produceCodeConfig.Size = new System.Drawing.Size(254, 22);
@@ -326,7 +329,8 @@ namespace MESdbToERPdb.View
             // pn_mailSetting
             // 
             this.pn_mailSetting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pn_mailSetting.Controls.Add(this.textBox3);
+            this.pn_mailSetting.Controls.Add(this.btn_saveSender);
+            this.pn_mailSetting.Controls.Add(this.txb_searchReceivers);
             this.pn_mailSetting.Controls.Add(this.btn_deleteAllReceiver);
             this.pn_mailSetting.Controls.Add(this.btn_saveReceiver);
             this.pn_mailSetting.Controls.Add(this.lb_receiverConfig);
@@ -335,7 +339,7 @@ namespace MESdbToERPdb.View
             this.pn_mailSetting.Controls.Add(this.btn_addReceiver);
             this.pn_mailSetting.Controls.Add(this.lb_listMail);
             this.pn_mailSetting.Controls.Add(this.dtgv_receivers);
-            this.pn_mailSetting.Controls.Add(this.btn_checkMailCon);
+            this.pn_mailSetting.Controls.Add(this.btn_editSender);
             this.pn_mailSetting.Controls.Add(this.txb_password);
             this.pn_mailSetting.Controls.Add(this.txb_email);
             this.pn_mailSetting.Controls.Add(this.lb_mailPW);
@@ -346,19 +350,32 @@ namespace MESdbToERPdb.View
             this.pn_mailSetting.Size = new System.Drawing.Size(444, 572);
             this.pn_mailSetting.TabIndex = 1;
             // 
-            // textBox3
+            // btn_saveSender
             // 
-            this.textBox3.Location = new System.Drawing.Point(8, 221);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(308, 22);
-            this.textBox3.TabIndex = 15;
+            this.btn_saveSender.BackColor = System.Drawing.Color.OldLace;
+            this.btn_saveSender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_saveSender.Location = new System.Drawing.Point(338, 33);
+            this.btn_saveSender.Name = "btn_saveSender";
+            this.btn_saveSender.Size = new System.Drawing.Size(99, 38);
+            this.btn_saveSender.TabIndex = 16;
+            this.btn_saveSender.Text = "SAVE";
+            this.btn_saveSender.UseVisualStyleBackColor = false;
+            this.btn_saveSender.Click += new System.EventHandler(this.btn_saveSender_Click);
+            // 
+            // txb_searchReceivers
+            // 
+            this.txb_searchReceivers.Location = new System.Drawing.Point(6, 252);
+            this.txb_searchReceivers.Name = "txb_searchReceivers";
+            this.txb_searchReceivers.Size = new System.Drawing.Size(308, 22);
+            this.txb_searchReceivers.TabIndex = 15;
+            this.txb_searchReceivers.TextChanged += new System.EventHandler(this.txb_searchReceivers_TextChanged);
             // 
             // btn_deleteAllReceiver
             // 
             this.btn_deleteAllReceiver.BackColor = System.Drawing.Color.Red;
             this.btn_deleteAllReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_deleteAllReceiver.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_deleteAllReceiver.Location = new System.Drawing.Point(320, 461);
+            this.btn_deleteAllReceiver.Location = new System.Drawing.Point(318, 493);
             this.btn_deleteAllReceiver.Name = "btn_deleteAllReceiver";
             this.btn_deleteAllReceiver.Size = new System.Drawing.Size(119, 72);
             this.btn_deleteAllReceiver.TabIndex = 14;
@@ -371,7 +388,7 @@ namespace MESdbToERPdb.View
             this.btn_saveReceiver.BackColor = System.Drawing.Color.OldLace;
             this.btn_saveReceiver.Enabled = false;
             this.btn_saveReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_saveReceiver.Location = new System.Drawing.Point(321, 119);
+            this.btn_saveReceiver.Location = new System.Drawing.Point(318, 158);
             this.btn_saveReceiver.Name = "btn_saveReceiver";
             this.btn_saveReceiver.Size = new System.Drawing.Size(119, 45);
             this.btn_saveReceiver.TabIndex = 13;
@@ -383,7 +400,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_receiverConfig.AutoSize = true;
             this.lb_receiverConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_receiverConfig.Location = new System.Drawing.Point(4, 119);
+            this.lb_receiverConfig.Location = new System.Drawing.Point(2, 151);
             this.lb_receiverConfig.Name = "lb_receiverConfig";
             this.lb_receiverConfig.Size = new System.Drawing.Size(80, 20);
             this.lb_receiverConfig.TabIndex = 12;
@@ -392,7 +409,7 @@ namespace MESdbToERPdb.View
             // txb_receiverConfig
             // 
             this.txb_receiverConfig.Enabled = false;
-            this.txb_receiverConfig.Location = new System.Drawing.Point(3, 142);
+            this.txb_receiverConfig.Location = new System.Drawing.Point(6, 181);
             this.txb_receiverConfig.Name = "txb_receiverConfig";
             this.txb_receiverConfig.Size = new System.Drawing.Size(295, 22);
             this.txb_receiverConfig.TabIndex = 11;
@@ -400,7 +417,7 @@ namespace MESdbToERPdb.View
             // btn_deleteEmail
             // 
             this.btn_deleteEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deleteEmail.Location = new System.Drawing.Point(321, 308);
+            this.btn_deleteEmail.Location = new System.Drawing.Point(318, 346);
             this.btn_deleteEmail.Name = "btn_deleteEmail";
             this.btn_deleteEmail.Size = new System.Drawing.Size(119, 54);
             this.btn_deleteEmail.TabIndex = 10;
@@ -411,7 +428,7 @@ namespace MESdbToERPdb.View
             // btn_addReceiver
             // 
             this.btn_addReceiver.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addReceiver.Location = new System.Drawing.Point(320, 248);
+            this.btn_addReceiver.Location = new System.Drawing.Point(318, 284);
             this.btn_addReceiver.Name = "btn_addReceiver";
             this.btn_addReceiver.Size = new System.Drawing.Size(119, 54);
             this.btn_addReceiver.TabIndex = 8;
@@ -423,7 +440,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_listMail.AutoSize = true;
             this.lb_listMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_listMail.Location = new System.Drawing.Point(4, 195);
+            this.lb_listMail.Location = new System.Drawing.Point(2, 229);
             this.lb_listMail.Name = "lb_listMail";
             this.lb_listMail.Size = new System.Drawing.Size(135, 20);
             this.lb_listMail.TabIndex = 7;
@@ -436,7 +453,7 @@ namespace MESdbToERPdb.View
             this.dtgv_receivers.AllowUserToResizeColumns = false;
             this.dtgv_receivers.AllowUserToResizeRows = false;
             this.dtgv_receivers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_receivers.Location = new System.Drawing.Point(7, 248);
+            this.dtgv_receivers.Location = new System.Drawing.Point(6, 280);
             this.dtgv_receivers.Name = "dtgv_receivers";
             this.dtgv_receivers.ReadOnly = true;
             this.dtgv_receivers.RowHeadersWidth = 51;
@@ -445,21 +462,21 @@ namespace MESdbToERPdb.View
             this.dtgv_receivers.TabIndex = 6;
             this.dtgv_receivers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_receivers_CellClick);
             // 
-            // btn_checkMailCon
+            // btn_editSender
             // 
-            this.btn_checkMailCon.BackColor = System.Drawing.Color.OldLace;
-            this.btn_checkMailCon.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_checkMailCon.Location = new System.Drawing.Point(342, 42);
-            this.btn_checkMailCon.Name = "btn_checkMailCon";
-            this.btn_checkMailCon.Size = new System.Drawing.Size(99, 51);
-            this.btn_checkMailCon.TabIndex = 5;
-            this.btn_checkMailCon.Text = "SAVE";
-            this.btn_checkMailCon.UseVisualStyleBackColor = false;
-            this.btn_checkMailCon.Click += new System.EventHandler(this.btn_checkMailCon_Click);
+            this.btn_editSender.BackColor = System.Drawing.Color.OldLace;
+            this.btn_editSender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_editSender.Location = new System.Drawing.Point(338, 72);
+            this.btn_editSender.Name = "btn_editSender";
+            this.btn_editSender.Size = new System.Drawing.Size(99, 38);
+            this.btn_editSender.TabIndex = 5;
+            this.btn_editSender.Text = "EDIT";
+            this.btn_editSender.UseVisualStyleBackColor = false;
+            this.btn_editSender.Click += new System.EventHandler(this.btn_editSender_Click);
             // 
             // txb_password
             // 
-            this.txb_password.Location = new System.Drawing.Point(90, 71);
+            this.txb_password.Location = new System.Drawing.Point(90, 81);
             this.txb_password.Name = "txb_password";
             this.txb_password.Size = new System.Drawing.Size(246, 22);
             this.txb_password.TabIndex = 4;
@@ -475,7 +492,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_mailPW.AutoSize = true;
             this.lb_mailPW.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_mailPW.Location = new System.Drawing.Point(5, 72);
+            this.lb_mailPW.Location = new System.Drawing.Point(5, 82);
             this.lb_mailPW.Name = "lb_mailPW";
             this.lb_mailPW.Size = new System.Drawing.Size(79, 18);
             this.lb_mailPW.TabIndex = 2;
@@ -592,7 +609,7 @@ namespace MESdbToERPdb.View
 
         private System.Windows.Forms.Panel pn_general;
         private System.Windows.Forms.Panel pn_mailSetting;
-        private System.Windows.Forms.Button btn_checkMailCon;
+        private System.Windows.Forms.Button btn_editSender;
         private System.Windows.Forms.TextBox txb_password;
         private System.Windows.Forms.TextBox txb_email;
         private System.Windows.Forms.Label lb_mailPW;
@@ -631,6 +648,7 @@ namespace MESdbToERPdb.View
         private System.Windows.Forms.TextBox txb_excelFilePath;
         private System.Windows.Forms.Label lb_excelFilePath;
         private System.Windows.Forms.TextBox txb_produceCodeSearch;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txb_searchReceivers;
+        private System.Windows.Forms.Button btn_saveSender;
     }
 }

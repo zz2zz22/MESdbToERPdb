@@ -84,3 +84,215 @@
 03:04:41.156 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
 
 03:04:42.010 Đã xuất file excel và lưu tại  : C:\Github\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-025435.xlsx
+08:17:37.652 MESdbToERPdb 1.0.0 : Started 
+08:24:51.162 MESdbToERPdb 1.0.0 : Started 
+08:35:14.486 Background worker : Started 
+08:35:16.826 Đơn chuyển : MV20211223082522506(5JI5A4NC8TC1).
+08:35:17.230 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:17.720 Đơn chuyển : MV20211223082545209(5JI5A8EIAA81).
+08:35:18.685 Database Response : Object reference not set to an instance of an object.
+08:35:19.777 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:20.178 Đơn chuyển : MV20211223082545797(5JI5A8I0BBK1).
+08:35:20.801 Database Response : Object reference not set to an instance of an object.
+08:35:21.622 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:22.022 Đơn chuyển : MV20211223082546633(5JI5A8MZHXS1).
+08:35:22.573 Database Response : Object reference not set to an instance of an object.
+08:35:23.462 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:23.868 Đơn chuyển : MV20211223082602884(5JI5AHXW1FK1).
+08:35:24.077 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:24.591 Đơn chuyển : MV20211223082631167(5JI5AMMA2GG1).
+08:35:25.309 Database Response : Object reference not set to an instance of an object.
+08:35:26.235 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:26.651 Đơn chuyển : MV20211223082640774(5JI5AO7H6JK1).
+08:35:26.948 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:27.348 Đơn chuyển : MV20211223082722074(5JI5B1NILCW1).
+08:35:28.075 Database Response : Object reference not set to an instance of an object.
+08:35:28.883 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:29.296 Đơn chuyển : MV20211223082722635(5JI5B1QUU281).
+08:35:29.917 Database Response : Object reference not set to an instance of an object.
+08:35:30.828 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:31.238 Đơn chuyển : MV20211223082723700(5JI5B1X73NK1).
+08:35:31.860 Database Response : Object reference not set to an instance of an object.
+08:35:32.671 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:33.081 Đơn chuyển : MV20211223082724381(5JI5B2192A81).
+08:35:34.617 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:35.026 Đơn chuyển : MV20211223082747422(5JI5B5UFJS01).
+08:35:35.176 Database MES base data Response : Object reference not set to an instance of an object.
+08:35:35.650 Database Response : Object reference not set to an instance of an object.
+08:35:36.460 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:36.990 Đơn chuyển : MV20211223082850143(5JI5BMU08341).
+08:35:37.110 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:37.894 Đơn chuyển : MV20211223082853730(5JI5BNFD1K01).
+08:35:38.516 Database Response : Object reference not set to an instance of an object.
+08:35:39.327 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:39.738 Đơn chuyển : MV20211223082933487(5JI5C0M7QI81).
+08:35:39.877 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:40.285 Đơn chuyển : MV20211223082946571(5JI5C2S43AO1).
+08:35:41.683 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:42.093 Đơn chuyển : MV20211223083017051(5JI5CEFQEGG1).
+08:35:42.298 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:42.707 Đơn chuyển : MV20211223083058115(5JI5CL87UB41).
+08:35:43.357 Database Response : Object reference not set to an instance of an object.
+08:35:44.243 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:44.756 Đơn chuyển : MV20211223083137410(5JI5CYCBIG01).
+08:35:46.196 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:46.599 Đơn chuyển : MV20211223083152911(5JI5D0WLWXC1).
+08:35:46.737 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:47.139 Đơn chuyển : MV20211223083239200(5JI5DF6CN401).
+08:35:47.244 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:47.622 Đơn chuyển : MV20211223083305768(5JI5DQ6OH341).
+08:35:48.176 Database Response : Object reference not set to an instance of an object.
+08:35:49.603 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:50.080 Đơn chuyển : MV20211223083310855(5JI5DR0YSMO1).
+08:35:50.221 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:35:50.835 Đơn chuyển : MV20211223083345396(5JI5DWQM4OW1).
+08:35:52.436 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:52.845 Đơn chuyển : MV20211223083359208(5JI5DZ0UIRK1).
+08:35:53.366 Database Response : Object reference not set to an instance of an object.
+08:35:54.279 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:54.919 Đơn chuyển : MV20211223083501720(5JI5EMLBSE81).
+08:35:55.756 Database Response : Object reference not set to an instance of an object.
+08:35:56.745 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+08:35:56.745 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
+
+08:35:57.959 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-082514.xlsx
+08:35:58.002 Chuyển đổi từ MES sang ERP không thành công! : The parameter 'fileName' cannot be an empty string.
+Parameter name: fileName
+
+08:40:45.616 MESdbToERPdb 1.0.0 : Started 
+08:41:11.492 MESdbToERPdb 1.0.0 : Started 
+08:51:14.000 Background worker : Started 
+08:51:15.420 Đơn chuyển : MV20211223084137841(5JI5HJSMLG01).
+08:51:16.555 Database Response : Object reference not set to an instance of an object.
+08:51:17.772 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:18.490 Đơn chuyển : MV20211223084138706(5JI5HJXRZTS1).
+08:51:19.420 Database Response : Object reference not set to an instance of an object.
+08:51:20.755 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:21.459 Đơn chuyển : MV20211223084139414(5JI5HK1ZQSG1).
+08:51:22.697 Database Response : Object reference not set to an instance of an object.
+08:51:23.843 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:24.838 Đơn chuyển : MV20211223084325226(5JI5IES9PCW1).
+08:51:25.146 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:25.676 Đơn chuyển : MV20211223084403671(5JI5IRRB6UO1).
+08:51:25.874 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:26.580 Đơn chuyển : MV20211223084440837(5JI5IXWL5JK1).
+08:51:26.792 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:27.402 Đơn chuyển : MV20211223084522718(5JI5JBG33DS1).
+08:51:27.611 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:28.731 Đơn chuyển : MV20211223084621178(5JI5JRQA9W01).
+08:51:28.943 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:29.858 Đơn chuyển : MV20211223084811302(5JI5KN68NS01).
+08:51:30.170 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:30.777 Đơn chuyển : MV20211223085102087(5JI5LZ9HZ741).
+08:51:33.141 Database Response : Object reference not set to an instance of an object.
+08:51:35.488 Generated Form : : D201-21120733
+08:51:35.488 Code : : B511-21100056
+08:51:36.115 Updated code:  : B51121100056
+08:51:36.615 Đơn chuyển : MV20211223085103063(5JI5LZFB6281).
+08:51:36.827 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:37.741 Đơn chuyển : MV20211223085103795(5JI5LZJO27K1).
+08:51:38.252 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+08:51:38.253 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
+
+08:51:39.030 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-084113.xlsx
+08:57:45.451 MESdbToERPdb 1.0.0 : Started 
+09:07:51.068 Background worker : Started 
+09:07:52.346 Đơn chuyển : MV20211223085829774(5JI5PBLYK0W1).
+09:07:52.769 Database MES base data Response : Object reference not set to an instance of an object.
+09:07:53.361 Database Response : Object reference not set to an instance of an object.
+09:07:54.395 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+09:07:54.890 Đơn chuyển : MV20211223085903434(5JI5PNSIG801).
+09:07:55.101 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+09:07:55.914 Đơn chuyển : MV20211223085937319(5JI5PTE8YU81).
+09:07:56.136 Database MES base data Response : Object reference not set to an instance of an object.
+09:07:56.845 Database Response : Object reference not set to an instance of an object.
+09:07:57.757 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+09:07:58.165 Đơn chuyển : MV20211223090051146(5JI68PQX2U81).
+09:07:58.388 Database MES base data Response : Object reference not set to an instance of an object.
+09:07:58.893 Database Response : Object reference not set to an instance of an object.
+09:07:59.906 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+09:08:00.521 Đơn chuyển : MV20211223090159576(5JI697OHE2O1).
+09:08:00.743 Database MES base data Response : Object reference not set to an instance of an object.
+09:08:01.170 Database Response : Object reference not set to an instance of an object.
+09:08:02.159 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+09:08:02.570 Đơn chuyển : MV20211223090214236(5JI69GPWXC01).
+09:08:04.923 Generated Form : : D101-21120070
+09:08:04.924 Code : : J511-21050015
+09:08:05.243 Updated code:  : J51121050015
+09:08:05.744 Đơn chuyển : MV20211223090346389(5JI6A2KPWEO1).
+09:08:08.010 Generated Form : : D101-21120071
+09:08:08.010 Code : : J511-21100023
+09:08:08.318 Updated code:  : J51121100023
+09:08:08.918 Đơn chuyển : MV20211223090452561(5JI6AK4U8SW1).
+09:08:11.389 Generated Form : : D101-21120072
+09:08:11.389 Code : : J511-21050012
+09:08:11.697 Updated code:  : J51121050012
+09:08:12.099 Đơn chuyển : MV20211223090545777(5JI6AZJTO281).
+09:08:14.150 Generated Form : : D101-21120073
+09:08:14.150 Code : : J511-21100023
+09:08:14.368 Updated code:  : J51121100023
+09:08:14.755 Đơn chuyển : MV20211223090622543(5JI6BC8VAB41).
+09:08:16.919 Generated Form : : D101-21120074
+09:08:16.919 Code : : J511-21100009
+09:08:17.213 Updated code:  : J51121100009
+09:08:17.623 Đơn chuyển : MV20211223090652429(5JI6BH6SW5S1).
+09:08:18.170 Database Response : Object reference not set to an instance of an object.
+09:08:19.261 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+09:08:19.687 Đơn chuyển : MV20211223090730485(5JI6BU3J0401).
+09:08:21.309 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+09:08:21.309 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
+
+09:08:22.062 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-085751.xlsx
+09:12:47.372 MESdbToERPdb 1.0.0 : Started 
+09:23:04.166 Background worker : Started 
+09:23:05.600 Đơn chuyển : MV20211223091415826(5JI6EZFVD401).
+09:23:07.726 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+09:23:08.136 Đơn chuyển : MV20211223091517174(5JI6FG79RA81).
+09:23:08.367 Database MES base data Response : Object reference not set to an instance of an object.
+09:23:08.863 Database Response : Object reference not set to an instance of an object.
+09:23:09.679 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+09:23:10.084 Đơn chuyển : MV20211223091517732(5JI6FGALCU81).
+09:23:10.238 Database MES base data Response : Object reference not set to an instance of an object.
+09:23:11.142 Database Response : Object reference not set to an instance of an object.
+09:23:12.167 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+09:23:12.645 Đơn chuyển : MV20211223091732847(5JI6GFVBYSW1).
+09:23:13.264 Database Response : Object reference not set to an instance of an object.
+09:23:14.105 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+09:23:14.690 Đơn chuyển : MV20211223091811432(5JI6GSV7GJK1).
+09:23:16.534 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+09:23:16.944 Đơn chuyển : MV20211223091827010(5JI6GVFYD5S1).
+09:23:17.156 Database MES base data Response : Object reference not set to an instance of an object.
+09:23:17.668 Database Response : Object reference not set to an instance of an object.
+09:23:18.479 GetListTransferOrder : Không có phiếu chuyển do mã sản xuất rỗng
+09:23:18.889 Đơn chuyển : MV20211223092102105(5JI6I4XSRRK1).
+09:23:20.425 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.
+09:23:20.426 Đã hoàn tất chuyển đổi từ MES sang ERP! : 
+
+09:23:21.253 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-091304.xlsx
+09:24:21.788 Chuyển đổi từ MES sang ERP không thành công! : Failure sending mail.
+
+09:26:28.896 MESdbToERPdb 1.0.0 : Started 
+09:28:32.140 MESdbToERPdb 1.0.0 : Started 
+09:28:35.639 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-092834.xlsx
+09:28:35.652 Send mail to : dragonslayer3105@gmail.com
+09:30:46.098 MESdbToERPdb 1.0.0 : Started 
+09:30:49.551 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-093048.xlsx
+09:30:49.573 Send mail to : dragonslayer3105@gmail.com
+09:31:30.082 MESdbToERPdb 1.0.0 : Started 
+09:31:32.064 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-093131.xlsx
+09:31:37.082 Send mail to : dragonslayer3105@gmail.com
+09:44:59.660 MESdbToERPdb 1.0.0 : Started 
+09:45:05.132 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211223-094503.xlsx
+09:45:08.232 Send mail to : dragonslayer3105@gmail.com
+10:06:09.865 MESdbToERPdb 1.0.0 : Started 
+10:07:04.794 MESdbToERPdb 1.0.0 : Started 
+10:12:22.680 MESdbToERPdb 1.0.0 : Started 
+10:14:23.869 MESdbToERPdb 1.0.0 : Started 
+10:17:06.754 MESdbToERPdb 1.0.0 : Started 
+10:18:50.494 MESdbToERPdb 1.0.0 : Started 
+10:21:15.116 MESdbToERPdb 1.0.0 : Started 
+10:23:10.727 MESdbToERPdb 1.0.0 : Started 
+10:50:47.137 MESdbToERPdb 1.0.0 : Started 
+10:51:43.226 MESdbToERPdb 1.0.0 : Started 
+11:00:49.931 MESdbToERPdb 1.0.0 : Started 
+11:03:28.713 MESdbToERPdb 1.0.0 : Started 

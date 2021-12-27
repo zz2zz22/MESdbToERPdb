@@ -118,9 +118,9 @@ namespace MESdbToERPdb
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            tmrCallBgWorker.Interval = settings.interval * 600000; //3600000;
+            tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
             tmrCallBgWorker.Start();
-            //UploadMain uploadMain = new UploadMain();
+            
             btn_stop.Text = "Stop";
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
@@ -129,11 +129,18 @@ namespace MESdbToERPdb
             settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
             settings.Save();
 
+            //test
+            UploadMain uploadMain = new UploadMain();
+            string testIn = "2021-12-06 12:00:00";
+            string testOut = "2021-12-06 16:00:00";
+            uploadMain.GetListTransferOrder(testIn, testOut);
+            DataReport.SaveExcel("", settings.excelFileName, settings.cfg_senders, settings.cfg_senderPW);
             
-            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
-            //DataReport.SaveExcel("", settings.excelFileName);
-            //DataReport.SendMail(settings.excelFilePath, settings.cfg_senders, settings.cfg_senderPW);
-
+            System.Threading.Thread.Sleep(100);
+            settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
+            settings.Save();
+            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
+            
             ClearMemory.CleanMemory();
         }
         #region backgroundworker
@@ -204,10 +211,9 @@ namespace MESdbToERPdb
                 settings.Save();
                 if (settings.intervalCounter > settings.intervalMail || settings.intervalCounter == settings.intervalMail)
                 {
-                    DataReport.SaveExcel("", settings.excelFileName);
+                    DataReport.SaveExcel("", settings.excelFileName, settings.cfg_senders, settings.cfg_senderPW);
                     settings.Save();
                     System.Threading.Thread.Sleep(100);
-                    DataReport.SendMail(settings.excelFilePath, settings.cfg_senders, settings.cfg_senderPW);
                     settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
                     settings.intervalCounter = 0;
                     settings.Save();
