@@ -10,6 +10,7 @@ namespace MESdbToERPdb
 {
     public class UploadMain
     {
+        Properties.Settings settings = new Properties.Settings();
         public void GetListTransferOrder(string dIn, string dOut)
         {
             string timeIn = (Convert.ToDateTime(dIn)).ToString("HH:mm:ss");
@@ -101,13 +102,38 @@ namespace MESdbToERPdb
                         
                         double OKQty = double.Parse(con2.sqlExecuteScalarString("select distinct actual_pass_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
                         double NGQty = double.Parse(con2.sqlExecuteScalarString("select distinct actual_fail_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
+
+                        string[] productionCodeHeaders;
+                        if (settings.cfg_produceCodes == "")
+                        {
+                            settings.cfg_produceCodes = null;
+                        }
+                        if (settings.cfg_produceCodes != null)
+                        {
+                            productionCodeHeaders = settings.cfg_produceCodes.Split('-');
+                        }
+                        else
+                        {
+                            productionCodeHeaders = null;
+                        }
                         
+                        bool checkIsProductionCode = false;
+                        if(productionCodeHeaders != null)
+                        {
+                            for (int i = 0; i < productionCodeHeaders.Length; i++)
+                            {
+                                if ( MP == productionCodeHeaders[i])
+                                {
+                                    checkIsProductionCode = true;
+                                }
+                            }
+                        }
                         if (erpCode != "")
                         {
                             DateTime transDate = Convert.ToDateTime(table.Rows[cmbitem]["move_out_date"].ToString());
                             insertERP_D201 classinsertD2 = new insertERP_D201();
                             insertERP_D101 classinsertD1 = new insertERP_D101();
-                            if ((MP == "A511") || (MP == "B511") || (MP == "P511") || (MP == "J511") || (MP == "P512")) //check là mã có thuộc ( A511, B511, P511, J511, P512 ) hay kg
+                            if (checkIsProductionCode) //check là mã có thuộc ( A511, B511, P511, J511, P512 ) hay kg
                             {
                                 if (MP == "P512" && table.Rows[cmbitem]["belong_organization"].ToString() == "3VFVREIJ1R41") //Nếu là P512 thì xét phải có phải là công đoạn có mã JM của bộ phận J01-2 thì không phát sinh phiếu
                                 {
@@ -133,25 +159,29 @@ namespace MESdbToERPdb
                                                     else
                                                     {
                                                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                                                        DataReport.addReport(DataReport.RP_TYPE.Fail,"", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(),"", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
+                                                        DataReport.addReport(DataReport.RP_TYPE.Error,"", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(),"", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
+                                                        //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
                                                     }
                                                 }
                                             }
                                             else
                                             {
                                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
-                                                DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
+                                                DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
+                                                //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
                                             }
                                         }
                                         else
                                         {
                                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
-                                            DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
+                                            DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
+                                            //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
                                         }                                   
                                     }else
                                     {
                                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do công đoạn thuộc J01-2 và có mã công đoạn là JM.");
-                                        DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 mã sản xuất P512 thuộc bộ phận J01-2 và có mã công đoạn là JM.");
+                                        DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 mã sản xuất P512 thuộc bộ phận J01-2 và có mã công đoạn là JM.");
+                                        //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 mã sản xuất P512 thuộc bộ phận J01-2 và có mã công đoạn là JM.");
                                     }
                                 }
                                 else
@@ -176,39 +206,44 @@ namespace MESdbToERPdb
                                                 else
                                                 {
                                                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                                                    DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
+                                                    DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
+                                                    //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
                                                 }
                                             }
                                         }
                                         else
                                         {
                                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
-                                            DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
+                                            DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
+                                            //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
                                         }
                                     }
                                     else
                                     {
                                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
-                                        DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
+                                        DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
+                                        //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
                                     }
                                 }
                             }
                             else
                             {
                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.");
-                                DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.");
+                                DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.");
+                                //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.");
                             }
                         }
                         else
                         {
                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển do mã sản xuất rỗng");
-                            DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển do mã sản xuất rỗng.");
+                            DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển do mã sản xuất rỗng.");
+                            //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển do mã sản xuất rỗng.");
                         }
                     }
                     else
                     {
                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                        DataReport.addReport(DataReport.RP_TYPE.Fail, "", "", "", table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
+                        DataReport.addReport(DataReport.RP_TYPE.Error, "", "", "", table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
                     }          
                 }
             }

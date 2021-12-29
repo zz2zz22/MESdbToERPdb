@@ -124,23 +124,28 @@ namespace MESdbToERPdb
             btn_stop.Text = "Stop";
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
-            settings.isStarted = true;
+            
             settings.dIn = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            settings.intervalCounter = 0;
             settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
             settings.Save();
 
+            
+            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Starting...!", "");
+
             //test
-            UploadMain uploadMain = new UploadMain();
-            string testIn = "2021-12-06 12:00:00";
-            string testOut = "2021-12-06 16:00:00";
-            uploadMain.GetListTransferOrder(testIn, testOut);
-            DataReport.SaveExcel("", settings.excelFileName, settings.cfg_senders, settings.cfg_senderPW);
-            
-            System.Threading.Thread.Sleep(100);
-            settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
-            settings.Save();
-            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Upload to data to ERP finished!", "");
-            
+
+            //UploadMain uploadMain = new UploadMain();
+            //string testIn = "2021-11-03 08:00:00";
+            //string testOut = "2021-11-03 12:00:00";
+            //uploadMain.GetListTransferOrder(testIn, testOut);
+            //DataReport.SaveExcel("", settings.excelFileName, settings.cfg_senders, settings.cfg_senderPW);
+            //FixData.SaveFixExcel();
+
+            //System.Threading.Thread.Sleep(100);
+            //settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
+            //settings.Save();
+
             ClearMemory.CleanMemory();
         }
         #region backgroundworker
@@ -162,7 +167,7 @@ namespace MESdbToERPdb
         private void btn_stop_Click(object sender, EventArgs e)
         {
             tmrCallBgWorker.Stop();
-            settings.isStarted = false;
+            
             settings.Save();
             btn_stop.Text = "Stopping";
             btn_start.Text = "Start";
@@ -201,18 +206,19 @@ namespace MESdbToERPdb
                 SystemLog.Output(SystemLog.MSG_TYPE.War, "Background worker", "Started ");
                 
                 string timeIN = settings.dIn;
-                string dOut = (Convert.ToDateTime(timeIN)).AddMinutes(settings.interval * 10).ToString("yyyy-MM-dd HH:mm:ss");
+                string dOut = ((Convert.ToDateTime(timeIN)).AddHours(settings.interval)).ToString("yyyy-MM-dd HH:mm:ss");
                 
                 UploadMain uploadMain = new UploadMain();
                 uploadMain.GetListTransferOrder(timeIN,dOut);
                 settings.dIn = dOut;
-                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
-                settings.intervalCounter += settings.interval;
+                settings.intervalCounter = settings.intervalCounter + settings.interval;
                 settings.Save();
+                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
+                
                 if (settings.intervalCounter > settings.intervalMail || settings.intervalCounter == settings.intervalMail)
                 {
                     DataReport.SaveExcel("", settings.excelFileName, settings.cfg_senders, settings.cfg_senderPW);
-                    settings.Save();
+                    FixData.SaveFixExcel();
                     System.Threading.Thread.Sleep(100);
                     settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
                     settings.intervalCounter = 0;
@@ -299,7 +305,10 @@ namespace MESdbToERPdb
             setting.ShowDialog();
         }
 
-
-        
+        private void btn_errorForm_Click(object sender, EventArgs e)
+        {
+            View.Error errorForm = new View.Error();
+            errorForm.ShowDialog();
+        }
     }
 }

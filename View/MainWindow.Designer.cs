@@ -38,6 +38,7 @@ namespace MESdbToERPdb
             this.pic_logo = new System.Windows.Forms.PictureBox();
             this.lb_logText = new System.Windows.Forms.Label();
             this.panel_LogText = new System.Windows.Forms.Panel();
+            this.btn_errorForm = new System.Windows.Forms.Button();
             this.btn_settingForm = new System.Windows.Forms.Button();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
@@ -117,6 +118,7 @@ namespace MESdbToERPdb
             // 
             // panel_LogText
             // 
+            this.panel_LogText.Controls.Add(this.btn_errorForm);
             this.panel_LogText.Controls.Add(this.btn_settingForm);
             this.panel_LogText.Controls.Add(this.lb_logText);
             this.panel_LogText.Controls.Add(this.elementHost1);
@@ -127,14 +129,26 @@ namespace MESdbToERPdb
             this.panel_LogText.Size = new System.Drawing.Size(811, 649);
             this.panel_LogText.TabIndex = 1;
             // 
+            // btn_errorForm
+            // 
+            this.btn_errorForm.BackColor = System.Drawing.Color.White;
+            this.btn_errorForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_errorForm.BackgroundImage")));
+            this.btn_errorForm.Location = new System.Drawing.Point(669, 19);
+            this.btn_errorForm.Name = "btn_errorForm";
+            this.btn_errorForm.Size = new System.Drawing.Size(59, 60);
+            this.btn_errorForm.TabIndex = 9;
+            this.btn_errorForm.UseVisualStyleBackColor = false;
+            this.btn_errorForm.Click += new System.EventHandler(this.btn_errorForm_Click);
+            // 
             // btn_settingForm
             // 
+            this.btn_settingForm.BackColor = System.Drawing.Color.White;
             this.btn_settingForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_settingForm.BackgroundImage")));
             this.btn_settingForm.Location = new System.Drawing.Point(734, 19);
             this.btn_settingForm.Name = "btn_settingForm";
             this.btn_settingForm.Size = new System.Drawing.Size(60, 60);
             this.btn_settingForm.TabIndex = 8;
-            this.btn_settingForm.UseVisualStyleBackColor = true;
+            this.btn_settingForm.UseVisualStyleBackColor = false;
             this.btn_settingForm.Click += new System.EventHandler(this.btn_settingForm_Click);
             // 
             // elementHost1
@@ -153,7 +167,7 @@ namespace MESdbToERPdb
             this.lb_progress_percentage.Font = new System.Drawing.Font("Century", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_progress_percentage.Location = new System.Drawing.Point(70, 584);
             this.lb_progress_percentage.Name = "lb_progress_percentage";
-            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 22);
+            this.lb_progress_percentage.Size = new System.Drawing.Size(0, 23);
             this.lb_progress_percentage.TabIndex = 6;
             // 
             // pic_title
@@ -189,6 +203,7 @@ namespace MESdbToERPdb
             this.Controls.Add(this.panel_LogText);
             this.Controls.Add(this.panel_Controller);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "mes2ERPMainWin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -222,6 +237,7 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private System.Windows.Forms.Button btn_settingForm;
         private RichTextBoxLog richTextBoxLog1;
+        private System.Windows.Forms.Button btn_errorForm;
     }
 }
 

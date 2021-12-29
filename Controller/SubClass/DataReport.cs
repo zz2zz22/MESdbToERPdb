@@ -9,20 +9,21 @@ using System.Windows;
 using ClosedXML.Excel;
 using System.IO;
 using System.Net.Mail;
+using System.Runtime.InteropServices;
 
 namespace MESdbToERPdb
 {
     public class DataReport
     {
         static DataReport s_drInstance = null;
-        
 
         Properties.Settings settings = new Properties.Settings();
         DataTable successReportTB = null;
         DataTable failReportTB = null;
+        DataTable errorReportTB = null;
+        
 
         #region CreateDatatable
-
         private DataReport()
         {
                 successReportTB = new DataTable();
@@ -53,13 +54,13 @@ namespace MESdbToERPdb
                 successReportTB.Columns.AddRange(new DataColumn[] { cl1, cl2, cl3, cl4, cl5, cl6 });
 
                 failReportTB = new DataTable();
-                DataColumn clf1 = new DataColumn();
-                clf1.ColumnName = "Loại phiếu"; // Loại phiếu
-                clf1.DataType = typeof(string);
+                //DataColumn clf1 = new DataColumn();
+                //clf1.ColumnName = "Loại phiếu"; // Loại phiếu
+                //clf1.DataType = typeof(string);
 
-                DataColumn clf2 = new DataColumn();
-                clf2.ColumnName = "Mã phiếu"; // Mã phiếu
-                clf2.DataType = typeof(string);
+                //DataColumn clf2 = new DataColumn();
+                //clf2.ColumnName = "Mã phiếu"; // Mã phiếu
+                //clf2.DataType = typeof(string);
 
                 DataColumn clf3 = new DataColumn();
                 clf3.ColumnName = "Mã SX"; // Mã ERP
@@ -77,8 +78,35 @@ namespace MESdbToERPdb
                 clf6.ColumnName = "Trạng thái chuyển đổi";
                 clf6.DataType = typeof(string);
 
-                failReportTB.Columns.AddRange(new DataColumn[] { clf1, clf2, clf3, clf4, clf5, clf6 });
-            
+                failReportTB.Columns.AddRange(new DataColumn[] {  clf3, clf4, clf5, clf6 });
+
+
+            errorReportTB = new DataTable();
+            //DataColumn cle1 = new DataColumn();
+            //cle1.ColumnName = "Loại phiếu"; // Loại phiếu
+            //cle1.DataType = typeof(string);
+
+            //DataColumn cle2 = new DataColumn();
+            //cle2.ColumnName = "Mã phiếu"; // Mã phiếu
+            //cle2.DataType = typeof(string);
+
+            DataColumn cle3 = new DataColumn();
+            cle3.ColumnName = "Mã SX"; // Mã ERP
+            cle3.DataType = typeof(string);
+
+            DataColumn cle4 = new DataColumn();
+            cle4.ColumnName = "Mã đơn chuyển"; // Mã số đơn chuyển trên MES   订单创建状态
+            cle4.DataType = typeof(string);
+
+            DataColumn cle5 = new DataColumn();
+            cle5.ColumnName = "Trạng thái xác nhận";
+            cle5.DataType = typeof(string);
+
+            DataColumn cle6 = new DataColumn();
+            cle6.ColumnName = "Trạng thái chuyển đổi";
+            cle6.DataType = typeof(string);
+
+            errorReportTB.Columns.AddRange(new DataColumn[] {  cle3, cle4, cle5, cle6 });        
         }
 
         public static void addReport(RP_TYPE rpType, string LP, string MP, string erpCode, string moveNo, string confirmStatus, string status)
@@ -89,21 +117,30 @@ namespace MESdbToERPdb
             }
             s_drInstance.writeReport(rpType, LP, MP, erpCode, moveNo, confirmStatus, status);
         }
+
         private void writeReport(RP_TYPE rpType, string LP, string MP, string erpCode, string moveNo, string confirmStatus, string status)
         {
             if ( rpType == RP_TYPE.Fail)
             {
-                failReportTB.Rows.Add(new object[] { LP, MP, erpCode, moveNo, confirmStatus, status });
+                failReportTB.Rows.Add(new object[] {erpCode, moveNo, confirmStatus, status });
             }
             else
             {
-                successReportTB.Rows.Add(new object[] { LP, MP, erpCode, moveNo, confirmStatus, status });
+                if (rpType == RP_TYPE.Success)
+                {
+                    successReportTB.Rows.Add(new object[] { LP, MP, erpCode, moveNo, confirmStatus, status });
+                }
+                else
+                {
+                    errorReportTB.Rows.Add(new object[] { erpCode, moveNo, confirmStatus, status });
+                }
             }
         }
         public enum RP_TYPE
         {
             Fail,
-            Success
+            Success,
+            Error
         };
         #endregion
         public static void SaveExcel(string excelFilePath, string fileName, string sender, string sender_pw)
@@ -125,9 +162,10 @@ namespace MESdbToERPdb
             
 
             XLWorkbook wb = new XLWorkbook();
-            wb.Worksheets.Add(successReportTB, "Success MO");
+            wb.Worksheets.Add(successReportTB, "Success MO"); 
             wb.Worksheets.Add(failReportTB, "Failed MO");
-            
+            wb.Worksheets.Add(errorReportTB, "Error MO");
+
             // check file path
             if (!string.IsNullOrEmpty(excelFilePath))
             {
@@ -149,6 +187,7 @@ namespace MESdbToERPdb
                 settings.excelFilePath = Path.Combine(path, fileName);
                 settings.Save();
             }
+            wb.Dispose();
         }
 
         public void SendReport(string sender, string sender_pw)
@@ -169,7 +208,7 @@ namespace MESdbToERPdb
             string[] receivers = settings.cfg_receivers.Split('-');
             for (int i = 0; i < receivers.Length; i ++)
             {
-                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Send mail to", receivers[i]);
+                //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Send mail to", receivers[i]);
                 SmtpClient SmtpServer = new SmtpClient(settings.smtp_server);
                 mail.From = new MailAddress(sender);
                 mail.To.Add(receivers[i]);
@@ -187,6 +226,7 @@ namespace MESdbToERPdb
 
                 SmtpServer.Send(mail);
             }
+            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Report sent successfully", "");
         }
     }
 }

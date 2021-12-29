@@ -71,13 +71,15 @@ namespace MESdbToERPdb.View
             lb_mainSettingWarning.Text = "Settings in \"bold\" style can ONLY be \nconfig before started or after stopped \nthe program!";
             lb_bgIntervalPicker.Text = "Data fetching interval:";
             lb_bgIntervalUnit.Text = "hour";
-            lb_produceCodeConfig.Text = "Produce code header:";
-            btn_saveProduceCodeConfig.Text = "SAVE";
-            lb_listProduceCodes.Text = "List of produce code headers:";
-            btn_addProduceCode.Text = "ADD";
-            btn_deleteProduceCode.Text = "DELETE";
+            lb_productionCodeConfig.Text = "Production code header:";
+            btn_saveProductionCodeConfig.Text = "SAVE";
+            lb_listProductionCodes.Text = "List of production code headers:";
+            btn_addProductionCode.Text = "ADD";
+            btn_deleteProductionCode.Text = "DELETE";
             btn_saveSender.Text = "SAVE";
             btn_editSender.Text = "EDIT";
+            lb_sendMailInterval.Text = "Send mail interval:";
+            lb_sendMailIntervalUnit.Text = "hour";
         }
         private void btn_languageVietnam_Click(object sender, EventArgs e)
         {
@@ -103,13 +105,15 @@ namespace MESdbToERPdb.View
             lb_mainSettingWarning.Text = "Những cài đặt \"in đậm\" CHỈ chỉnh sửa \nđược trước khi bắt đầu hoặc sau khi \ndừng chương trình!";
             lb_bgIntervalPicker.Text = "Khoảng lấy dữ liệu:";
             lb_bgIntervalUnit.Text = "giờ";
-            lb_produceCodeConfig.Text = "Đầu mã sản xuất:";
-            btn_saveProduceCodeConfig.Text = "LƯU";
-            lb_listProduceCodes.Text = "Danh sách các đầu mã:";
-            btn_addProduceCode.Text = "THÊM";
-            btn_deleteProduceCode.Text = "XÓA";
+            lb_productionCodeConfig.Text = "Đầu mã sản xuất:";
+            btn_saveProductionCodeConfig.Text = "LƯU";
+            lb_listProductionCodes.Text = "Danh sách các đầu mã:";
+            btn_addProductionCode.Text = "THÊM";
+            btn_deleteProductionCode.Text = "XÓA";
             btn_saveSender.Text = "LƯU";
             btn_editSender.Text = "SỬA";
+            lb_sendMailInterval.Text = "Khoảng thời gian gửi mail:";
+            lb_sendMailIntervalUnit.Text = "giờ";
         }
 
         private void Setting_Load(object sender, EventArgs e)
@@ -130,7 +134,9 @@ namespace MESdbToERPdb.View
             txb_password.Text = settings.cfg_senderPW;
             txb_email.Enabled = false;
             txb_password.Enabled = false;
+            
             LoadReceiverGrid();
+            LoadProductionCodes();
         }
         
         public void LoadReceiverGrid()
@@ -162,9 +168,42 @@ namespace MESdbToERPdb.View
                     this.dtgv_receivers.Rows.Add(receivers[i]);
                 }
             }
+            this.dtgv_receivers.Sort(this.dtgv_receivers.Columns["receiver"], ListSortDirection.Ascending);
+        }
+        public void LoadProductionCodes()
+        {
+            if (settings.cfg_produceCodes == "")
+            {
+                settings.cfg_produceCodes = null;
+            }
+            dtgv_productionCodeList.Rows.Clear();
+            dtgv_productionCodeList.Columns.Clear();
+            string[] productionCode;
+            if (settings.cfg_produceCodes != null)
+            {
+                productionCode = settings.cfg_produceCodes.Split('-');
+            }
+            else
+            {
+                productionCode = null;
+            }
+            dtgv_productionCodeList.RowHeadersVisible = false;
+            dtgv_productionCodeList.ColumnHeadersVisible = false;
+            dtgv_productionCodeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            dtgv_productionCodeList.Columns.Add("code", "productionCodes");
+            if (productionCode != null)
+            {
+                for (int i = 0; i < productionCode.Length; i++)
+                {
+                    this.dtgv_productionCodeList.Rows.Add(productionCode[i]);
+                }
+            }
+            this.dtgv_productionCodeList.Sort(this.dtgv_productionCodeList.Columns["code"], ListSortDirection.Ascending);
         }
         private void txb_searchReceivers_TextChanged(object sender, EventArgs e)
         {
+
             this.dtgv_receivers.Rows.Clear();
             this.dtgv_receivers.Columns.Clear();
             dtgv_receivers.RowHeadersVisible = false;
@@ -181,8 +220,8 @@ namespace MESdbToERPdb.View
             {
                 receivers = null;
             }
-            
-            for (int i = 0; i< receivers.Length; i++ )
+
+            for (int i = 0; i < receivers.Length; i++)
             {
                 if (receivers[i].Contains(txb_searchReceivers.Text))
                 {
@@ -194,7 +233,7 @@ namespace MESdbToERPdb.View
                     {
                         receiverSearch += "-" + receivers[i];
                     }
-                    
+
                 }
             }
             string[] receiverSearchList = receiverSearch.Split('-');
@@ -205,7 +244,12 @@ namespace MESdbToERPdb.View
                     this.dtgv_receivers.Rows.Add(receiverSearchList[j]);
                 }
             }
+            if (string.IsNullOrWhiteSpace(txb_searchReceivers.Text))
+            {
+                LoadReceiverGrid();
+            }
         }
+        
 
         private void btn_deleteEmail_Click(object sender, EventArgs e)
         {
@@ -364,6 +408,218 @@ namespace MESdbToERPdb.View
             settings.Save();
         }
 
-        
+        private void btn_addProductionCode_Click(object sender, EventArgs e)
+        {
+            txb_productionCodeConfig.Enabled = true;
+            btn_saveProductionCodeConfig.Enabled = true;
+            txb_productionCodeConfig.Clear();
+            txb_productionCodeConfig.Focus();
+        }
+
+        private void btn_saveProductionCodeConfig_Click(object sender, EventArgs e)
+        {
+            if (settings.cfg_produceCodes != null && settings.cfg_produceCodes.Contains(txb_productionCodeConfig.Text))
+            {
+                if (txb_productionCodeConfig.Text == "")
+                {
+                    if (settings.cfg_language == 1) { MessageBox.Show("Production code is empty! Please input a value before press save!"); }
+
+                    else { MessageBox.Show("Đầu mã sản xuất trống! Xin hãy nhập đầu mã sản xuất trước khi chọn lưu!"); }
+                }
+                else
+                {
+                    if (settings.cfg_language == 1) { MessageBox.Show("Production code '" + txb_productionCodeConfig.Text + "' have existed!"); }
+
+                    else { MessageBox.Show("Đầu mã '" + txb_productionCodeConfig.Text + "' đã tồn tại!"); }
+                }
+                txb_productionCodeConfig.Clear();
+                txb_productionCodeConfig.Enabled = false;
+                btn_saveProductionCodeConfig.Enabled = false;
+            }
+            else
+            {
+                DialogResult dialogResult;
+                if (settings.cfg_language == 1)
+                {
+                    dialogResult = MessageBox.Show("Do you want to add '" + txb_productionCodeConfig.Text + "' to list of receivers codes?", "Confirmation", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    dialogResult = MessageBox.Show("Thêm đầu mã '" + txb_productionCodeConfig.Text + "' vào danh sách?", "Xác nhận", MessageBoxButtons.OKCancel);
+                }
+                if (dialogResult == DialogResult.OK)
+                {
+                    if (txb_productionCodeConfig != null)
+                    {
+                        if (settings.cfg_produceCodes == null)
+                        {
+                            settings.cfg_produceCodes += txb_productionCodeConfig.Text;
+                            settings.Save();
+                        }
+                        else if (settings.cfg_produceCodes != null)
+                        {
+                            settings.cfg_produceCodes += "-" + txb_productionCodeConfig.Text;
+                            settings.Save();
+                        }
+                        LoadProductionCodes();
+                        txb_productionCodeConfig.Clear();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please in put a production code !");
+                    }
+                }
+                txb_productionCodeConfig.Enabled = false;
+                btn_saveProductionCodeConfig.Enabled = false;
+            }
+        }
+
+        private void btn_deleteProductionCode_Click(object sender, EventArgs e)
+        {
+            if (txb_productionCodeConfig.Text == "")
+            {
+                if (settings.cfg_language == 1)
+                    MessageBox.Show("Please select production code header need to delete !");
+                else
+                    MessageBox.Show("Xin hãy chọn đầu mã cần xóa !");
+            }
+            else
+            {
+                DialogResult dialogResult;
+                if (settings.cfg_language == 1)
+                {
+                    dialogResult = MessageBox.Show("Delete '" + txb_productionCodeConfig.Text + "' from production code headers list ?", "Delete confirmation", MessageBoxButtons.OKCancel);
+                }
+                else
+                {
+                    dialogResult = MessageBox.Show("Xóa đầu mã '" + txb_productionCodeConfig.Text + "' khỏi danh sách ?", "Xác nhận xóa", MessageBoxButtons.OKCancel);
+                }
+                if (dialogResult == DialogResult.OK)
+                {
+                    string remainProductionCode = settings.cfg_produceCodes;
+                    string[] productionCodes = settings.cfg_produceCodes.Split('-');
+                    if (productionCodes[0] == settings.selectedProduceCode)
+                    {
+                        if (remainProductionCode == settings.selectedProduceCode)
+                        {
+                            settings.cfg_produceCodes = remainProductionCode.Replace(settings.selectedProduceCode, null);
+                        }
+                        else
+                        {
+                            settings.cfg_produceCodes = remainProductionCode.Replace(settings.selectedProduceCode + "-", null);
+                        }
+                    }
+                    else
+                    {
+                        settings.cfg_produceCodes = remainProductionCode.Replace("-" + settings.selectedProduceCode, null);
+                    }
+                    MessageBox.Show("Xóa thành công " + settings.selectedProduceCode + " khỏi danh sách!");
+                    settings.Save();
+                    LoadProductionCodes();
+                }
+                txb_productionCodeConfig.Clear();
+                txb_productionCodeSearch.Clear();
+            }
+        }
+
+        private void dtgv_productionCodeList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_productionCodeList.Rows[e.RowIndex];
+
+                txb_productionCodeConfig.Text = row.Cells[0].Value.ToString();
+                settings.selectedProduceCode = txb_productionCodeConfig.Text;
+                settings.Save();
+            }
+        }
+
+        private void txb_productionCodeSearch_Enter(object sender, EventArgs e)
+        {
+            if (txb_productionCodeSearch.Text == "Search")
+            {
+                txb_productionCodeSearch.Text = "";
+                txb_productionCodeSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void txb_productionCodeSearch_Leave(object sender, EventArgs e)
+        {
+            if (txb_productionCodeSearch.Text == "")
+            {
+                txb_productionCodeSearch.Text = "Search";
+                txb_productionCodeSearch.ForeColor = Color.DimGray;
+            }
+            LoadProductionCodes();
+        }
+
+        private void txb_searchReceivers_Enter(object sender, EventArgs e)
+        {
+            if (txb_searchReceivers.Text == "Search")
+            {
+                txb_searchReceivers.Text = "";
+                txb_searchReceivers.ForeColor = Color.Black;
+            }
+        }
+
+        private void txb_searchReceivers_Leave(object sender, EventArgs e)
+        {
+            if (txb_searchReceivers.Text == "")
+            {
+                txb_searchReceivers.Text = "Search";
+                txb_searchReceivers.ForeColor = Color.DimGray;
+            }
+            LoadReceiverGrid();
+        }
+
+        private void txb_productionCodeSearch_TextChanged(object sender, EventArgs e)
+        {
+
+            this.dtgv_productionCodeList.Rows.Clear();
+            this.dtgv_productionCodeList.Columns.Clear();
+            dtgv_productionCodeList.RowHeadersVisible = false;
+            dtgv_productionCodeList.ColumnHeadersVisible = false;
+            dtgv_productionCodeList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dtgv_productionCodeList.Columns.Add("code", "productionCodes");
+            string codeSearch = "";
+            string[] codes;
+            if (settings.cfg_produceCodes != null)
+            {
+                codes = settings.cfg_produceCodes.Split('-');
+            }
+            else
+            {
+                codes = null;
+            }
+
+            for (int i = 0; i < codes.Length; i++)
+            {
+                if (codes[i].Contains(txb_productionCodeSearch.Text))
+                {
+                    if (codeSearch == "")
+                    {
+                        codeSearch += codes[i];
+                    }
+                    else
+                    {
+                        codeSearch += "-" + codes[i];
+                    }
+
+                }
+            }
+            string[] codeSearchList = codeSearch.Split('-');
+            if (codeSearchList != null)
+            {
+                for (int j = 0; j < codeSearchList.Length; j++)
+                {
+                    this.dtgv_productionCodeList.Rows.Add(codeSearchList[j]);
+                }
+            }
+            if (string.IsNullOrWhiteSpace(txb_productionCodeSearch.Text))
+            {
+                LoadProductionCodes();
+            }
+        }
     }
 }

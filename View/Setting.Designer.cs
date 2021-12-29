@@ -32,7 +32,6 @@ namespace MESdbToERPdb.View
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Setting));
             this.pn_general = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txb_excelFilePath = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lb_sendMailIntervalUnit = new System.Windows.Forms.Label();
             this.nud_sendMailIntervalPicker = new System.Windows.Forms.NumericUpDown();
@@ -40,16 +39,15 @@ namespace MESdbToERPdb.View
             this.lb_sendMailInterval = new System.Windows.Forms.Label();
             this.nud_bgIntervalPicker = new System.Windows.Forms.NumericUpDown();
             this.lb_bgIntervalUnit = new System.Windows.Forms.Label();
-            this.lb_excelFilePath = new System.Windows.Forms.Label();
             this.pn_mainSetting = new System.Windows.Forms.Panel();
-            this.txb_produceCodeSearch = new System.Windows.Forms.TextBox();
-            this.btn_deleteProduceCode = new System.Windows.Forms.Button();
-            this.btn_addProduceCode = new System.Windows.Forms.Button();
-            this.dtgv_produceCodeList = new System.Windows.Forms.DataGridView();
-            this.lb_listProduceCodes = new System.Windows.Forms.Label();
-            this.btn_saveProduceCodeConfig = new System.Windows.Forms.Button();
-            this.lb_produceCodeConfig = new System.Windows.Forms.Label();
-            this.txb_produceCodeConfig = new System.Windows.Forms.TextBox();
+            this.txb_productionCodeSearch = new System.Windows.Forms.TextBox();
+            this.btn_deleteProductionCode = new System.Windows.Forms.Button();
+            this.btn_addProductionCode = new System.Windows.Forms.Button();
+            this.dtgv_productionCodeList = new System.Windows.Forms.DataGridView();
+            this.lb_listProductionCodes = new System.Windows.Forms.Label();
+            this.btn_saveProductionCodeConfig = new System.Windows.Forms.Button();
+            this.lb_productionCodeConfig = new System.Windows.Forms.Label();
+            this.txb_productionCodeConfig = new System.Windows.Forms.TextBox();
             this.lb_mainSettingWarning = new System.Windows.Forms.Label();
             this.pn_mailSetting = new System.Windows.Forms.Panel();
             this.btn_saveSender = new System.Windows.Forms.Button();
@@ -79,7 +77,7 @@ namespace MESdbToERPdb.View
             ((System.ComponentModel.ISupportInitialize)(this.nud_sendMailIntervalPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_bgIntervalPicker)).BeginInit();
             this.pn_mainSetting.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_produceCodeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_productionCodeList)).BeginInit();
             this.pn_mailSetting.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_receivers)).BeginInit();
             this.panel1.SuspendLayout();
@@ -89,9 +87,7 @@ namespace MESdbToERPdb.View
             // 
             this.pn_general.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pn_general.Controls.Add(this.pictureBox1);
-            this.pn_general.Controls.Add(this.txb_excelFilePath);
             this.pn_general.Controls.Add(this.panel3);
-            this.pn_general.Controls.Add(this.lb_excelFilePath);
             this.pn_general.Controls.Add(this.pn_mainSetting);
             this.pn_general.Controls.Add(this.lb_mainSettingWarning);
             this.pn_general.Location = new System.Drawing.Point(12, 12);
@@ -110,13 +106,6 @@ namespace MESdbToERPdb.View
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
             // 
-            // txb_excelFilePath
-            // 
-            this.txb_excelFilePath.Location = new System.Drawing.Point(9, 521);
-            this.txb_excelFilePath.Name = "txb_excelFilePath";
-            this.txb_excelFilePath.Size = new System.Drawing.Size(566, 22);
-            this.txb_excelFilePath.TabIndex = 4;
-            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -128,14 +117,14 @@ namespace MESdbToERPdb.View
             this.panel3.Controls.Add(this.lb_bgIntervalUnit);
             this.panel3.Location = new System.Drawing.Point(3, 170);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(374, 311);
+            this.panel3.Size = new System.Drawing.Size(374, 395);
             this.panel3.TabIndex = 10;
             // 
             // lb_sendMailIntervalUnit
             // 
             this.lb_sendMailIntervalUnit.AutoSize = true;
             this.lb_sendMailIntervalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sendMailIntervalUnit.Location = new System.Drawing.Point(135, 174);
+            this.lb_sendMailIntervalUnit.Location = new System.Drawing.Point(135, 136);
             this.lb_sendMailIntervalUnit.Name = "lb_sendMailIntervalUnit";
             this.lb_sendMailIntervalUnit.Size = new System.Drawing.Size(46, 20);
             this.lb_sendMailIntervalUnit.TabIndex = 2;
@@ -144,7 +133,7 @@ namespace MESdbToERPdb.View
             // nud_sendMailIntervalPicker
             // 
             this.nud_sendMailIntervalPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_sendMailIntervalPicker.Location = new System.Drawing.Point(10, 169);
+            this.nud_sendMailIntervalPicker.Location = new System.Drawing.Point(10, 131);
             this.nud_sendMailIntervalPicker.Minimum = new decimal(new int[] {
             1,
             0,
@@ -175,7 +164,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_sendMailInterval.AutoSize = true;
             this.lb_sendMailInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sendMailInterval.Location = new System.Drawing.Point(6, 146);
+            this.lb_sendMailInterval.Location = new System.Drawing.Point(6, 108);
             this.lb_sendMailInterval.Name = "lb_sendMailInterval";
             this.lb_sendMailInterval.Size = new System.Drawing.Size(166, 20);
             this.lb_sendMailInterval.TabIndex = 0;
@@ -211,108 +200,113 @@ namespace MESdbToERPdb.View
             this.lb_bgIntervalUnit.TabIndex = 3;
             this.lb_bgIntervalUnit.Text = "hour";
             // 
-            // lb_excelFilePath
-            // 
-            this.lb_excelFilePath.AutoSize = true;
-            this.lb_excelFilePath.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_excelFilePath.Location = new System.Drawing.Point(10, 498);
-            this.lb_excelFilePath.Name = "lb_excelFilePath";
-            this.lb_excelFilePath.Size = new System.Drawing.Size(247, 20);
-            this.lb_excelFilePath.TabIndex = 3;
-            this.lb_excelFilePath.Text = "Excel report export location:";
-            // 
             // pn_mainSetting
             // 
             this.pn_mainSetting.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pn_mainSetting.Controls.Add(this.txb_produceCodeSearch);
-            this.pn_mainSetting.Controls.Add(this.btn_deleteProduceCode);
-            this.pn_mainSetting.Controls.Add(this.btn_addProduceCode);
-            this.pn_mainSetting.Controls.Add(this.dtgv_produceCodeList);
-            this.pn_mainSetting.Controls.Add(this.lb_listProduceCodes);
-            this.pn_mainSetting.Controls.Add(this.btn_saveProduceCodeConfig);
-            this.pn_mainSetting.Controls.Add(this.lb_produceCodeConfig);
-            this.pn_mainSetting.Controls.Add(this.txb_produceCodeConfig);
+            this.pn_mainSetting.Controls.Add(this.txb_productionCodeSearch);
+            this.pn_mainSetting.Controls.Add(this.btn_deleteProductionCode);
+            this.pn_mainSetting.Controls.Add(this.btn_addProductionCode);
+            this.pn_mainSetting.Controls.Add(this.dtgv_productionCodeList);
+            this.pn_mainSetting.Controls.Add(this.lb_listProductionCodes);
+            this.pn_mainSetting.Controls.Add(this.btn_saveProductionCodeConfig);
+            this.pn_mainSetting.Controls.Add(this.lb_productionCodeConfig);
+            this.pn_mainSetting.Controls.Add(this.txb_productionCodeConfig);
             this.pn_mainSetting.Location = new System.Drawing.Point(383, 3);
             this.pn_mainSetting.Name = "pn_mainSetting";
-            this.pn_mainSetting.Size = new System.Drawing.Size(400, 478);
+            this.pn_mainSetting.Size = new System.Drawing.Size(400, 562);
             this.pn_mainSetting.TabIndex = 9;
             // 
-            // txb_produceCodeSearch
+            // txb_productionCodeSearch
             // 
-            this.txb_produceCodeSearch.Location = new System.Drawing.Point(4, 129);
-            this.txb_produceCodeSearch.Name = "txb_produceCodeSearch";
-            this.txb_produceCodeSearch.Size = new System.Drawing.Size(249, 22);
-            this.txb_produceCodeSearch.TabIndex = 11;
+            this.txb_productionCodeSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_productionCodeSearch.ForeColor = System.Drawing.Color.DimGray;
+            this.txb_productionCodeSearch.Location = new System.Drawing.Point(4, 126);
+            this.txb_productionCodeSearch.Name = "txb_productionCodeSearch";
+            this.txb_productionCodeSearch.Size = new System.Drawing.Size(249, 27);
+            this.txb_productionCodeSearch.TabIndex = 11;
+            this.txb_productionCodeSearch.Text = "Search";
+            this.txb_productionCodeSearch.TextChanged += new System.EventHandler(this.txb_productionCodeSearch_TextChanged);
+            this.txb_productionCodeSearch.Enter += new System.EventHandler(this.txb_productionCodeSearch_Enter);
+            this.txb_productionCodeSearch.Leave += new System.EventHandler(this.txb_productionCodeSearch_Leave);
             // 
-            // btn_deleteProduceCode
+            // btn_deleteProductionCode
             // 
-            this.btn_deleteProduceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_deleteProduceCode.Location = new System.Drawing.Point(267, 217);
-            this.btn_deleteProduceCode.Name = "btn_deleteProduceCode";
-            this.btn_deleteProduceCode.Size = new System.Drawing.Size(125, 54);
-            this.btn_deleteProduceCode.TabIndex = 10;
-            this.btn_deleteProduceCode.Text = "DELETE";
-            this.btn_deleteProduceCode.UseVisualStyleBackColor = true;
+            this.btn_deleteProductionCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deleteProductionCode.Location = new System.Drawing.Point(267, 217);
+            this.btn_deleteProductionCode.Name = "btn_deleteProductionCode";
+            this.btn_deleteProductionCode.Size = new System.Drawing.Size(125, 54);
+            this.btn_deleteProductionCode.TabIndex = 10;
+            this.btn_deleteProductionCode.Text = "DELETE";
+            this.btn_deleteProductionCode.UseVisualStyleBackColor = true;
+            this.btn_deleteProductionCode.Click += new System.EventHandler(this.btn_deleteProductionCode_Click);
             // 
-            // btn_addProduceCode
+            // btn_addProductionCode
             // 
-            this.btn_addProduceCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_addProduceCode.Location = new System.Drawing.Point(268, 157);
-            this.btn_addProduceCode.Name = "btn_addProduceCode";
-            this.btn_addProduceCode.Size = new System.Drawing.Size(124, 54);
-            this.btn_addProduceCode.TabIndex = 9;
-            this.btn_addProduceCode.Text = "ADD";
-            this.btn_addProduceCode.UseVisualStyleBackColor = true;
+            this.btn_addProductionCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_addProductionCode.Location = new System.Drawing.Point(268, 157);
+            this.btn_addProductionCode.Name = "btn_addProductionCode";
+            this.btn_addProductionCode.Size = new System.Drawing.Size(124, 54);
+            this.btn_addProductionCode.TabIndex = 9;
+            this.btn_addProductionCode.Text = "ADD";
+            this.btn_addProductionCode.UseVisualStyleBackColor = true;
+            this.btn_addProductionCode.Click += new System.EventHandler(this.btn_addProductionCode_Click);
             // 
-            // dtgv_produceCodeList
+            // dtgv_productionCodeList
             // 
-            this.dtgv_produceCodeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_produceCodeList.Location = new System.Drawing.Point(3, 157);
-            this.dtgv_produceCodeList.Name = "dtgv_produceCodeList";
-            this.dtgv_produceCodeList.RowHeadersWidth = 51;
-            this.dtgv_produceCodeList.RowTemplate.Height = 24;
-            this.dtgv_produceCodeList.Size = new System.Drawing.Size(250, 316);
-            this.dtgv_produceCodeList.TabIndex = 8;
+            this.dtgv_productionCodeList.AllowUserToAddRows = false;
+            this.dtgv_productionCodeList.AllowUserToDeleteRows = false;
+            this.dtgv_productionCodeList.AllowUserToResizeColumns = false;
+            this.dtgv_productionCodeList.AllowUserToResizeRows = false;
+            this.dtgv_productionCodeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_productionCodeList.Location = new System.Drawing.Point(3, 157);
+            this.dtgv_productionCodeList.Name = "dtgv_productionCodeList";
+            this.dtgv_productionCodeList.ReadOnly = true;
+            this.dtgv_productionCodeList.RowHeadersWidth = 51;
+            this.dtgv_productionCodeList.RowTemplate.Height = 24;
+            this.dtgv_productionCodeList.Size = new System.Drawing.Size(250, 398);
+            this.dtgv_productionCodeList.TabIndex = 8;
+            this.dtgv_productionCodeList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_productionCodeList_CellClick);
             // 
-            // lb_listProduceCodes
+            // lb_listProductionCodes
             // 
-            this.lb_listProduceCodes.AutoSize = true;
-            this.lb_listProduceCodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_listProduceCodes.Location = new System.Drawing.Point(-1, 103);
-            this.lb_listProduceCodes.Name = "lb_listProduceCodes";
-            this.lb_listProduceCodes.Size = new System.Drawing.Size(261, 20);
-            this.lb_listProduceCodes.TabIndex = 7;
-            this.lb_listProduceCodes.Text = "List of produce code headers:";
+            this.lb_listProductionCodes.AutoSize = true;
+            this.lb_listProductionCodes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_listProductionCodes.Location = new System.Drawing.Point(-1, 103);
+            this.lb_listProductionCodes.Name = "lb_listProductionCodes";
+            this.lb_listProductionCodes.Size = new System.Drawing.Size(282, 20);
+            this.lb_listProductionCodes.TabIndex = 7;
+            this.lb_listProductionCodes.Text = "List of production code headers:";
             // 
-            // btn_saveProduceCodeConfig
+            // btn_saveProductionCodeConfig
             // 
-            this.btn_saveProduceCodeConfig.BackColor = System.Drawing.Color.OldLace;
-            this.btn_saveProduceCodeConfig.Enabled = false;
-            this.btn_saveProduceCodeConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_saveProduceCodeConfig.Location = new System.Drawing.Point(267, 28);
-            this.btn_saveProduceCodeConfig.Name = "btn_saveProduceCodeConfig";
-            this.btn_saveProduceCodeConfig.Size = new System.Drawing.Size(125, 50);
-            this.btn_saveProduceCodeConfig.TabIndex = 6;
-            this.btn_saveProduceCodeConfig.Text = "SAVE";
-            this.btn_saveProduceCodeConfig.UseVisualStyleBackColor = false;
+            this.btn_saveProductionCodeConfig.BackColor = System.Drawing.Color.OldLace;
+            this.btn_saveProductionCodeConfig.Enabled = false;
+            this.btn_saveProductionCodeConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_saveProductionCodeConfig.Location = new System.Drawing.Point(267, 28);
+            this.btn_saveProductionCodeConfig.Name = "btn_saveProductionCodeConfig";
+            this.btn_saveProductionCodeConfig.Size = new System.Drawing.Size(125, 50);
+            this.btn_saveProductionCodeConfig.TabIndex = 6;
+            this.btn_saveProductionCodeConfig.Text = "SAVE";
+            this.btn_saveProductionCodeConfig.UseVisualStyleBackColor = false;
+            this.btn_saveProductionCodeConfig.Click += new System.EventHandler(this.btn_saveProductionCodeConfig_Click);
             // 
-            // lb_produceCodeConfig
+            // lb_productionCodeConfig
             // 
-            this.lb_produceCodeConfig.AutoSize = true;
-            this.lb_produceCodeConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_produceCodeConfig.Location = new System.Drawing.Point(3, 28);
-            this.lb_produceCodeConfig.Name = "lb_produceCodeConfig";
-            this.lb_produceCodeConfig.Size = new System.Drawing.Size(193, 20);
-            this.lb_produceCodeConfig.TabIndex = 4;
-            this.lb_produceCodeConfig.Text = "Produce code header:";
+            this.lb_productionCodeConfig.AutoSize = true;
+            this.lb_productionCodeConfig.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_productionCodeConfig.Location = new System.Drawing.Point(3, 28);
+            this.lb_productionCodeConfig.Name = "lb_productionCodeConfig";
+            this.lb_productionCodeConfig.Size = new System.Drawing.Size(214, 20);
+            this.lb_productionCodeConfig.TabIndex = 4;
+            this.lb_productionCodeConfig.Text = "Production code header:";
             // 
-            // txb_produceCodeConfig
+            // txb_productionCodeConfig
             // 
-            this.txb_produceCodeConfig.Enabled = false;
-            this.txb_produceCodeConfig.Location = new System.Drawing.Point(3, 51);
-            this.txb_produceCodeConfig.Name = "txb_produceCodeConfig";
-            this.txb_produceCodeConfig.Size = new System.Drawing.Size(254, 22);
-            this.txb_produceCodeConfig.TabIndex = 5;
+            this.txb_productionCodeConfig.Enabled = false;
+            this.txb_productionCodeConfig.Location = new System.Drawing.Point(3, 51);
+            this.txb_productionCodeConfig.Name = "txb_productionCodeConfig";
+            this.txb_productionCodeConfig.Size = new System.Drawing.Size(254, 22);
+            this.txb_productionCodeConfig.TabIndex = 5;
             // 
             // lb_mainSettingWarning
             // 
@@ -364,11 +358,16 @@ namespace MESdbToERPdb.View
             // 
             // txb_searchReceivers
             // 
-            this.txb_searchReceivers.Location = new System.Drawing.Point(6, 252);
+            this.txb_searchReceivers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txb_searchReceivers.ForeColor = System.Drawing.Color.DimGray;
+            this.txb_searchReceivers.Location = new System.Drawing.Point(6, 249);
             this.txb_searchReceivers.Name = "txb_searchReceivers";
-            this.txb_searchReceivers.Size = new System.Drawing.Size(308, 22);
+            this.txb_searchReceivers.Size = new System.Drawing.Size(308, 27);
             this.txb_searchReceivers.TabIndex = 15;
+            this.txb_searchReceivers.Text = "Search";
             this.txb_searchReceivers.TextChanged += new System.EventHandler(this.txb_searchReceivers_TextChanged);
+            this.txb_searchReceivers.Enter += new System.EventHandler(this.txb_searchReceivers_Enter);
+            this.txb_searchReceivers.Leave += new System.EventHandler(this.txb_searchReceivers_Leave);
             // 
             // btn_deleteAllReceiver
             // 
@@ -478,6 +477,7 @@ namespace MESdbToERPdb.View
             // 
             this.txb_password.Location = new System.Drawing.Point(90, 81);
             this.txb_password.Name = "txb_password";
+            this.txb_password.PasswordChar = '*';
             this.txb_password.Size = new System.Drawing.Size(246, 22);
             this.txb_password.TabIndex = 4;
             // 
@@ -582,6 +582,7 @@ namespace MESdbToERPdb.View
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pn_mailSetting);
             this.Controls.Add(this.pn_general);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Setting";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Setting";
@@ -595,7 +596,7 @@ namespace MESdbToERPdb.View
             ((System.ComponentModel.ISupportInitialize)(this.nud_bgIntervalPicker)).EndInit();
             this.pn_mainSetting.ResumeLayout(false);
             this.pn_mainSetting.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_produceCodeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_productionCodeList)).EndInit();
             this.pn_mailSetting.ResumeLayout(false);
             this.pn_mailSetting.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_receivers)).EndInit();
@@ -634,20 +635,18 @@ namespace MESdbToERPdb.View
         private System.Windows.Forms.NumericUpDown nud_bgIntervalPicker;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel pn_mainSetting;
-        private System.Windows.Forms.Button btn_deleteProduceCode;
-        private System.Windows.Forms.Button btn_addProduceCode;
-        private System.Windows.Forms.DataGridView dtgv_produceCodeList;
-        private System.Windows.Forms.Label lb_listProduceCodes;
-        private System.Windows.Forms.Button btn_saveProduceCodeConfig;
-        private System.Windows.Forms.Label lb_produceCodeConfig;
-        private System.Windows.Forms.TextBox txb_produceCodeConfig;
+        private System.Windows.Forms.Button btn_deleteProductionCode;
+        private System.Windows.Forms.Button btn_addProductionCode;
+        private System.Windows.Forms.DataGridView dtgv_productionCodeList;
+        private System.Windows.Forms.Label lb_listProductionCodes;
+        private System.Windows.Forms.Button btn_saveProductionCodeConfig;
+        private System.Windows.Forms.Label lb_productionCodeConfig;
+        private System.Windows.Forms.TextBox txb_productionCodeConfig;
         private System.Windows.Forms.Label lb_sendMailIntervalUnit;
         private System.Windows.Forms.NumericUpDown nud_sendMailIntervalPicker;
         private System.Windows.Forms.Label lb_sendMailInterval;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txb_excelFilePath;
-        private System.Windows.Forms.Label lb_excelFilePath;
-        private System.Windows.Forms.TextBox txb_produceCodeSearch;
+        private System.Windows.Forms.TextBox txb_productionCodeSearch;
         private System.Windows.Forms.TextBox txb_searchReceivers;
         private System.Windows.Forms.Button btn_saveSender;
     }

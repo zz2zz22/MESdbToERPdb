@@ -9,7 +9,7 @@
       <Value Profile="(Default)">1</Value>
     </Setting>
     <Setting Name="cfg_senders" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">tlms@techlink.vn</Value>
     </Setting>
     <Setting Name="cfg_receivers" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -26,9 +26,6 @@
     <Setting Name="cfg_language" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
-    <Setting Name="isStarted" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
     <Setting Name="intervalMail" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
     </Setting>
@@ -36,7 +33,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="cfg_produceCodes" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">A511-B511-P511-P512-J511</Value>
     </Setting>
     <Setting Name="excelFileName" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -45,7 +42,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="cfg_senderPW" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">techlink@123</Value>
     </Setting>
     <Setting Name="intervalCounter" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>

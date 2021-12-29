@@ -49,7 +49,7 @@ namespace MESdbToERPdb.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("tlms@techlink.vn")]
         public string cfg_senders {
             get {
                 return ((string)(this["cfg_senders"]));
@@ -121,18 +121,6 @@ namespace MESdbToERPdb.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("False")]
-        public bool isStarted {
-            get {
-                return ((bool)(this["isStarted"]));
-            }
-            set {
-                this["isStarted"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("1")]
         public int intervalMail {
             get {
@@ -157,7 +145,7 @@ namespace MESdbToERPdb.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("A511-B511-P511-P512-J511")]
         public string cfg_produceCodes {
             get {
                 return ((string)(this["cfg_produceCodes"]));
@@ -193,7 +181,7 @@ namespace MESdbToERPdb.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("techlink@123")]
         public string cfg_senderPW {
             get {
                 return ((string)(this["cfg_senderPW"]));

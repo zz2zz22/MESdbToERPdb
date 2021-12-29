@@ -1,0 +1,433 @@
+09:13:21.791 MESdbToERPdb 1.0.0 : Started 
+11:25:10.112 MESdbToERPdb 1.0.0 : Started 
+11:36:52.709 MESdbToERPdb 1.0.0 : Started 
+11:39:27.804 MESdbToERPdb 1.0.0 : Started 
+11:40:21.612 MESdbToERPdb 1.0.0 : Started 
+11:40:54.192 MESdbToERPdb 1.0.0 : Started 
+11:41:56.928 MESdbToERPdb 1.0.0 : Started 
+11:41:57.968 Starting...! : 
+11:41:59.549 Đơn chuyển : MV20211103080010837(5EKWHRF4MZ41).
+11:41:59.652 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:00.022 Đơn chuyển : MV20211103084124518(5EKX0NQX8PS1).
+11:42:01.829 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1739 : 600 (Code : A511-21020212)
+11:42:01.831 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:02.200 Đơn chuyển : MV20211103084145663(5EKX0R8TCKW1).
+11:42:03.736 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 2566 : 400 (Code : A511-21070044)
+11:42:03.736 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:04.119 Đơn chuyển : MV20211103084518388(5EKX2GVX9341).
+11:42:05.558 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 12668 : 768 (Code : A511-21100197)
+11:42:05.558 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:05.923 Đơn chuyển : MV20211103090103958(5EKXS4MYR1C1).
+11:42:07.249 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:42:07.249 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:07.647 Đơn chuyển : MV20211103090226651(5EKXSOXG4A81).
+11:42:09.355 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:42:09.355 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:09.978 Đơn chuyển : MV20211103090321852(5EKXT4O8ZWG1).
+11:42:11.727 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:42:11.727 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:12.141 Đơn chuyển : MV20211103090409658(5EKXTJ70VC01).
+11:42:13.546 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:42:13.546 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:14.021 Đơn chuyển : MV20211103092920449(5EKY52FMIOG1).
+11:42:14.094 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:14.580 Đơn chuyển : MV20211103093025215(5EKY5JRDIB41).
+11:42:14.648 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:15.013 Đơn chuyển : MV20211103093120618(5EKY5ZJDOKG1).
+11:42:15.081 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:15.559 Đơn chuyển : MV20211103093218615(5EKY6FQTU9C1).
+11:42:15.627 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:15.977 Đơn chuyển : MV20211103093353901(5EKY724ABPS1).
+11:42:16.047 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:16.399 Đơn chuyển : MV20211103093505860(5EKY7R90EV41).
+11:42:16.475 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:16.829 Đơn chuyển : MV20211103094136912(5EKYANM4R9C1).
+11:42:18.248 Generated Form : : D201-21120117
+11:42:18.248 Code : : J511-21060012
+11:42:18.493 Updated code:  : J51121060012
+11:42:18.843 Đơn chuyển : MV20211103094357433(5EKYBO3226O1).
+11:42:20.085 Generated Form : : D201-21120118
+11:42:20.085 Code : : J511-21060012
+11:42:20.270 Updated code:  : J51121060012
+11:42:20.622 Đơn chuyển : MV20211103094629248(5EKYCX1DG5C1).
+11:42:21.869 Generated Form : : D201-21120118
+11:42:21.869 Code : : J511-21030028
+11:42:22.073 Updated code:  : J51121030028
+11:42:22.665 Đơn chuyển : MV20211103095347486(5EKYG7TKS0W1).
+11:42:24.722 Generated Form : : D201-21120119
+11:42:24.722 Code : : J511-21030028
+11:42:24.902 Updated code:  : J51121030028
+11:42:25.328 Đơn chuyển : MV20211103095952653(5EKYIZWL2HC1).
+11:42:25.402 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:25.787 Đơn chuyển : MV20211103100052690(5EKZ1TZ5AG01).
+11:42:25.855 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:26.208 Đơn chuyển : MV20211103100229608(5EKZ2N8GYGW1).
+11:42:26.346 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:26.732 Đơn chuyển : MV20211103100800472(5EKZ59N8XA81).
+11:42:26.798 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:27.144 Đơn chuyển : MV20211103101348137(5EKZ7S7WJGW1).
+11:42:27.210 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:27.564 Đơn chuyển : MV20211103101438849(5EKZ877Z9QO1).
+11:42:27.629 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:27.978 Đơn chuyển : MV20211103101559853(5EKZ8R8EMKW1).
+11:42:28.045 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:28.394 Đơn chuyển : MV20211103101702837(5EKZ9EVP26O1).
+11:42:28.458 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:28.809 Đơn chuyển : MV20211103102408300(5EKZCNJU9J41).
+11:42:28.874 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:29.229 Đơn chuyển : MV20211103102902087(5EKZEX7PYEO1).
+11:42:29.292 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:29.647 Đơn chuyển : MV20211103102924126(5EKZF0UXOF41).
+11:42:29.711 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:30.061 Đơn chuyển : MV20211103102954561(5EKZF5W4YDS1).
+11:42:30.125 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:30.474 Đơn chuyển : MV20211103103016524(5EKZFG51RY81).
+11:42:30.539 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:30.884 Đơn chuyển : MV20211103103037802(5EKZFJNQE1S1).
+11:42:30.949 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:42:31.295 Đơn chuyển : MV20211103111623897(5EL0IZN4J2O1).
+11:42:32.533 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 19288 : 14000 (Code : P511-21060003)
+11:42:32.533 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:32.883 Đơn chuyển : MV20211103111746887(5EL0JJZDJZK1).
+11:42:34.245 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 516720 : 300000 (Code : P511-21050021)
+11:42:34.245 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:34.787 Đơn chuyển : MV20211103111849548(5EL0K0YLDC01).
+11:42:36.374 Generated Form : : D101-21120005
+11:42:36.374 Code : : P511-21060054
+11:42:36.514 Updated code:  : P51121060054
+11:42:36.976 Đơn chuyển : MV20211103111958800(5EL0KJ11V5S1).
+11:42:39.083 Generated Form : : D101-21120006
+11:42:39.083 Code : : P511-21060043
+11:42:39.190 Updated code:  : P51121060043
+11:42:39.816 Đơn chuyển : MV20211103112129166(5EL0LB7D7MO1).
+11:42:41.668 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 980340 : 900000 (Code : J511-21030011)
+11:42:41.668 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:42.101 Đơn chuyển : MV20211103112227377(5EL0LRG38K01).
+11:42:43.730 Generated Form : : D101-21120007
+11:42:43.730 Code : : P511-21060058
+11:42:43.832 Updated code:  : P51121060058
+11:42:44.405 Đơn chuyển : MV20211103112554498(5EL0N9JOMCG1).
+11:42:46.236 Generated Form : : D101-21120008
+11:42:46.236 Code : : P511-21100006
+11:42:46.343 Updated code:  : P51121100006
+11:42:46.844 Đơn chuyển : MV20211103112919587(5EL0OXXBV3K1).
+11:42:48.616 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 5490 : 1000 (Code : A511-21100286)
+11:42:48.616 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:49.036 Đơn chuyển : MV20211103112944238(5EL0P203FFK1).
+11:42:50.423 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 770 : 550 (Code : A511-21110019)
+11:42:50.423 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:50.790 Đơn chuyển : MV20211103113044564(5EL0PILERSW1).
+11:42:52.105 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 152376 : 96000 (Code : J511-21030020)
+11:42:52.105 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:52.460 Đơn chuyển : MV20211103113117458(5EL0PUNEHI81).
+11:42:53.969 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1424 : 324 (Code : A511-21070029)
+11:42:53.969 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:54.473 Đơn chuyển : MV20211103113235108(5EL0QE3UYPS1).
+11:42:55.935 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1176 : 168 (Code : A511-21100210)
+11:42:55.935 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:56.344 Đơn chuyển : MV20211103113502468(5EL0RMBNHOG1).
+11:42:57.797 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 207548 : 192000 (Code : J511-20120022)
+11:42:57.797 Không cập nhật phiếu do phiếu không được tạo! : 
+11:42:58.986 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211229-114157.xlsx
+11:42:59.537 Report sent successfully : 
+11:49:26.704 MESdbToERPdb 1.0.0 : Started 
+11:49:28.157 Starting...! : 
+11:49:29.423 Đơn chuyển : MV20211103080010837(5EKWHRF4MZ41).
+11:49:29.533 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:49:29.972 Đơn chuyển : MV20211103084124518(5EKX0NQX8PS1).
+11:49:31.436 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1739 : 600 (Code : A511-21020212)
+11:49:31.437 Không cập nhật phiếu do phiếu không được tạo! : 
+11:49:31.813 Đơn chuyển : MV20211103084145663(5EKX0R8TCKW1).
+11:49:33.086 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 2566 : 400 (Code : A511-21070044)
+11:49:33.086 Không cập nhật phiếu do phiếu không được tạo! : 
+11:49:33.457 Đơn chuyển : MV20211103084518388(5EKX2GVX9341).
+11:49:34.722 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 12668 : 768 (Code : A511-21100197)
+11:49:34.722 Không cập nhật phiếu do phiếu không được tạo! : 
+11:49:35.091 Đơn chuyển : MV20211103090103958(5EKXS4MYR1C1).
+11:49:36.359 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:49:36.359 Không cập nhật phiếu do phiếu không được tạo! : 
+11:49:36.732 Đơn chuyển : MV20211103090226651(5EKXSOXG4A81).
+11:49:38.035 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:49:38.035 Không cập nhật phiếu do phiếu không được tạo! : 
+11:49:38.677 Đơn chuyển : MV20211103090321852(5EKXT4O8ZWG1).
+11:49:40.284 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:49:40.284 Không cập nhật phiếu do phiếu không được tạo! : 
+11:49:40.731 Đơn chuyển : MV20211103090409658(5EKXTJ70VC01).
+11:49:42.162 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:49:42.163 Không cập nhật phiếu do phiếu không được tạo! : 
+11:49:42.556 Đơn chuyển : MV20211103092920449(5EKY52FMIOG1).
+11:49:42.622 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:49:42.992 Đơn chuyển : MV20211103093025215(5EKY5JRDIB41).
+11:49:43.060 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:49:43.500 Đơn chuyển : MV20211103093120618(5EKY5ZJDOKG1).
+11:49:43.566 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:49:43.948 Đơn chuyển : MV20211103093218615(5EKY6FQTU9C1).
+11:49:44.012 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:49:44.382 Đơn chuyển : MV20211103093353901(5EKY724ABPS1).
+11:49:44.449 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:49:44.818 Đơn chuyển : MV20211103093505860(5EKY7R90EV41).
+11:49:44.882 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:49:45.250 Đơn chuyển : MV20211103094136912(5EKYANM4R9C1).
+11:50:24.983 MESdbToERPdb 1.0.0 : Started 
+11:50:26.146 Starting...! : 
+11:50:27.251 Đơn chuyển : MV20211103080010837(5EKWHRF4MZ41).
+11:50:27.355 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:27.729 Đơn chuyển : MV20211103084124518(5EKX0NQX8PS1).
+11:50:29.151 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1739 : 600 (Code : A511-21020212)
+11:50:29.153 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:29.524 Đơn chuyển : MV20211103084145663(5EKX0R8TCKW1).
+11:50:30.835 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 2566 : 400 (Code : A511-21070044)
+11:50:30.835 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:31.211 Đơn chuyển : MV20211103084518388(5EKX2GVX9341).
+11:50:32.605 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 12668 : 768 (Code : A511-21100197)
+11:50:32.605 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:32.964 Đơn chuyển : MV20211103090103958(5EKXS4MYR1C1).
+11:50:34.161 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:50:34.161 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:34.521 Đơn chuyển : MV20211103090226651(5EKXSOXG4A81).
+11:50:35.711 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:50:35.711 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:36.201 Đơn chuyển : MV20211103090321852(5EKXT4O8ZWG1).
+11:50:37.603 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:50:37.603 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:37.968 Đơn chuyển : MV20211103090409658(5EKXTJ70VC01).
+11:50:39.167 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:50:39.167 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:39.533 Đơn chuyển : MV20211103092920449(5EKY52FMIOG1).
+11:50:39.604 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:39.985 Đơn chuyển : MV20211103093025215(5EKY5JRDIB41).
+11:50:40.062 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:40.428 Đơn chuyển : MV20211103093120618(5EKY5ZJDOKG1).
+11:50:40.501 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:40.863 Đơn chuyển : MV20211103093218615(5EKY6FQTU9C1).
+11:50:40.932 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:41.286 Đơn chuyển : MV20211103093353901(5EKY724ABPS1).
+11:50:41.352 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:41.717 Đơn chuyển : MV20211103093505860(5EKY7R90EV41).
+11:50:41.786 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:42.149 Đơn chuyển : MV20211103094136912(5EKYANM4R9C1).
+11:50:43.408 Generated Form : : D201-21120119
+11:50:43.408 Code : : J511-21060012
+11:50:43.587 Updated code:  : J51121060012
+11:50:43.954 Đơn chuyển : MV20211103094357433(5EKYBO3226O1).
+11:50:45.187 Generated Form : : D201-21120119
+11:50:45.187 Code : : J511-21060012
+11:50:45.360 Updated code:  : J51121060012
+11:50:45.764 Đơn chuyển : MV20211103094629248(5EKYCX1DG5C1).
+11:50:47.605 Generated Form : : D201-21120119
+11:50:47.605 Code : : J511-21030028
+11:50:47.816 Updated code:  : J51121030028
+11:50:48.258 Đơn chuyển : MV20211103095347486(5EKYG7TKS0W1).
+11:50:50.147 Generated Form : : D201-21120119
+11:50:50.147 Code : : J511-21030028
+11:50:50.320 Updated code:  : J51121030028
+11:50:50.769 Đơn chuyển : MV20211103095952653(5EKYIZWL2HC1).
+11:50:50.841 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:51.250 Đơn chuyển : MV20211103100052690(5EKZ1TZ5AG01).
+11:50:51.327 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:51.772 Đơn chuyển : MV20211103100229608(5EKZ2N8GYGW1).
+11:50:51.846 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:52.274 Đơn chuyển : MV20211103100800472(5EKZ59N8XA81).
+11:50:52.346 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:52.781 Đơn chuyển : MV20211103101348137(5EKZ7S7WJGW1).
+11:50:52.844 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:53.201 Đơn chuyển : MV20211103101438849(5EKZ877Z9QO1).
+11:50:53.268 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:53.702 Đơn chuyển : MV20211103101559853(5EKZ8R8EMKW1).
+11:50:53.769 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:54.127 Đơn chuyển : MV20211103101702837(5EKZ9EVP26O1).
+11:50:54.197 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:54.640 Đơn chuyển : MV20211103102408300(5EKZCNJU9J41).
+11:50:54.704 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:55.058 Đơn chuyển : MV20211103102902087(5EKZEX7PYEO1).
+11:50:55.126 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:55.480 Đơn chuyển : MV20211103102924126(5EKZF0UXOF41).
+11:50:55.547 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:55.906 Đơn chuyển : MV20211103102954561(5EKZF5W4YDS1).
+11:50:55.977 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:56.331 Đơn chuyển : MV20211103103016524(5EKZFG51RY81).
+11:50:56.398 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:56.752 Đơn chuyển : MV20211103103037802(5EKZFJNQE1S1).
+11:50:56.818 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:50:57.174 Đơn chuyển : MV20211103111623897(5EL0IZN4J2O1).
+11:50:58.383 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 19288 : 14000 (Code : P511-21060003)
+11:50:58.383 Không cập nhật phiếu do phiếu không được tạo! : 
+11:50:58.742 Đơn chuyển : MV20211103111746887(5EL0JJZDJZK1).
+11:50:59.923 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 516720 : 300000 (Code : P511-21050021)
+11:50:59.923 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:00.285 Đơn chuyển : MV20211103111849548(5EL0K0YLDC01).
+11:51:01.529 Generated Form : : D101-21120009
+11:51:01.529 Code : : P511-21060054
+11:51:01.620 Updated code:  : P51121060054
+11:51:01.979 Đơn chuyển : MV20211103111958800(5EL0KJ11V5S1).
+11:51:03.188 Generated Form : : D101-21120009
+11:51:03.188 Code : : P511-21060043
+11:51:03.277 Updated code:  : P51121060043
+11:51:03.635 Đơn chuyển : MV20211103112129166(5EL0LB7D7MO1).
+11:51:04.827 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 980340 : 900000 (Code : J511-21030011)
+11:51:04.827 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:05.182 Đơn chuyển : MV20211103112227377(5EL0LRG38K01).
+11:51:06.379 Không thể tạo phiếu do SFCTA010 > MOCTA015. : 1307808>1288000 (Code : P511-21060058)
+11:51:06.379 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:06.737 Đơn chuyển : MV20211103112554498(5EL0N9JOMCG1).
+11:51:07.931 Không thể tạo phiếu do SFCTA010 > MOCTA015. : 105840>90000 (Code : P511-21100006)
+11:51:07.931 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:08.289 Đơn chuyển : MV20211103112919587(5EL0OXXBV3K1).
+11:51:09.472 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 5490 : 1000 (Code : A511-21100286)
+11:51:09.472 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:09.826 Đơn chuyển : MV20211103112944238(5EL0P203FFK1).
+11:51:11.014 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 770 : 550 (Code : A511-21110019)
+11:51:11.017 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:11.371 Đơn chuyển : MV20211103113044564(5EL0PILERSW1).
+11:51:12.575 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 152376 : 96000 (Code : J511-21030020)
+11:51:12.575 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:12.933 Đơn chuyển : MV20211103113117458(5EL0PUNEHI81).
+11:51:14.119 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1424 : 324 (Code : A511-21070029)
+11:51:14.119 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:14.478 Đơn chuyển : MV20211103113235108(5EL0QE3UYPS1).
+11:51:15.670 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1176 : 168 (Code : A511-21100210)
+11:51:15.670 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:16.024 Đơn chuyển : MV20211103113502468(5EL0RMBNHOG1).
+11:51:17.308 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 207548 : 192000 (Code : J511-20120022)
+11:51:17.308 Không cập nhật phiếu do phiếu không được tạo! : 
+11:51:18.054 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211229-115026.xlsx
+11:51:18.259 Report sent successfully : 
+11:54:32.639 MESdbToERPdb 1.0.0 : Started 
+11:54:36.303 Starting...! : 
+11:54:37.353 Đơn chuyển : MV20211103080010837(5EKWHRF4MZ41).
+11:54:37.466 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:37.835 Đơn chuyển : MV20211103084124518(5EKX0NQX8PS1).
+11:54:39.214 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1739 : 600 (Code : A511-21020212)
+11:54:39.215 Không cập nhật phiếu do phiếu không được tạo! : 
+11:54:39.585 Đơn chuyển : MV20211103084145663(5EKX0R8TCKW1).
+11:54:40.841 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 2566 : 400 (Code : A511-21070044)
+11:54:40.841 Không cập nhật phiếu do phiếu không được tạo! : 
+11:54:41.211 Đơn chuyển : MV20211103084518388(5EKX2GVX9341).
+11:54:42.452 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 12668 : 768 (Code : A511-21100197)
+11:54:42.452 Không cập nhật phiếu do phiếu không được tạo! : 
+11:54:42.817 Đơn chuyển : MV20211103090103958(5EKXS4MYR1C1).
+11:54:44.072 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:54:44.073 Không cập nhật phiếu do phiếu không được tạo! : 
+11:54:44.442 Đơn chuyển : MV20211103090226651(5EKXSOXG4A81).
+11:54:45.706 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:54:45.706 Không cập nhật phiếu do phiếu không được tạo! : 
+11:54:46.070 Đơn chuyển : MV20211103090321852(5EKXT4O8ZWG1).
+11:54:47.304 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1383289 : 840000 (Code : J511-21030028)
+11:54:47.304 Không cập nhật phiếu do phiếu không được tạo! : 
+11:54:47.673 Đơn chuyển : MV20211103090409658(5EKXTJ70VC01).
+11:54:48.903 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1021984 : 840000 (Code : J511-21060012)
+11:54:48.904 Không cập nhật phiếu do phiếu không được tạo! : 
+11:54:49.274 Đơn chuyển : MV20211103092920449(5EKY52FMIOG1).
+11:54:49.341 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:49.703 Đơn chuyển : MV20211103093025215(5EKY5JRDIB41).
+11:54:49.767 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:50.134 Đơn chuyển : MV20211103093120618(5EKY5ZJDOKG1).
+11:54:50.197 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:50.562 Đơn chuyển : MV20211103093218615(5EKY6FQTU9C1).
+11:54:50.624 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:50.990 Đơn chuyển : MV20211103093353901(5EKY724ABPS1).
+11:54:51.051 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:51.422 Đơn chuyển : MV20211103093505860(5EKY7R90EV41).
+11:54:51.490 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:51.857 Đơn chuyển : MV20211103094136912(5EKYANM4R9C1).
+11:54:53.194 Generated Form : : D201-21120119
+11:54:53.194 Code : : J511-21060012
+11:54:53.407 Updated code:  : J51121060012
+11:54:53.773 Đơn chuyển : MV20211103094357433(5EKYBO3226O1).
+11:54:55.073 Generated Form : : D201-21120119
+11:54:55.073 Code : : J511-21060012
+11:54:55.262 Updated code:  : J51121060012
+11:54:55.629 Đơn chuyển : MV20211103094629248(5EKYCX1DG5C1).
+11:54:56.977 Generated Form : : D201-21120119
+11:54:56.978 Code : : J511-21030028
+11:54:57.167 Updated code:  : J51121030028
+11:54:57.538 Đơn chuyển : MV20211103095347486(5EKYG7TKS0W1).
+11:54:58.854 Generated Form : : D201-21120119
+11:54:58.854 Code : : J511-21030028
+11:54:59.062 Updated code:  : J51121030028
+11:54:59.432 Đơn chuyển : MV20211103095952653(5EKYIZWL2HC1).
+11:54:59.497 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:54:59.860 Đơn chuyển : MV20211103100052690(5EKZ1TZ5AG01).
+11:54:59.927 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:00.297 Đơn chuyển : MV20211103100229608(5EKZ2N8GYGW1).
+11:55:00.364 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:00.769 Đơn chuyển : MV20211103100800472(5EKZ59N8XA81).
+11:55:00.844 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:01.213 Đơn chuyển : MV20211103101348137(5EKZ7S7WJGW1).
+11:55:01.281 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:01.646 Đơn chuyển : MV20211103101438849(5EKZ877Z9QO1).
+11:55:01.715 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:02.097 Đơn chuyển : MV20211103101559853(5EKZ8R8EMKW1).
+11:55:02.165 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:02.531 Đơn chuyển : MV20211103101702837(5EKZ9EVP26O1).
+11:55:02.602 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:02.965 Đơn chuyển : MV20211103102408300(5EKZCNJU9J41).
+11:55:03.035 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:03.402 Đơn chuyển : MV20211103102902087(5EKZEX7PYEO1).
+11:55:03.468 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:03.832 Đơn chuyển : MV20211103102924126(5EKZF0UXOF41).
+11:55:03.903 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:04.272 Đơn chuyển : MV20211103102954561(5EKZF5W4YDS1).
+11:55:04.336 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:04.701 Đơn chuyển : MV20211103103016524(5EKZFG51RY81).
+11:55:04.771 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:05.137 Đơn chuyển : MV20211103103037802(5EKZFJNQE1S1).
+11:55:05.204 GetListTransferOrder : Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.
+11:55:05.572 Đơn chuyển : MV20211103111623897(5EL0IZN4J2O1).
+11:55:06.891 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 19288 : 14000 (Code : P511-21060003)
+11:55:06.891 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:07.260 Đơn chuyển : MV20211103111746887(5EL0JJZDJZK1).
+11:55:08.521 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 516720 : 300000 (Code : P511-21050021)
+11:55:08.521 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:08.887 Đơn chuyển : MV20211103111849548(5EL0K0YLDC01).
+11:55:10.172 Generated Form : : D101-21120009
+11:55:10.172 Code : : P511-21060054
+11:55:10.283 Updated code:  : P51121060054
+11:55:10.653 Đơn chuyển : MV20211103111958800(5EL0KJ11V5S1).
+11:55:11.920 Generated Form : : D101-21120009
+11:55:11.920 Code : : P511-21060043
+11:55:12.021 Updated code:  : P51121060043
+11:55:12.390 Đơn chuyển : MV20211103112129166(5EL0LB7D7MO1).
+11:55:13.638 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 980340 : 900000 (Code : J511-21030011)
+11:55:13.638 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:14.019 Đơn chuyển : MV20211103112227377(5EL0LRG38K01).
+11:55:15.287 Không thể tạo phiếu do SFCTA010 > MOCTA015. : 1307808>1288000 (Code : P511-21060058)
+11:55:15.287 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:15.698 Đơn chuyển : MV20211103112554498(5EL0N9JOMCG1).
+11:55:16.970 Không thể tạo phiếu do SFCTA010 > MOCTA015. : 105840>90000 (Code : P511-21100006)
+11:55:16.970 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:17.339 Đơn chuyển : MV20211103112919587(5EL0OXXBV3K1).
+11:55:18.641 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 5490 : 1000 (Code : A511-21100286)
+11:55:18.641 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:19.006 Đơn chuyển : MV20211103112944238(5EL0P203FFK1).
+11:55:20.249 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 770 : 550 (Code : A511-21110019)
+11:55:20.249 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:20.623 Đơn chuyển : MV20211103113044564(5EL0PILERSW1).
+11:55:21.946 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 152376 : 96000 (Code : J511-21030020)
+11:55:21.947 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:22.316 Đơn chuyển : MV20211103113117458(5EL0PUNEHI81).
+11:55:23.554 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1424 : 324 (Code : A511-21070029)
+11:55:23.554 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:23.922 Đơn chuyển : MV20211103113235108(5EL0QE3UYPS1).
+11:55:25.190 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 1176 : 168 (Code : A511-21100210)
+11:55:25.190 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:25.559 Đơn chuyển : MV20211103113502468(5EL0RMBNHOG1).
+11:55:26.806 Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015. : 207548 : 192000 (Code : J511-20120022)
+11:55:26.806 Không cập nhật phiếu do phiếu không được tạo! : 
+11:55:27.659 Đã xuất file excel và lưu tại  : D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\\MES2ERP_Reports\Report_20211229-115436.xlsx
+11:55:28.175 Report sent successfully : 
+12:01:05.537 MESdbToERPdb 1.0.0 : Started 
+13:06:50.120 MESdbToERPdb 1.0.0 : Started 
+13:47:04.144 MESdbToERPdb 1.0.0 : Started 
+13:49:31.647 MESdbToERPdb 1.0.0 : Started 
+13:55:07.713 MESdbToERPdb 1.0.0 : Started 
+13:56:40.179 MESdbToERPdb 1.0.0 : Started 
+13:59:05.197 MESdbToERPdb 1.0.0 : Started 
+14:00:39.394 MESdbToERPdb 1.0.0 : Started 
+14:02:41.186 MESdbToERPdb 1.0.0 : Started 
+14:08:00.021 MESdbToERPdb 1.0.0 : Started 
+14:09:27.825 MESdbToERPdb 1.0.0 : Started 
+14:09:48.515 MESdbToERPdb 1.0.0 : Started 
+14:15:16.244 MESdbToERPdb 1.0.0 : Started 
+14:16:08.831 MESdbToERPdb 1.0.0 : Started 
+14:37:01.805 MESdbToERPdb 1.0.0 : Started 
