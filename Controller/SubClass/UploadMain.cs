@@ -10,7 +10,7 @@ namespace MESdbToERPdb
 {
     public class UploadMain
     {
-        Properties.Settings settings = new Properties.Settings();
+        
         public void GetListTransferOrder(string dIn, string dOut)
         {
             string timeIn = (Convert.ToDateTime(dIn)).ToString("HH:mm:ss");
@@ -104,13 +104,13 @@ namespace MESdbToERPdb
                         double NGQty = double.Parse(con2.sqlExecuteScalarString("select distinct actual_fail_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
 
                         string[] productionCodeHeaders;
-                        if (settings.cfg_produceCodes == "")
+                        if (Properties.Settings.Default.cfg_produceCodes == "")
                         {
-                            settings.cfg_produceCodes = null;
+                            Properties.Settings.Default.cfg_produceCodes = null;
                         }
-                        if (settings.cfg_produceCodes != null)
+                        if (Properties.Settings.Default.cfg_produceCodes != null)
                         {
-                            productionCodeHeaders = settings.cfg_produceCodes.Split('-');
+                            productionCodeHeaders = Properties.Settings.Default.cfg_produceCodes.Split('-');
                         }
                         else
                         {

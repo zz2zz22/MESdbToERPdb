@@ -12,7 +12,6 @@ namespace MESdbToERPdb.View
 {
     public partial class Setting : Form
     {
-        Properties.Settings settings = new Properties.Settings();
         mes2ERPMainWin mainWin = new mes2ERPMainWin();
         
         public Setting()
@@ -24,11 +23,12 @@ namespace MESdbToERPdb.View
         {
             txb_email.Enabled = true;
             txb_password.Enabled = true;
+            btn_saveSender.Enabled = true;
         }
         private void btn_saveSender_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult;
-            if (settings.cfg_language == 1)
+            if (Properties.Settings.Default.cfg_language == 1)
             {
                 dialogResult = MessageBox.Show("Do you want to set this sender ?", "Confirmation", MessageBoxButtons.OKCancel);
             }
@@ -38,19 +38,20 @@ namespace MESdbToERPdb.View
             }
             if (dialogResult == DialogResult.OK)
             {
-                settings.cfg_senders = txb_email.Text;
-                settings.cfg_senderPW = txb_password.Text;
-                settings.Save();
+                Properties.Settings.Default.cfg_senders = txb_email.Text;
+                Properties.Settings.Default.cfg_senderPW = txb_password.Text;
+                Properties.Settings.Default.Save();
                 MessageBox.Show("Lưu người gửi thành công!");
             }
             txb_email.Enabled = false;
             txb_password.Enabled = false;
+            btn_saveSender.Enabled = false;
         }
 
         private void btn_languageEnglish_Click(object sender, EventArgs e)
         {
-            settings.cfg_language = 1;
-            settings.Save();
+            Properties.Settings.Default.cfg_language = 1;
+            Properties.Settings.Default.Save();
             ChangeLanguageToEnglish();
         }
         private void ChangeLanguageToEnglish()
@@ -83,8 +84,8 @@ namespace MESdbToERPdb.View
         }
         private void btn_languageVietnam_Click(object sender, EventArgs e)
         {
-            settings.cfg_language = 0;
-            settings.Save();
+            Properties.Settings.Default.cfg_language = 0;
+            Properties.Settings.Default.Save();
             ChangeLanguageToVietnamese();
         }
         private void ChangeLanguageToVietnamese()
@@ -118,22 +119,24 @@ namespace MESdbToERPdb.View
 
         private void Setting_Load(object sender, EventArgs e)
         {
-            if ( settings.cfg_receivers == "")
+            if (Properties.Settings.Default.cfg_receivers == "")
             {
-                settings.cfg_receivers = null;
+                Properties.Settings.Default.cfg_receivers = null;
             }
-            if (settings.cfg_language == 1)
+            if (Properties.Settings.Default.cfg_language == 1)
             {
                 ChangeLanguageToEnglish();
-            }else if (settings.cfg_language == 0) {
+            }else if (Properties.Settings.Default.cfg_language == 0) {
                 ChangeLanguageToVietnamese();
             }
-            nud_bgIntervalPicker.Value = Convert.ToDecimal(settings.interval.ToString());
-            nud_sendMailIntervalPicker.Value = Convert.ToDecimal(settings.intervalMail.ToString());
-            txb_email.Text = settings.cfg_senders;
-            txb_password.Text = settings.cfg_senderPW;
+            nud_bgIntervalPicker.Value = Convert.ToDecimal(Properties.Settings.Default.interval.ToString());
+            nud_sendMailIntervalPicker.Value = Convert.ToDecimal(Properties.Settings.Default.intervalMail.ToString());
+            txb_email.Text = Properties.Settings.Default.cfg_senders;
+            txb_password.Text = Properties.Settings.Default.cfg_senderPW;
             txb_email.Enabled = false;
             txb_password.Enabled = false;
+            btn_saveSender.Enabled = false;
+            
             
             LoadReceiverGrid();
             LoadProductionCodes();
@@ -141,16 +144,16 @@ namespace MESdbToERPdb.View
         
         public void LoadReceiverGrid()
         {
-            if (settings.cfg_receivers == "")
+            if (Properties.Settings.Default.cfg_receivers == "")
             {
-                settings.cfg_receivers = null;
+                Properties.Settings.Default.cfg_receivers = null;
             }
             this.dtgv_receivers.Rows.Clear();
             this.dtgv_receivers.Columns.Clear();
             string[] receivers;
-            if (settings.cfg_receivers != null)
+            if (Properties.Settings.Default.cfg_receivers != null)
             {
-                receivers = settings.cfg_receivers.Split('-');
+                receivers = Properties.Settings.Default.cfg_receivers.Split('-');
             }
             else
             {
@@ -172,16 +175,16 @@ namespace MESdbToERPdb.View
         }
         public void LoadProductionCodes()
         {
-            if (settings.cfg_produceCodes == "")
+            if (Properties.Settings.Default.cfg_produceCodes == "")
             {
-                settings.cfg_produceCodes = null;
+                Properties.Settings.Default.cfg_produceCodes = null;
             }
             dtgv_productionCodeList.Rows.Clear();
             dtgv_productionCodeList.Columns.Clear();
             string[] productionCode;
-            if (settings.cfg_produceCodes != null)
+            if (Properties.Settings.Default.cfg_produceCodes != null)
             {
-                productionCode = settings.cfg_produceCodes.Split('-');
+                productionCode = Properties.Settings.Default.cfg_produceCodes.Split('-');
             }
             else
             {
@@ -203,51 +206,55 @@ namespace MESdbToERPdb.View
         }
         private void txb_searchReceivers_TextChanged(object sender, EventArgs e)
         {
-
-            this.dtgv_receivers.Rows.Clear();
-            this.dtgv_receivers.Columns.Clear();
-            dtgv_receivers.RowHeadersVisible = false;
-            dtgv_receivers.ColumnHeadersVisible = false;
-            dtgv_receivers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dtgv_receivers.Columns.Add("receiver", "Receivers");
-            string receiverSearch = "";
-            string[] receivers;
-            if (settings.cfg_receivers != null)
+            if (!string.IsNullOrWhiteSpace(txb_searchReceivers.Text))
             {
-                receivers = settings.cfg_receivers.Split('-');
+                this.dtgv_receivers.Rows.Clear();
+                this.dtgv_receivers.Columns.Clear();
+                dtgv_receivers.RowHeadersVisible = false;
+                dtgv_receivers.ColumnHeadersVisible = false;
+                dtgv_receivers.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dtgv_receivers.Columns.Add("receiver", "Receivers");
+                string receiverSearch = "";
+                string[] receivers;
+                if (Properties.Settings.Default.cfg_receivers != null)
+                {
+                    receivers = Properties.Settings.Default.cfg_receivers.Split('-');
+                }
+                else
+                {
+                    receivers = null;
+                }
+
+                for (int i = 0; i < receivers.Length; i++)
+                {
+                    if (receivers[i].Contains(txb_searchReceivers.Text))
+                    {
+                        if (receiverSearch == "")
+                        {
+                            receiverSearch += receivers[i];
+                        }
+                        else
+                        {
+                            receiverSearch += "-" + receivers[i];
+                        }
+
+                    }
+                }
+                string[] receiverSearchList = receiverSearch.Split('-');
+                if (receiverSearchList != null)
+                {
+                    for (int j = 0; j < receiverSearchList.Length; j++)
+                    {
+                        this.dtgv_receivers.Rows.Add(receiverSearchList[j]);
+                    }
+                }
+               
             }
             else
             {
-                receivers = null;
-            }
-
-            for (int i = 0; i < receivers.Length; i++)
-            {
-                if (receivers[i].Contains(txb_searchReceivers.Text))
-                {
-                    if (receiverSearch == "")
-                    {
-                        receiverSearch += receivers[i];
-                    }
-                    else
-                    {
-                        receiverSearch += "-" + receivers[i];
-                    }
-
-                }
-            }
-            string[] receiverSearchList = receiverSearch.Split('-');
-            if (receiverSearchList != null)
-            {
-                for (int j = 0; j < receiverSearchList.Length; j++)
-                {
-                    this.dtgv_receivers.Rows.Add(receiverSearchList[j]);
-                }
-            }
-            if (string.IsNullOrWhiteSpace(txb_searchReceivers.Text))
-            {
                 LoadReceiverGrid();
             }
+            
         }
         
 
@@ -255,7 +262,7 @@ namespace MESdbToERPdb.View
         {
             if(txb_receiverConfig.Text == "")
             {
-                if (settings.cfg_language == 1)
+                if (Properties.Settings.Default.cfg_language == 1)
                     MessageBox.Show("Please select receiver need to delete !");
                 else
                     MessageBox.Show("Xin hãy chọn người nhận cần xóa !");
@@ -263,7 +270,7 @@ namespace MESdbToERPdb.View
             else
             {
                 DialogResult dialogResult;
-                if (settings.cfg_language == 1)
+                if (Properties.Settings.Default.cfg_language == 1)
                 {
                     dialogResult = MessageBox.Show("Delete '" + txb_receiverConfig.Text + "' from receivers list ?", "Delete receiver confirmation", MessageBoxButtons.OKCancel);
                 }
@@ -273,25 +280,25 @@ namespace MESdbToERPdb.View
                 }
                 if ( dialogResult == DialogResult.OK)
                 {
-                    string remainReceiver = settings.cfg_receivers;
-                    string[] receivers = settings.cfg_receivers.Split('-');
-                    if (receivers[0] == settings.selectedReceiver)
+                    string remainReceiver = Properties.Settings.Default.cfg_receivers;
+                    string[] receivers = Properties.Settings.Default.cfg_receivers.Split('-');
+                    if (receivers[0] == Properties.Settings.Default.selectedReceiver)
                     {
-                        if (remainReceiver == settings.selectedReceiver)
+                        if (remainReceiver == Properties.Settings.Default.selectedReceiver)
                         {
-                            settings.cfg_receivers = remainReceiver.Replace(settings.selectedReceiver, null);
+                            Properties.Settings.Default.cfg_receivers = remainReceiver.Replace(Properties.Settings.Default.selectedReceiver, null);
                         }
                         else
                         {
-                            settings.cfg_receivers = remainReceiver.Replace(settings.selectedReceiver + "-", null);
+                            Properties.Settings.Default.cfg_receivers = remainReceiver.Replace(Properties.Settings.Default.selectedReceiver + "-", null);
                         }
                     }
                     else
                     {
-                        settings.cfg_receivers = remainReceiver.Replace("-" + settings.selectedReceiver, null);
+                        Properties.Settings.Default.cfg_receivers = remainReceiver.Replace("-" + Properties.Settings.Default.selectedReceiver, null);
                     }
-                    MessageBox.Show("Xóa thành công " + settings.selectedReceiver +" khỏi danh sách người nhận!");
-                    settings.Save();
+                    MessageBox.Show("Xóa thành công " + Properties.Settings.Default.selectedReceiver +" khỏi danh sách người nhận!");
+                    Properties.Settings.Default.Save();
                     LoadReceiverGrid();
                 }
                 txb_receiverConfig.Clear();
@@ -309,17 +316,17 @@ namespace MESdbToERPdb.View
 
         private void btn_saveReceiver_Click(object sender, EventArgs e)
         {
-            if (settings.cfg_receivers != null && settings.cfg_receivers.Contains(txb_receiverConfig.Text))
+            if (Properties.Settings.Default.cfg_receivers != null && Properties.Settings.Default.cfg_receivers.Contains(txb_receiverConfig.Text))
             {
                 if (txb_receiverConfig.Text == "")
                 {
-                    if (settings.cfg_language == 1) { MessageBox.Show("Receiver address is empty! Please input a value before press save!"); }
+                    if (Properties.Settings.Default.cfg_language == 1) { MessageBox.Show("Receiver address is empty! Please input a value before press save!"); }
 
                     else { MessageBox.Show("Địa chỉ mail người nhận trống! Xin hãy nhập địa chỉ mail trước khi chọn lưu!"); }
                 }
                 else
                 {
-                    if (settings.cfg_language == 1) { MessageBox.Show("Receiver '" + txb_receiverConfig.Text + "' have existed!"); }
+                    if (Properties.Settings.Default.cfg_language == 1) { MessageBox.Show("Receiver '" + txb_receiverConfig.Text + "' have existed!"); }
 
                     else { MessageBox.Show("Địa chỉ '" + txb_receiverConfig.Text + "' đã tồn tại!"); }
                 }
@@ -330,7 +337,7 @@ namespace MESdbToERPdb.View
             else
             {
                 DialogResult dialogResult; 
-                if ( settings.cfg_language == 1)
+                if (Properties.Settings.Default.cfg_language == 1)
                 {
                     dialogResult = MessageBox.Show("Do you want to add '" + txb_receiverConfig.Text + "' to list of receivers ?", "Confirmation", MessageBoxButtons.OKCancel);
                 }
@@ -342,15 +349,15 @@ namespace MESdbToERPdb.View
                 {
                     if (txb_receiverConfig != null)
                     {
-                        if (settings.cfg_receivers == null)
+                        if (Properties.Settings.Default.cfg_receivers == null)
                         {
-                            settings.cfg_receivers += txb_receiverConfig.Text;
-                            settings.Save();
+                            Properties.Settings.Default.cfg_receivers += txb_receiverConfig.Text;
+                            Properties.Settings.Default.Save();
                         }
-                        else if (settings.cfg_receivers != null)
+                        else if (Properties.Settings.Default.cfg_receivers != null)
                         {
-                            settings.cfg_receivers += "-" + txb_receiverConfig.Text;
-                            settings.Save();
+                            Properties.Settings.Default.cfg_receivers += "-" + txb_receiverConfig.Text;
+                            Properties.Settings.Default.Save();
                         }
                         LoadReceiverGrid();
                         txb_receiverConfig.Clear();
@@ -374,18 +381,26 @@ namespace MESdbToERPdb.View
                 DataGridViewRow row = dtgv_receivers.Rows[e.RowIndex];
                 
                 txb_receiverConfig.Text = row.Cells[0].Value.ToString();
-                settings.selectedReceiver = txb_receiverConfig.Text;
-                settings.Save();
+                Properties.Settings.Default.selectedReceiver = txb_receiverConfig.Text;
+                Properties.Settings.Default.Save();
             }
         }
 
         private void btn_deleteAllReceiver_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Are you sure you want to clear all receivers in the list ?", "Delete confirmation", MessageBoxButtons.OKCancel);
+            DialogResult dialogResult;
+            if ( Properties.Settings.Default.cfg_language == 1)
+            {
+                dialogResult = MessageBox.Show("Are you sure you want to clear all receivers in the list ?", "Delete confirmation", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                dialogResult = MessageBox.Show("Bạn có muốn xóa tất cả người nhận trong danh sách ?", "Xác nhận xóa", MessageBoxButtons.OKCancel);
+            }
             if ( dialogResult == DialogResult.OK)
             {
-                settings.cfg_receivers = null;
-                settings.Save();
+                Properties.Settings.Default.cfg_receivers = null;
+                Properties.Settings.Default.Save();
             }
             LoadReceiverGrid();
             
@@ -398,14 +413,16 @@ namespace MESdbToERPdb.View
 
         private void nud_bgIntervalPicker_ValueChanged(object sender, EventArgs e)
         {
-            settings.interval = int.Parse(nud_bgIntervalPicker.Value.ToString());
-            settings.Save();
+            Properties.Settings.Default.interval = int.Parse(nud_bgIntervalPicker.Value.ToString());
+            Properties.Settings.Default.Save();
+            
         }
 
         private void nud_sendMailIntervalPicker_ValueChanged(object sender, EventArgs e)
         {
-            settings.intervalMail = int.Parse(nud_sendMailIntervalPicker.Value.ToString());
-            settings.Save();
+            Properties.Settings.Default.intervalMail = int.Parse(nud_sendMailIntervalPicker.Value.ToString());
+            Properties.Settings.Default.Save();
+            
         }
 
         private void btn_addProductionCode_Click(object sender, EventArgs e)
@@ -418,17 +435,17 @@ namespace MESdbToERPdb.View
 
         private void btn_saveProductionCodeConfig_Click(object sender, EventArgs e)
         {
-            if (settings.cfg_produceCodes != null && settings.cfg_produceCodes.Contains(txb_productionCodeConfig.Text))
+            if (Properties.Settings.Default.cfg_produceCodes != null && Properties.Settings.Default.cfg_produceCodes.Contains(txb_productionCodeConfig.Text))
             {
                 if (txb_productionCodeConfig.Text == "")
                 {
-                    if (settings.cfg_language == 1) { MessageBox.Show("Production code is empty! Please input a value before press save!"); }
+                    if (Properties.Settings.Default.cfg_language == 1) { MessageBox.Show("Production code is empty! Please input a value before press save!"); }
 
                     else { MessageBox.Show("Đầu mã sản xuất trống! Xin hãy nhập đầu mã sản xuất trước khi chọn lưu!"); }
                 }
                 else
                 {
-                    if (settings.cfg_language == 1) { MessageBox.Show("Production code '" + txb_productionCodeConfig.Text + "' have existed!"); }
+                    if (Properties.Settings.Default.cfg_language == 1) { MessageBox.Show("Production code '" + txb_productionCodeConfig.Text + "' have existed!"); }
 
                     else { MessageBox.Show("Đầu mã '" + txb_productionCodeConfig.Text + "' đã tồn tại!"); }
                 }
@@ -439,7 +456,7 @@ namespace MESdbToERPdb.View
             else
             {
                 DialogResult dialogResult;
-                if (settings.cfg_language == 1)
+                if (Properties.Settings.Default.cfg_language == 1)
                 {
                     dialogResult = MessageBox.Show("Do you want to add '" + txb_productionCodeConfig.Text + "' to list of receivers codes?", "Confirmation", MessageBoxButtons.OKCancel);
                 }
@@ -451,15 +468,15 @@ namespace MESdbToERPdb.View
                 {
                     if (txb_productionCodeConfig != null)
                     {
-                        if (settings.cfg_produceCodes == null)
+                        if (Properties.Settings.Default.cfg_produceCodes == null)
                         {
-                            settings.cfg_produceCodes += txb_productionCodeConfig.Text;
-                            settings.Save();
+                            Properties.Settings.Default.cfg_produceCodes += txb_productionCodeConfig.Text;
+                            Properties.Settings.Default.Save();
                         }
-                        else if (settings.cfg_produceCodes != null)
+                        else if (Properties.Settings.Default.cfg_produceCodes != null)
                         {
-                            settings.cfg_produceCodes += "-" + txb_productionCodeConfig.Text;
-                            settings.Save();
+                            Properties.Settings.Default.cfg_produceCodes += "-" + txb_productionCodeConfig.Text;
+                            Properties.Settings.Default.Save();
                         }
                         LoadProductionCodes();
                         txb_productionCodeConfig.Clear();
@@ -479,7 +496,7 @@ namespace MESdbToERPdb.View
         {
             if (txb_productionCodeConfig.Text == "")
             {
-                if (settings.cfg_language == 1)
+                if (Properties.Settings.Default.cfg_language == 1)
                     MessageBox.Show("Please select production code header need to delete !");
                 else
                     MessageBox.Show("Xin hãy chọn đầu mã cần xóa !");
@@ -487,7 +504,7 @@ namespace MESdbToERPdb.View
             else
             {
                 DialogResult dialogResult;
-                if (settings.cfg_language == 1)
+                if (Properties.Settings.Default.cfg_language == 1)
                 {
                     dialogResult = MessageBox.Show("Delete '" + txb_productionCodeConfig.Text + "' from production code headers list ?", "Delete confirmation", MessageBoxButtons.OKCancel);
                 }
@@ -497,25 +514,25 @@ namespace MESdbToERPdb.View
                 }
                 if (dialogResult == DialogResult.OK)
                 {
-                    string remainProductionCode = settings.cfg_produceCodes;
-                    string[] productionCodes = settings.cfg_produceCodes.Split('-');
-                    if (productionCodes[0] == settings.selectedProduceCode)
+                    string remainProductionCode = Properties.Settings.Default.cfg_produceCodes;
+                    string[] productionCodes = Properties.Settings.Default.cfg_produceCodes.Split('-');
+                    if (productionCodes[0] == Properties.Settings.Default.selectedProduceCode)
                     {
-                        if (remainProductionCode == settings.selectedProduceCode)
+                        if (remainProductionCode == Properties.Settings.Default.selectedProduceCode)
                         {
-                            settings.cfg_produceCodes = remainProductionCode.Replace(settings.selectedProduceCode, null);
+                            Properties.Settings.Default.cfg_produceCodes = remainProductionCode.Replace(Properties.Settings.Default.selectedProduceCode, null);
                         }
                         else
                         {
-                            settings.cfg_produceCodes = remainProductionCode.Replace(settings.selectedProduceCode + "-", null);
+                            Properties.Settings.Default.cfg_produceCodes = remainProductionCode.Replace(Properties.Settings.Default.selectedProduceCode + "-", null);
                         }
                     }
                     else
                     {
-                        settings.cfg_produceCodes = remainProductionCode.Replace("-" + settings.selectedProduceCode, null);
+                        Properties.Settings.Default.cfg_produceCodes = remainProductionCode.Replace("-" + Properties.Settings.Default.selectedProduceCode, null);
                     }
-                    MessageBox.Show("Xóa thành công " + settings.selectedProduceCode + " khỏi danh sách!");
-                    settings.Save();
+                    MessageBox.Show("Xóa thành công " + Properties.Settings.Default.selectedProduceCode + " khỏi danh sách!");
+                    Properties.Settings.Default.Save();
                     LoadProductionCodes();
                 }
                 txb_productionCodeConfig.Clear();
@@ -530,8 +547,8 @@ namespace MESdbToERPdb.View
                 DataGridViewRow row = dtgv_productionCodeList.Rows[e.RowIndex];
 
                 txb_productionCodeConfig.Text = row.Cells[0].Value.ToString();
-                settings.selectedProduceCode = txb_productionCodeConfig.Text;
-                settings.Save();
+                Properties.Settings.Default.selectedProduceCode = txb_productionCodeConfig.Text;
+                Properties.Settings.Default.Save();
             }
         }
 
@@ -584,9 +601,9 @@ namespace MESdbToERPdb.View
             dtgv_productionCodeList.Columns.Add("code", "productionCodes");
             string codeSearch = "";
             string[] codes;
-            if (settings.cfg_produceCodes != null)
+            if (Properties.Settings.Default.cfg_produceCodes != null)
             {
-                codes = settings.cfg_produceCodes.Split('-');
+                codes = Properties.Settings.Default.cfg_produceCodes.Split('-');
             }
             else
             {

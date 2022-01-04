@@ -84,9 +84,20 @@ namespace MESdbToERPdb
             DateTime date = DateTime.Now;
             string dateFormat = date.ToString("yyyyMMdd");
             string strData = "";
-            if (orgCode != "B01")
+            if (autoEnd != "" && autoStart != "")
             {
-                 strData = con.sqlExecuteScalarString("select max(TC002) from SFCTC where TC001 = 'D201' and TC004 = '" + MP + "' and TC005 = '" + SP + "' and CREATE_DATE = '" + dateFormat + "' and CREATE_TIME < '" + autoEnd + "' and CREATE_TIME >= '" + autoStart + "'");
+                if (orgCode != "B01")
+                {
+                    strData = con.sqlExecuteScalarString("select max(TC002) from SFCTC where TC001 = 'D201' and TC004 = '" + MP + "' and TC005 = '" + SP + "' and CREATE_DATE = '" + dateFormat + "' and CREATE_TIME between '" + autoStart + "' and '" + autoEnd + "'");
+                }
+                else
+                {
+                    strData = "";
+                }
+            }
+            else
+            {
+                strData = "";
             }
             return strData;
         }
@@ -316,7 +327,7 @@ namespace MESdbToERPdb
                                 sqlUpdateSFCTB.Append("update SFCTB set TB200 = TB200 + " + TC036 + ", TB201 = TB201 + " + output + ", TB202 = TB202 + " + NG + " where TB001 = 'D201' and TB002 = '" + ticketCode + "'");
                                 sqlInsert.sqlExecuteNonQuery(sqlUpdateSFCTB.ToString(), false);
 
-                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" + TC002);
+                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" +  ticketCode);
                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
                                 DataReport.addReport(DataReport.RP_TYPE.Success, "D201", ticketCode, MP + SP, MES_move_no, TB013, "Đã tạo và gộp phiếu chuyển thành công! Số thứ tự phiếu: " + ticketNumber);
                                 isTicketCreated = true;

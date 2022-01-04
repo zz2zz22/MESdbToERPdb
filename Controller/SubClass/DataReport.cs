@@ -17,7 +17,7 @@ namespace MESdbToERPdb
     {
         static DataReport s_drInstance = null;
 
-        Properties.Settings settings = new Properties.Settings();
+        
         DataTable successReportTB = null;
         DataTable failReportTB = null;
         DataTable errorReportTB = null;
@@ -151,6 +151,7 @@ namespace MESdbToERPdb
             }
             s_drInstance.ExportToExcel(excelFilePath, fileName);
             s_drInstance.SendReport(sender, sender_pw);
+            s_drInstance = null;
         }
 
         public void ExportToExcel(string excelFilePath, string fileName)
@@ -162,9 +163,27 @@ namespace MESdbToERPdb
             
 
             XLWorkbook wb = new XLWorkbook();
-            wb.Worksheets.Add(successReportTB, "Success MO"); 
-            wb.Worksheets.Add(failReportTB, "Failed MO");
-            wb.Worksheets.Add(errorReportTB, "Error MO");
+            var ws1 = wb.Worksheets.Add(successReportTB, "Success MO");
+            var ws2 = wb.Worksheets.Add(failReportTB, "Failed MO");
+            var ws3 = wb.Worksheets.Add(errorReportTB, "Error MO");
+            wb.Style.Fill.BackgroundColor = XLColor.NoColor;
+            ws1.Column("A").Width = 8;
+            ws1.Column("B").Width = 11;
+            ws1.Column("C").Width = 15;
+            ws1.Column("D").Width = 25;
+            ws1.Column("E").Width = 19;
+            ws1.Column("F").Width = 66;
+
+            ws2.Column("A").Width = 15;
+            ws2.Column("B").Width = 25;
+            ws2.Column("C").Width = 19;
+            ws2.Column("D").Width = 80;
+
+            ws3.Column("A").Width = 15;
+            ws3.Column("B").Width = 25;
+            ws3.Column("C").Width = 19;
+            ws3.Column("D").Width = 80;
+
 
             // check file path
             if (!string.IsNullOrEmpty(excelFilePath))
@@ -173,8 +192,8 @@ namespace MESdbToERPdb
                 {
                     wb.SaveAs(Path.Combine(excelFilePath, fileName));
                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Report is exported and save at ", Path.Combine(excelFilePath, fileName));
-                    settings.excelFilePath = Path.Combine(excelFilePath, fileName);
-                    settings.Save();
+                    Properties.Settings.Default.excelFilePath = Path.Combine(excelFilePath, fileName);
+                    Properties.Settings.Default.Save();
                 }
                 catch (Exception ex)
                 {
@@ -184,8 +203,8 @@ namespace MESdbToERPdb
             else { // no file path is given
                 wb.SaveAs(Path.Combine(path, fileName));
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã xuất file excel và lưu tại ", Path.Combine(path, fileName));
-                settings.excelFilePath = Path.Combine(path, fileName);
-                settings.Save();
+                Properties.Settings.Default.excelFilePath = Path.Combine(path, fileName);
+                Properties.Settings.Default.Save();
             }
             wb.Dispose();
         }
@@ -196,30 +215,30 @@ namespace MESdbToERPdb
             string smtp = sender.Substring(sender.IndexOf('@'));
             if (smtp == "@gmail.com")
             {
-                settings.smtp_server = "smtp.gmail.com";
-                settings.smtp_port = "587";
+                Properties.Settings.Default.smtp_server = "smtp.gmail.com";
+                Properties.Settings.Default.smtp_port = "587";
             }else if (smtp == "@techlink.vn")
             {
-                settings.smtp_server = "pro56.emailserver.vn";
-                settings.smtp_port = "587";
+                Properties.Settings.Default.smtp_server = "pro56.emailserver.vn";
+                Properties.Settings.Default.smtp_port = "587";
             }
-            
-            settings.Save();
-            string[] receivers = settings.cfg_receivers.Split('-');
+
+            Properties.Settings.Default.Save();
+            string[] receivers = Properties.Settings.Default.cfg_receivers.Split('-');
             for (int i = 0; i < receivers.Length; i ++)
             {
                 //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Send mail to", receivers[i]);
-                SmtpClient SmtpServer = new SmtpClient(settings.smtp_server);
+                SmtpClient SmtpServer = new SmtpClient(Properties.Settings.Default.smtp_server);
                 mail.From = new MailAddress(sender);
                 mail.To.Add(receivers[i]);
                 mail.Subject = "MES to ERP transfer report : " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-                mail.Body = "test mail";
+                mail.Body = "This is an auto generated report! Please don't reply!";
 
                 System.Net.Mail.Attachment attachment;
-                attachment = new System.Net.Mail.Attachment(settings.excelFilePath);
+                attachment = new System.Net.Mail.Attachment(Properties.Settings.Default.excelFilePath);
                 mail.Attachments.Add(attachment);
 
-                SmtpServer.Port = int.Parse(settings.smtp_port);
+                SmtpServer.Port = int.Parse(Properties.Settings.Default.smtp_port);
                 SmtpServer.UseDefaultCredentials = false;
                 SmtpServer.Credentials = new System.Net.NetworkCredential(sender, sender_pw);
                 SmtpServer.EnableSsl = true;
@@ -227,6 +246,9 @@ namespace MESdbToERPdb
                 SmtpServer.Send(mail);
             }
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Report sent successfully", "");
+            mail.Dispose();
+            
+            System.Threading.Thread.Sleep(1000);
         }
     }
 }

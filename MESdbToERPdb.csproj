@@ -163,6 +163,7 @@
     <Compile Include="RichTextBoxLog.xaml.cs">
       <DependentUpon>RichTextBoxLog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Settings.cs" />
     <Compile Include="View\Error.cs">
       <SubType>Form</SubType>
     </Compile>

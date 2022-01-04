@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Windows;
+
 using System.Windows.Forms;
 using MySqlConnector;
 using System.Windows.Data;
@@ -27,7 +27,7 @@ namespace MESdbToERPdb
         
 
         EventBroker.EventParam m_timerEvent = null;
-        Properties.Settings settings = new Properties.Settings();
+        
         FlowDocument m_flowDoc = null; //Hien log vao richtextbox
         System.Windows.Forms.Timer tmrCallBgWorker;
         
@@ -118,17 +118,17 @@ namespace MESdbToERPdb
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
+            tmrCallBgWorker.Interval = Properties.Settings.Default.interval * 3600000; //3600000;
             tmrCallBgWorker.Start();
             
             btn_stop.Text = "Stop";
             btn_start.Enabled = false;
             btn_stop.Enabled = true;
-            
-            settings.dIn = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            settings.intervalCounter = 0;
-            settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
-            settings.Save();
+
+            Properties.Settings.Default.dIn = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            Properties.Settings.Default.intervalCounter = 0;
+            Properties.Settings.Default.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
+            Properties.Settings.Default.Save();
 
             
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Starting...!", "");
@@ -136,10 +136,10 @@ namespace MESdbToERPdb
             //test
 
             //UploadMain uploadMain = new UploadMain();
-            //string testIn = "2021-11-03 08:00:00";
-            //string testOut = "2021-11-03 12:00:00";
+            //string testIn = "2021-11-03 17:00:00";
+            //string testOut = "2021-11-03 18:00:00";
             //uploadMain.GetListTransferOrder(testIn, testOut);
-            //DataReport.SaveExcel("", settings.excelFileName, settings.cfg_senders, settings.cfg_senderPW);
+            //DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
             //FixData.SaveFixExcel();
 
             //System.Threading.Thread.Sleep(100);
@@ -153,7 +153,7 @@ namespace MESdbToERPdb
         {   // this timer calls bgWorker again and again after regular intervals
             tmrCallBgWorker = new System.Windows.Forms.Timer();//Timer for do task
             tmrCallBgWorker.Tick += new EventHandler(timer_nextRun_Tick);
-            tmrCallBgWorker.Interval = settings.interval * 3600000; //3600000;
+            tmrCallBgWorker.Interval = Properties.Settings.Default.interval * 3600000; //3600000;
 
             // this is our worker
             bgWorker = new BackgroundWorker();
@@ -167,8 +167,8 @@ namespace MESdbToERPdb
         private void btn_stop_Click(object sender, EventArgs e)
         {
             tmrCallBgWorker.Stop();
-            
-            settings.Save();
+
+            Properties.Settings.Default.Save();
             btn_stop.Text = "Stopping";
             btn_start.Text = "Start";
             btn_start.Enabled = true;
@@ -205,24 +205,24 @@ namespace MESdbToERPdb
             {
                 SystemLog.Output(SystemLog.MSG_TYPE.War, "Background worker", "Started ");
                 
-                string timeIN = settings.dIn;
-                string dOut = ((Convert.ToDateTime(timeIN)).AddHours(settings.interval)).ToString("yyyy-MM-dd HH:mm:ss");
+                string timeIN = Properties.Settings.Default.dIn;
+                string dOut = ((Convert.ToDateTime(timeIN)).AddHours(Properties.Settings.Default.interval)).ToString("yyyy-MM-dd HH:mm:ss");
                 
                 UploadMain uploadMain = new UploadMain();
                 uploadMain.GetListTransferOrder(timeIN,dOut);
-                settings.dIn = dOut;
-                settings.intervalCounter = settings.intervalCounter + settings.interval;
-                settings.Save();
+                Properties.Settings.Default.dIn = dOut;
+                Properties.Settings.Default.intervalCounter = Properties.Settings.Default.intervalCounter + Properties.Settings.Default.interval;
+                Properties.Settings.Default.Save();
+                FixData.SaveFixExcel();
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
                 
-                if (settings.intervalCounter > settings.intervalMail || settings.intervalCounter == settings.intervalMail)
+                if (Properties.Settings.Default.intervalCounter > Properties.Settings.Default.intervalMail || Properties.Settings.Default.intervalCounter == Properties.Settings.Default.intervalMail)
                 {
-                    DataReport.SaveExcel("", settings.excelFileName, settings.cfg_senders, settings.cfg_senderPW);
-                    FixData.SaveFixExcel();
-                    System.Threading.Thread.Sleep(100);
-                    settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
-                    settings.intervalCounter = 0;
-                    settings.Save();
+                    DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
+                    System.Threading.Thread.Sleep(1000);
+                    Properties.Settings.Default.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
+                    Properties.Settings.Default.intervalCounter = 0;
+                    Properties.Settings.Default.Save();
                 }
                 ClearMemory.CleanMemory();
             }
@@ -285,8 +285,19 @@ namespace MESdbToERPdb
 
         private void mes2ERPMainWin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            this.WindowState = FormWindowState.Minimized;
-            e.Cancel = true;
+            DialogResult dialogResult;
+            if(Properties.Settings.Default.cfg_language == 1)
+            {
+                dialogResult = MessageBox.Show("Are you sure want to quit ?", "Confirmation", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                dialogResult = MessageBox.Show("Bạn muốn thoát chương trình ?", "Xác nhận thoát", MessageBoxButtons.OKCancel);
+            }
+            if (dialogResult == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
 
         private void mes2ERPMainWin_Load(object sender, EventArgs e)

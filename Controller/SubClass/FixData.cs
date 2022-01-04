@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 using System.Data;
 using ClosedXML.Excel;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+using System.Windows.Forms;
 
 namespace MESdbToERPdb
 {
     public class FixData
     {
-        Properties.Settings settings = new Properties.Settings();
+        
         static FixData s_fixInstance = null;
 
         DataTable fixTB = null;
@@ -39,6 +41,7 @@ namespace MESdbToERPdb
             clfix5.DataType = typeof(string);
 
             fixTB.Columns.AddRange(new DataColumn[] { clfix1, clfix2, clfix3, clfix4, clfix5 });
+            
         }
         public static void addFixTB(DateTime date, string erpCode, string moveNo, string status)
         {
@@ -52,6 +55,7 @@ namespace MESdbToERPdb
         {
             string transDate = date.ToString("yyyy-MM-dd");
             string transTime = date.ToString("HH:mm:ss");
+
             fixTB.Rows.Add(new object[] { transDate, transTime, erpCode, moveNo, status });
         }
         public static void SaveFixExcel()
@@ -61,6 +65,7 @@ namespace MESdbToERPdb
                 s_fixInstance = new FixData();
             }
             s_fixInstance.ExportToExcel();
+            s_fixInstance = null;
         }
         public void ExportToExcel()
         {
@@ -69,14 +74,44 @@ namespace MESdbToERPdb
             if (dir.Exists == false)
                 dir.Create();
             string fileName = "FixData.xlsx";
+            if (File.Exists(Path.Combine(path, fileName)))
+            {
+                XLWorkbook currentWorkbook = new XLWorkbook(Path.Combine(path, fileName));
+                IXLWorksheet currentWsh = currentWorkbook.Worksheet("FixData");
+                IXLCell cellForNewData = currentWsh.Cell(currentWsh.LastRowUsed().RowNumber() + 1, 1);
+                var table = currentWsh.Tables.FirstOrDefault();
 
-            XLWorkbook wb = new XLWorkbook();
-            wb.Worksheets.Add(fixTB, "FixData");
+                //if (currentWsh.LastRowUsed().RowNumber() != 1)
+                //{
+                    cellForNewData.InsertData(fixTB);
+                    table.Resize(currentWsh.FirstCellUsed(), currentWsh.LastCellUsed());
+                    currentWorkbook.Save();
+                    currentWorkbook.Dispose();
+                //}
+                //else
+                //{
 
+                //    File.Delete(Path.Combine(path, fileName));
+                //    System.Threading.Thread.Sleep(1000);
+                //    XLWorkbook wb = new XLWorkbook();
+                //    wb.Worksheets.Add(fixTB, "FixData");
 
-            wb.SaveAs(Path.Combine(path, fileName));
-            wb.Dispose();
+                //    wb.SaveAs(Path.Combine(path, fileName));
+                //    wb.Dispose();
+                //}
+            }
+            else
+            {
+                //not exist
+                XLWorkbook wb = new XLWorkbook();
+                wb.Worksheets.Add(fixTB, "FixData");
+                
+                wb.SaveAs(Path.Combine(path, fileName));
+                wb.Dispose();
+            }
+            
             //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã xuất file excel và lưu tại ", Path.Combine(path, fileName));
         }
+        
     }
 }

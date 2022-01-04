@@ -133,7 +133,10 @@ namespace MESdbToERPdb
             // 
             this.btn_errorForm.BackColor = System.Drawing.Color.White;
             this.btn_errorForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_errorForm.BackgroundImage")));
-            this.btn_errorForm.Location = new System.Drawing.Point(669, 19);
+            this.btn_errorForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_errorForm.FlatAppearance.BorderSize = 0;
+            this.btn_errorForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_errorForm.Location = new System.Drawing.Point(649, 19);
             this.btn_errorForm.Name = "btn_errorForm";
             this.btn_errorForm.Size = new System.Drawing.Size(59, 60);
             this.btn_errorForm.TabIndex = 9;
@@ -144,6 +147,9 @@ namespace MESdbToERPdb
             // 
             this.btn_settingForm.BackColor = System.Drawing.Color.White;
             this.btn_settingForm.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_settingForm.BackgroundImage")));
+            this.btn_settingForm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btn_settingForm.FlatAppearance.BorderSize = 0;
+            this.btn_settingForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_settingForm.Location = new System.Drawing.Point(734, 19);
             this.btn_settingForm.Name = "btn_settingForm";
             this.btn_settingForm.Size = new System.Drawing.Size(60, 60);
