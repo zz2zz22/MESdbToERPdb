@@ -26,113 +26,191 @@ namespace MESdbToERPdb
         #region CreateDatatable
         private DataReport()
         {
-                successReportTB = new DataTable();
-                DataColumn cl1 = new DataColumn();
-                cl1.ColumnName = "Loại phiếu"; // Loại phiếu
-                cl1.DataType = typeof(string);
+            successReportTB = new DataTable();
 
-                DataColumn cl2 = new DataColumn();
-                cl2.ColumnName = "Mã phiếu"; // Mã phiếu
-                cl2.DataType = typeof(string);
+            DataColumn cl1 = new DataColumn();
+            cl1.ColumnName = "Thời gian chuyển"; //DateTime.Now
+            cl1.DataType = typeof(string);
 
-                DataColumn cl3 = new DataColumn();
-                cl3.ColumnName = "Mã SX"; // Mã ERP
-                cl3.DataType = typeof(string);
+            DataColumn cl2 = new DataColumn();
+            cl2.ColumnName = "Loại phiếu chuyển"; // Loại phiếu
+            cl2.DataType = typeof(string);
 
-                DataColumn cl4 = new DataColumn();
-                cl4.ColumnName = "Mã đơn chuyển"; // Mã số đơn chuyển trên MES   订单创建状态
-                cl4.DataType = typeof(string);
+            DataColumn cl3 = new DataColumn();
+            cl3.ColumnName = "Mã phiếu chuyển"; // Mã phiếu
+            cl3.DataType = typeof(string);
 
-                DataColumn cl5 = new DataColumn();
-                cl5.ColumnName = "Trạng thái xác nhận";
-                cl5.DataType = typeof(string);
+            DataColumn cl4 = new DataColumn();
+            cl4.ColumnName = "Thứ tự phiếu";
+            cl4.DataType = typeof(string);
 
-                DataColumn cl6 = new DataColumn();
-                cl6.ColumnName = "Trạng thái chuyển đổi";
-                cl6.DataType = typeof(string);
+            DataColumn cl5 = new DataColumn();
+            cl5.ColumnName = "Số đơn đặt"; // Mã ERP
+            cl5.DataType = typeof(string);
 
-                successReportTB.Columns.AddRange(new DataColumn[] { cl1, cl2, cl3, cl4, cl5, cl6 });
+            DataColumn cl6 = new DataColumn();
+            cl6.ColumnName = "Chuyển số đơn đặt hàng"; // Mã số đơn chuyển trên MES   订单创建状态  Trạng thái xác nhận  Trạng thái chuyển đổi
+            cl6.DataType = typeof(string);
 
-                failReportTB = new DataTable();
-                //DataColumn clf1 = new DataColumn();
-                //clf1.ColumnName = "Loại phiếu"; // Loại phiếu
-                //clf1.DataType = typeof(string);
+            DataColumn cl7 = new DataColumn();
+            cl7.ColumnName = "Số hiệu sản phẩm";
+            cl7.DataType = typeof(string);
 
-                //DataColumn clf2 = new DataColumn();
-                //clf2.ColumnName = "Mã phiếu"; // Mã phiếu
-                //clf2.DataType = typeof(string);
+            DataColumn cl8 = new DataColumn();
+            cl8.ColumnName = "Số hiệu công đoạn sản xuất";
+            cl8.DataType = typeof(string);
 
-                DataColumn clf3 = new DataColumn();
-                clf3.ColumnName = "Mã SX"; // Mã ERP
-                clf3.DataType = typeof(string);
+            DataColumn cl9 = new DataColumn();
+            cl9.ColumnName = "Tên gọi công đoạn sản xuất";
+            cl9.DataType = typeof(string);
 
-                DataColumn clf4 = new DataColumn();
-                clf4.ColumnName = "Mã đơn chuyển"; // Mã số đơn chuyển trên MES   订单创建状态
-                clf4.DataType = typeof(string);
+            DataColumn cl10 = new DataColumn();
+            cl10.ColumnName = "Số lượng đạt yêu cầu";
+            cl10.DataType = typeof(string);
 
-                DataColumn clf5 = new DataColumn();
-                clf5.ColumnName = "Trạng thái xác nhận";
-                clf5.DataType = typeof(string);
+            DataColumn cl11 = new DataColumn();
+            cl11.ColumnName = "Số lượng không đạt";
+            cl11.DataType = typeof(string);
 
-                DataColumn clf6 = new DataColumn();
-                clf6.ColumnName = "Trạng thái chuyển đổi";
-                clf6.DataType = typeof(string);
+            DataColumn cl12 = new DataColumn();
+            cl12.ColumnName = "Trả lại số lượng Xiuli";
+            cl12.DataType = typeof(string);
 
-                failReportTB.Columns.AddRange(new DataColumn[] {  clf3, clf4, clf5, clf6 });
+            DataColumn cl13 = new DataColumn();
+            cl13.ColumnName = "Trạng thái xác nhận";
+            cl13.DataType = typeof(string);
+
+            DataColumn cl14 = new DataColumn();
+            cl14.ColumnName = "Trạng thái chuyển đổi";
+            cl14.DataType = typeof(string);
+
+            successReportTB.Columns.AddRange(new DataColumn[] { cl1, cl2, cl3, cl4, cl5, cl6, cl7, cl8, cl9, cl10, cl11, cl12, cl13, cl14 });
+            
+
+
+            failReportTB = new DataTable();
+
+            DataColumn clf1 = new DataColumn();
+            clf1.ColumnName = "Thời gian chuyển"; 
+            clf1.DataType = typeof(string);
+
+            DataColumn clf2 = new DataColumn();
+            clf2.ColumnName = "Số đơn đặt"; // Mã ERP
+            clf2.DataType = typeof(string);
+
+            DataColumn clf3 = new DataColumn();
+            clf3.ColumnName = "Chuyển số đơn đặt hàng"; // Mã số đơn chuyển trên MES   订单创建状态
+            clf3.DataType = typeof(string);
+
+            DataColumn clf4 = new DataColumn();
+            clf4.ColumnName = "Số hiệu sản phẩm";
+            clf4.DataType = typeof(string);
+
+            DataColumn clf5 = new DataColumn();
+            clf5.ColumnName = "Số hiệu công đoạn sản xuất";
+            clf5.DataType = typeof(string);
+
+            DataColumn clf6 = new DataColumn();
+            clf6.ColumnName = "Tên gọi công đoạn sản xuất";
+            clf6.DataType = typeof(string);
+
+            DataColumn clf7 = new DataColumn();
+            clf7.ColumnName = "Số lượng đạt yêu cầu";
+            clf7.DataType = typeof(string);
+
+            DataColumn clf8 = new DataColumn();
+            clf8.ColumnName = "Số lượng không đạt";
+            clf8.DataType = typeof(string);
+
+            DataColumn clf9 = new DataColumn();
+            clf9.ColumnName = "Trả lại số lượng Xiuli";
+            clf9.DataType = typeof(string);
+
+            DataColumn clf10 = new DataColumn();
+            clf10.ColumnName = "Trạng thái xác nhận";
+            clf10.DataType = typeof(string);
+
+            DataColumn clf11 = new DataColumn();
+            clf11.ColumnName = "Trạng thái chuyển đổi";
+            clf11.DataType = typeof(string);
+
+            failReportTB.Columns.AddRange(new DataColumn[] { clf1, clf2, clf3, clf4, clf5, clf6, clf7, clf8, clf9, clf10, clf11 });
+
 
 
             errorReportTB = new DataTable();
-            //DataColumn cle1 = new DataColumn();
-            //cle1.ColumnName = "Loại phiếu"; // Loại phiếu
-            //cle1.DataType = typeof(string);
 
-            //DataColumn cle2 = new DataColumn();
-            //cle2.ColumnName = "Mã phiếu"; // Mã phiếu
-            //cle2.DataType = typeof(string);
+            DataColumn cle1 = new DataColumn();
+            cle1.ColumnName = "Thời gian chuyển"; // Mã ERP
+            cle1.DataType = typeof(string);
+
+            DataColumn cle2 = new DataColumn();
+            cle2.ColumnName = "Số đơn đặt"; // Mã ERP
+            cle2.DataType = typeof(string);
 
             DataColumn cle3 = new DataColumn();
-            cle3.ColumnName = "Mã SX"; // Mã ERP
+            cle3.ColumnName = "Chuyển số đơn đặt hàng"; // Mã số đơn chuyển trên MES   订单创建状态
             cle3.DataType = typeof(string);
 
             DataColumn cle4 = new DataColumn();
-            cle4.ColumnName = "Mã đơn chuyển"; // Mã số đơn chuyển trên MES   订单创建状态
+            cle4.ColumnName = "Số hiệu sản phẩm";
             cle4.DataType = typeof(string);
 
             DataColumn cle5 = new DataColumn();
-            cle5.ColumnName = "Trạng thái xác nhận";
+            cle5.ColumnName = "Số hiệu công đoạn sản xuất";
             cle5.DataType = typeof(string);
 
             DataColumn cle6 = new DataColumn();
-            cle6.ColumnName = "Trạng thái chuyển đổi";
+            cle6.ColumnName = "Tên gọi công đoạn sản xuất";
             cle6.DataType = typeof(string);
 
-            errorReportTB.Columns.AddRange(new DataColumn[] {  cle3, cle4, cle5, cle6 });        
+            DataColumn cle7 = new DataColumn();
+            cle7.ColumnName = "Số lượng đạt yêu cầu";
+            cle7.DataType = typeof(string);
+
+            DataColumn cle8 = new DataColumn();
+            cle8.ColumnName = "Số lượng không đạt";
+            cle8.DataType = typeof(string);
+
+            DataColumn cle9 = new DataColumn();
+            cle9.ColumnName = "Trả lại số lượng Xiuli";
+            cle9.DataType = typeof(string);
+
+            DataColumn cle10 = new DataColumn();
+            cle10.ColumnName = "Trạng thái xác nhận";
+            cle10.DataType = typeof(string);
+
+            DataColumn cle11 = new DataColumn();
+            cle11.ColumnName = "Trạng thái chuyển đổi";
+            cle11.DataType = typeof(string);
+
+            errorReportTB.Columns.AddRange(new DataColumn[] { cle1, cle2, cle3, cle4, cle5, cle6, cle7, cle8, cle9, cle10, cle11 });        
         }
 
-        public static void addReport(RP_TYPE rpType, string LP, string MP, string erpCode, string moveNo, string confirmStatus, string status)
+        public static void addReport(RP_TYPE rpType, string transDate, string LP, string MP, string ticketNo, string erpCode, string moveNo, string productCode, string operationNo, string operationName, string OK, string NG, string RW, string confirmStatus, string status)
         {
             if ( s_drInstance == null)
             {
                 s_drInstance = new DataReport();
             }
-            s_drInstance.writeReport(rpType, LP, MP, erpCode, moveNo, confirmStatus, status);
+            s_drInstance.writeReport(rpType, transDate, LP, MP, ticketNo, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status);
         }
 
-        private void writeReport(RP_TYPE rpType, string LP, string MP, string erpCode, string moveNo, string confirmStatus, string status)
+        private void writeReport(RP_TYPE rpType,string transDate, string LP, string MP, string ticketNo, string erpCode, string moveNo, string productCode, string operationNo, string operationName, string OK, string NG, string RW, string confirmStatus, string status)
         {
             if ( rpType == RP_TYPE.Fail)
             {
-                failReportTB.Rows.Add(new object[] {erpCode, moveNo, confirmStatus, status });
+                failReportTB.Rows.Add(new object[] { transDate, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
             }
             else
             {
                 if (rpType == RP_TYPE.Success)
                 {
-                    successReportTB.Rows.Add(new object[] { LP, MP, erpCode, moveNo, confirmStatus, status });
+                    successReportTB.Rows.Add(new object[] { transDate, LP, MP, ticketNo, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                 }
                 else
                 {
-                    errorReportTB.Rows.Add(new object[] { erpCode, moveNo, confirmStatus, status });
+                    errorReportTB.Rows.Add(new object[] { transDate, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                 }
             }
         }
@@ -167,22 +245,44 @@ namespace MESdbToERPdb
             var ws2 = wb.Worksheets.Add(failReportTB, "Failed MO");
             var ws3 = wb.Worksheets.Add(errorReportTB, "Error MO");
             wb.Style.Fill.BackgroundColor = XLColor.NoColor;
-            ws1.Column("A").Width = 8;
+            ws1.Column("A").Width = 19;
             ws1.Column("B").Width = 11;
-            ws1.Column("C").Width = 15;
-            ws1.Column("D").Width = 25;
-            ws1.Column("E").Width = 19;
-            ws1.Column("F").Width = 66;
+            ws1.Column("C").Width = 14;
+            ws1.Column("D").Width = 14;
+            ws1.Column("E").Width = 15;
+            ws1.Column("F").Width = 22;
+            ws1.Column("G").Width = 25;
+            ws1.Column("H").Width = 13;
+            ws1.Column("I").Width = 34;
+            ws1.Column("J").Width = 9;
+            ws1.Column("K").Width = 9;
+            ws1.Column("L").Width = 9;
+            ws1.Column("M").Width = 9;
+            ws1.Column("N").Width = 34;
 
-            ws2.Column("A").Width = 15;
-            ws2.Column("B").Width = 25;
-            ws2.Column("C").Width = 19;
-            ws2.Column("D").Width = 80;
+            ws2.Column("A").Width = 19;
+            ws2.Column("B").Width = 15;
+            ws2.Column("C").Width = 22;
+            ws2.Column("D").Width = 25;
+            ws2.Column("E").Width = 13;
+            ws2.Column("F").Width = 34;
+            ws2.Column("G").Width = 9;
+            ws2.Column("H").Width = 9;
+            ws2.Column("I").Width = 9;
+            ws2.Column("J").Width = 9;
+            ws2.Column("K").Width = 58;
 
-            ws3.Column("A").Width = 15;
-            ws3.Column("B").Width = 25;
-            ws3.Column("C").Width = 19;
-            ws3.Column("D").Width = 80;
+            ws3.Column("A").Width = 19;
+            ws3.Column("B").Width = 15;
+            ws3.Column("C").Width = 22;
+            ws3.Column("D").Width = 25;
+            ws3.Column("E").Width = 13;
+            ws3.Column("F").Width = 34;
+            ws3.Column("G").Width = 9;
+            ws3.Column("H").Width = 9;
+            ws3.Column("I").Width = 9;
+            ws3.Column("J").Width = 9;
+            ws3.Column("K").Width = 58;
 
 
             // check file path
@@ -211,7 +311,7 @@ namespace MESdbToERPdb
 
         public void SendReport(string sender, string sender_pw)
         {
-            MailMessage mail = new MailMessage();
+            
             string smtp = sender.Substring(sender.IndexOf('@'));
             if (smtp == "@gmail.com")
             {
@@ -227,6 +327,7 @@ namespace MESdbToERPdb
             string[] receivers = Properties.Settings.Default.cfg_receivers.Split('-');
             for (int i = 0; i < receivers.Length; i ++)
             {
+                MailMessage mail = new MailMessage();
                 //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Send mail to", receivers[i]);
                 SmtpClient SmtpServer = new SmtpClient(Properties.Settings.Default.smtp_server);
                 mail.From = new MailAddress(sender);
@@ -244,9 +345,9 @@ namespace MESdbToERPdb
                 SmtpServer.EnableSsl = true;
 
                 SmtpServer.Send(mail);
+                mail.Dispose();
             }
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Report sent successfully", "");
-            mail.Dispose();
             
             System.Threading.Thread.Sleep(1000);
         }

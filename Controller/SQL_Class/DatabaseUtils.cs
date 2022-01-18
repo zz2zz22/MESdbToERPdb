@@ -10,20 +10,10 @@ namespace MESdbToERPdb
 {
     class DatabaseUtils
     {
-        //public static SqlConnection GetDBConnection()
-        //{
-        //    string datasource = "172.16.0.12";
-        //    string database = "ERPSOFT";
-        //    string username = "ERPUSER";
-        //    string password = "12345";
-
-        //    return DatabaseSQLServerUtils.GetDBConnection(datasource, database, username, password);
-        //}
-
         public static SqlConnection GetERPTestDBConnection() //ERP trên con .11 db - TLVN2 (dùng để test) con chính ERP trong db TECHLINK (KHÔNG ĐƯỢC ĐỘNG VÀO NẾU CHƯA TEST KĨ )
         {
-            string datasource = "172.16.0.11"; // Main ERP test connection "TL05112021"
-            string database = "TEST20211229";  // TECHLINK (kho chính)
+            string datasource = "172.16.0.11"; // Main ERP test connection "TEST20211229" 
+            string database = "TECHLINK";  // TECHLINK (kho chính)
             string username = "soft";
             string password = "techlink@!@#";
 
@@ -51,7 +41,6 @@ namespace MESdbToERPdb
 
             return DatabaseSQLServerUtils.GetMesDBConnection(host, user, password, database);
         }
-
 
         public static MySqlConnection GetMes_Quality_ControlDBC()
         {

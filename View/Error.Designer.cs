@@ -43,6 +43,8 @@ namespace MESdbToERPdb.View
             this.lb_pickTimeEnd = new System.Windows.Forms.Label();
             this.btn_startTransfer = new System.Windows.Forms.Button();
             this.pgb_transferError = new System.Windows.Forms.ProgressBar();
+            this.cbox_deleteStatus = new System.Windows.Forms.ComboBox();
+            this.btn_deleteAllStatus = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_fixData)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,14 +54,16 @@ namespace MESdbToERPdb.View
             this.dtgv_fixData.AllowUserToAddRows = false;
             this.dtgv_fixData.AllowUserToDeleteRows = false;
             this.dtgv_fixData.AllowUserToResizeRows = false;
-            this.dtgv_fixData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_fixData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgv_fixData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dtgv_fixData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_fixData.Location = new System.Drawing.Point(12, 142);
             this.dtgv_fixData.Name = "dtgv_fixData";
             this.dtgv_fixData.ReadOnly = true;
             this.dtgv_fixData.RowHeadersWidth = 51;
             this.dtgv_fixData.RowTemplate.Height = 24;
-            this.dtgv_fixData.Size = new System.Drawing.Size(1238, 519);
+            this.dtgv_fixData.Size = new System.Drawing.Size(1238, 445);
             this.dtgv_fixData.TabIndex = 0;
             // 
             // dtp_transDate
@@ -176,9 +180,9 @@ namespace MESdbToERPdb.View
             // 
             this.btn_startTransfer.BackColor = System.Drawing.Color.Yellow;
             this.btn_startTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_startTransfer.Location = new System.Drawing.Point(903, 11);
+            this.btn_startTransfer.Location = new System.Drawing.Point(926, 11);
             this.btn_startTransfer.Name = "btn_startTransfer";
-            this.btn_startTransfer.Size = new System.Drawing.Size(256, 81);
+            this.btn_startTransfer.Size = new System.Drawing.Size(211, 81);
             this.btn_startTransfer.TabIndex = 9;
             this.btn_startTransfer.Text = "TRANSFER ERROR CODE";
             this.btn_startTransfer.UseVisualStyleBackColor = false;
@@ -191,11 +195,42 @@ namespace MESdbToERPdb.View
             this.pgb_transferError.Size = new System.Drawing.Size(460, 34);
             this.pgb_transferError.TabIndex = 10;
             // 
+            // cbox_deleteStatus
+            // 
+            this.cbox_deleteStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbox_deleteStatus.FormattingEnabled = true;
+            this.cbox_deleteStatus.Items.AddRange(new object[] {
+            "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.",
+            "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ",
+            "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.",
+            "Không thể tạo phiếu D101 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA",
+            "Không thể tạo phiếu D201 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA.",
+            "Không thể tạo phiếu! Lỗi không xác định! Xem file log để biết thêm chi tiết!"});
+            this.cbox_deleteStatus.Location = new System.Drawing.Point(384, 614);
+            this.cbox_deleteStatus.Name = "cbox_deleteStatus";
+            this.cbox_deleteStatus.Size = new System.Drawing.Size(582, 28);
+            this.cbox_deleteStatus.TabIndex = 11;
+            // 
+            // btn_deleteAllStatus
+            // 
+            this.btn_deleteAllStatus.BackColor = System.Drawing.Color.Red;
+            this.btn_deleteAllStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_deleteAllStatus.ForeColor = System.Drawing.Color.Yellow;
+            this.btn_deleteAllStatus.Location = new System.Drawing.Point(972, 593);
+            this.btn_deleteAllStatus.Name = "btn_deleteAllStatus";
+            this.btn_deleteAllStatus.Size = new System.Drawing.Size(279, 68);
+            this.btn_deleteAllStatus.TabIndex = 12;
+            this.btn_deleteAllStatus.Text = "DELETE STATUS";
+            this.btn_deleteAllStatus.UseVisualStyleBackColor = false;
+            this.btn_deleteAllStatus.Click += new System.EventHandler(this.btn_deleteAllStatus_Click);
+            // 
             // Error
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.btn_deleteAllStatus);
+            this.Controls.Add(this.cbox_deleteStatus);
             this.Controls.Add(this.pgb_transferError);
             this.Controls.Add(this.btn_startTransfer);
             this.Controls.Add(this.panel1);
@@ -228,5 +263,7 @@ namespace MESdbToERPdb.View
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar pgb_transferError;
+        private System.Windows.Forms.ComboBox cbox_deleteStatus;
+        private System.Windows.Forms.Button btn_deleteAllStatus;
     }
 }

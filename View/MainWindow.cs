@@ -28,20 +28,19 @@ namespace MESdbToERPdb
 
         EventBroker.EventParam m_timerEvent = null;
         
-        FlowDocument m_flowDoc = null; //Hien log vao richtextbox
+        FlowDocument m_flowDoc = null; //Hien log vao flowDoc
         System.Windows.Forms.Timer tmrCallBgWorker;
         
         //Khoi tao bg worker
         BackgroundWorker bgWorker;
         
-
         System.Threading.Timer tmrEnsureWorkerGetsCalled;
         
         object lockObject = new object();
         
         //System.Windows.Forms.NotifyIcon m_notify = null; //icon trong bảng thông báo
         SettingClass settingClass = null;
-        
+
         private void InitializeVersion()
         {
             string version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Major.ToString(); //AssemblyVersion을 가져온다.
@@ -49,8 +48,6 @@ namespace MESdbToERPdb
             version += "." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.Build.ToString();
             Title = System.Reflection.Assembly.GetExecutingAssembly().GetName().Name + " " + version;
         }
-
-
         public mes2ERPMainWin()
         {
             InitializeComponent();
@@ -136,8 +133,8 @@ namespace MESdbToERPdb
             //test
 
             //UploadMain uploadMain = new UploadMain();
-            //string testIn = "2021-11-03 17:00:00";
-            //string testOut = "2021-11-03 18:00:00";
+            //string testIn = "2022-01-06 09:00:00";
+            //string testOut = "2022-01-06 11:00:00";
             //uploadMain.GetListTransferOrder(testIn, testOut);
             //DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
             //FixData.SaveFixExcel();
@@ -148,6 +145,60 @@ namespace MESdbToERPdb
 
             ClearMemory.CleanMemory();
         }
+
+        private void mes2ERPMainWin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            tmrCallBgWorker.Tick -= new EventHandler(timer_nextRun_Tick);
+            bgWorker.DoWork -= new DoWorkEventHandler(BW_DoWork);
+            bgWorker.ProgressChanged -= BW_ProgressChanged;
+            bgWorker.RunWorkerCompleted -= new RunWorkerCompletedEventHandler(BW_RunWorkerCompleted);
+
+            if (m_timerEvent != null)
+                EventBroker.RemoveTimeEvent(EventBroker.EventID.etUpdateMe, m_timerEvent);
+            EventBroker.RemoveObserver(EventBroker.EventID.etLog, m_observerLog);
+            EventBroker.Relase();
+            Environment.Exit(0);
+        }
+
+        private void mes2ERPMainWin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dialogResult;
+            if (Properties.Settings.Default.cfg_language == 1)
+            {
+                dialogResult = MessageBox.Show("Are you sure want to quit ?", "Confirmation", MessageBoxButtons.OKCancel);
+            }
+            else
+            {
+                dialogResult = MessageBox.Show("Bạn muốn thoát chương trình ?", "Xác nhận thoát", MessageBoxButtons.OKCancel);
+            }
+            if (dialogResult == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+        }
+
+        private void mes2ERPMainWin_Load(object sender, EventArgs e)
+        {
+            SystemLog.Output(SystemLog.MSG_TYPE.War, Title, "Started ");
+            settingClass = new SettingClass();
+            if (File.Exists(SaveObject.Pathsave))
+                settingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);
+            LoadBackgroundWorker();
+
+        }
+
+        private void btn_settingForm_Click(object sender, EventArgs e)
+        {
+            View.Setting setting = new View.Setting();
+            setting.ShowDialog();
+        }
+
+        private void btn_errorForm_Click(object sender, EventArgs e)
+        {
+            View.Error errorForm = new View.Error();
+            errorForm.ShowDialog();
+        }
+
         #region backgroundworker
         private void LoadBackgroundWorker()
         {   // this timer calls bgWorker again and again after regular intervals
@@ -219,7 +270,7 @@ namespace MESdbToERPdb
                 if (Properties.Settings.Default.intervalCounter > Properties.Settings.Default.intervalMail || Properties.Settings.Default.intervalCounter == Properties.Settings.Default.intervalMail)
                 {
                     DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
-                    System.Threading.Thread.Sleep(1000);
+                    
                     Properties.Settings.Default.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
                     Properties.Settings.Default.intervalCounter = 0;
                     Properties.Settings.Default.Save();
@@ -269,57 +320,6 @@ namespace MESdbToERPdb
         }
         #endregion
 
-        private void mes2ERPMainWin_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            tmrCallBgWorker.Tick -= new EventHandler(timer_nextRun_Tick);
-            bgWorker.DoWork -= new DoWorkEventHandler(BW_DoWork);
-            bgWorker.ProgressChanged -= BW_ProgressChanged;
-            bgWorker.RunWorkerCompleted -= new RunWorkerCompletedEventHandler(BW_RunWorkerCompleted);
-
-            if (m_timerEvent != null)
-                EventBroker.RemoveTimeEvent(EventBroker.EventID.etUpdateMe, m_timerEvent);
-            EventBroker.RemoveObserver(EventBroker.EventID.etLog, m_observerLog);
-            EventBroker.Relase();
-            Environment.Exit(0);
-        }
-
-        private void mes2ERPMainWin_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dialogResult;
-            if(Properties.Settings.Default.cfg_language == 1)
-            {
-                dialogResult = MessageBox.Show("Are you sure want to quit ?", "Confirmation", MessageBoxButtons.OKCancel);
-            }
-            else
-            {
-                dialogResult = MessageBox.Show("Bạn muốn thoát chương trình ?", "Xác nhận thoát", MessageBoxButtons.OKCancel);
-            }
-            if (dialogResult == DialogResult.Cancel)
-            {
-                e.Cancel = true;
-            }
-        }
-
-        private void mes2ERPMainWin_Load(object sender, EventArgs e)
-        {
-            SystemLog.Output(SystemLog.MSG_TYPE.War, Title, "Started ");
-            settingClass = new SettingClass();
-            if (File.Exists(SaveObject.Pathsave))
-                settingClass = (SettingClass)SaveObject.Load_data(SaveObject.Pathsave);
-            LoadBackgroundWorker();
-            
-        }
-
-        private void btn_settingForm_Click(object sender, EventArgs e)
-        {
-            View.Setting setting = new View.Setting();
-            setting.ShowDialog();
-        }
-
-        private void btn_errorForm_Click(object sender, EventArgs e)
-        {
-            View.Error errorForm = new View.Error();
-            errorForm.ShowDialog();
-        }
+        
     }
 }

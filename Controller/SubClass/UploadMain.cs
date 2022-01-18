@@ -10,26 +10,27 @@ namespace MESdbToERPdb
 {
     public class UploadMain
     {
-        
+
         public void GetListTransferOrder(string dIn, string dOut)
         {
             string timeIn = (Convert.ToDateTime(dIn)).ToString("HH:mm:ss");
             string timeOut = (Convert.ToDateTime(dOut)).ToString("HH:mm:ss");
-            try
+
+            string sqlgetListTO = "select distinct uuid from job_move where create_date < '" + dOut + "' and create_date >= '" + dIn + "' and delete_flag = '0'";
+            ComboBox cmb_ = new ComboBox();
+            sqlMESPlanningExcutionCon data = new sqlMESPlanningExcutionCon();
+            data.getComboBoxData(sqlgetListTO, ref cmb_);
+            DataTable table = new DataTable();
+            for (int cmbitem = 0; cmbitem < cmb_.Items.Count; cmbitem++)
             {
-                string sqlgetListTO = "select distinct uuid from job_move where create_date < '" + dOut + "' and create_date >= '" + dIn + "' and delete_flag = '0'";
-                ComboBox cmb_ = new ComboBox();
-                sqlMESPlanningExcutionCon data = new sqlMESPlanningExcutionCon();
-                data.getComboBoxData(sqlgetListTO, ref cmb_);
-                DataTable table = new DataTable();
-                for (int cmbitem = 0; cmbitem < cmb_.Items.Count; cmbitem++)
+                try
                 {
                     string jobmId = cmb_.Items[cmbitem].ToString();
 
                     StringBuilder sqlGetTable = new StringBuilder();
                     sqlGetTable.Append("select uuid, move_no, job_order_uuid,");
                     sqlGetTable.Append("job_no, work_order_uuid, belong_organization, work_order_process_uuid, ");
-                    sqlGetTable.Append("operation_uuid, operation_no, product_uuid, product_no ,product_lot_no, move_out_qty, move_out_pass_qty, move_out_failed_qty, move_out_date, create_by, update_by, create_date, update_date");
+                    sqlGetTable.Append("operation_uuid, operation_no, operation_name, product_uuid, product_no ,product_lot_no, move_out_qty, move_out_pass_qty, move_out_failed_qty, move_out_date, create_by, update_by, create_date, update_date");
                     sqlGetTable.Append(" from job_move ");
                     sqlGetTable.Append(" where uuid = '" + cmb_.Items[cmbitem].ToString() + "'");
                     data.sqlDataAdapterFillDatatable(sqlGetTable.ToString(), ref table);
@@ -51,7 +52,7 @@ namespace MESdbToERPdb
 
                         DataTable dtJobRecord = new DataTable();
                         string getTableJR = "select uuid, job_order_uuid, create_date from job_order_record where job_order_uuid = '" + jobOrder_id + "' and product_lot_no = '" + productLotNo + "' and actual_pass_qty = '" + jmMOPassQty + "'";
-                        
+
                         data.sqlDataAdapterFillDatatable(getTableJR, ref dtJobRecord);
                         TimeSpan minDate = new TimeSpan(1, 0, 0, 0);
                         int flag = 0;
@@ -65,7 +66,7 @@ namespace MESdbToERPdb
                                 flag = i;
                             }
                         }
-                        
+
                         sqlMESQualityControlCon qltyCon = new sqlMESQualityControlCon();
                         string jobOrderRecord_id = dtJobRecord.Rows[flag]["uuid"].ToString();
 
@@ -91,15 +92,16 @@ namespace MESdbToERPdb
                             SP = erpCode.Substring(4);
                         }
                         string checkSemiValue = "SEMI";
-                        
+
                         string operationCode = table.Rows[cmbitem]["operation_no"].ToString();
                         string ParentOrgCode = GetParentOrganizationCode(table.Rows[cmbitem]["belong_organization"].ToString());
                         bool isOperationJM = false;
                         if (table.Rows[cmbitem]["operation_no"].ToString().Substring(0, 2) == "JM")
                         {
                             isOperationJM = true;
-                        } else isOperationJM = false;
-                        
+                        }
+                        else isOperationJM = false;
+
                         double OKQty = double.Parse(con2.sqlExecuteScalarString("select distinct actual_pass_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
                         double NGQty = double.Parse(con2.sqlExecuteScalarString("select distinct actual_fail_qty from job_order_record_view where uuid = '" + jobOrderRecord_id + "'"));
 
@@ -116,13 +118,13 @@ namespace MESdbToERPdb
                         {
                             productionCodeHeaders = null;
                         }
-                        
+
                         bool checkIsProductionCode = false;
-                        if(productionCodeHeaders != null)
+                        if (productionCodeHeaders != null)
                         {
                             for (int i = 0; i < productionCodeHeaders.Length; i++)
                             {
-                                if ( MP == productionCodeHeaders[i])
+                                if (MP == productionCodeHeaders[i])
                                 {
                                     checkIsProductionCode = true;
                                 }
@@ -146,42 +148,38 @@ namespace MESdbToERPdb
                                                 if (checkD1orD2 == 2)
                                                 {
                                                     //update D201 to realtime
-                                                    classinsertD2.InsertdataToERP_D201(MP, SP, ParentOrgCode, OKQty, NGQty, RWQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString());
+                                                    classinsertD2.InsertdataToERP_D201(MP, SP, ParentOrgCode, OKQty, NGQty, RWQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
                                                     classinsertD2.updateERPD201(MP, SP, OKQty, NGQty, RWQty, DateUp, TimeUp); //check transdate 
                                                 }
                                                 else
                                                 {
                                                     if (checkD1orD2 == 1)
                                                     {
-                                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString());
+                                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
                                                         classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp);
                                                     }
                                                     else
                                                     {
                                                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                                                        DataReport.addReport(DataReport.RP_TYPE.Error,"", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(),"", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                                                        //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
                                                     }
                                                 }
                                             }
                                             else
                                             {
                                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
-                                                DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
-                                                //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
+                                                DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
                                             }
                                         }
                                         else
                                         {
                                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
-                                            DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
-                                            //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
-                                        }                                   
-                                    }else
+                                            DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
+                                        }
+                                    }
+                                    else
                                     {
                                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do công đoạn thuộc J01-2 và có mã công đoạn là JM.");
-                                        DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 mã sản xuất P512 thuộc bộ phận J01-2 và có mã công đoạn là JM.");
-                                        //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 mã sản xuất P512 thuộc bộ phận J01-2 và có mã công đoạn là JM.");
+                                        DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển D101 hay D201 do công đoạn thuộc J01-2 và có mã công đoạn là JM.");
                                     }
                                 }
                                 else
@@ -193,65 +191,60 @@ namespace MESdbToERPdb
                                             if (checkD1orD2 == 2)
                                             {
                                                 //update D201 to realtime
-                                                classinsertD2.InsertdataToERP_D201(MP, SP, ParentOrgCode, OKQty, NGQty, RWQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString());
+                                                classinsertD2.InsertdataToERP_D201(MP, SP, ParentOrgCode, OKQty, NGQty, RWQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
                                                 classinsertD2.updateERPD201(MP, SP, OKQty, NGQty, RWQty, DateUp, TimeUp); //check transdate 
                                             }
                                             else
                                             {
                                                 if (checkD1orD2 == 1)
                                                 {
-                                                    classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString());
+                                                    classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
                                                     classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp);
                                                 }
                                                 else
                                                 {
                                                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                                                    DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                                                    //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
                                                 }
                                             }
                                         }
                                         else
                                         {
                                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
-                                            DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
-                                            //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
+                                            DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
                                         }
                                     }
                                     else
                                     {
                                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
-                                        DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
-                                        //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do lệnh sản xuất có chứa 'SEMI'");
+                                        DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không thể tạo phiếu chuyển do 'Số lượng hoàn thành(OK)' = 0 và 'Số lượng phế(NG)' = 0 !");
                                     }
                                 }
                             }
                             else
                             {
                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.");
-                                DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.");
-                                //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển D101 hay D201 do không thuộc các mã phiếu cần tạo.");
                             }
                         }
                         else
                         {
                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển do mã sản xuất rỗng");
-                            DataReport.addReport(DataReport.RP_TYPE.Error, "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển do mã sản xuất rỗng.");
-                            //FixData.addFixTB(DateTime.Now, MP + SP, table.Rows[cmbitem]["move_no"].ToString(), "Không có phiếu chuyển do mã sản xuất rỗng.");
+                            DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do mã sản xuất rỗng");
                         }
                     }
                     else
                     {
                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                        DataReport.addReport(DataReport.RP_TYPE.Error, "", "", "", table.Rows[cmbitem]["move_no"].ToString(), "", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
-                    }          
+                    }
+                }
+                catch (Exception ex)
+                {
+                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                SystemLog.Output(SystemLog.MSG_TYPE.Err, "GetListTransferOrder", ex.Message);
-            }
         }
+
+    
+
 
         public string GetParentOrganizationCode(string uuid)
         {
