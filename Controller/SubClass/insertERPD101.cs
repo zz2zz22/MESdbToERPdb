@@ -8,7 +8,6 @@ namespace MESdbToERPdb
 {
     public class insertERP_D101
     {
-
         string ITEMID_TC047 = "";
         string ITEMNAME_TC048 = "";
         string ITEMDESCRIPTION = "";
@@ -61,8 +60,8 @@ namespace MESdbToERPdb
         {
             sqlERPCon sqlERPCON = new sqlERPCon();
             double DonVi = 0;
-            string MD003 = sqlERPCON.sqlExecuteScalarString("select distinct MD003 from INVMD where MD001 = '" + itemNo + "' and MD002 = 'KG'");
-            string MD004 = sqlERPCON.sqlExecuteScalarString("select distinct MD004 from INVMD where MD001 = '" + itemNo + "' and MD002 = 'KG'");
+            string MD003 = sqlERPCON.sqlExecuteScalarString("select distinct MD003 from INVMD where MD001 = '" + itemNo + "' and UPPER(MD002) = 'KG'");
+            string MD004 = sqlERPCON.sqlExecuteScalarString("select distinct MD004 from INVMD where MD001 = '" + itemNo + "' and UPPER(MD002) = 'KG'");
             double DV_MD003 = double.Parse(MD003);
             double DV_MD004 = double.Parse(MD004);
             if (DV_MD003 == 0 || DV_MD004 == 0)
@@ -320,7 +319,7 @@ namespace MESdbToERPdb
                         {
                             SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.", SFCTA010 + " : " + MOCTA015 + " (Code : " + MP + "-" + SP + ")");
                             DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
-                            FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
+                            FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA010 lon hon hoac bang MOCTA015.");
                         }
                     }
                     else
@@ -354,7 +353,7 @@ namespace MESdbToERPdb
                         {
                             SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA010 > MOCTA015.", SFCTA010 + ">" + MOCTA015 + " (Code : " + MP + "-" + SP + ")");
                             DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
-                            FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
+                            FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA010 lon hon MOCTA015.");
                         }
                     }
                 }
@@ -362,14 +361,14 @@ namespace MESdbToERPdb
                 {
                     SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu D101 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA: ", MP + SP);
                     DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu D101 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA");
-                    FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Không thể tạo phiếu D101 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA");
+                    FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu D101 do thieu du lieu o bang SFCTA hoac MOCTA.");
                 }
             }
             catch (Exception ex)
             {
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "InsertdataToERP(string barcode, string output, string NG)", ex.Message);
                 DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu! Lỗi không xác định! Xem file log để biết thêm chi tiết!"); ;
-                FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Không thể tạo phiếu! Lỗi không xác định! Xem file log để biết thêm chi tiết!");
+                FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu! Loi khong xac dinh xem file log de biet chi tiet!");
             }
         }
         public string CheckTA032(string MP, string SP)
@@ -387,12 +386,11 @@ namespace MESdbToERPdb
         }
         public string GetFirstD1Date(string MP, string SP)
         {
-            DateTime date = DateTime.Now;
-            DateTime nextMonth = date.AddMonths(1);
-            string dateNMFormat = nextMonth.ToString("yyMM");
             sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
-            string transferCode = con.sqlExecuteScalarString("select distinct min(TC002) from SFCTC where TC001 = 'D101' and TC004 = '"+MP+"' and TC005 = '"+ SP+"'");
-            string createDate = con.sqlExecuteScalarString("select distinct TB003 from SFCTB where TB001 ='D101' and TB002 = '"+transferCode+"'");
+            string transferType = con.sqlExecuteScalarString("select TOP 1 TC001 from TECHLINK.dbo.SFCTC where TC004 = '" + MP + "' and TC005 = '" + SP + "' and TC001 IN ('D101', 'AD11')");
+            string transferCode = con.sqlExecuteScalarString("select TOP 1 TC002 from TECHLINK.dbo.SFCTC where TC004 = '" + MP + "' and TC005 = '" + SP + "' and TC001 IN ('D101', 'AD11')");
+
+            string createDate = con.sqlExecuteScalarString("select distinct TB003 from SFCTB where TB001 = '" + transferType + "' and TB002 = '" + transferCode + "'");
             return createDate;
         }
         public void updateERPD101(string MP, string SP, double output, string date, string time)

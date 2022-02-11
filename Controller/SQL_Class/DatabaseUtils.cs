@@ -13,7 +13,7 @@ namespace MESdbToERPdb
         public static SqlConnection GetERPTestDBConnection() //ERP trên con .11 db - TLVN2 (dùng để test) con chính ERP trong db TECHLINK (KHÔNG ĐƯỢC ĐỘNG VÀO NẾU CHƯA TEST KĨ )
         {
             string datasource = "172.16.0.11"; // Main ERP test connection "TEST20211229" 
-            string database = "TECHLINK";  // TECHLINK (kho chính)
+            string database = "TEST20211229";  // TECHLINK (kho chính)
             string username = "soft";
             string password = "techlink@!@#";
 
@@ -30,6 +30,16 @@ namespace MESdbToERPdb
 
             //string connectionString = @"Data Source=DESKTOP-R9UCIUR/SQLEXPRESS;Initial Catalog=TLVN2; Integrated Security = True"; //Test on local server clone from mes_interface on MES database.
             return DatabaseSQLServerUtils.GetERPDBConnection(datasource, database, username, password);
+        }
+
+        public static SqlConnection GetSoftDBConnection()
+        {
+            string datasource = "172.16.0.12";
+            string database = "MES2ERP_SOFT";
+            string username = "ERPUSER";
+            string password = "12345";
+
+            return DatabaseSQLServerUtils.GetSoftDBConnection(datasource, database, username, password);
         }
 
         public static MySqlConnection GetMes_InterfaceDBC() //MES trên con .22 mySQL - sử dụng MySQL DataProvider để clone về server local

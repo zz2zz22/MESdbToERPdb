@@ -10,15 +10,14 @@ namespace MESdbToERPdb
 {
     public class UploadMain
     {
-
         public void GetListTransferOrder(string dIn, string dOut)
         {
             string timeIn = (Convert.ToDateTime(dIn)).ToString("HH:mm:ss");
             string timeOut = (Convert.ToDateTime(dOut)).ToString("HH:mm:ss");
-
+            sqlMESPlanningExcutionCon data = new sqlMESPlanningExcutionCon();
             string sqlgetListTO = "select distinct uuid from job_move where create_date < '" + dOut + "' and create_date >= '" + dIn + "' and delete_flag = '0'";
             ComboBox cmb_ = new ComboBox();
-            sqlMESPlanningExcutionCon data = new sqlMESPlanningExcutionCon();
+            
             data.getComboBoxData(sqlgetListTO, ref cmb_);
             DataTable table = new DataTable();
             for (int cmbitem = 0; cmbitem < cmb_.Items.Count; cmbitem++)
@@ -239,12 +238,10 @@ namespace MESdbToERPdb
                 catch (Exception ex)
                 {
                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", ex.Message);
+                    DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "","", table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), "", "", "", "", ex.Message);
                 }
             }
         }
-
-    
-
 
         public string GetParentOrganizationCode(string uuid)
         {

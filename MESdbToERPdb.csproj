@@ -148,6 +148,7 @@
     <Compile Include="Controller\SQL_Class\DatabaseUtils.cs" />
     <Compile Include="Controller\SQL_Class\sqlERPCon.cs" />
     <Compile Include="Controller\SQL_Class\sqlMESInterCon.cs" />
+    <Compile Include="Controller\SQL_Class\sqlSOFTCon.cs" />
     <Compile Include="Controller\SubClass\DataReport.cs" />
     <Compile Include="Controller\SubClass\FixData.cs" />
     <Compile Include="Controller\SubClass\insertERPD101.cs" />

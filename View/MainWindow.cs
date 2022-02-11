@@ -125,6 +125,7 @@ namespace MESdbToERPdb
             Properties.Settings.Default.dIn = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             Properties.Settings.Default.intervalCounter = 0;
             Properties.Settings.Default.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
+            Properties.Settings.Default.isD1Converted = false;
             Properties.Settings.Default.Save();
 
             
@@ -133,15 +134,13 @@ namespace MESdbToERPdb
             //test
 
             //UploadMain uploadMain = new UploadMain();
-            //string testIn = "2022-01-06 09:00:00";
-            //string testOut = "2022-01-06 11:00:00";
+            //string testIn = "2022-01-24 07:59:19"; //2022-01-18 03:45:29
+            //string testOut = "2022-01-24 10:23:30"; //2022-01-20 11:59:17 
+
             //uploadMain.GetListTransferOrder(testIn, testOut);
             //DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
-            //FixData.SaveFixExcel();
-
+            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
             //System.Threading.Thread.Sleep(100);
-            //settings.excelFileName = "Report_" + DateTime.Now.ToString("yyyyMMdd-hhmmss") + ".xlsx";
-            //settings.Save();
 
             ClearMemory.CleanMemory();
         }
@@ -264,7 +263,6 @@ namespace MESdbToERPdb
                 Properties.Settings.Default.dIn = dOut;
                 Properties.Settings.Default.intervalCounter = Properties.Settings.Default.intervalCounter + Properties.Settings.Default.interval;
                 Properties.Settings.Default.Save();
-                FixData.SaveFixExcel();
                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
                 
                 if (Properties.Settings.Default.intervalCounter > Properties.Settings.Default.intervalMail || Properties.Settings.Default.intervalCounter == Properties.Settings.Default.intervalMail)

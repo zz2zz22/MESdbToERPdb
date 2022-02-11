@@ -21,72 +21,18 @@ namespace MESdbToERPdb.View
         {
             InitializeComponent();
         }
-        private static DataTable LoadExcel2DataGrid()
+        private static DataTable Load2DataGrid()
         {
-            
-            using (DataTable dt = new DataTable())
-            { 
-            string path = AppDomain.CurrentDomain.BaseDirectory + "\\FixData";
-            string fileName = "FixData.xlsx";
-            string file = Path.Combine(path, fileName);
-                if (File.Exists(file))
-                {
-                    DataRow row;
-                    
-                    try
-                    {
-                        Excel.Application excelApp = new Excel.Application();
-                        Excel.Workbook excelWB = excelApp.Workbooks.Open(file);
-                        Excel._Worksheet excelWS = excelWB.Sheets[1];
-                        Excel.Range excelRange = excelWS.UsedRange;
-
-                        int rowCount = excelRange.Rows.Count;
-                        int colCount = excelRange.Columns.Count;
-
-                        for (int j = 1; j <= colCount; j++)
-                        {
-                            dt.Columns.Add(excelRange.Cells[1, j].Value2.ToString());
-                        }
-                        int rowCounter;
-                        for (int i = 2; i <= rowCount; i++)
-                        {
-                            row = dt.NewRow();
-                            rowCounter = 0;
-                            for (int j = 1; j <= colCount; j++)
-                            {
-                                if (excelRange.Cells[i, j] != null)
-                                {
-                                    row[rowCounter] = Convert.ToString(excelRange.Cells[i, j].Value2);
-                                }
-                                else
-                                {
-                                    row[i] = "";
-                                }
-                                rowCounter++;
-                            }
-                            dt.Rows.Add(row);
-                        }
-                        GC.Collect();
-                        GC.WaitForPendingFinalizers();
-                        Marshal.ReleaseComObject(excelRange);
-                        Marshal.ReleaseComObject(excelWS);
-                        excelWB.Close(0);
-                        Marshal.ReleaseComObject(excelWB);
-                        excelApp.Quit();
-                        Marshal.ReleaseComObject(excelApp);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-                return dt;
-            }
+            DataTable dt = new DataTable();
+            string sqlLoadFixData = "select * from v_FixData";
+            sqlSOFTCon con = new sqlSOFTCon();
+            con.sqlDataAdapterFillDatatable(sqlLoadFixData, ref dt);
+            return dt;
         }
 
         private void Error_Load(object sender, EventArgs e)
         {
-            dtgv_fixData.DataSource = LoadExcel2DataGrid();
+            dtgv_fixData.DataSource = Load2DataGrid();
             
             
             btn_startTransfer.Enabled = false;
@@ -108,7 +54,6 @@ namespace MESdbToERPdb.View
             lb_pickTimeStart.Text = "Từ:";
             lb_pickTimeEnd.Text = "Đến:";
             btn_startTransfer.Text = "CHUYỂN ĐỔI CÁC MÃ LỖI";
-            btn_deleteAllStatus.Text = "XÓA TRẠNG THÁI";
         }
         private void ChangeLanguageToEnglish()
         {
@@ -117,32 +62,16 @@ namespace MESdbToERPdb.View
             lb_pickTimeStart.Text = "From:";
             lb_pickTimeEnd.Text = "To:";
             btn_startTransfer.Text = "TRANSFER ERROR CODE";
-            btn_deleteAllStatus.Text = "DELETE STATUS";
         }
         private static DataTable SearchErrorResult(string TransDate, string TimeIn, string TimeEnd)
         {
             string searchDate = TransDate;
             DataTable dt = new DataTable();
-            try
-            {
-                var re = from row in LoadExcel2DataGrid().AsEnumerable() where row[0].ToString().Contains(searchDate) select row;
-                if (re.Count() != 0)
-                {
-                    var re2 = from row2 in re.CopyToDataTable().AsEnumerable() where (Convert.ToDateTime(row2[1].ToString()) >= Convert.ToDateTime(TimeIn) && Convert.ToDateTime(row2[1].ToString()) <= Convert.ToDateTime(TimeEnd)) select row2;
-                    {
-                        if (re2.Count() != 0)
-                        {
-                            dt = re2.CopyToDataTable();
-                        }
-                    }
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            string sqlLoadFixData = "select * from v_FixData where TRANS_DATE = '" + TransDate + "' and TRANS_TIME >= '" + TimeIn + "' and TRANS_TIME <= '" + TimeEnd + "'";
+            sqlSOFTCon con = new sqlSOFTCon();
+            con.sqlDataAdapterFillDatatable(sqlLoadFixData, ref dt);
             return dt;
+
         }
         private void btn_errorDateSearch_Click(object sender, EventArgs e)
         {
@@ -177,12 +106,13 @@ namespace MESdbToERPdb.View
                     DataTable table = new DataTable();
                     for (int cmbitem = 0; cmbitem < cmb_.Items.Count; cmbitem++)
                     {
+                        pgb_transferError.Value = (cmbitem + 1) * pgb_transferError.Maximum / cmb_.Items.Count;
                         string jobmId = cmb_.Items[cmbitem].ToString();
 
                         StringBuilder sqlGetTable = new StringBuilder();
                         sqlGetTable.Append("select uuid, move_no, job_order_uuid,");
                         sqlGetTable.Append("job_no, work_order_uuid, belong_organization, work_order_process_uuid, ");
-                        sqlGetTable.Append("operation_uuid, operation_no, product_uuid, product_no ,product_lot_no, move_out_qty, move_out_pass_qty, move_out_failed_qty, move_out_date, create_by, update_by, create_date, update_date");
+                        sqlGetTable.Append("operation_uuid, operation_no,operation_name, product_uuid, product_no ,product_lot_no, move_out_qty, move_out_pass_qty, move_out_failed_qty, move_out_date, create_by, update_by, create_date, update_date");
                         sqlGetTable.Append(" from job_move ");
                         sqlGetTable.Append(" where uuid = '" + cmb_.Items[cmbitem].ToString() + "'");
                         data.sqlDataAdapterFillDatatable(sqlGetTable.ToString(), ref table);
@@ -389,6 +319,7 @@ namespace MESdbToERPdb.View
                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrder", "Không có phiếu chuyển D101 hay D201 do không thuộc các công đoạn cần tạo phiếu.");
                         }
                     }
+                    pgb_transferError.Value = 0;
                 }
                 else
                 {
@@ -451,6 +382,17 @@ namespace MESdbToERPdb.View
             
             DataTable tableDel = new DataTable();
             tableDel = SearchErrorResult(dtp_transDate.Value.ToString("yyyy-MM-dd"), dtp_timeStart.Value.ToString("HH:mm:ss"), dtp_timeEnd.Value.ToString("HH:mm:ss"));
+            List<string> moveNOs = new List<string>(tableDel.Rows.Count);
+            foreach (DataRow row in tableDel.Rows)
+            {
+                moveNOs.Add(row[3].ToString());
+            }
+            for (int i = 0; i < moveNOs.Count(); i++)
+            {
+                sqlSOFTCon con = new sqlSOFTCon();
+                string sqlCmd = "delete from v_FixData where MOVE_NO = '" + moveNOs[i] + "'";
+                con.sqlExecuteNonQuery(sqlCmd, false);
+            }
             GetListTransferOrder(tableDel);
             MessageBox.Show("Chuyển thành công!");
             if (Properties.Settings.Default.cfg_language == 1)
@@ -463,45 +405,7 @@ namespace MESdbToERPdb.View
             }
             btn_startTransfer.Enabled = false;
             btn_startTransfer.BackColor = Color.Gray;
-            List<string> moveNOs = new List<string>(tableDel.Rows.Count);
 
-            string path = AppDomain.CurrentDomain.BaseDirectory + "\\FixData";
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
-            if (dir.Exists == false)
-                dir.Create();
-            string fileName = "FixData.xlsx";
-
-            Excel.Application excelApp = new Excel.Application();
-            Excel.Workbook excelWB = excelApp.Workbooks.Open(Path.Combine(path,fileName));
-            Excel._Worksheet excelWS = excelWB.Sheets[1];
-            Excel.Range excelRange = excelWS.UsedRange;
-
-            int rowCount = excelRange.Rows.Count;
-            foreach (DataRow row in tableDel.Rows)
-            {
-                moveNOs.Add(row[3].ToString());
-            }
-
-            if (Properties.Settings.Default.cfg_language == 1)
-            {
-                btn_startTransfer.Text = "Reloading data...";
-            }
-            else
-            {
-                btn_startTransfer.Text = "Tải dữ liệu...";
-            }
-            for (int i = 0; i < moveNOs.Count(); i++)
-            {
-                pgb_transferError.Value = i * pgb_transferError.Maximum / moveNOs.Count();
-                for(int j = 2; j <= rowCount; j++)
-                {
-                    if (Convert.ToString(excelRange.Cells[j, 4].Value2) == moveNOs[i])
-                    {
-                        excelRange.Rows[j].Delete();
-                    }
-                }
-            }
-            pgb_transferError.Value = 0;
             if (Properties.Settings.Default.cfg_language == 1)
             {
                 btn_startTransfer.Text = "TRANSFER ERROR CODE";
@@ -510,26 +414,21 @@ namespace MESdbToERPdb.View
             {
                 btn_startTransfer.Text = "CHUYỂN ĐỔI CÁC MÃ LỖI";
             }
-            
-
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-            Marshal.ReleaseComObject(excelRange);
-            Marshal.ReleaseComObject(excelWS);
-            excelWB.Save();
-            excelWB.Close(0);
-            Marshal.ReleaseComObject(excelWB);
-            excelApp.DisplayAlerts = false;
-            excelApp.Quit();
-            Marshal.ReleaseComObject(excelApp);
 
             dtgv_fixData.DataSource = null;
-            dtgv_fixData.DataSource = LoadExcel2DataGrid();
+            dtgv_fixData.DataSource = Load2DataGrid();
         }
 
         private void dtp_transDate_ValueChanged(object sender, EventArgs e)
         {
             btn_startTransfer.Enabled = false;
+            dtgv_fixData.DataSource = null;
+            string searchDate = dtp_transDate.Value.ToString("yyyy-MM-dd");
+            DataTable dt = new DataTable();
+            string sqlLoadFixData = "select * from v_FixData where TRANS_DATE = '" + searchDate + "'";
+            sqlSOFTCon con = new sqlSOFTCon();
+            con.sqlDataAdapterFillDatatable(sqlLoadFixData, ref dt);
+            dtgv_fixData.DataSource = dt;
         }
 
         private void dtp_timeStart_ValueChanged(object sender, EventArgs e)
@@ -546,119 +445,5 @@ namespace MESdbToERPdb.View
         {
             Dispose();
         }
-
-        private static DataTable SearchStatusResult(string value)
-        {
-            DataTable dt = new DataTable();
-            try
-            {
-                var re = from row in LoadExcel2DataGrid().AsEnumerable() where row[4].ToString().Contains(value) select row;
-                if (re.Count() != 0)
-                {
-                    dt = re.CopyToDataTable();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            return dt;
-        }
-
-        private void btn_deleteAllStatus_Click(object sender, EventArgs e)
-        {
-            if (cbox_deleteStatus.Text == "")
-            {
-                if(Properties.Settings.Default.cfg_language == 1)
-                {
-                    MessageBox.Show("Please choose a status to delete!");
-                }
-                else
-                {
-                    MessageBox.Show("Xin hãy chọn một trạng thái để xóa!");
-                }
-            }
-            else
-            {
-                DialogResult dialogResult;
-                if (Properties.Settings.Default.cfg_language == 1)
-                {
-                    dialogResult = MessageBox.Show("Do you want to delete all line contain status '" + cbox_deleteStatus.Text + "' ?", "Confirmation", MessageBoxButtons.OKCancel);
-                }
-                else
-                {
-                    dialogResult = MessageBox.Show("Bạn có muốn xóa cá dòng có trạng thái '" + cbox_deleteStatus.Text + "' ?", "Xác nhận", MessageBoxButtons.OKCancel);
-                }
-                if (dialogResult == DialogResult.OK)
-                {
-                    if (Properties.Settings.Default.cfg_language == 1)
-                    {
-                        btn_deleteAllStatus.Text = "DELETING...";
-                    }
-                    else
-                    {
-                        btn_deleteAllStatus.Text = "ĐANG XÓA...";
-                    }
-                    DataTable tableDelete = new DataTable();
-                    tableDelete = SearchStatusResult(cbox_deleteStatus.Text);
-                    List<string> status = new List<string>(tableDelete.Rows.Count);
-
-                    string path = AppDomain.CurrentDomain.BaseDirectory + "\\FixData";
-                    System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(path);
-                    if (dir.Exists == false)
-                        dir.Create();
-                    string fileName = "FixData.xlsx";
-
-                    Excel.Application excelApp = new Excel.Application();
-                    Excel.Workbook excelWB = excelApp.Workbooks.Open(Path.Combine(path, fileName));
-                    Excel._Worksheet excelWS = excelWB.Sheets[1];
-                    Excel.Range excelRange = excelWS.UsedRange;
-
-                    int rowCount = excelRange.Rows.Count;
-                    foreach (DataRow row in tableDelete.Rows)
-                    {
-                        status.Add(row[4].ToString());
-                    }
-
-                    for (int i = 0; i < status.Count(); i++)
-                    {
-                        
-                        for (int j = 2; j <= rowCount; j++)
-                        {
-                            if (Convert.ToString(excelRange.Cells[j, 5].Value2) == status[i])
-                            {
-                                excelRange.Rows[j].Delete();
-                            }
-                        }
-                    }
-                    
-                    if (Properties.Settings.Default.cfg_language == 1)
-                    {
-                        btn_deleteAllStatus.Text = "DELETE STATUS";
-                    }
-                    else
-                    {
-                        btn_deleteAllStatus.Text = "XÓA TRẠNG THÁI";
-                    }
-
-                    GC.Collect();
-                    GC.WaitForPendingFinalizers();
-                    Marshal.ReleaseComObject(excelRange);
-                    Marshal.ReleaseComObject(excelWS);
-                    excelWB.Save();
-                    excelWB.Close(0);
-                    Marshal.ReleaseComObject(excelWB);
-                    excelApp.DisplayAlerts = false;
-                    excelApp.Quit();
-                    Marshal.ReleaseComObject(excelApp);
-
-                    dtgv_fixData.DataSource = LoadExcel2DataGrid();
-                }
-                
-            }
-        }
     }
-    
-    
 }
