@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace MESdbToERPdb
 {
-    public class insertERP_D101
+    public class insertERP_D101 //Hàm xử lý tạo phiếu D101
     {
+        
         string ITEMID_TC047 = "";
         string ITEMNAME_TC048 = "";
         string ITEMDESCRIPTION = "";
         string TC009 = "";
-        bool isTicketCreated = false;
-        public string CheckTransDate(DateTime date)
+        bool isTicketCreated = false; // Xét xem phiếu có được tạo hay không nếu kg tạo thì kg cập nhật báo trong UpdateLogic
+
+
+        #region SubLogic
+        public string CheckTransDate(DateTime date) // Check nếu qua ngày mới nhưng nằm trong khoảng 0h đến 8h thì vẫn lấy ngày cũ
         {
             string transDate = date.ToString("yyyy-MM-dd");
             DateTime dateCheckMax = Convert.ToDateTime(transDate + " 08:00:00");
@@ -25,7 +29,8 @@ namespace MESdbToERPdb
             }
             return date.ToString("yyyy-MM-dd HH:mm:ss");
         }
-        public string GetTC002()
+
+        public string GetTC002() // Số mã phiếu tăng tự động
         {
             string _TC002 = "";
             DateTime date = DateTime.Now;
@@ -56,7 +61,7 @@ namespace MESdbToERPdb
             return _TC002;
         }
 
-        public static double GetDonVi(string itemNo)
+        public static double GetDonVi(string itemNo) // Lấy tỉ lệ khối lượng của mã sản phẩm để nhân với số lượng lấy khối lượng tổng
         {
             sqlERPCon sqlERPCON = new sqlERPCon();
             double DonVi = 0;
@@ -79,72 +84,73 @@ namespace MESdbToERPdb
         public string GetWarehouse(string orgCode)
         {
             string warehouse = "";
-            if (orgCode == "A01")
+            if (orgCode.Contains("A01"))
                 warehouse = "A07";
 
-            if (orgCode == "A02")
+            if (orgCode.Contains("A02"))
                 warehouse = "A09";
 
-            if (orgCode == "A03")
+            if (orgCode.Contains("A03"))
                 warehouse = "A11";
 
-            if (orgCode == "B01")
+            if (orgCode.Contains("B01"))
                 warehouse = "B09";
 
-            if (orgCode == "B02")
+            if (orgCode.Contains("B02"))
                 warehouse = "B06";
 
-            if (orgCode == "C01")
+            if (orgCode.Contains("C01"))
                 warehouse = "C01";
 
-            if (orgCode == "C02")
+            if (orgCode.Contains("C02"))
                 warehouse = "C01";
 
-            if (orgCode == "D01")
+            if (orgCode.Contains("D01"))
                 warehouse = "D02";
 
-            if (orgCode == "D02")
+            if (orgCode.Contains("D02"))
                 warehouse = "D02";
 
-            if (orgCode == "J01")
+            if (orgCode.Contains("J01"))
                 warehouse = "J01";
 
-            if (orgCode == "P01")
+            if (orgCode.Contains("P01"))
                 warehouse = "P07";
 
-            if (orgCode == "P02")
+            if (orgCode.Contains("P02"))
                 warehouse = "P06";
 
-            if (orgCode == "P03")
+            if (orgCode.Contains("P03"))
                 warehouse = "P06";
 
-            if (orgCode == "W01")
+            if (orgCode.Contains("W01"))
                 warehouse = "W01";
 
-            if (orgCode == "Y01")
+            if (orgCode.Contains("Y01"))
                 warehouse = "Y06";
 
-            if (orgCode == "Y02")
+            if (orgCode.Contains("Y02"))
                 warehouse = "Y07";
 
-            if (orgCode == "Y03")
+            if (orgCode.Contains("Y03"))
                 warehouse = "Y08";
 
-            if (orgCode == "Y04")
+            if (orgCode.Contains("Y04"))
                 warehouse = "Y08";
 
-            if (orgCode == "Y05")
+            if (orgCode.Contains("Y05"))
                 warehouse = "Y09";
 
-            if (orgCode == "Y06")
+            if (orgCode.Contains("Y06"))
                 warehouse = "Y10";
 
-            if (orgCode == "Y07")
+            if (orgCode.Contains("Y07"))
                 warehouse = "Y24";
 
             return warehouse;
-        }
-        public string getFirstD101ofOrganization(string orgCode, string autoStart, string autoEnd, string MP, string SP)
+        } // Lấy mã kho theo mã bộ phận set sẵn theo file Excel chị Diệu gửi (chỉ phiếu D1)
+
+        public string getFirstD101ofOrganization(string orgCode, string autoStart, string autoEnd, string MP, string SP) //Hàm lấy số phiếu để gộp phiếu nếu là bộ phận ống B01 thì không gộp
         {
             sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
             DateTime date = DateTime.Now;
@@ -168,7 +174,8 @@ namespace MESdbToERPdb
 
             return strData;
         }
-        public string getTicketNumber(string ticketCode)
+        
+        public string getTicketNumber(string ticketCode) //Lấy số thứ tự phiếu để gộp phiếu chỉ gộp SFCTC kg gộp trong SFCTB
         {
             sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
             string nextTC003 = con.sqlExecuteScalarString("select max(TC003) from SFCTC where TC001 = 'D101' and TC002 = '" + ticketCode + "'");
@@ -177,6 +184,41 @@ namespace MESdbToERPdb
             string countFormatup = countUp.ToString("0000");
             return countFormatup;
         }
+
+        public string CheckTA032(string MP, string SP) //Kiểm tra điều kiện theo như file excel chị Diệu gửi
+        {
+            sqlERPCon con = new sqlERPCon();
+
+            double TA010 = double.Parse(con.sqlExecuteScalarString("select distinct TA010 from SFCTA where TA001 = '" + MP + "' and TA002 ='" + SP + "' and TA003 = '0010'"));
+            double TA011 = double.Parse(con.sqlExecuteScalarString("select distinct TA011 from SFCTA where TA001 = '" + MP + "' and TA002 ='" + SP + "' and TA003 = '0010'"));
+            double TA012 = double.Parse(con.sqlExecuteScalarString("select distinct TA012 from SFCTA where TA001 = '" + MP + "' and TA002 ='" + SP + "' and TA003 = '0010'"));
+            if (TA010 == 0 && TA011 == 0 && TA012 == 0)
+            {
+                return "Y";
+            }
+            else return "N";
+        }
+
+        public string GetFirstD1Date(string MP, string SP) // Lấy số ngày hiện tại trong SFCTA xét cập nhật
+        {
+            sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
+            string Date = "";
+            string createDate = con.sqlExecuteScalarString("select distinct TA030 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'");
+            if (createDate != "")
+            {
+                string year = createDate.Substring(0, 4);
+                string month = createDate.Substring(4, 2);
+                string day = createDate.Substring(6, 2);
+                Date = month + "/" + day + "/" + year + " 00:00:00 AM";
+            }
+            return Date;
+        }
+        #endregion
+
+
+        #region MainLogic
+
+            #region InsertLogic
         public void InsertdataToERP_D101(string MP, string SP, string orgCode, double output, DateTime tdate, string date, string time, string timeIn, string timeOut, string MES_move_no, string productCode, string operationNo, string operationName)
         {
             try
@@ -267,7 +309,7 @@ namespace MESdbToERPdb
                 double KLNG = DLDonvi * NG;
                 double KLTotal = Total * DLDonvi;
 
-                string TB005 = GetWarehouse(orgCode);
+                string TB005 = GetWarehouse(TA006);
                 string TB006 = sqlERPCon.sqlExecuteScalarString("select distinct MC002 from CMSMC where MC001 = '" + TB005 + "'");
                 string transdate = (Convert.ToDateTime(mesTransDate)).ToString("yyyyMMdd");
 
@@ -414,33 +456,9 @@ namespace MESdbToERPdb
                 FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu! Loi khong xac dinh xem file log de biet chi tiet!");
             }
         }
-        public string CheckTA032(string MP, string SP)
-        {
-            sqlERPCon con = new sqlERPCon();
-            
-            double TA010 = double.Parse(con.sqlExecuteScalarString("select distinct TA010 from SFCTA where TA001 = '" + MP + "' and TA002 ='" + SP + "' and TA003 = '0010'"));
-            double TA011 = double.Parse(con.sqlExecuteScalarString("select distinct TA011 from SFCTA where TA001 = '" + MP + "' and TA002 ='" + SP + "' and TA003 = '0010'"));
-            double TA012 = double.Parse(con.sqlExecuteScalarString("select distinct TA012 from SFCTA where TA001 = '" + MP + "' and TA002 ='" + SP + "' and TA003 = '0010'"));
-            if (TA010 == 0 && TA011 == 0 && TA012 == 0)
-            {
-                return "Y";
-            }
-            else return "N";
-        }
-        public string GetFirstD1Date(string MP, string SP)
-        {
-            sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
-            string Date = "";
-            string createDate = con.sqlExecuteScalarString("select distinct TA030 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'");
-            if (createDate != "")
-            {
-                string year = createDate.Substring(0, 4);
-                string month = createDate.Substring(4, 2);
-                string day = createDate.Substring(6, 2);
-                Date = month + "/" + day + "/" + year + " 00:00:00 AM";
-            }
-            return Date;
-        }
+        #endregion
+
+            #region UpdateLogic
         public void updateERPD101(string MP, string SP, double output, string date, string time, DateTime tdate)
         {
             try
@@ -531,5 +549,8 @@ namespace MESdbToERPdb
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "updateERPD101(string " + MP + "-" + SP + ")", ex.Message);
             }
         }
+        #endregion
+
+        #endregion
     }
 }

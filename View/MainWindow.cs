@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
 using MySqlConnector;
 using System.Windows.Data;
@@ -136,16 +135,16 @@ namespace MESdbToERPdb
 
             //test
 
-            //UploadMain uploadMain = new UploadMain();
-            //string testIn = "2022-02-15 15:48:56"; //2022-01-18 03:45:29
-            //string testOut = "2022-02-15 18:30:48"; //2022-01-20 11:59:17 
+            UploadMain uploadMain = new UploadMain();
+            string testIn = "2022-02-18 13:46:24"; //2022-01-18 03:45:29
+            string testOut = "2022-02-18 13:57:24"; //2022-01-20 11:59:17 
 
-            //uploadMain.GetListTransferOrder(testIn, testOut);
-            //DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
-            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
-            //System.Threading.Thread.Sleep(100);
+            uploadMain.GetListTransferOrderSub(testIn, testOut);
+            DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
+            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
+            System.Threading.Thread.Sleep(100);
 
-            //ClearMemory.CleanMemory();
+            ClearMemory.CleanMemory();
         }
 
         private void mes2ERPMainWin_FormClosed(object sender, FormClosedEventArgs e)
@@ -426,5 +425,18 @@ namespace MESdbToERPdb
             }
         }
         #endregion
+
+        private void btn_FixMail_Click(object sender, EventArgs e)
+        {
+            if (txb_fMailPass.Text == "techlink@123")
+            {
+                DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
+                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Send unfinished report", "Unfinished data report sent!");
+            }
+            else
+            {
+                MessageBox.Show("Wrong password!");
+            }
+        }
     }
 }

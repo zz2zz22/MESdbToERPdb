@@ -424,11 +424,15 @@ namespace MESdbToERPdb
         public string GetFirstD2Date(string MP, string SP)
         {
             sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
+            string Date = "";
             string createDate = con.sqlExecuteScalarString("select distinct TA030 from SFCTA where TA001 ='" + MP + "' and TA002 = '" + SP + "' and TA003 = '0020'");
-            string year = createDate.Substring(0, 4);
-            string month = createDate.Substring(4, 2);
-            string day = createDate.Substring(6, 2);
-            string Date = month + "/" + day + "/" + year + " 00:00:00 AM";
+            if (createDate != "")
+            {
+                string year = createDate.Substring(0, 4);
+                string month = createDate.Substring(4, 2);
+                string day = createDate.Substring(6, 2);
+                Date = month + "/" + day + "/" + year + " 00:00:00 AM";
+            }
             return Date;
         }
         public string CheckTA032_D201_0010(string MP, string SP)
