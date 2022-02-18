@@ -33,6 +33,8 @@ namespace MESdbToERPdb
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mes2ERPMainWin));
             this.panel_Controller = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txb_fMailPass = new System.Windows.Forms.TextBox();
+            this.btn_FixMail = new System.Windows.Forms.Button();
             this.btn_start = new System.Windows.Forms.Button();
             this.btn_stop = new System.Windows.Forms.Button();
             this.pic_logo = new System.Windows.Forms.PictureBox();
@@ -40,13 +42,13 @@ namespace MESdbToERPdb
             this.panel_LogText = new System.Windows.Forms.Panel();
             this.btn_errorForm = new System.Windows.Forms.Button();
             this.btn_settingForm = new System.Windows.Forms.Button();
-            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
-            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
             this.lb_progress_percentage = new System.Windows.Forms.Label();
             this.pic_title = new System.Windows.Forms.PictureBox();
             this.BW = new System.ComponentModel.BackgroundWorker();
             this.timer_nextRun = new System.Windows.Forms.Timer(this.components);
             this.BW_D1 = new System.ComponentModel.BackgroundWorker();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.richTextBoxLog1 = new MESdbToERPdb.RichTextBoxLog();
             this.panel_Controller.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
@@ -65,6 +67,8 @@ namespace MESdbToERPdb
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txb_fMailPass);
+            this.groupBox1.Controls.Add(this.btn_FixMail);
             this.groupBox1.Controls.Add(this.btn_start);
             this.groupBox1.Controls.Add(this.btn_stop);
             this.groupBox1.Location = new System.Drawing.Point(3, 105);
@@ -73,10 +77,28 @@ namespace MESdbToERPdb
             this.groupBox1.TabIndex = 17;
             this.groupBox1.TabStop = false;
             // 
+            // txb_fMailPass
+            // 
+            this.txb_fMailPass.Location = new System.Drawing.Point(241, 512);
+            this.txb_fMailPass.Name = "txb_fMailPass";
+            this.txb_fMailPass.Size = new System.Drawing.Size(100, 22);
+            this.txb_fMailPass.TabIndex = 7;
+            // 
+            // btn_FixMail
+            // 
+            this.btn_FixMail.BackColor = System.Drawing.Color.Red;
+            this.btn_FixMail.Location = new System.Drawing.Point(347, 512);
+            this.btn_FixMail.Name = "btn_FixMail";
+            this.btn_FixMail.Size = new System.Drawing.Size(62, 23);
+            this.btn_FixMail.TabIndex = 6;
+            this.btn_FixMail.Text = "FMail";
+            this.btn_FixMail.UseVisualStyleBackColor = false;
+            this.btn_FixMail.Click += new System.EventHandler(this.btn_FixMail_Click);
+            // 
             // btn_start
             // 
             this.btn_start.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_start.Location = new System.Drawing.Point(76, 93);
+            this.btn_start.Location = new System.Drawing.Point(76, 35);
             this.btn_start.Name = "btn_start";
             this.btn_start.Size = new System.Drawing.Size(245, 90);
             this.btn_start.TabIndex = 4;
@@ -87,7 +109,7 @@ namespace MESdbToERPdb
             // btn_stop
             // 
             this.btn_stop.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_stop.Location = new System.Drawing.Point(76, 214);
+            this.btn_stop.Location = new System.Drawing.Point(76, 147);
             this.btn_stop.Name = "btn_stop";
             this.btn_stop.Size = new System.Drawing.Size(245, 90);
             this.btn_stop.TabIndex = 5;
@@ -158,16 +180,6 @@ namespace MESdbToERPdb
             this.btn_settingForm.UseVisualStyleBackColor = false;
             this.btn_settingForm.Click += new System.EventHandler(this.btn_settingForm_Click);
             // 
-            // elementHost1
-            // 
-            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.elementHost1.Location = new System.Drawing.Point(3, 140);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(805, 506);
-            this.elementHost1.TabIndex = 7;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.richTextBoxLog1;
-            // 
             // lb_progress_percentage
             // 
             this.lb_progress_percentage.AutoSize = true;
@@ -210,6 +222,16 @@ namespace MESdbToERPdb
             this.BW_D1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BW_D1_ProgressChanged);
             this.BW_D1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BW_D1_RunWorkerCompleted);
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.elementHost1.Location = new System.Drawing.Point(3, 140);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(805, 506);
+            this.elementHost1.TabIndex = 7;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.richTextBoxLog1;
+            // 
             // mes2ERPMainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -228,6 +250,7 @@ namespace MESdbToERPdb
             this.Load += new System.EventHandler(this.mes2ERPMainWin_Load);
             this.panel_Controller.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).EndInit();
             this.panel_LogText.ResumeLayout(false);
             this.panel_LogText.PerformLayout();
@@ -254,6 +277,8 @@ namespace MESdbToERPdb
         private RichTextBoxLog richTextBoxLog1;
         private System.Windows.Forms.Button btn_errorForm;
         private System.ComponentModel.BackgroundWorker BW_D1;
+        private System.Windows.Forms.TextBox txb_fMailPass;
+        private System.Windows.Forms.Button btn_FixMail;
     }
 }
 
