@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.31808.319
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESdbToERPdb", "MESdbToERPdb.csproj", "{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "..\Setup\Setup.vdproj", "{522D0DCD-8522-44E9-867D-FFEA2342CBA0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A7FE998-C244-4D71-8EC8-8CAE21DB9095}.Release|Any CPU.Build.0 = Release|Any CPU
+		{522D0DCD-8522-44E9-867D-FFEA2342CBA0}.Debug|Any CPU.ActiveCfg = Debug
+		{522D0DCD-8522-44E9-867D-FFEA2342CBA0}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

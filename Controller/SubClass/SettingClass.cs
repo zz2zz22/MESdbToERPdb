@@ -9,12 +9,17 @@ namespace MESdbToERPdb
     [Serializable]
     public class SettingClass
     {
-        public string OfflineServer { get; set; }
-        public string userOffline { get; set; }
-        public string password { get; set; }
-        public bool usingOfftlineServer { get; set; }
-        public string PathListProduct { get; set; }
-        public int TimmerBackgroudWorker { get; set; }
-
+        public string din;
+        public int interval;
+        public string dIn 
+        { 
+            get { return din;}
+            set { din = value; }
+        }
+        public int Interval
+        {
+            get { return interval;}
+            set { interval = value; }
+        }
     }
 }
