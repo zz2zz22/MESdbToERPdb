@@ -424,11 +424,12 @@ namespace MESdbToERPdb
         public string GetFirstD2Date(string MP, string SP)
         {
             sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
-            string transferType = con.sqlExecuteScalarString("select TOP 1 TC001 from TECHLINK.dbo.SFCTC where TC004 = '" + MP + "' and TC005 = '" + SP + "' and TC001 IN ('D201', 'AD21')");
-            string transferCode = con.sqlExecuteScalarString("select TOP 1 TC002 from TECHLINK.dbo.SFCTC where TC004 = '" + MP + "' and TC005 = '" + SP + "' and TC001 IN ('D201', 'AD21')");
-
-            string createDate = con.sqlExecuteScalarString("select distinct TB003 from SFCTB where TB001 ='" + transferType + "' and TB002 = '" + transferCode + "'");
-            return createDate;
+            string createDate = con.sqlExecuteScalarString("select distinct TA030 from SFCTA where TA001 ='" + MP + "' and TA002 = '" + SP + "' and TA003 = '0020'");
+            string year = createDate.Substring(0, 4);
+            string month = createDate.Substring(4, 2);
+            string day = createDate.Substring(6, 2);
+            string Date = month + "/" + day + "/" + year + " 00:00:00 AM";
+            return Date;
         }
         public string CheckTA032_D201_0010(string MP, string SP)
         {
@@ -460,13 +461,26 @@ namespace MESdbToERPdb
             }
             else return "N";
         }
-        public void updateERPD201(string MP, string SP, double output, double NG, double RW,  string date, string time)
+        public void updateERPD201(string MP, string SP, double output, double NG, double RW,  string date, string time, DateTime tdate)
         {
             try
             {
                 if (isTicketCreated == true)
                 {
                     string firstD2Date = GetFirstD2Date(MP, SP);
+                    bool isUpdated = false;
+                    if (firstD2Date != "")
+                    {
+                        DateTime convertedFDate = Convert.ToDateTime(firstD2Date);
+                        if (tdate < convertedFDate)
+                        {
+                            isUpdated = true;
+                        }
+                    }
+                    else
+                    {
+                        isUpdated = true;
+                    }
                     sqlERPCon data = new sqlERPCon();
                     string TC047 = data.sqlExecuteScalarString("select distinct TA006 from MOCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "'");
 
@@ -523,8 +537,16 @@ namespace MESdbToERPdb
                             double SFCTA039Updated = double.Parse(con.sqlExecuteScalarString("select distinct TA039 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'"));
                             //update SFCTA 0020
                             StringBuilder updateSFCTA02 = new StringBuilder();
-                            updateSFCTA02.Append("update SFCTA set TA010 = " + SFCTA011Updated + ", TA030= '" + firstD2Date + "', TA032 = '" + CheckTA032_D201_0020(MP, SP) + "', TA038 = " + SFCTA039Updated + " , MODIFIER ='MES', MODI_DATE ='" + dateTm + "',MODI_TIME ='" + time + "', MODI_AP ='SFT', MODI_PRID ='SFCMI05' where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 ='0020' and TA004 = '" + TC009 + "' ");
-                            sqlUpdate.sqlExecuteNonQuery(updateSFCTA02.ToString(), false);
+                            if (isUpdated == true)
+                            {
+                                updateSFCTA02.Append("update SFCTA set TA010 = " + SFCTA011Updated + ", TA030= '" + tdate.ToString("yyyyMMdd") + "', TA032 = '" + CheckTA032_D201_0020(MP, SP) + "', TA038 = " + SFCTA039Updated + " , MODIFIER ='MES', MODI_DATE ='" + dateTm + "',MODI_TIME ='" + time + "', MODI_AP ='SFT', MODI_PRID ='SFCMI05' where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 ='0020' and TA004 = '" + TC009 + "' ");
+                                sqlUpdate.sqlExecuteNonQuery(updateSFCTA02.ToString(), false);
+                            }
+                            else
+                            {
+                                updateSFCTA02.Append("update SFCTA set TA010 = " + SFCTA011Updated + ", TA032 = '" + CheckTA032_D201_0020(MP, SP) + "', TA038 = " + SFCTA039Updated + " , MODIFIER ='MES', MODI_DATE ='" + dateTm + "',MODI_TIME ='" + time + "', MODI_AP ='SFT', MODI_PRID ='SFCMI05' where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 ='0020' and TA004 = '" + TC009 + "' ");
+                                sqlUpdate.sqlExecuteNonQuery(updateSFCTA02.ToString(), false);
+                            }
 
                             //update MOCTA
                             StringBuilder UpdateMOCTA = new StringBuilder();

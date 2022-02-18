@@ -50,5 +50,14 @@
     <Setting Name="isMailSaved" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="intervalD1" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="dInD1" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="d1Status" Type="System.String" Scope="User">
+      <Value Profile="(Default)">N</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

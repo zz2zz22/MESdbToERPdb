@@ -70,8 +70,10 @@ namespace MESdbToERPdb.View
             btn_deleteEmail.Text = "DELETE";
             btn_deleteAllReceiver.Text = "DELETE ALL";
             lb_mainSettingWarning.Text = "Settings in \"bold\" style can ONLY be \nconfig before started or after stopped \nthe program!";
-            lb_bgIntervalPicker.Text = "Data fetching interval:";
-            lb_bgIntervalUnit.Text = "hour";
+            lb_bgIntervalPicker.Text = "D2 fetching interval:";
+            lb_bgIntervalD1Picker.Text = "D1 fetching interval:";
+            lb_bgIntervalUnit.Text = "hours";
+            lb_bgIntervalD1Unit.Text = "minutes";
             lb_productionCodeConfig.Text = "Production code header:";
             btn_saveProductionCodeConfig.Text = "SAVE";
             lb_listProductionCodes.Text = "List of production code headers:";
@@ -80,7 +82,10 @@ namespace MESdbToERPdb.View
             btn_saveSender.Text = "SAVE";
             btn_editSender.Text = "EDIT";
             lb_sendMailInterval.Text = "Send mail interval:";
-            lb_sendMailIntervalUnit.Text = "hour";
+            lb_sendMailIntervalUnit.Text = "hours";
+            lb_d1Status.Text = "D1 status";
+            cbx_d1Status.Items[0] = "N - Not comfirmed";
+            cbx_d1Status.Items[1] = "Y - Confirmed";
         }
         private void btn_languageVietnam_Click(object sender, EventArgs e)
         {
@@ -104,8 +109,10 @@ namespace MESdbToERPdb.View
             btn_deleteEmail.Text = "XÓA";
             btn_deleteAllReceiver.Text = "XÓA TẤT CẢ";
             lb_mainSettingWarning.Text = "Những cài đặt \"in đậm\" CHỈ chỉnh sửa \nđược trước khi bắt đầu hoặc sau khi \ndừng chương trình!";
-            lb_bgIntervalPicker.Text = "Khoảng lấy dữ liệu:";
+            lb_bgIntervalPicker.Text = "Thời gian chuyển đổi phiếu D2:";
+            lb_bgIntervalD1Picker.Text = "Thời gian chuyển đổi phiếu D1:";
             lb_bgIntervalUnit.Text = "giờ";
+            lb_bgIntervalD1Unit.Text = "phút";
             lb_productionCodeConfig.Text = "Đầu mã sản xuất:";
             btn_saveProductionCodeConfig.Text = "LƯU";
             lb_listProductionCodes.Text = "Danh sách các đầu mã:";
@@ -115,6 +122,9 @@ namespace MESdbToERPdb.View
             btn_editSender.Text = "SỬA";
             lb_sendMailInterval.Text = "Khoảng thời gian gửi mail:";
             lb_sendMailIntervalUnit.Text = "giờ";
+            lb_d1Status.Text = "Trạng thái xác nhận D1";
+            cbx_d1Status.Items[0] = "N - Không xác nhận";
+            cbx_d1Status.Items[1] = "Y - Xác nhận";
         }
 
         private void Setting_Load(object sender, EventArgs e)
@@ -131,12 +141,20 @@ namespace MESdbToERPdb.View
             }
             nud_bgIntervalPicker.Value = Convert.ToDecimal(Properties.Settings.Default.interval.ToString());
             nud_sendMailIntervalPicker.Value = Convert.ToDecimal(Properties.Settings.Default.intervalMail.ToString());
+            nud_bgIntervalD1Picker.Value = Convert.ToDecimal(Properties.Settings.Default.intervalD1.ToString());
             txb_email.Text = Properties.Settings.Default.cfg_senders;
             txb_password.Text = Properties.Settings.Default.cfg_senderPW;
             txb_email.Enabled = false;
             txb_password.Enabled = false;
             btn_saveSender.Enabled = false;
-            
+            if (Properties.Settings.Default.d1Status == "Y")
+            {
+                cbx_d1Status.Text = cbx_d1Status.Items[1].ToString();
+            }else
+            {
+                if (Properties.Settings.Default.d1Status == "N")
+                    cbx_d1Status.Text = cbx_d1Status.Items[0].ToString();
+            }
             
             LoadReceiverGrid();
             LoadProductionCodes();
@@ -637,6 +655,25 @@ namespace MESdbToERPdb.View
             {
                 LoadProductionCodes();
             }
+        }
+
+        private void nud_bgIntervalD1Picker_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.intervalD1 = int.Parse(nud_bgIntervalD1Picker.Value.ToString());
+            Properties.Settings.Default.Save();
+        }
+
+        private void cbx_d1Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = cbx_d1Status.SelectedIndex;
+            if (selectedIndex == 0)
+                Properties.Settings.Default.d1Status = "N";
+            else
+            {
+                if (selectedIndex == 1)
+                    Properties.Settings.Default.d1Status = "Y";
+            }
+            Properties.Settings.Default.Save();
         }
     }
 }

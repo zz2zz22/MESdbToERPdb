@@ -214,5 +214,41 @@ namespace MESdbToERPdb.Properties {
                 this["isMailSaved"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int intervalD1 {
+            get {
+                return ((int)(this["intervalD1"]));
+            }
+            set {
+                this["intervalD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string dInD1 {
+            get {
+                return ((string)(this["dInD1"]));
+            }
+            set {
+                this["dInD1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("N")]
+        public string d1Status {
+            get {
+                return ((string)(this["d1Status"]));
+            }
+            set {
+                this["d1Status"] = value;
+            }
+        }
     }
 }

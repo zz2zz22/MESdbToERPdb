@@ -46,6 +46,7 @@ namespace MESdbToERPdb
             this.pic_title = new System.Windows.Forms.PictureBox();
             this.BW = new System.ComponentModel.BackgroundWorker();
             this.timer_nextRun = new System.Windows.Forms.Timer(this.components);
+            this.BW_D1 = new System.ComponentModel.BackgroundWorker();
             this.panel_Controller.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_logo)).BeginInit();
@@ -201,6 +202,14 @@ namespace MESdbToERPdb
             this.timer_nextRun.Interval = 1000;
             this.timer_nextRun.Tick += new System.EventHandler(this.timer_nextRun_Tick);
             // 
+            // BW_D1
+            // 
+            this.BW_D1.WorkerReportsProgress = true;
+            this.BW_D1.WorkerSupportsCancellation = true;
+            this.BW_D1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BW_D1_DoWork);
+            this.BW_D1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BW_D1_ProgressChanged);
+            this.BW_D1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BW_D1_RunWorkerCompleted);
+            // 
             // mes2ERPMainWin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -244,6 +253,7 @@ namespace MESdbToERPdb
         private System.Windows.Forms.Button btn_settingForm;
         private RichTextBoxLog richTextBoxLog1;
         private System.Windows.Forms.Button btn_errorForm;
+        private System.ComponentModel.BackgroundWorker BW_D1;
     }
 }
 

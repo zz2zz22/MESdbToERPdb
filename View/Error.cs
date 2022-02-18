@@ -231,14 +231,14 @@ namespace MESdbToERPdb.View
                                                     {
                                                         //update D201 to realtime
                                                         classinsertD2.InsertdataToERP_D201(MP, SP, ParentOrgCode, OKQty, NGQty, RWQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                        classinsertD2.updateERPD201(MP, SP, OKQty, NGQty, RWQty, DateUp, TimeUp); //check transdate 
+                                                        classinsertD2.updateERPD201(MP, SP, OKQty, NGQty, RWQty, DateUp, TimeUp, transDate); //check transdate 
                                                     }
                                                     else
                                                     {
                                                         if (checkD1orD2 == 1)
                                                         {
                                                             classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                            classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp);
+                                                            classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
                                                         }
                                                         else
                                                         {
@@ -275,14 +275,14 @@ namespace MESdbToERPdb.View
                                                 {
                                                     //update D201 to realtime
                                                     classinsertD2.InsertdataToERP_D201(MP, SP, ParentOrgCode, OKQty, NGQty, RWQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                    classinsertD2.updateERPD201(MP, SP, OKQty, NGQty, RWQty, DateUp, TimeUp); //check transdate 
+                                                    classinsertD2.updateERPD201(MP, SP, OKQty, NGQty, RWQty, DateUp, TimeUp, transDate); //check transdate 
                                                 }
                                                 else
                                                 {
                                                     if (checkD1orD2 == 1)
                                                     {
                                                         classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                        classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp);
+                                                        classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp,transDate);
                                                     }
                                                     else
                                                     {
@@ -405,15 +405,6 @@ namespace MESdbToERPdb.View
             }
             btn_startTransfer.Enabled = false;
             btn_startTransfer.BackColor = Color.Gray;
-
-            if (Properties.Settings.Default.cfg_language == 1)
-            {
-                btn_startTransfer.Text = "TRANSFER ERROR CODE";
-            }
-            else
-            {
-                btn_startTransfer.Text = "CHUYỂN ĐỔI CÁC MÃ LỖI";
-            }
 
             dtgv_fixData.DataSource = null;
             dtgv_fixData.DataSource = Load2DataGrid();
