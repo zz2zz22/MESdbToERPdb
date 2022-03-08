@@ -59,5 +59,8 @@
     <Setting Name="d1Status" Type="System.String" Scope="User">
       <Value Profile="(Default)">N</Value>
     </Setting>
+    <Setting Name="d2Status" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Y</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

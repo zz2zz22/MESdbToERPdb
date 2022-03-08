@@ -250,5 +250,17 @@ namespace MESdbToERPdb.Properties {
                 this["d1Status"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Y")]
+        public string d2Status {
+            get {
+                return ((string)(this["d2Status"]));
+            }
+            set {
+                this["d2Status"] = value;
+            }
+        }
     }
 }

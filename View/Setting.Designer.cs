@@ -33,6 +33,8 @@ namespace MESdbToERPdb.View
             this.pn_general = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lb_d1Status = new System.Windows.Forms.Label();
+            this.cbx_d1Status = new System.Windows.Forms.ComboBox();
             this.lb_bgIntervalD1Picker = new System.Windows.Forms.Label();
             this.nud_bgIntervalD1Picker = new System.Windows.Forms.NumericUpDown();
             this.lb_bgIntervalD1Unit = new System.Windows.Forms.Label();
@@ -74,8 +76,8 @@ namespace MESdbToERPdb.View
             this.btn_languageVietnam = new System.Windows.Forms.Button();
             this.btn_languageEnglish = new System.Windows.Forms.Button();
             this.lb_languageConfig = new System.Windows.Forms.Label();
-            this.cbx_d1Status = new System.Windows.Forms.ComboBox();
-            this.lb_d1Status = new System.Windows.Forms.Label();
+            this.lb_d2Status = new System.Windows.Forms.Label();
+            this.cbx_d2Status = new System.Windows.Forms.ComboBox();
             this.pn_general.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -115,6 +117,8 @@ namespace MESdbToERPdb.View
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.cbx_d2Status);
+            this.panel3.Controls.Add(this.lb_d2Status);
             this.panel3.Controls.Add(this.lb_d1Status);
             this.panel3.Controls.Add(this.cbx_d1Status);
             this.panel3.Controls.Add(this.lb_bgIntervalD1Picker);
@@ -130,6 +134,29 @@ namespace MESdbToERPdb.View
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(374, 395);
             this.panel3.TabIndex = 10;
+            // 
+            // lb_d1Status
+            // 
+            this.lb_d1Status.AutoSize = true;
+            this.lb_d1Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_d1Status.Location = new System.Drawing.Point(6, 278);
+            this.lb_d1Status.Name = "lb_d1Status";
+            this.lb_d1Status.Size = new System.Drawing.Size(87, 20);
+            this.lb_d1Status.TabIndex = 8;
+            this.lb_d1Status.Text = "D1 status:";
+            // 
+            // cbx_d1Status
+            // 
+            this.cbx_d1Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_d1Status.FormattingEnabled = true;
+            this.cbx_d1Status.Items.AddRange(new object[] {
+            "N - Không xác nhận",
+            "Y - Xác nhận"});
+            this.cbx_d1Status.Location = new System.Drawing.Point(10, 301);
+            this.cbx_d1Status.Name = "cbx_d1Status";
+            this.cbx_d1Status.Size = new System.Drawing.Size(215, 28);
+            this.cbx_d1Status.TabIndex = 7;
+            this.cbx_d1Status.SelectedIndexChanged += new System.EventHandler(this.cbx_d1Status_SelectedIndexChanged);
             // 
             // lb_bgIntervalD1Picker
             // 
@@ -175,7 +202,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_sendMailIntervalUnit.AutoSize = true;
             this.lb_sendMailIntervalUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sendMailIntervalUnit.Location = new System.Drawing.Point(135, 236);
+            this.lb_sendMailIntervalUnit.Location = new System.Drawing.Point(135, 202);
             this.lb_sendMailIntervalUnit.Name = "lb_sendMailIntervalUnit";
             this.lb_sendMailIntervalUnit.Size = new System.Drawing.Size(56, 20);
             this.lb_sendMailIntervalUnit.TabIndex = 2;
@@ -184,7 +211,7 @@ namespace MESdbToERPdb.View
             // nud_sendMailIntervalPicker
             // 
             this.nud_sendMailIntervalPicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_sendMailIntervalPicker.Location = new System.Drawing.Point(10, 231);
+            this.nud_sendMailIntervalPicker.Location = new System.Drawing.Point(10, 197);
             this.nud_sendMailIntervalPicker.Minimum = new decimal(new int[] {
             1,
             0,
@@ -215,7 +242,7 @@ namespace MESdbToERPdb.View
             // 
             this.lb_sendMailInterval.AutoSize = true;
             this.lb_sendMailInterval.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_sendMailInterval.Location = new System.Drawing.Point(6, 208);
+            this.lb_sendMailInterval.Location = new System.Drawing.Point(6, 174);
             this.lb_sendMailInterval.Name = "lb_sendMailInterval";
             this.lb_sendMailInterval.Size = new System.Drawing.Size(166, 20);
             this.lb_sendMailInterval.TabIndex = 0;
@@ -624,28 +651,28 @@ namespace MESdbToERPdb.View
             this.lb_languageConfig.TabIndex = 0;
             this.lb_languageConfig.Text = "Choose your language";
             // 
-            // cbx_d1Status
+            // lb_d2Status
             // 
-            this.cbx_d1Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_d1Status.FormattingEnabled = true;
-            this.cbx_d1Status.Items.AddRange(new object[] {
+            this.lb_d2Status.AutoSize = true;
+            this.lb_d2Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_d2Status.Location = new System.Drawing.Point(6, 332);
+            this.lb_d2Status.Name = "lb_d2Status";
+            this.lb_d2Status.Size = new System.Drawing.Size(87, 20);
+            this.lb_d2Status.TabIndex = 9;
+            this.lb_d2Status.Text = "D2 status:";
+            // 
+            // cbx_d2Status
+            // 
+            this.cbx_d2Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_d2Status.FormattingEnabled = true;
+            this.cbx_d2Status.Items.AddRange(new object[] {
             "N - Không xác nhận",
-            "Y - Xác nhận"});
-            this.cbx_d1Status.Location = new System.Drawing.Point(10, 321);
-            this.cbx_d1Status.Name = "cbx_d1Status";
-            this.cbx_d1Status.Size = new System.Drawing.Size(215, 28);
-            this.cbx_d1Status.TabIndex = 7;
-            this.cbx_d1Status.SelectedIndexChanged += new System.EventHandler(this.cbx_d1Status_SelectedIndexChanged);
-            // 
-            // lb_d1Status
-            // 
-            this.lb_d1Status.AutoSize = true;
-            this.lb_d1Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_d1Status.Location = new System.Drawing.Point(6, 298);
-            this.lb_d1Status.Name = "lb_d1Status";
-            this.lb_d1Status.Size = new System.Drawing.Size(97, 20);
-            this.lb_d1Status.TabIndex = 8;
-            this.lb_d1Status.Text = "D1 status:";
+            "Tự động xét điều kiện"});
+            this.cbx_d2Status.Location = new System.Drawing.Point(10, 355);
+            this.cbx_d2Status.Name = "cbx_d2Status";
+            this.cbx_d2Status.Size = new System.Drawing.Size(215, 28);
+            this.cbx_d2Status.TabIndex = 10;
+            this.cbx_d2Status.SelectedIndexChanged += new System.EventHandler(this.cbx_d2Status_SelectedIndexChanged);
             // 
             // Setting
             // 
@@ -729,5 +756,7 @@ namespace MESdbToERPdb.View
         private System.Windows.Forms.Label lb_bgIntervalD1Unit;
         private System.Windows.Forms.Label lb_d1Status;
         private System.Windows.Forms.ComboBox cbx_d1Status;
+        private System.Windows.Forms.ComboBox cbx_d2Status;
+        private System.Windows.Forms.Label lb_d2Status;
     }
 }

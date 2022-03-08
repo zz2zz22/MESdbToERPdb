@@ -134,17 +134,24 @@ namespace MESdbToERPdb
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Starting...!", "");
 
             //test
+            //tmrCallBgWorker.Stop();
+            //tmrCallBgWorkerD1.Stop();
+            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "StopBG...!", "");
+            //UploadMain uploadMain = new UploadMain();
+            //string testInD1 = "2022-03-07 15:00:00"; //2022-01-18 03:45:29
+            //string testOutD1 = "2022-03-07 19:03:09"; //2022-01-20 11:59:17 
+            //uploadMain.GetListTransferOrderD1(testInD1, testOutD1);
+            //System.Threading.Thread.Sleep(700000);
 
-            UploadMain uploadMain = new UploadMain();
-            string testIn = "2022-02-18 13:46:24"; //2022-01-18 03:45:29
-            string testOut = "2022-02-18 13:57:24"; //2022-01-20 11:59:17 
+            //string testIn = "2022-03-07 15:00:00"; //2022-01-18 03:45:29
+            //string testOut = "2022-03-07 19:03:09"; //2022-01-20 11:59:17 
+            //uploadMain.GetListTransferOrder(testIn, testOut);
 
-            uploadMain.GetListTransferOrderSub(testIn, testOut);
-            DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
-            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
-            System.Threading.Thread.Sleep(100);
+            //DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
+            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
+            //System.Threading.Thread.Sleep(100);
 
-            ClearMemory.CleanMemory();
+            //ClearMemory.CleanMemory();
         }
 
         private void mes2ERPMainWin_FormClosed(object sender, FormClosedEventArgs e)

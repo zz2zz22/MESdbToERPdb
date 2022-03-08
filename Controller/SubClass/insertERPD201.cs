@@ -13,7 +13,7 @@ namespace MESdbToERPdb
         string ITEMDESCRIPTION = "";
         string TC007 = "";
         string TC009 = "";
-        string TB013 = "Y";
+        string TB013 = Properties.Settings.Default.d2Status;
         bool isTicketCreated = false;
         public string CheckTransDate(DateTime date)
         {

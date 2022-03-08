@@ -86,6 +86,9 @@ namespace MESdbToERPdb.View
             lb_d1Status.Text = "D1 status";
             cbx_d1Status.Items[0] = "N - Not comfirmed";
             cbx_d1Status.Items[1] = "Y - Confirmed";
+            lb_d2Status.Text = "D2 status";
+            cbx_d2Status.Items[0] = "N - Not comfirmed";
+            cbx_d2Status.Items[1] = "Automatic";
         }
         private void btn_languageVietnam_Click(object sender, EventArgs e)
         {
@@ -125,6 +128,9 @@ namespace MESdbToERPdb.View
             lb_d1Status.Text = "Trạng thái xác nhận D1";
             cbx_d1Status.Items[0] = "N - Không xác nhận";
             cbx_d1Status.Items[1] = "Y - Xác nhận";
+            lb_d2Status.Text = "Trạng thái xác nhận D2";
+            cbx_d2Status.Items[0] = "N - Không xác nhận";
+            cbx_d2Status.Items[1] = "Tự động xét điều kiện";
         }
 
         private void Setting_Load(object sender, EventArgs e)
@@ -155,7 +161,16 @@ namespace MESdbToERPdb.View
                 if (Properties.Settings.Default.d1Status == "N")
                     cbx_d1Status.Text = cbx_d1Status.Items[0].ToString();
             }
-            
+            if (Properties.Settings.Default.d2Status == "Y")
+            {
+                cbx_d2Status.Text = cbx_d2Status.Items[1].ToString();
+            }
+            else
+            {
+                if (Properties.Settings.Default.d2Status == "N")
+                    cbx_d2Status.Text = cbx_d2Status.Items[0].ToString();
+            }
+
             LoadReceiverGrid();
             LoadProductionCodes();
         }
@@ -672,6 +687,19 @@ namespace MESdbToERPdb.View
             {
                 if (selectedIndex == 1)
                     Properties.Settings.Default.d1Status = "Y";
+            }
+            Properties.Settings.Default.Save();
+        }
+
+        private void cbx_d2Status_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectedIndex = cbx_d2Status.SelectedIndex;
+            if (selectedIndex == 0)
+                Properties.Settings.Default.d2Status = "N";
+            else
+            {
+                if (selectedIndex == 1)
+                    Properties.Settings.Default.d2Status = "Y";
             }
             Properties.Settings.Default.Save();
         }
