@@ -134,24 +134,24 @@ namespace MESdbToERPdb
             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Starting...!", "");
 
             //test
-            tmrCallBgWorker.Stop();
-            tmrCallBgWorkerD1.Stop();
-            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "StopBG...!", "");
-            UploadMain uploadMain = new UploadMain();
-            string testInD1 = "2022-03-14 18:29:05"; //2022-01-18 03:45:29
-            string testOutD1 = "2022-03-14 19:00:00"; //2022-01-20 11:59:17 
-            uploadMain.GetListTransferOrderD1(testInD1, testOutD1);
-            System.Threading.Thread.Sleep(900000);
+            //tmrCallBgWorker.Stop();
+            //tmrCallBgWorkerD1.Stop();
+            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "StopBG...!", "");
+            //UploadMain uploadMain = new UploadMain();
+            //string testInD1 = "2022-03-14 18:29:05"; //2022-01-18 03:45:29
+            //string testOutD1 = "2022-03-14 19:00:00"; //2022-01-20 11:59:17 
+            //uploadMain.GetListTransferOrderD1(testInD1, testOutD1);
+            //System.Threading.Thread.Sleep(900000);
 
-            string testIn = "2022-03-14 17:09:05"; //2022-01-18 03:45:29
-            string testOut = "2022-03-15 09:27:55"; //2022-01-20 11:59:17 
-            uploadMain.GetListTransferOrder(testIn, testOut);
+            //string testIn = "2022-03-14 17:09:05"; //2022-01-18 03:45:29
+            //string testOut = "2022-03-15 09:27:55"; //2022-01-20 11:59:17 
+            //uploadMain.GetListTransferOrder(testIn, testOut);
 
-            DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
-            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
-            System.Threading.Thread.Sleep(100);
+            //DataReport.SaveExcel("", Properties.Settings.Default.excelFileName, Properties.Settings.Default.cfg_senders, Properties.Settings.Default.cfg_senderPW);
+            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Đã hoàn tất chuyển đổi từ MES sang ERP!", "\n");
+            //System.Threading.Thread.Sleep(100);
 
-            ClearMemory.CleanMemory();
+            //ClearMemory.CleanMemory();
         }
 
         private void mes2ERPMainWin_FormClosed(object sender, FormClosedEventArgs e)
