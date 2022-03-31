@@ -230,10 +230,13 @@ namespace MESdbToERPdb
                     isDataMissing = true;
                 double totalTA383940 = SFCTA038 - SFCTA039 - SFCTA040;
                 string modifier = "MES";
-                if (KLTotal > totalTA383940)
+                if (Properties.Settings.Default.d2Status == "Y")
                 {
-                    TB013 = "N";
-                    modifier = "";
+                    if (KLTotal > totalTA383940)
+                    {
+                        TB013 = "N";
+                        modifier = "";
+                    }
                 }
                 
                 bool checkQty = false;
@@ -250,63 +253,9 @@ namespace MESdbToERPdb
                 }
                 if (isDataMissing == false)
                 {
-                    if (ticketCode == "")
+                    if (Properties.Settings.Default.d2Status == "Y")
                     {
-                        if (TC009 != "")
-                        {
-                            if (!checkQty)
-                            {
-                                //kg dùng SFT nữa nên TB038 & TB039 để trống
-                                sqlERPTest_TLVN2 sqlInsert = new sqlERPTest_TLVN2();
-                                StringBuilder sqlInsertSFCTC = new StringBuilder();
-                                sqlInsertSFCTC.Append("insert into SFCTC ");
-                                sqlInsertSFCTC.Append(@"(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
-                                sqlInsertSFCTC.Append(@"TC001,TC002,TC003,TC004,TC005,TC006,TC007,TC008,TC009,TC010,TC011,TC012,TC013,TC014,TC015,TC016,TC017,TC018,TC019,TC020,");
-                                sqlInsertSFCTC.Append(@"TC021,TC022,TC023,TC024,TC025,TC026,TC027,TC033,TC034,TC035,TC036,TC037,TC038,TC039,TC040,");
-                                sqlInsertSFCTC.Append(@"TC041,TC042,TC043,TC044,TC045,TC046,TC047,TC048,TC049,TC050,TC051,TC053,TC054,TC055)");
-                                sqlInsertSFCTC.Append(" values ( ");
-                                sqlInsertSFCTC.Append("'TLVN','MES','GS','" + dateTm + "','" + modifier + "','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
-                                sqlInsertSFCTC.Append("'D201','" + TC002 + "','0001','" + MP + "','" + SP + "','0010','" + TC007 + "','0020','" + TC009 + "','PCS','','','1','" + output + "','0','" + NG + "',0,0,0,0,");
-                                sqlInsertSFCTC.Append("0,'" + TB013 + "','" + TC007 + "','',0,'N','N','" + TC033 + "','" + TC034 + "','N','" + TC036 + "','0','" + transdate + "','0','',"); // chinh sua TC033 + TC034 25/11
-                                sqlInsertSFCTC.Append("'" + TA006 + "','" + KLTotal + "','" + KLOK + "','0','" + KLNG + "','0','" + TC047 + "','" + ITEMNAME_TC048 + "','" + ITEMDESCRIPTION + "','KG','0','0','0','N'");
-                                sqlInsertSFCTC.Append(")");
-                                sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTC.ToString(), false);
-
-                                StringBuilder sqlInsertSFCTB = new StringBuilder();
-                                sqlInsertSFCTB.Append("insert into SFCTB ");
-                                sqlInsertSFCTB.Append("(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
-                                sqlInsertSFCTB.Append("TB001,TB002,TB003,TB004,TB005,TB006,TB007,TB008,TB009,TB010,TB011,TB012,TB013,TB014,TB015,TB016,TB017,TB018,TB019,TB020,");
-                                sqlInsertSFCTB.Append(" TB021,TB022,TB023,TB024,TB025,TB026,TB027,TB028,TB029,TB030,TB031,TB034,TB036,TB037,TB038,TB039,");
-                                sqlInsertSFCTB.Append("TB200,TB201,TB202)");
-                                sqlInsertSFCTB.Append(" values ( ");
-                                sqlInsertSFCTB.Append("'TLVN','MES','GS','" + dateTm + "','" + modifier + "','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
-                                sqlInsertSFCTB.Append("'D201','" + TC002 + "','" + transdate + "','1','" + TA006 + "','" + TA007 + "','1','" + TA006 + "','" + TA007 + "','TL',0,'N','" + TB013 + "','','" + transdate + "','MES','N','','','',");
-                                sqlInsertSFCTB.Append("'','" + MOCTA56 + "','1','N','" + month + "','" + MOCTA57 + "','0','','0','0','0','" + MOCTA70 + "','VND',1,'','',");
-                                sqlInsertSFCTB.Append(TC036 + ",'" + output + "'," + NG);
-                                sqlInsertSFCTB.Append(")");
-                                sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
-                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" + TC002);
-                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
-                                DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D201", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), TB013, "Đã tạo phiếu chuyển thành công");
-                                isTicketCreated = true;
-                            }
-                            else
-                            {
-                                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.", " (Code : " + MP + "-" + SP + ")");
-                                DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
-                                FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
-                            }
-                        }
-                        else if (TC009 == "")
-                        {
-                            SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do thiếu mã quy trình 0020: ", MP + SP);
-                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ");
-                            FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do thieu ma quy trinh 0020 ");
-                        }
-                    }
-                    else
-                    {
-                        if (TB013 == "N")
+                        if (ticketCode == "")
                         {
                             if (TC009 != "")
                             {
@@ -362,50 +311,162 @@ namespace MESdbToERPdb
                         }
                         else
                         {
-                            if (TC009 != "")
+                            if (TB013 == "N")
                             {
-                                if (!checkQty)
+                                if (TC009 != "")
                                 {
-                                    sqlERPTest_TLVN2 sqlInsert = new sqlERPTest_TLVN2();
-                                    StringBuilder sqlInsertSFCTC = new StringBuilder();
-                                    sqlInsertSFCTC.Append("insert into SFCTC ");
-                                    sqlInsertSFCTC.Append(@"(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
-                                    sqlInsertSFCTC.Append(@"TC001,TC002,TC003,TC004,TC005,TC006,TC007,TC008,TC009,TC010,TC011,TC012,TC013,TC014,TC015,TC016,TC017,TC018,TC019,TC020,");
-                                    sqlInsertSFCTC.Append(@"TC021,TC022,TC023,TC024,TC025,TC026,TC027,TC033,TC034,TC035,TC036,TC037,TC038,TC039,TC040,");
-                                    sqlInsertSFCTC.Append(@"TC041,TC042,TC043,TC044,TC045,TC046,TC047,TC048,TC049,TC050,TC051,TC053,TC054,TC055)");
-                                    sqlInsertSFCTC.Append(" values ( ");
-                                    sqlInsertSFCTC.Append("'TLVN','MES','GS','" + dateTm + "','" + modifier + "','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
-                                    sqlInsertSFCTC.Append("'D201','" + ticketCode + "','" + ticketNumber + "','" + MP + "','" + SP + "','0010','" + TC007 + "','0020','" + TC009 + "','PCS','','','1'," + output + ",0," + NG + ",0,0,0,0,");
-                                    sqlInsertSFCTC.Append("0,'" + TB013 + "','" + TC007 + "','',0,'N','N','" + TC033 + "','" + TC034 + "','N'," + TC036 + ",0,'" + transdate + "','0','',"); // chinh sua TC033 + TC034 25/11
-                                    sqlInsertSFCTC.Append("'" + TA006 + "'," + KLTotal + "," + KLOK + ",0," + KLNG + ",0,'" + TC047 + "','" + ITEMNAME_TC048 + "','" + ITEMDESCRIPTION + "','KG','0','0','0','N'");
-                                    sqlInsertSFCTC.Append(")");
-                                    sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTC.ToString(), false);
+                                    if (!checkQty)
+                                    {
+                                        //kg dùng SFT nữa nên TB038 & TB039 để trống
+                                        sqlERPTest_TLVN2 sqlInsert = new sqlERPTest_TLVN2();
+                                        StringBuilder sqlInsertSFCTC = new StringBuilder();
+                                        sqlInsertSFCTC.Append("insert into SFCTC ");
+                                        sqlInsertSFCTC.Append(@"(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
+                                        sqlInsertSFCTC.Append(@"TC001,TC002,TC003,TC004,TC005,TC006,TC007,TC008,TC009,TC010,TC011,TC012,TC013,TC014,TC015,TC016,TC017,TC018,TC019,TC020,");
+                                        sqlInsertSFCTC.Append(@"TC021,TC022,TC023,TC024,TC025,TC026,TC027,TC033,TC034,TC035,TC036,TC037,TC038,TC039,TC040,");
+                                        sqlInsertSFCTC.Append(@"TC041,TC042,TC043,TC044,TC045,TC046,TC047,TC048,TC049,TC050,TC051,TC053,TC054,TC055)");
+                                        sqlInsertSFCTC.Append(" values ( ");
+                                        sqlInsertSFCTC.Append("'TLVN','MES','GS','" + dateTm + "','','',2,'" + time + "','SFT','SFCMI05','','','',");
+                                        sqlInsertSFCTC.Append("'D201','" + TC002 + "','0001','" + MP + "','" + SP + "','0010','" + TC007 + "','0020','" + TC009 + "','PCS','','','1','" + output + "','0','" + NG + "',0,0,0,0,");
+                                        sqlInsertSFCTC.Append("0,'" + TB013 + "','" + TC007 + "','',0,'N','N','" + TC033 + "','" + TC034 + "','N','" + TC036 + "','0','" + transdate + "','0','',"); // chinh sua TC033 + TC034 25/11
+                                        sqlInsertSFCTC.Append("'" + TA006 + "','" + KLTotal + "','" + KLOK + "','0','" + KLNG + "','0','" + TC047 + "','" + ITEMNAME_TC048 + "','" + ITEMDESCRIPTION + "','KG','0','0','0','N'");
+                                        sqlInsertSFCTC.Append(")");
+                                        sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTC.ToString(), false);
 
-                                    StringBuilder sqlUpdateSFCTB = new StringBuilder();
-                                    sqlUpdateSFCTB.Append("update SFCTB set TB200 = TB200 + " + TC036 + ", TB201 = TB201 + " + output + ", TB202 = TB202 + " + NG + " where TB001 = 'D201' and TB002 = '" + ticketCode + "'");
-                                    sqlInsert.sqlExecuteNonQuery(sqlUpdateSFCTB.ToString(), false);
-
-                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" + ticketCode);
-                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
-                                    DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D201", ticketCode, ticketNumber, MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), TB013, "Đã tạo và gộp phiếu chuyển thành công");
-                                    isTicketCreated = true;
+                                        StringBuilder sqlInsertSFCTB = new StringBuilder();
+                                        sqlInsertSFCTB.Append("insert into SFCTB ");
+                                        sqlInsertSFCTB.Append("(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
+                                        sqlInsertSFCTB.Append("TB001,TB002,TB003,TB004,TB005,TB006,TB007,TB008,TB009,TB010,TB011,TB012,TB013,TB014,TB015,TB016,TB017,TB018,TB019,TB020,");
+                                        sqlInsertSFCTB.Append(" TB021,TB022,TB023,TB024,TB025,TB026,TB027,TB028,TB029,TB030,TB031,TB034,TB036,TB037,TB038,TB039,");
+                                        sqlInsertSFCTB.Append("TB200,TB201,TB202)");
+                                        sqlInsertSFCTB.Append(" values ( ");
+                                        sqlInsertSFCTB.Append("'TLVN','MES','GS','" + dateTm + "','','',2,'" + time + "','SFT','SFCMI05','','','',");
+                                        sqlInsertSFCTB.Append("'D201','" + TC002 + "','" + transdate + "','1','" + TA006 + "','" + TA007 + "','1','" + TA006 + "','" + TA007 + "','TL',0,'N','" + TB013 + "','','" + transdate + "','MES','N','','','',");
+                                        sqlInsertSFCTB.Append("'','" + MOCTA56 + "','1','N','" + month + "','" + MOCTA57 + "','0','','0','0','0','" + MOCTA70 + "','VND',1,'','',");
+                                        sqlInsertSFCTB.Append(TC036 + ",'" + output + "'," + NG);
+                                        sqlInsertSFCTB.Append(")");
+                                        sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
+                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" + TC002);
+                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
+                                        DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D201", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), TB013, "Đã tạo phiếu chuyển thành công");
+                                        isTicketCreated = true;
+                                    }
+                                    else
+                                    {
+                                        SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.", " (Code : " + MP + "-" + SP + ")");
+                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
+                                        FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
+                                    }
                                 }
-                                //kg dùng SFT nữa nên TB038 & TB039 để trống
-                                else
+                                else if (TC009 == "")
                                 {
-                                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.", " (Code : " + MP + "-" + SP + ")");
-                                    DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
-                                    FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
+                                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do thiếu mã quy trình 0020: ", MP + SP);
+                                    DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ");
+                                    FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do thieu ma quy trinh 0020 ");
                                 }
                             }
-                            else if (TC009 == "")
+                            else
                             {
-                                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ", MP + SP);
-                                DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ");
-                                FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do thieu ma quy trinh 0020 ");
+                                if (TC009 != "")
+                                {
+                                    if (!checkQty)
+                                    {
+                                        sqlERPTest_TLVN2 sqlInsert = new sqlERPTest_TLVN2();
+                                        StringBuilder sqlInsertSFCTC = new StringBuilder();
+                                        sqlInsertSFCTC.Append("insert into SFCTC ");
+                                        sqlInsertSFCTC.Append(@"(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
+                                        sqlInsertSFCTC.Append(@"TC001,TC002,TC003,TC004,TC005,TC006,TC007,TC008,TC009,TC010,TC011,TC012,TC013,TC014,TC015,TC016,TC017,TC018,TC019,TC020,");
+                                        sqlInsertSFCTC.Append(@"TC021,TC022,TC023,TC024,TC025,TC026,TC027,TC033,TC034,TC035,TC036,TC037,TC038,TC039,TC040,");
+                                        sqlInsertSFCTC.Append(@"TC041,TC042,TC043,TC044,TC045,TC046,TC047,TC048,TC049,TC050,TC051,TC053,TC054,TC055)");
+                                        sqlInsertSFCTC.Append(" values ( ");
+                                        sqlInsertSFCTC.Append("'TLVN','MES','GS','" + dateTm + "','" + modifier + "','" + dateTm + "',2,'" + time + "','SFT','SFCMI05','" + time + "','SFT','SFCMI05',");
+                                        sqlInsertSFCTC.Append("'D201','" + ticketCode + "','" + ticketNumber + "','" + MP + "','" + SP + "','0010','" + TC007 + "','0020','" + TC009 + "','PCS','','','1'," + output + ",0," + NG + ",0,0,0,0,");
+                                        sqlInsertSFCTC.Append("0,'" + TB013 + "','" + TC007 + "','',0,'N','N','" + TC033 + "','" + TC034 + "','N'," + TC036 + ",0,'" + transdate + "','0','',"); // chinh sua TC033 + TC034 25/11
+                                        sqlInsertSFCTC.Append("'" + TA006 + "'," + KLTotal + "," + KLOK + ",0," + KLNG + ",0,'" + TC047 + "','" + ITEMNAME_TC048 + "','" + ITEMDESCRIPTION + "','KG','0','0','0','N'");
+                                        sqlInsertSFCTC.Append(")");
+                                        sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTC.ToString(), false);
+
+                                        StringBuilder sqlUpdateSFCTB = new StringBuilder();
+                                        sqlUpdateSFCTB.Append("update SFCTB set TB200 = TB200 + " + TC036 + ", TB201 = TB201 + " + output + ", TB202 = TB202 + " + NG + " where TB001 = 'D201' and TB002 = '" + ticketCode + "'");
+                                        sqlInsert.sqlExecuteNonQuery(sqlUpdateSFCTB.ToString(), false);
+
+                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" + ticketCode);
+                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
+                                        DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D201", ticketCode, ticketNumber, MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), TB013, "Đã tạo và gộp phiếu chuyển thành công");
+                                        isTicketCreated = true;
+                                    }
+                                    //kg dùng SFT nữa nên TB038 & TB039 để trống
+                                    else
+                                    {
+                                        SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.", " (Code : " + MP + "-" + SP + ")");
+                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
+                                        FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
+                                    }
+                                }
+                                else if (TC009 == "")
+                                {
+                                    SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ", MP + SP);
+                                    DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ");
+                                    FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do thieu ma quy trinh 0020 ");
+                                }
                             }
                         }
                     }
+                    else
+                    {
+                        if (TC009 != "")
+                        {
+                            if (!checkQty)
+                            {
+                                //kg dùng SFT nữa nên TB038 & TB039 để trống
+                                sqlERPTest_TLVN2 sqlInsert = new sqlERPTest_TLVN2();
+                                StringBuilder sqlInsertSFCTC = new StringBuilder();
+                                sqlInsertSFCTC.Append("insert into SFCTC ");
+                                sqlInsertSFCTC.Append(@"(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
+                                sqlInsertSFCTC.Append(@"TC001,TC002,TC003,TC004,TC005,TC006,TC007,TC008,TC009,TC010,TC011,TC012,TC013,TC014,TC015,TC016,TC017,TC018,TC019,TC020,");
+                                sqlInsertSFCTC.Append(@"TC021,TC022,TC023,TC024,TC025,TC026,TC027,TC033,TC034,TC035,TC036,TC037,TC038,TC039,TC040,");
+                                sqlInsertSFCTC.Append(@"TC041,TC042,TC043,TC044,TC045,TC046,TC047,TC048,TC049,TC050,TC051,TC053,TC054,TC055)");
+                                sqlInsertSFCTC.Append(" values ( ");
+                                sqlInsertSFCTC.Append("'TLVN','MES','GS','" + dateTm + "','','',2,'" + time + "','SFT','SFCMI05','','','',");
+                                sqlInsertSFCTC.Append("'D201','" + TC002 + "','0001','" + MP + "','" + SP + "','0010','" + TC007 + "','0020','" + TC009 + "','PCS','','','1','" + output + "','0','" + NG + "',0,0,0,0,");
+                                sqlInsertSFCTC.Append("0,'" + TB013 + "','" + TC007 + "','',0,'N','N','" + TC033 + "','" + TC034 + "','N','" + TC036 + "','0','" + transdate + "','0','',"); // chinh sua TC033 + TC034 25/11
+                                sqlInsertSFCTC.Append("'" + TA006 + "','" + KLTotal + "','" + KLOK + "','0','" + KLNG + "','0','" + TC047 + "','" + ITEMNAME_TC048 + "','" + ITEMDESCRIPTION + "','KG','0','0','0','N'");
+                                sqlInsertSFCTC.Append(")");
+                                sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTC.ToString(), false);
+
+                                StringBuilder sqlInsertSFCTB = new StringBuilder();
+                                sqlInsertSFCTB.Append("insert into SFCTB ");
+                                sqlInsertSFCTB.Append("(COMPANY,CREATOR,USR_GROUP,CREATE_DATE,MODIFIER,MODI_DATE,FLAG,CREATE_TIME,CREATE_AP,CREATE_PRID,MODI_TIME,MODI_AP,MODI_PRID,");
+                                sqlInsertSFCTB.Append("TB001,TB002,TB003,TB004,TB005,TB006,TB007,TB008,TB009,TB010,TB011,TB012,TB013,TB014,TB015,TB016,TB017,TB018,TB019,TB020,");
+                                sqlInsertSFCTB.Append(" TB021,TB022,TB023,TB024,TB025,TB026,TB027,TB028,TB029,TB030,TB031,TB034,TB036,TB037,TB038,TB039,");
+                                sqlInsertSFCTB.Append("TB200,TB201,TB202)");
+                                sqlInsertSFCTB.Append(" values ( ");
+                                sqlInsertSFCTB.Append("'TLVN','MES','GS','" + dateTm + "','','',2,'" + time + "','SFT','SFCMI05','','','',");
+                                sqlInsertSFCTB.Append("'D201','" + TC002 + "','" + transdate + "','1','" + TA006 + "','" + TA007 + "','1','" + TA006 + "','" + TA007 + "','TL',0,'N','" + TB013 + "','','" + transdate + "','MES','N','','','',");
+                                sqlInsertSFCTB.Append("'','" + MOCTA56 + "','1','N','" + month + "','" + MOCTA57 + "','0','','0','0','0','" + MOCTA70 + "','VND',1,'','',");
+                                sqlInsertSFCTB.Append(TC036 + ",'" + output + "'," + NG);
+                                sqlInsertSFCTB.Append(")");
+                                sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
+                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D201-" + TC002);
+                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
+                                DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D201", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), TB013, "Đã tạo phiếu chuyển thành công");
+                                isTicketCreated = true;
+                            }
+                            else
+                            {
+                                SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.", " (Code : " + MP + "-" + SP + ")");
+                                DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
+                                FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA036 > SFCTA010 - SFCTA011 - SFCTA012.");
+                            }
+                        }
+                        else if (TC009 == "")
+                        {
+                            SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do thiếu mã quy trình 0020: ", MP + SP);
+                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), NG.ToString(), RW.ToString(), "", "Không thể tạo phiếu do thiếu dữ liệu mã quy trình 0020: ");
+                            FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do thieu ma quy trinh 0020 ");
+                        }
+                    }
+                    
                 }
                 else
                 {
