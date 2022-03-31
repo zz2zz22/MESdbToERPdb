@@ -428,9 +428,11 @@ namespace MESdbToERPdb
                                                 {
                                                     if (checkD1orD2 == 1)
                                                     {
+                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
                                                         DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
                                                     }
-                                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                    
+                                                    SystemLog.Output(SystemLog.MSG_TYPE.War, "GetListTransferOrderD1", "Import data to SQL.");
                                                     StringBuilder sqlInsertD1Temp = new StringBuilder();
                                                     sqlInsertD1Temp.Append("insert into v_TempD1MoveNo ");
                                                     sqlInsertD1Temp.Append(@"(MOVE_NO)");
@@ -481,10 +483,10 @@ namespace MESdbToERPdb
                                             {
                                                 if (checkD1orD2 == 1)
                                                 {
-                                                    
+                                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
                                                     DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
                                                 }
-                                                SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                SystemLog.Output(SystemLog.MSG_TYPE.War, "GetListTransferOrderD1", "Import data to SQL.");
                                                 StringBuilder sqlInsertD1Temp = new StringBuilder();
                                                 sqlInsertD1Temp.Append("insert into v_TempD1MoveNo ");
                                                 sqlInsertD1Temp.Append(@"(MOVE_NO)");
