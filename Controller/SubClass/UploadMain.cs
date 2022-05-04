@@ -131,7 +131,6 @@ namespace MESdbToERPdb
                                 }
                             }
                         }
-                        int checkExistFinishedMO = int.Parse(sqlSOFTCon.sqlExecuteScalarString("SELECT COUNT(*) FROM v_TempD1MoveNo WHERE MOVE_NO = '" + table.Rows[cmbitem]["move_no"].ToString() + "'"));
                         bool isFinished = false;
                         if (erpCode != "")
                         {
@@ -167,12 +166,8 @@ namespace MESdbToERPdb
                                                     }
                                                     else
                                                     {
-                                                        if (checkExistFinishedMO == 0)
-                                                        {
-                                                            //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD2", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                        }
                                                         SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD2", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
                                                     }
 
                                                 }
@@ -215,12 +210,8 @@ namespace MESdbToERPdb
                                                 }
                                                 else
                                                 {
-                                                    if (checkExistFinishedMO == 0)
-                                                    {
-                                                        //SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD2", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                    }
                                                     SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD2", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                    DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
                                                 }
                                             }
                                             else
@@ -263,9 +254,7 @@ namespace MESdbToERPdb
                     DataReport.addReport(DataReport.RP_TYPE.Error, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "","", table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), "", "", "", "", ex.Message);
                 }
             }
-            StringBuilder sqlDeleteTempData = new StringBuilder();
-            sqlDeleteTempData.Append("Delete from v_TempD1MoveNo");
-            sqlSOFTCon.sqlExecuteNonQuery(sqlDeleteTempData.ToString(), false);
+            
         }
         public void GetListTransferOrderD1(string dIn, string dOut)
         {
@@ -298,6 +287,7 @@ namespace MESdbToERPdb
                     string productLotNo = table.Rows[cmbitem]["product_lot_no"].ToString();
 
                     int checkD1orD2 = CheckProcess(table.Rows[cmbitem]["work_order_process_uuid"].ToString(), table.Rows[cmbitem]["operation_uuid"].ToString());
+                    int checkD1orD2_B511 = CheckProcessB511(table.Rows[cmbitem]["work_order_process_uuid"].ToString(), table.Rows[cmbitem]["operation_uuid"].ToString());
                     if (checkD1orD2 != 3) //check công đoạn sau MQC thì không lấy dữ liệu
                     {
                         string DateUp = DateTime.Now.ToString();
@@ -412,12 +402,20 @@ namespace MESdbToERPdb
                                         {
                                             if (!checkSemiOngLon.Contains(checkSemiValue))
                                             {
-                                                if (isFinished == false)
+                                                if (MP == "B511")
                                                 {
-                                                    if (checkD1orD2 == 1)
+                                                    if (checkD1orD2_B511 == 1)
                                                     {
-                                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                        classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
+                                                        if (isFinished == false)
+                                                        {
+                                                            classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
+                                                            classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
+                                                        }
+                                                        else
+                                                        {
+                                                            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                        }
                                                     }
                                                     else
                                                     {
@@ -428,18 +426,21 @@ namespace MESdbToERPdb
                                                 {
                                                     if (checkD1orD2 == 1)
                                                     {
-                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                        if (isFinished == false)
+                                                        {
+                                                            classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
+                                                            classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
+                                                        }
+                                                        else
+                                                        {
+                                                            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                        }
                                                     }
-                                                    
-                                                    SystemLog.Output(SystemLog.MSG_TYPE.War, "GetListTransferOrderD1", "Import data to SQL.");
-                                                    StringBuilder sqlInsertD1Temp = new StringBuilder();
-                                                    sqlInsertD1Temp.Append("insert into v_TempD1MoveNo ");
-                                                    sqlInsertD1Temp.Append(@"(MOVE_NO)");
-                                                    sqlInsertD1Temp.Append(" values (");
-                                                    sqlInsertD1Temp.Append("'" + table.Rows[cmbitem]["move_no"].ToString() + "'");
-                                                    sqlInsertD1Temp.Append(")");
-                                                    sqlSOFTCon.sqlExecuteNonQuery(sqlInsertD1Temp.ToString(), false);
+                                                    else
+                                                    {
+                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển D101 do không thuộc các công đoạn cần tạo phiếu.");
+                                                    }
                                                 }
                                             }
                                             else
@@ -466,13 +467,20 @@ namespace MESdbToERPdb
                                     {
                                         if (!checkSemiOngLon.Contains(checkSemiValue))
                                         {
-
-                                            if (isFinished == false)
+                                            if (MP == "B511")
                                             {
-                                                if (checkD1orD2 == 1)
+                                                if (checkD1orD2_B511 == 1)
                                                 {
-                                                    classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                    classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
+                                                    if (isFinished == false)
+                                                    {
+                                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
+                                                        classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
+                                                    }
+                                                    else
+                                                    {
+                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                    }
                                                 }
                                                 else
                                                 {
@@ -483,17 +491,21 @@ namespace MESdbToERPdb
                                             {
                                                 if (checkD1orD2 == 1)
                                                 {
-                                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                    DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                    if (isFinished == false)
+                                                    {
+                                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
+                                                        classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
+                                                    }
+                                                    else
+                                                    {
+                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                    }
                                                 }
-                                                SystemLog.Output(SystemLog.MSG_TYPE.War, "GetListTransferOrderD1", "Import data to SQL.");
-                                                StringBuilder sqlInsertD1Temp = new StringBuilder();
-                                                sqlInsertD1Temp.Append("insert into v_TempD1MoveNo ");
-                                                sqlInsertD1Temp.Append(@"(MOVE_NO)");
-                                                sqlInsertD1Temp.Append(" values (");
-                                                sqlInsertD1Temp.Append("'" + table.Rows[cmbitem]["move_no"].ToString() + "'");
-                                                sqlInsertD1Temp.Append(")");
-                                                sqlSOFTCon.sqlExecuteNonQuery(sqlInsertD1Temp.ToString(), false);
+                                                else
+                                                {
+                                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển D101 do không thuộc các công đoạn cần tạo phiếu.");
+                                                }
                                             }
 
                                         }
@@ -563,6 +575,33 @@ namespace MESdbToERPdb
                 }else if (getLineNo > int.Parse(getMQClineNo))
                 {
                     return 3;
+                }
+                else return 0;
+            }
+            else return 0;
+        }
+        public int CheckProcessB511(string work_order_process_id, string operationID)
+        {
+            sqlMESBaseDataCon con = new sqlMESBaseDataCon();
+            sqlMESPlanningExcutionCon conEx = new sqlMESPlanningExcutionCon();
+            string productProcessListID = conEx.sqlExecuteScalarString("select distinct product_process_list_uuid from work_order_process where uuid = '" + work_order_process_id + "'");
+            int getLineNo = int.Parse(con.sqlExecuteScalarString("select distinct line_no from product_process_list where uuid = '" + productProcessListID + "' and operation_uuid = '" + operationID + "'"));
+            string processID = con.sqlExecuteScalarString("select distinct process_uuid from product_process_list where uuid = '" + productProcessListID + "'");
+            string getMQClineNo = con.sqlExecuteScalarString("select distinct line_no from process_list where process_uuid = '" + processID + "' and operation_name like '%MQC%' and delete_flag = '0'");
+            string getOP4lineNo = con.sqlExecuteScalarString("select distinct line_no from process_list where process_uuid = '" + processID + "' and operation_no like 'OP4' and delete_flag = '0'");
+            if (getMQClineNo != "")
+            {
+                if (getLineNo == int.Parse(getMQClineNo))
+                {
+                    return 2;
+                }
+                else if (getOP4lineNo != "")
+                {
+                    if (getLineNo == int.Parse(getOP4lineNo))
+                    {
+                        return 1;
+                    }
+                    else return 0;
                 }
                 else return 0;
             }
