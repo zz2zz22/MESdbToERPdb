@@ -402,45 +402,22 @@ namespace MESdbToERPdb
                                         {
                                             if (!checkSemiOngLon.Contains(checkSemiValue))
                                             {
-                                                if (MP == "B511")
+                                                if (checkD1orD2 == 1)
                                                 {
-                                                    if (checkD1orD2_B511 == 1)
+                                                    if (isFinished == false)
                                                     {
-                                                        if (isFinished == false)
-                                                        {
-                                                            classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                            classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
-                                                        }
-                                                        else
-                                                        {
-                                                            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                        }
+                                                        classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
+                                                        classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
                                                     }
                                                     else
                                                     {
-                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển D101 do không thuộc các công đoạn cần tạo phiếu.");
+                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
+                                                        DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
                                                     }
                                                 }
                                                 else
                                                 {
-                                                    if (checkD1orD2 == 1)
-                                                    {
-                                                        if (isFinished == false)
-                                                        {
-                                                            classinsertD1.InsertdataToERP_D101(MP, SP, ParentOrgCode, OKQty, transDate, DateUp, TimeUp, timeIn, timeOut, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString());
-                                                            classinsertD1.updateERPD101(MP, SP, OKQty, DateUp, TimeUp, transDate);
-                                                        }
-                                                        else
-                                                        {
-                                                            SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, table.Rows[cmbitem]["move_no"].ToString(), table.Rows[cmbitem]["product_no"].ToString(), table.Rows[cmbitem]["operation_no"].ToString(), table.Rows[cmbitem]["operation_name"].ToString(), OKQty.ToString(), NGQty.ToString(), reworkQ, "", "Không có phiếu chuyển do MOCTA011 = Y/y.");
-                                                        }
-                                                    }
-                                                    else
-                                                    {
-                                                        SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển D101 do không thuộc các công đoạn cần tạo phiếu.");
-                                                    }
+                                                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "GetListTransferOrderD1", "Không có phiếu chuyển D101 do không thuộc các công đoạn cần tạo phiếu.");
                                                 }
                                             }
                                             else
