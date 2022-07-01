@@ -57,7 +57,6 @@ namespace MESdbToERPdb
                     _TC002 = dateFormat + countFormatReset;
                 }
             }
-
             return _TC002;
         }
 
@@ -78,7 +77,6 @@ namespace MESdbToERPdb
                 DonVi = DV_MD003 / DV_MD004;
                 return DonVi;
             }
-
         }
 
         public string GetWarehouse(string orgCode)
@@ -224,6 +222,7 @@ namespace MESdbToERPdb
             try
             {
                 bool isDataMissing = false;
+                bool isHaveWeight = true;
                 string dateTm = Convert.ToDateTime(date).ToString("yyyyMMdd");
                 string month = dateTm.Substring(0, 6);
 
@@ -303,12 +302,7 @@ namespace MESdbToERPdb
                     checkQty = true;
                 }
 
-                double Total = output + NG;
-                double DLDonvi = GetDonVi(TC047);
-                double KLOK = DLDonvi * output;
-                double KLNG = DLDonvi * NG;
-                double KLTotal = Total * DLDonvi;
-
+                
                 string TB005 = GetWarehouse(TA006);
                 string TB006 = sqlERPCon.sqlExecuteScalarString("select distinct MC002 from CMSMC where MC001 = '" + TB005 + "'");
                 string transdate = (Convert.ToDateTime(mesTransDate)).ToString("yyyyMMdd");
@@ -324,13 +318,27 @@ namespace MESdbToERPdb
                 {
                     ticketNumber = getTicketNumber(ticketCode);
                 }
+                double Total = output + NG;
+                double DLDonvi, KLOK, KLNG, KLTotal;
+                string getMB091 = sqlERPCon.sqlExecuteScalarString("select distinct MB091 from INVMB where MB001 = '" + TC047 + "'");
+                if (getMB091.ToUpper() == "Y")
+                {
+                    DLDonvi = GetDonVi(TC047);
+                }
+                else
+                {
+                    DLDonvi = 0;
+                    isHaveWeight = false;
+                }
+                KLOK = DLDonvi * output;
+                KLNG = DLDonvi * NG;
+                KLTotal = Total * DLDonvi;
                 if (isDataMissing == false)
                 {
                     if (ticketCode == "")
                     {
                         if (!checkQty)
                         {
-                            
                             sqlERPTest_TLVN2 sqlInsert = new sqlERPTest_TLVN2();
                             if (Properties.Settings.Default.d1Status == "Y")
                             {
@@ -362,8 +370,7 @@ namespace MESdbToERPdb
                                 sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D101-" + TC002 + ", " + Properties.Settings.Default.d1Status);
                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
-                                DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D101", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "Đã tạo phiếu chuyển thành công");
-
+                                DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "D101", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "Đã tạo phiếu chuyển thành công");
                             }
                             else
                             {
@@ -395,14 +402,19 @@ namespace MESdbToERPdb
                                 sqlInsert.sqlExecuteNonQuery(sqlInsertSFCTB.ToString(), false);
                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D101-" + TC002 + ", " + Properties.Settings.Default.d1Status);
                                 SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
-                                DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D101", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "Đã tạo phiếu chuyển thành công");
+                                DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"),tdate.ToString("dd/MM/yyyy HH:mm:ss"), "D101", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "Đã tạo phiếu chuyển thành công");
+                               
                             }
                             isTicketCreated = true;
+                            if (isHaveWeight == false)
+                            {
+                                DataReport.addReport(DataReport.RP_TYPE.NoWeightPercent, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "D101", TC002, "0001", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "");
+                            }
                         }
                         else
                         {
                             SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.", SFCTA010 + " : " + MOCTA015 + " (Code : " + MP + "-" + SP + ")");
-                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
+                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
                             FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA010 lon hon hoac bang MOCTA015.");
                         }
                     }
@@ -431,13 +443,17 @@ namespace MESdbToERPdb
                             sqlInsert.sqlExecuteNonQuery(sqlUpdateSFCTB.ToString(), false);
                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Generated Form :", "D101-" + ticketCode + ", " + Properties.Settings.Default.d1Status);
                             SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Code :", MP + "-" + SP);
-                            DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "D101", ticketCode, ticketNumber, MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "Đã tạo và gộp phiếu chuyển thành công");
+                            DataReport.addReport(DataReport.RP_TYPE.Success, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "D101", ticketCode, ticketNumber, MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "Đã tạo và gộp phiếu chuyển thành công");
                             isTicketCreated = true;
+                            if (isHaveWeight == false)
+                            {
+                                DataReport.addReport(DataReport.RP_TYPE.NoWeightPercent, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "D101", TC002, ticketNumber, MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", Properties.Settings.Default.d1Status, "");
+                            }
                         }
                         else
                         {
                             SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu do SFCTA010 > MOCTA015.", SFCTA010 + ">" + MOCTA015 + " (Code : " + MP + "-" + SP + ")");
-                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
+                            DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu do SFCTA010 lớn hơn hoặc bằng MOCTA015.");
                             FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu do SFCTA010 lon hon MOCTA015.");
                         }
                     }
@@ -445,14 +461,14 @@ namespace MESdbToERPdb
                 else
                 {
                     SystemLog.Output(SystemLog.MSG_TYPE.Err, "Không thể tạo phiếu D101 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA: ", MP + SP);
-                    DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu D101 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA");
+                    DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu D101 do thiếu dữ liệu ở bảng SFCTA hoặc MOCTA");
                     FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu D101 do thieu du lieu o bang SFCTA hoac MOCTA.");
                 }
             }
             catch (Exception ex)
             {
                 SystemLog.Output(SystemLog.MSG_TYPE.Err, "InsertdataToERP(string barcode, string output, string NG)", ex.Message);
-                DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu! Lỗi không xác định! Xem file log để biết thêm chi tiết!"); ;
+                DataReport.addReport(DataReport.RP_TYPE.Fail, DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss"), tdate.ToString("dd/MM/yyyy HH:mm:ss"), "", "", "", MP + SP, MES_move_no, productCode, operationNo, operationName, output.ToString(), "", "", "", "Không thể tạo phiếu! Lỗi không xác định! Xem file log để biết thêm chi tiết!"); ;
                 FixData.addFixTB(DateTime.Now, MP + SP, MES_move_no, "Khong the tao phieu! Loi khong xac dinh xem file log de biet chi tiet!");
             }
         }
@@ -486,10 +502,19 @@ namespace MESdbToERPdb
 
                         double NGQty = 0;
                         double Total = output + NGQty;
-                        double DLDonvi = GetDonVi(TC047);
-                        double KLOK = DLDonvi * output;
-                        double KLNG = DLDonvi * NGQty;
-                        double KLTotal = Total * DLDonvi;
+                        double DLDonvi, KLOK, KLNG, KLTotal;
+                        string getMB091 = data.sqlExecuteScalarString("select distinct MB091 from INVMB where MB001 = '" + TC047 + "'");
+                        if (getMB091.ToUpper() == "Y")
+                        {
+                            DLDonvi = GetDonVi(TC047);
+                        }
+                        else
+                        {
+                            DLDonvi = 0;
+                        }
+                        KLOK = DLDonvi * output;
+                        KLNG = DLDonvi * NGQty;
+                        KLTotal = Total * DLDonvi;
 
                         sqlERPTest_TLVN2 con = new sqlERPTest_TLVN2();
                         double SFCTA010 = double.Parse(con.sqlExecuteScalarString("select distinct TA010 from SFCTA where TA001 = '" + MP + "' and TA002 = '" + SP + "' and TA003 = '0010'"));
