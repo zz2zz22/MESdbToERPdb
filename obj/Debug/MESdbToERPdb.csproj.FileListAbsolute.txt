@@ -111,3 +111,4 @@ D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.Error.r
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb_Content.g.cs
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Newtonsoft.Json.dll
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Newtonsoft.Json.xml
+D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.csproj.AssemblyReference.cache

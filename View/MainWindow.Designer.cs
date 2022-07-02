@@ -164,6 +164,7 @@ namespace MESdbToERPdb
             this.btn_errorForm.Size = new System.Drawing.Size(59, 60);
             this.btn_errorForm.TabIndex = 9;
             this.btn_errorForm.UseVisualStyleBackColor = false;
+            this.btn_errorForm.Visible = false;
             this.btn_errorForm.Click += new System.EventHandler(this.btn_errorForm_Click);
             // 
             // btn_settingForm

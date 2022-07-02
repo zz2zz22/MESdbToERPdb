@@ -322,12 +322,15 @@ namespace MESdbToERPdb
             switch(rpType)
             {
                 case RP_TYPE.Fail:
+                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Adding report line:", "Fail");
                     failReportTB.Rows.Add(new object[] { transDate, MESDate, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                     break;
                 case RP_TYPE.Success:
+                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Adding report line:", "Success");
                     successReportTB.Rows.Add(new object[] { transDate, MESDate, LP, MP, ticketNo, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                     break;
                 case RP_TYPE.Error:
+                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Adding report line:", "Error");
                     errorReportTB.Rows.Add(new object[] { transDate, MESDate, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                     break;
                 //case RP_TYPE.Missing:
@@ -337,6 +340,7 @@ namespace MESdbToERPdb
                 //    }
                 //    break;
                 case RP_TYPE.NoWeightPercent:
+                    SystemLog.Output(SystemLog.MSG_TYPE.Nor, "Adding report line:", "No Weight");
                     noWeightTB.Rows.Add(new object[] { transDate, MESDate, LP, MP, ticketNo, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                     break;
                 default:
