@@ -110,5 +110,4 @@ C:\Github\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.Setting.resources
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb.View.Error.resources
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\obj\Debug\MESdbToERPdb_Content.g.cs
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Newtonsoft.Json.dll
-D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Owin.dll
 D:\CompanyProjects\MESdbToERPdb\MESdbToERPdb\bin\Debug\Newtonsoft.Json.xml

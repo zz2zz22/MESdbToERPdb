@@ -33,6 +33,8 @@ namespace MESdbToERPdb.View
             this.pn_general = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbx_d2Status = new System.Windows.Forms.ComboBox();
+            this.lb_d2Status = new System.Windows.Forms.Label();
             this.lb_d1Status = new System.Windows.Forms.Label();
             this.cbx_d1Status = new System.Windows.Forms.ComboBox();
             this.lb_bgIntervalD1Picker = new System.Windows.Forms.Label();
@@ -76,8 +78,6 @@ namespace MESdbToERPdb.View
             this.btn_languageVietnam = new System.Windows.Forms.Button();
             this.btn_languageEnglish = new System.Windows.Forms.Button();
             this.lb_languageConfig = new System.Windows.Forms.Label();
-            this.lb_d2Status = new System.Windows.Forms.Label();
-            this.cbx_d2Status = new System.Windows.Forms.ComboBox();
             this.pn_general.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
@@ -134,6 +134,29 @@ namespace MESdbToERPdb.View
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(374, 395);
             this.panel3.TabIndex = 10;
+            // 
+            // cbx_d2Status
+            // 
+            this.cbx_d2Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbx_d2Status.FormattingEnabled = true;
+            this.cbx_d2Status.Items.AddRange(new object[] {
+            "N - Không xác nhận",
+            "Tự động xét điều kiện"});
+            this.cbx_d2Status.Location = new System.Drawing.Point(10, 355);
+            this.cbx_d2Status.Name = "cbx_d2Status";
+            this.cbx_d2Status.Size = new System.Drawing.Size(215, 28);
+            this.cbx_d2Status.TabIndex = 10;
+            this.cbx_d2Status.SelectedIndexChanged += new System.EventHandler(this.cbx_d2Status_SelectedIndexChanged);
+            // 
+            // lb_d2Status
+            // 
+            this.lb_d2Status.AutoSize = true;
+            this.lb_d2Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_d2Status.Location = new System.Drawing.Point(6, 332);
+            this.lb_d2Status.Name = "lb_d2Status";
+            this.lb_d2Status.Size = new System.Drawing.Size(87, 20);
+            this.lb_d2Status.TabIndex = 9;
+            this.lb_d2Status.Text = "D2 status:";
             // 
             // lb_d1Status
             // 
@@ -651,29 +674,6 @@ namespace MESdbToERPdb.View
             this.lb_languageConfig.TabIndex = 0;
             this.lb_languageConfig.Text = "Choose your language";
             // 
-            // lb_d2Status
-            // 
-            this.lb_d2Status.AutoSize = true;
-            this.lb_d2Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_d2Status.Location = new System.Drawing.Point(6, 332);
-            this.lb_d2Status.Name = "lb_d2Status";
-            this.lb_d2Status.Size = new System.Drawing.Size(87, 20);
-            this.lb_d2Status.TabIndex = 9;
-            this.lb_d2Status.Text = "D2 status:";
-            // 
-            // cbx_d2Status
-            // 
-            this.cbx_d2Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbx_d2Status.FormattingEnabled = true;
-            this.cbx_d2Status.Items.AddRange(new object[] {
-            "N - Không xác nhận",
-            "Tự động xét điều kiện"});
-            this.cbx_d2Status.Location = new System.Drawing.Point(10, 355);
-            this.cbx_d2Status.Name = "cbx_d2Status";
-            this.cbx_d2Status.Size = new System.Drawing.Size(215, 28);
-            this.cbx_d2Status.TabIndex = 10;
-            this.cbx_d2Status.SelectedIndexChanged += new System.EventHandler(this.cbx_d2Status_SelectedIndexChanged);
-            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -685,7 +685,7 @@ namespace MESdbToERPdb.View
             this.Controls.Add(this.pn_general);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Setting";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Setting";
             this.Load += new System.EventHandler(this.Setting_Load);
             this.pn_general.ResumeLayout(false);

@@ -217,7 +217,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Controller\Model\" />
+    <Folder Include="Model\" />
     <Folder Include="Resource\" />
   </ItemGroup>
   <ItemGroup>

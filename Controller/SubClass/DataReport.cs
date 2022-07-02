@@ -330,12 +330,12 @@ namespace MESdbToERPdb
                 case RP_TYPE.Error:
                     errorReportTB.Rows.Add(new object[] { transDate, MESDate, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                     break;
-                case RP_TYPE.Missing:
-                    if (!missingMESTB.Rows.Contains(moveNo))
-                    {
-                        missingMESTB.Rows.Add(new object[] { transDate, moveNo, ticketNo, productCode, operationNo, operationName, erpCode, OK, MESDate });
-                    }
-                    break;
+                //case RP_TYPE.Missing:
+                //    if (!missingMESTB.Rows.Contains(moveNo))
+                //    {
+                //        missingMESTB.Rows.Add(new object[] { transDate, moveNo, ticketNo, productCode, operationNo, operationName, erpCode, OK, MESDate });
+                //    }
+                //    break;
                 case RP_TYPE.NoWeightPercent:
                     noWeightTB.Rows.Add(new object[] { transDate, MESDate, LP, MP, ticketNo, erpCode, moveNo, productCode, operationNo, operationName, OK, NG, RW, confirmStatus, status });
                     break;
