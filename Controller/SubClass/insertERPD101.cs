@@ -96,6 +96,9 @@ namespace MESdbToERPdb
 
             if (orgCode.Contains("B02"))
                 warehouse = "B06";
+            
+            if (orgCode.Contains("B04"))
+                warehouse = "B06";
 
             if (orgCode.Contains("C01"))
                 warehouse = "C01";
